@@ -1,0 +1,211 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Insurance Quote | Heidi Blondin Financial"
+  description="Request a no-obligation insurance quote. Life, critical illness, disability, and combination coverage options for Ontario residents."
+>
+
+  <section class="bg-brand-plum py-20">
+    <div class="container-content max-w-3xl">
+      <p class="eyebrow-light mb-5">Insurance</p>
+      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Request an Insurance Quote</h1>
+      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
+        Tell us a little about yourself and we'll put together a no-obligation quote tailored to your situation and coverage needs.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-brand-tintPlum section-gap">
+    <div class="container-content">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="space-y-6">
+          <div>
+            <h2 class="font-serif text-xl text-brand-plum mb-3" style="font-optical-sizing: auto;">What happens next</h2>
+            <ol class="font-sans text-sm text-brand-ink/70 space-y-3">
+              <li class="flex items-start gap-3"><span class="font-serif text-brand-gold text-lg leading-none mt-0.5">1</span><span>You submit the form with your information and coverage preferences.</span></li>
+              <li class="flex items-start gap-3"><span class="font-serif text-brand-gold text-lg leading-none mt-0.5">2</span><span>Heidi or a team member reviews your information and researches options across our insurance partners.</span></li>
+              <li class="flex items-start gap-3"><span class="font-serif text-brand-gold text-lg leading-none mt-0.5">3</span><span>We reach out to discuss the options and schedule a conversation if you'd like to proceed.</span></li>
+            </ol>
+          </div>
+          <div class="bg-brand-plum/8 border border-brand-plum/12 p-5">
+            <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">
+              <strong class="text-brand-plum">No obligation.</strong> Requesting a quote doesn't commit you to anything. We'll present options and answer questions — you decide if and when to move forward.
+            </p>
+          </div>
+          <div>
+            <p class="font-sans text-xs text-brand-ink/50 leading-relaxed">For general inquiries not related to insurance, please use our <a href="/contact/" class="text-brand-gold hover:underline">Contact form</a>.</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="bg-white p-8 shadow-sm">
+            <h2 class="font-serif text-xl text-brand-plum mb-6" style="font-optical-sizing: auto;">Your quote request</h2>
+            <form id="quote-form" class="space-y-5" novalidate>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="first_name" class="field-label">First Name <span class="text-brand-gold">*</span></label>
+                  <input type="text" id="first_name" name="first_name" required autocomplete="given-name" class="field-input" />
+                </div>
+                <div>
+                  <label for="last_name" class="field-label">Last Name <span class="text-brand-gold">*</span></label>
+                  <input type="text" id="last_name" name="last_name" required autocomplete="family-name" class="field-input" />
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="email" class="field-label">Email Address <span class="text-brand-gold">*</span></label>
+                  <input type="email" id="email" name="email" required autocomplete="email" class="field-input" />
+                </div>
+                <div>
+                  <label for="phone" class="field-label">Phone Number <span class="text-brand-gold">*</span></label>
+                  <input type="tel" id="phone" name="phone" required autocomplete="tel" class="field-input" />
+                </div>
+              </div>
+              <div>
+                <label for="insurance_type" class="field-label">Type of Insurance <span class="text-brand-gold">*</span></label>
+                <select id="insurance_type" name="insurance_type" required class="field-select">
+                  <option value="">— Please select —</option>
+                  <option value="life">Life Insurance</option>
+                  <option value="life_ci">Life + Critical Illness Insurance</option>
+                  <option value="ci">Critical Illness Insurance</option>
+                  <option value="disability">Disability Insurance</option>
+                  <option value="life_no_medical">Life Insurance (No Medical)</option>
+                  <option value="combination">Combination (multiple types)</option>
+                </select>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="dob" class="field-label">Date of Birth <span class="text-brand-gold">*</span></label>
+                  <input type="date" id="dob" name="dob" required class="field-input" />
+                </div>
+                <div>
+                  <label for="sex" class="field-label">Sex</label>
+                  <select id="sex" name="sex" class="field-select">
+                    <option value="">— Please select —</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="health" class="field-label">Overall Health</label>
+                  <select id="health" name="health" class="field-select">
+                    <option value="">— Please select —</option>
+                    <option value="excellent">Excellent</option>
+                    <option value="above_avg">Above Average</option>
+                    <option value="average">Average</option>
+                    <option value="some_concerns">Some Health Concerns</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="smoker" class="field-label">Do you smoke?</label>
+                  <select id="smoker" name="smoker" class="field-select">
+                    <option value="">— Please select —</option>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label for="coverage_amount" class="field-label">Approximate Coverage Amount Needed</label>
+                <select id="coverage_amount" name="coverage_amount" class="field-select">
+                  <option value="">— Unsure / prefer to discuss —</option>
+                  <option value="under_250k">Under $250,000</option>
+                  <option value="250k_500k">$250,000 – $500,000</option>
+                  <option value="500k_1m">$500,000 – $1,000,000</option>
+                  <option value="over_1m">Over $1,000,000</option>
+                </select>
+              </div>
+              <div>
+                <label for="comments" class="field-label">Additional Information</label>
+                <textarea id="comments" name="comments" rows="4" class="field-input" placeholder="Any other details about your health history, current coverage, or specific questions..."></textarea>
+              </div>
+
+              <div class="flex items-start gap-3 py-2">
+                <input type="checkbox" id="casl_consent" name="casl_consent" class="mt-1 h-4 w-4 border-brand-plum/30 text-brand-plum focus:ring-brand-plum" />
+                <label for="casl_consent" class="font-sans text-[13px] text-brand-ink/70 leading-relaxed cursor-pointer">
+                  I consent to Heidi Blondin Financial contacting me about my insurance inquiry and quote request.
+                </label>
+              </div>
+
+              <div id="form-error" class="hidden bg-red-50 border border-red-200 p-4">
+                <p class="font-sans text-sm text-red-700">There was an error sending your request. Please try again or call us at <a href="tel:6138872726" class="font-medium underline">613-887-2726</a>.</p>
+              </div>
+
+              <div id="form-success" class="hidden bg-brand-tintSage border border-brand-sage/30 p-5">
+                <p class="font-sans text-sm font-medium text-brand-plum">Thank you — your quote request has been received!</p>
+                <p class="font-sans text-sm text-brand-ink/65 mt-1">We'll review your information and be in touch within 1–2 business days.</p>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn-primary w-full justify-center">
+                <span id="btn-text">Submit Quote Request</span>
+                <span id="btn-spinner" class="hidden">
+                  <svg class="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+                  Sending...
+                </span>
+              </button>
+
+              <p class="font-sans text-[11px] text-brand-ink/40 leading-relaxed">
+                Insurance products are offered through Heidi Blondin Financial / Qualified Financial Services. Your personal information is collected solely for the purpose of providing you with an insurance quote and is subject to our <a href="/privacy-policy/" class="underline">Privacy Policy</a>. We do not collect SIN or financial account numbers through this form.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('quote-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const btnText = document.getElementById('btn-text') as HTMLElement;
+    const btnSpinner = document.getElementById('btn-spinner') as HTMLElement;
+    const errorDiv = document.getElementById('form-error') as HTMLElement;
+    const successDiv = document.getElementById('form-success') as HTMLElement;
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorDiv.classList.add('hidden');
+      successDiv.classList.add('hidden');
+
+      const requiredFields = form.querySelectorAll('[required]');
+      let valid = true;
+      requiredFields.forEach((field) => {
+        const input = field as HTMLInputElement;
+        if (!input.value.trim()) {
+          input.classList.add('border-red-400');
+          valid = false;
+        } else {
+          input.classList.remove('border-red-400');
+        }
+      });
+      if (!valid) return;
+
+      btnText.classList.add('hidden');
+      btnSpinner.classList.remove('hidden');
+      submitBtn.disabled = true;
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          body: JSON.stringify({ formType: 'insurance-quote', ...Object.fromEntries(data) }),
+          headers: { 'Content-Type': 'application/json' },
+        });
+        if (!res.ok) throw new Error('Server error');
+        form.reset();
+        successDiv.classList.remove('hidden');
+      } catch {
+        errorDiv.classList.remove('hidden');
+      } finally {
+        btnText.classList.remove('hidden');
+        btnSpinner.classList.add('hidden');
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+
+</BaseLayout>

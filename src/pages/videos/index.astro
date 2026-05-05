@@ -1,0 +1,100 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTABand from '@/components/CTABand.astro';
+
+const videos = [
+  { id: 'placeholder-fhsa', title: 'What Is the First Home Savings Account (FHSA)?', category: 'Investing', desc: 'An overview of Canada\'s newest registered account and how it helps first-time homebuyers.' },
+  { id: 'placeholder-tfsa', title: 'How a TFSA Works and Why You Need One', category: 'Investing', desc: 'The basics of the Tax-Free Savings Account and the most common mistakes to avoid.' },
+  { id: 'placeholder-rrsp', title: 'RRSP vs. TFSA — Which Should You Prioritize?', category: 'Investing', desc: 'A plain-language comparison to help you decide where to put your next dollar.' },
+  { id: 'placeholder-cpp', title: 'When Should You Start CPP?', category: 'Retirement', desc: 'How the timing of your CPP election affects your lifetime benefit — and how to decide.' },
+  { id: 'placeholder-oas', title: 'Understanding Old Age Security (OAS) and the Clawback', category: 'Retirement', desc: 'What the OAS clawback is, who it affects, and how to plan around it.' },
+  { id: 'placeholder-retirement', title: 'Building a Retirement Income Plan', category: 'Retirement', desc: 'How to turn your savings into reliable income — from RRIFs to TFSAs to CPP.' },
+  { id: 'placeholder-life-ins', title: 'Do You Have Enough Life Insurance?', category: 'Insurance', desc: 'How to figure out the right amount of coverage for your family\'s situation.' },
+  { id: 'placeholder-resp', title: 'How to Maximize Your RESP', category: 'Investing', desc: 'Making the most of the Canada Education Savings Grant and growing your child\'s education fund.' },
+  { id: 'placeholder-estate', title: 'Estate Planning Basics for Ontario Families', category: 'Planning', desc: 'Wills, powers of attorney, beneficiary designations, and what happens if you don\'t have them.' },
+  { id: 'placeholder-executor', title: 'What Does an Executor Actually Do?', category: 'Planning', desc: 'A practical walkthrough of the executor\'s responsibilities in Ontario.' },
+  { id: 'placeholder-disability', title: 'Why Disability Insurance Matters More Than You Think', category: 'Insurance', desc: 'The risk of disability is higher than most people realize — and the financial impact is significant.' },
+  { id: 'placeholder-seg-funds', title: 'What Are Segregated Funds?', category: 'Investing', desc: 'How seg funds work, what guarantees they offer, and who they\'re best suited for.' },
+];
+
+const categories = ['All', 'Investing', 'Retirement', 'Insurance', 'Planning'];
+---
+
+<BaseLayout
+  title="Financial Education Videos | Heidi Blondin Financial"
+  description="Plain-language videos on RRSPs, TFSAs, RESPs, life insurance, retirement income planning, estate planning, and more. From Heidi Blondin Financial in Kingston, Ontario."
+>
+
+  <section class="bg-brand-plum py-20">
+    <div class="container-content">
+      <p class="eyebrow-light mb-5">Videos</p>
+      <h1 class="font-serif text-display text-white max-w-2xl text-balance" style="font-optical-sizing: auto;">
+        Financial education, plain and simple.
+      </h1>
+      <p class="font-sans text-[18px] text-white/65 mt-5 max-w-lg">
+        Short videos on the topics that matter most — retirement, insurance, investing, and estate planning. No jargon, no sales pitch.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-brand-tintSage section-gap">
+    <div class="container-content">
+
+      <!-- Category filter -->
+      <div class="flex flex-wrap gap-2 mb-10" id="video-filters">
+        {categories.map(cat => (
+          <button
+            data-category={cat}
+            class={`font-sans text-xs font-medium px-4 py-2 transition-all border ${cat === 'All' ? 'bg-brand-plum text-white border-brand-plum' : 'bg-white text-brand-plum border-brand-plum/20 hover:border-brand-plum/50'}`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <!-- Video grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="video-grid">
+        {videos.map(video => (
+          <div class="bg-white video-card" data-category={video.category}>
+            <!-- Video embed placeholder — replace id with real YouTube video ID -->
+            <div class="aspect-video bg-brand-plum/10 flex items-center justify-center relative group cursor-pointer">
+              <div class="w-14 h-14 bg-brand-plum rounded-full flex items-center justify-center group-hover:bg-brand-gold transition-colors">
+                <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="absolute bottom-3 right-3 font-sans text-[10px] text-brand-plum/40 bg-white/80 px-2 py-0.5">YouTube</span>
+            </div>
+            <div class="p-5">
+              <span class="font-sans text-[10px] font-medium text-brand-sageDark tracking-widest uppercase">{video.category}</span>
+              <h3 class="font-sans text-sm font-semibold text-brand-plum mt-1.5 mb-2 leading-snug">{video.title}</h3>
+              <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed">{video.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABand heading="Questions after watching?" sub="Book a free consultation — we'll apply these concepts to your specific situation." />
+
+</BaseLayout>
+
+<script>
+  const filters = document.querySelectorAll('#video-filters button');
+  const cards = document.querySelectorAll('.video-card');
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-category');
+
+      filters.forEach(b => b.classList.remove('bg-brand-plum', 'text-white', 'border-brand-plum'));
+      filters.forEach(b => b.classList.add('bg-white', 'text-brand-plum', 'border-brand-plum/20'));
+      btn.classList.remove('bg-white', 'text-brand-plum', 'border-brand-plum/20');
+      btn.classList.add('bg-brand-plum', 'text-white', 'border-brand-plum');
+
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        (card as HTMLElement).style.display = (cat === 'All' || cardCat === cat) ? '' : 'none';
+      });
+    });
+  });
+</script>

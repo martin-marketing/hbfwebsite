@@ -1,0 +1,89 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  canonical?: string;
+}
+
+const {
+  title,
+  description = 'Heidi Blondin Financial Inc. — Certified Financial Planner serving Kingston and Ontario families since 2007. Mutual funds through Investia Financial Services Inc.',
+  image = '/og-default.jpg',
+  noindex = false,
+  canonical,
+} = Astro.props;
+
+const siteUrl = 'https://heidiblondin.com';
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="Heidi Blondin Financial" />
+
+  <!-- Twitter/X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Organization schema on every page -->
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": ["Organization", "FinancialService", "LocalBusiness"],
+      "name": "Heidi Blondin Financial Inc.",
+      "url": "https://heidiblondin.com",
+      "logo": "https://heidiblondin.com/logo.svg",
+      "telephone": ["+16138872726", "+18558443927"],
+      "email": "hbadmin@heidiblondin.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "785 Midpark Drive, Suite 100",
+        "addressLocality": "Kingston",
+        "addressRegion": "ON",
+        "postalCode": "K7M 7G3",
+        "addressCountry": "CA"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Ontario"
+      },
+      "foundingDate": "2013",
+      "sameAs": []
+    })}
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <Header />
+  <main id="main">
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>

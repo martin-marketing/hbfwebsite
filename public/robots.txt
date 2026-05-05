@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Noindex these pages but allow crawling for sitemap discovery
+Disallow: /client-resources/
+
+Sitemap: https://heidiblondin.com/sitemap-index.xml

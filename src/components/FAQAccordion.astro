@@ -1,0 +1,70 @@
+---
+interface FAQItem {
+  q: string;
+  a: string;
+}
+interface Props {
+  items: FAQItem[];
+  heading?: string;
+}
+const { items, heading = 'Frequently Asked Questions' } = Astro.props;
+---
+
+<section class="bg-brand-tintSage section-gap">
+  <div class="container-content">
+    <h2 class="font-serif text-h2 text-brand-plum text-center mb-12 text-balance" style="font-optical-sizing: auto;">{heading}</h2>
+    <div class="max-w-2xl mx-auto bg-white divide-y divide-brand-plum/8" id="faq-list">
+      {items.map((item, i) => (
+        <div class="faq-item">
+          <button
+            class="w-full flex items-center justify-between px-6 py-5 text-left font-sans text-sm font-medium text-brand-plum hover:text-brand-gold transition-colors group"
+            aria-expanded="false"
+            aria-controls={`faq-body-${i}`}
+          >
+            <span>{item.q}</span>
+            <svg class="w-4 h-4 flex-shrink-0 ml-4 text-brand-gold transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+            </svg>
+          </button>
+          <div class="accordion-body" id={`faq-body-${i}`} role="region">
+            <div>
+              <p class="px-6 pb-5 font-sans text-sm text-brand-ink/75 leading-relaxed">{item.a}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-item button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const body = btn.nextElementSibling as HTMLElement;
+      const isOpen = body?.classList.contains('open');
+      // Close all others
+      document.querySelectorAll('.faq-item .accordion-body').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.faq-item button').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        const icon = b.querySelector('svg');
+        icon?.classList.remove('rotate-45');
+      });
+      if (!isOpen) {
+        body?.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        const icon = btn.querySelector('svg');
+        icon?.classList.add('rotate-45');
+      }
+    });
+  });
+</script>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+})} />

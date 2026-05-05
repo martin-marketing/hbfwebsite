@@ -1,0 +1,102 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTABand from '@/components/CTABand.astro';
+
+const calculators = [
+  { name: 'Budget & Income Worksheet', desc: 'Track monthly income and expenses. A great starting point for any financial plan.', file: '/downloads/budget-worksheet.xlsx', icon: '📊' },
+  { name: 'Net Worth Calculator', desc: 'Add up your assets and liabilities to understand your complete financial picture.', file: '/downloads/net-worth-calculator.xlsx', icon: '💰' },
+  { name: 'Education Savings Calculator', desc: 'Estimate how much you need to save for a child\'s post-secondary education.', file: '/downloads/education-savings-calculator.xlsx', icon: '🎓' },
+  { name: 'Mortgage Calculator', desc: 'Calculate monthly payments and total interest for any mortgage scenario.', file: '/downloads/mortgage-calculator.xlsx', icon: '🏠' },
+  { name: 'Retirement Income Calculator', desc: 'Project your retirement income from CPP, OAS, pensions, and personal savings.', file: '/downloads/retirement-income-calculator.xlsx', icon: '📈' },
+];
+
+const planningDocs = [
+  { name: 'Legacy Planning Checklist', desc: 'A step-by-step guide to organizing your estate documents, wishes, and key information for your family.', file: '/downloads/legacy-planning-checklist.pdf', icon: '📋' },
+  { name: 'Personal Records Organizer (Canada Life)', desc: 'Canada Life\'s comprehensive guide to organizing your important personal and financial records.', file: '/downloads/personal-records-organizer-canada-life.pdf', icon: '📁' },
+  { name: 'Personal Records Organizer (Sun Life)', desc: 'Sun Life\'s version of the personal records organizer — great for documenting policies and accounts.', file: '/downloads/personal-records-organizer-sun-life.pdf', icon: '📁' },
+  { name: 'Empire Life Executor Checklist', desc: 'A practical checklist for executors navigating estate administration duties in Ontario.', file: '/downloads/executor-checklist.pdf', icon: '✅' },
+  { name: 'Will Planning Worksheet', desc: 'Organize your wishes before meeting with an estate lawyer. A thoughtful way to prepare.', file: '/downloads/will-planning-worksheet.pdf', icon: '📝' },
+  { name: 'Power of Attorney Guide', desc: 'Understanding powers of attorney in Ontario — what they cover and why they matter.', file: '/downloads/power-of-attorney-guide.pdf', icon: '⚖️' },
+  { name: 'Digital Assets Worksheet', desc: 'Document your online accounts, passwords hints, and digital assets for your executor.', file: '/downloads/digital-assets-worksheet.pdf', icon: '💻' },
+];
+---
+
+<BaseLayout
+  title="Financial Planning Resources | Heidi Blondin Financial"
+  description="Free financial planning tools: calculators, estate planning checklists, personal records organizers, and more. From Heidi Blondin Financial, Kingston ON."
+>
+
+  <!-- Hero -->
+  <section class="bg-brand-plum py-20">
+    <div class="container-content">
+      <p class="eyebrow-light mb-5">Resources</p>
+      <h1 class="font-serif text-display text-white max-w-xl text-balance" style="font-optical-sizing: auto;">
+        Tools to take control of your financial life.
+      </h1>
+      <p class="font-sans text-[18px] text-white/65 mt-5 max-w-lg">
+        Complimentary calculators and planning documents to help you get organized, think clearly, and plan with confidence.
+      </p>
+    </div>
+  </section>
+
+  <!-- Calculators -->
+  <section class="bg-white section-gap">
+    <div class="container-content">
+      <div class="mb-12">
+        <p class="eyebrow mb-3">Calculators</p>
+        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Run the numbers</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {calculators.map(item => (
+          <a
+            href={item.file}
+            download
+            class="group flex items-start gap-4 border border-brand-plum/10 p-6 hover:border-brand-plum/25 hover:shadow-sm transition-all"
+          >
+            <span class="text-2xl flex-shrink-0">{item.icon}</span>
+            <div>
+              <h3 class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors mb-1">{item.name}</h3>
+              <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed mb-3">{item.desc}</p>
+              <span class="font-sans text-[11px] font-medium text-brand-gold flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                Download
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Planning documents -->
+  <section class="bg-brand-tintSage section-gap">
+    <div class="container-content">
+      <div class="mb-12">
+        <p class="eyebrow mb-3">Planning Documents</p>
+        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Estate & life planning guides</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {planningDocs.map(item => (
+          <a
+            href={item.file}
+            download
+            class="group flex items-start gap-4 bg-white border border-brand-plum/8 p-6 hover:border-brand-plum/20 hover:shadow-sm transition-all"
+          >
+            <span class="text-2xl flex-shrink-0">{item.icon}</span>
+            <div>
+              <h3 class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors mb-1">{item.name}</h3>
+              <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed mb-3">{item.desc}</p>
+              <span class="font-sans text-[11px] font-medium text-brand-gold flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                Download
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABand heading="Want help making sense of any of these?" sub="Book a free consultation and we'll walk through your numbers together." />
+
+</BaseLayout>

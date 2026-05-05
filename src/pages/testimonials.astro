@@ -1,0 +1,59 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTABand from '@/components/CTABand.astro';
+
+const testimonials = [
+  { quote: 'Heidi has been my trusted advisor and friend for several years. She and her team have provided sound financial guidance in the investment of my life savings.', attribution: 'T.O. · Kingston, Ontario' },
+  { quote: 'I can\'t thank Heidi and her team enough for their constant support. I first came to Heidi when I was in great debt — she was very positive and encouraging. I followed her advice completely and I am now financially on track.', attribution: 'D.R. · Ontario' },
+  { quote: 'Heidi is a true professional who I feel actually cares about my financial wellbeing. She explains everything clearly and always has time for my questions. I wouldn\'t trust anyone else with my retirement.', attribution: 'M.K. · Kingston, Ontario' },
+  { quote: 'Working with Heidi and her team has given me real peace of mind. My financial plan is finally something I understand and believe in. They listen — that\'s not something I\'ve always found with advisors.', attribution: 'A.F. · Kingston, Ontario' },
+  { quote: 'What sets Heidi apart is that she genuinely cares about you as a person, not just as a client. She takes the time to understand your goals and fears, and she helps you build something you can actually count on.', attribution: 'S.B. · Ontario' },
+  { quote: 'The whole team at Heidi Blondin Financial has been exceptional. From the first call with Angela to every meeting with Heidi, I\'ve always felt informed, respected, and confident in the advice I\'ve received.', attribution: 'P.L. · Kingston, Ontario' },
+];
+---
+
+<BaseLayout
+  title="Client Testimonials | Heidi Blondin Financial"
+  description="What clients say about working with Heidi Blondin Financial. Real experiences from real Ontario families."
+>
+
+  <!-- Hero -->
+  <section class="bg-brand-plum py-20 lg:py-28">
+    <div class="container-content text-center">
+      <p class="eyebrow-light mb-5">Client Stories</p>
+      <h1 class="font-serif text-display text-white max-w-2xl mx-auto text-balance" style="font-optical-sizing: auto;">
+        What our clients say
+      </h1>
+      <p class="font-sans text-[18px] text-white/65 mt-6 max-w-lg mx-auto">
+        We measure success by the confidence our clients feel about their financial future.
+      </p>
+    </div>
+  </section>
+
+  <!-- Testimonials grid -->
+  <section class="bg-white section-gap">
+    <div class="container-content">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {testimonials.map(t => (
+          <div class="bg-brand-tintPlum p-8 flex flex-col">
+            <div class="font-serif text-brand-gold text-5xl leading-none mb-4 select-none" style="font-optical-sizing: auto;">&ldquo;</div>
+            <blockquote class="font-serif text-lg text-brand-plum leading-relaxed flex-1 mb-6" style="font-optical-sizing: auto; font-style: italic; font-variation-settings: 'SOFT' 60;">
+              {t.quote}
+            </blockquote>
+            <cite class="font-sans text-xs tracking-[0.18em] uppercase text-brand-sageDark not-italic">{t.attribution}</cite>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 bg-brand-plumDark py-14 px-10 text-center">
+        <p class="font-serif text-2xl text-white/80 italic mb-4" style="font-optical-sizing: auto; font-variation-settings: 'SOFT' 60;">
+          &ldquo;Testimonials are presented with client permission. Names are represented by initials to protect privacy, as required under advisor advertising guidelines.&rdquo;
+        </p>
+        <p class="font-sans text-xs text-white/40 tracking-wide uppercase">Heidi Blondin Financial Inc.</p>
+      </div>
+    </div>
+  </section>
+
+  <CTABand heading="Ready to become one of our success stories?" sub="Your first consultation is free and comes with no obligation." />
+
+</BaseLayout>

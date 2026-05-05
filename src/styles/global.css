@@ -1,0 +1,209 @@
+/* Self-hosted fonts via fontsource */
+@import '@fontsource-variable/fraunces';
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --plum: #593D58;
+    --plum-mid: #7A5577;
+    --plum-dark: #3F2C3E;
+    --gold: #B87B1E;
+    --sage: #A2A47D;
+    --sage-dark: #7A7D5E;
+    --tint-plum: #F5F0F5;
+    --tint-sage: #F2F2EA;
+    --ink: #222222;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-brand-ink bg-white;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+    font-optical-sizing: auto;
+  }
+
+  /* Skip to content */
+  .skip-link {
+    @apply absolute -top-full left-4 z-50 px-4 py-2 bg-brand-gold text-white font-sans font-medium text-sm;
+    transition: top 0.1s;
+  }
+  .skip-link:focus {
+    @apply top-4;
+  }
+
+  /* Focus rings */
+  *:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-4 bg-brand-plum text-white font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plumDark;
+  }
+  .btn-primary-gold {
+    @apply inline-flex items-center gap-2 px-7 py-4 bg-brand-gold text-white font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-amber-700;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-7 py-4 border border-brand-plum text-brand-plum font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plum hover:text-white;
+  }
+  .btn-ghost-light {
+    @apply inline-flex items-center gap-2 px-7 py-4 border border-white/50 text-white font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-white hover:text-brand-plum;
+  }
+
+  /* Section containers */
+  .container-content {
+    @apply max-w-content mx-auto px-6 lg:px-10;
+  }
+
+  /* Eyebrow label */
+  .eyebrow {
+    @apply font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-gold;
+  }
+  .eyebrow-sage {
+    @apply font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-sageDark;
+  }
+  .eyebrow-light {
+    @apply font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-tintPlum/70;
+  }
+
+  /* Gold quote mark */
+  .quote-mark::before {
+    content: '\201C';
+    @apply font-serif text-brand-gold text-5xl leading-none block mb-3;
+    font-optical-sizing: auto;
+  }
+
+  /* Rich text body */
+  .prose-hbf {
+    @apply text-brand-ink leading-relaxed;
+  }
+  .prose-hbf h2 {
+    @apply font-serif text-h2 text-brand-plum mt-10 mb-4;
+  }
+  .prose-hbf h3 {
+    @apply font-serif text-h3 text-brand-plum mt-8 mb-3;
+  }
+  .prose-hbf p {
+    @apply mb-5 text-[17px] leading-[1.7];
+  }
+  .prose-hbf ul {
+    @apply mb-5 pl-6 space-y-2;
+  }
+  .prose-hbf li {
+    @apply text-[17px] leading-[1.7] list-disc;
+  }
+  .prose-hbf strong {
+    @apply font-semibold text-brand-plum;
+  }
+  .prose-hbf em {
+    @apply italic;
+  }
+  .prose-hbf a {
+    @apply text-brand-gold underline underline-offset-2 hover:text-amber-700;
+  }
+  .prose-hbf ol {
+    @apply mb-5 pl-6 space-y-2;
+  }
+  .prose-hbf ol li {
+    @apply list-decimal;
+  }
+
+  /* Form fields */
+  .field-label {
+    @apply block font-sans text-sm font-medium text-brand-plum mb-1.5;
+  }
+  .field-input {
+    @apply w-full border border-brand-plum/25 bg-white px-4 py-3 font-sans text-sm text-brand-ink placeholder-brand-plumMid/50 transition-colors focus:border-brand-plum focus:outline-none;
+  }
+  .field-select {
+    @apply w-full border border-brand-plum/25 bg-white px-4 py-3 font-sans text-sm text-brand-ink transition-colors focus:border-brand-plum focus:outline-none appearance-none cursor-pointer;
+  }
+
+  /* Nav link */
+  .nav-link {
+    @apply font-sans text-sm font-medium text-brand-ink/80 hover:text-brand-plum transition-colors duration-150 py-1;
+  }
+  .nav-link-active {
+    @apply text-brand-plum font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .section-gap {
+    @apply py-20 lg:py-28;
+  }
+  .section-gap-sm {
+    @apply py-14 lg:py-20;
+  }
+}
+
+/* Mega-menu animation */
+.mega-menu {
+  transition: opacity 150ms ease, transform 150ms ease, visibility 150ms;
+}
+.mega-menu.hidden {
+  opacity: 0;
+  transform: translateY(-8px);
+  visibility: hidden;
+  pointer-events: none;
+}
+.mega-menu.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Mobile drawer */
+.mobile-drawer {
+  transition: transform 200ms ease-out;
+}
+.mobile-drawer.closed {
+  transform: translateX(-100%);
+}
+.mobile-drawer.open {
+  transform: translateX(0);
+}
+
+/* Accordion */
+.accordion-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 200ms ease;
+}
+.accordion-body.open {
+  grid-template-rows: 1fr;
+}
+.accordion-body > div {
+  overflow: hidden;
+}
+
+/* Fraunces italic for emphasis */
+em {
+  font-style: italic;
+  font-variation-settings: "SOFT" 80;
+}

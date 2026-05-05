@@ -1,0 +1,117 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTABand from '@/components/CTABand.astro';
+import { getAllPosts, getPostBySlug, formatDate } from '@/lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  return posts.map(post => ({ params: { slug: post.slug } }));
+}
+
+const { slug } = Astro.params;
+const post = await getPostBySlug(slug!);
+
+if (!post) return Astro.redirect('/blog/');
+
+// Convert simple markdown to HTML (headings, bold, italic, lists)
+function simpleMarkdown(md: string): string {
+  return md
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>')
+    .replace(/^(\d+)\. (.+)$/gm, '<li>$2</li>')
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/^(?!<[hul])(.+)$/gm, '$1')
+    .split('\n\n').map(block => {
+      if (block.startsWith('<h') || block.startsWith('<ul') || block.startsWith('<ol')) return block;
+      return `<p>${block}</p>`;
+    }).join('\n');
+}
+
+const bodyHtml = simpleMarkdown(post.body);
+---
+
+<BaseLayout
+  title={post.meta_title ?? `${post.title} | Heidi Blondin Financial`}
+  description={post.meta_desc ?? post.excerpt ?? ''}
+  noindex={post.noindex}
+>
+
+  <!-- Hero -->
+  <section class="bg-brand-plum py-16 lg:py-20">
+    <div class="container-content max-w-3xl">
+      <div class="flex items-center gap-3 mb-6">
+        {post.category && <span class="eyebrow-light">{post.category}</span>}
+        <span class="font-sans text-xs text-white/40">{formatDate(post.published_at)}</span>
+      </div>
+      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">{post.title}</h1>
+      {post.excerpt && (
+        <p class="font-sans text-[17px] text-white/65 mt-5 leading-relaxed">{post.excerpt}</p>
+      )}
+      <div class="mt-8 pt-6 border-t border-white/10 flex items-center gap-3">
+        <img src="/team/heidi-portrait.jpg" alt="Heidi Blondin" class="w-10 h-10 object-cover object-top" />
+        <div>
+          <div class="font-sans text-sm font-medium text-white">{post.author}</div>
+          <div class="font-sans text-xs text-white/45">CFP®, EPC · Heidi Blondin Financial</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Post body -->
+  <article class="bg-white section-gap">
+    <div class="container-content max-w-3xl">
+      <div class="prose-hbf" set:html={bodyHtml} />
+
+      {post.tags && post.tags.length > 0 && (
+        <div class="mt-12 pt-8 border-t border-brand-plum/10 flex flex-wrap gap-2">
+          {post.tags.map(tag => (
+            <span class="font-sans text-[11px] font-medium text-brand-sageDark bg-brand-tintSage px-3 py-1.5 tracking-wide uppercase">{tag}</span>
+          ))}
+        </div>
+      )}
+
+      <!-- Disclaimer -->
+      <div class="mt-10 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
+        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">
+          This article is for general information purposes only and does not constitute personalized financial advice. Mutual funds are offered through Investia Financial Services Inc. Insurance products are offered through Heidi Blondin Financial / Qualified Financial Services. Please consult with a qualified financial advisor before making any financial decisions.
+        </p>
+      </div>
+
+      <div class="mt-10">
+        <a href="/blog/" class="font-sans text-sm font-medium text-brand-gold flex items-center gap-2 hover:gap-3 transition-all">
+          <svg class="w-4 h-4 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Back to all posts
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt ?? post.meta_desc,
+    "author": {
+      "@type": "Person",
+      "name": post.author,
+      "jobTitle": "CFP®, EPC",
+      "worksFor": { "@type": "Organization", "name": "Heidi Blondin Financial Inc." }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Heidi Blondin Financial Inc.",
+      "url": "https://heidiblondin.com"
+    },
+    "datePublished": post.published_at,
+    "dateModified": post.updated_at,
+    "url": `https://heidiblondin.com/blog/${post.slug}/`
+  })} />
+
+  <CTABand heading="Found this helpful?" sub="Book a free consultation and we'll apply this thinking to your specific situation." />
+
+</BaseLayout>

@@ -1,0 +1,65 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTABand from '@/components/CTABand.astro';
+
+const coverages = [
+  { name: 'Life Insurance', href: '/financial-services/life-insurance/', desc: 'Ensure your family is financially protected if something happens to you. We help you find the right type and amount of coverage.' },
+  { name: 'Critical Illness Insurance', href: '/financial-services/critical-illness-insurance/', desc: 'A tax-free lump sum payout when you\'re diagnosed with a covered illness — so you can focus on recovery, not finances.' },
+  { name: 'Disability Insurance', href: '/financial-services/disability-insurance/', desc: 'Your income is your most valuable asset. Disability coverage replaces a portion of it if you can\'t work due to injury or illness.' },
+  { name: 'Combination Insurance', href: '/financial-services/combination-insurance/', desc: 'Layer multiple types of coverage into one integrated policy to fill every gap in your protection plan.' },
+  { name: 'Individual Health & Dental Plans', href: '/financial-services/individual-health-dental-plans/', desc: 'Prescriptions, dental, vision, and paramedical services — for Ontarians without access to group benefits.' },
+  { name: 'Travel Insurance', href: '/financial-services/travel-insurance/', desc: 'Emergency medical, trip cancellation, and baggage coverage for every trip — domestic or international.' },
+  { name: 'Group Benefits & Savings', href: '/financial-services/employee-group-benefits-plans/', desc: 'Employer-sponsored benefits packages that attract talent and show your team you\'re invested in their wellbeing.' },
+];
+---
+
+<BaseLayout
+  title="Insurance Planning | Heidi Blondin Financial"
+  description="Life, critical illness, disability, and health insurance solutions for Ontario families. Independent advice on the coverage that fits your situation."
+>
+
+  <section class="bg-brand-plum py-20">
+    <div class="container-content max-w-3xl">
+      <p class="eyebrow-light mb-5">Insurance</p>
+      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Protection for every stage of life.</h1>
+      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
+        A financial plan without proper insurance coverage has a gap in it. We help Ontario families identify exactly what they need — and what they don't — so coverage fits the real risks in their lives.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white section-gap">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Independent advice on the coverage that fits you</h2>
+      <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
+        <p>Insurance is one of the most misunderstood parts of a financial plan — it's common to be either underinsured (leaving your family exposed) or over-insured (paying for coverage you don't need). As independent advisors, we work with multiple insurance companies to find the products that fit your situation, not a single company's lineup.</p>
+        <p>Whether you're a young family protecting a new mortgage, a business owner planning for continuity, or a retiree looking for health coverage, we'll help you build a protection strategy that makes sense.</p>
+      </div>
+
+      <div class="mt-12 space-y-4">
+        {coverages.map(item => (
+          <a href={item.href} class="group flex items-start gap-5 border border-brand-plum/10 p-5 hover:border-brand-plum/25 hover:shadow-sm transition-all">
+            <div class="flex-1">
+              <h3 class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors mb-1">{item.name}</h3>
+              <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed">{item.desc}</p>
+            </div>
+            <svg class="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-12 bg-brand-plum p-8">
+        <h3 class="font-serif text-xl text-white mb-2" style="font-optical-sizing: auto;">Ready for a no-obligation quote?</h3>
+        <p class="font-sans text-sm text-white/65 mb-6">Tell us about your situation — coverage type, health history, coverage amount — and we'll put together a personalized quote.</p>
+        <a href="/financial-services/insurance-quote/" class="btn-primary-gold">Request an Insurance Quote</a>
+      </div>
+
+      <div class="mt-10 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
+        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">Insurance products are offered through Heidi Blondin Financial / Qualified Financial Services. This article is for general information purposes only and does not constitute personalized insurance advice. Please consult with a qualified advisor to determine what coverage is appropriate for your situation.</p>
+      </div>
+    </div>
+  </section>
+
+  <CTABand heading="Find the right coverage" sub="Book a free consultation and we'll help you understand exactly what you need to protect your family." />
+
+</BaseLayout>

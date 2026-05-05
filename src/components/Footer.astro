@@ -1,0 +1,139 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <!-- Content zone -->
+  <div class="bg-brand-plum text-white">
+    <div class="container-content py-16 lg:py-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+
+        <!-- Brand column -->
+        <div class="lg:col-span-1">
+          <div class="font-serif text-2xl text-white mb-1" style="font-optical-sizing: auto;">Heidi Blondin</div>
+          <div class="font-sans text-[11px] tracking-[0.18em] uppercase text-white/50 mb-5">Financial Inc.</div>
+          <p class="font-sans text-sm text-white/70 leading-relaxed mb-6">
+            Helping Ontario families align their financial lives with what matters most — since 2007.
+          </p>
+          <address class="not-italic font-sans text-sm text-white/65 leading-relaxed space-y-1">
+            <div>785 Midpark Drive, Suite 100</div>
+            <div>Kingston, ON K7M 7G3</div>
+          </address>
+          <div class="mt-4 space-y-1.5">
+            <a href="tel:6138872726" class="flex items-center gap-2 font-sans text-sm text-white/70 hover:text-white transition-colors">
+              <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z"/></svg>
+              613-887-2726
+            </a>
+            <a href="tel:18558443927" class="flex items-center gap-2 font-sans text-sm text-white/70 hover:text-white transition-colors">
+              <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z"/></svg>
+              1-855-844-3927
+            </a>
+            <a href="mailto:hbadmin@heidiblondin.com" class="flex items-center gap-2 font-sans text-sm text-white/70 hover:text-white transition-colors">
+              <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+              hbadmin@heidiblondin.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Services column -->
+        <div>
+          <h3 class="font-sans text-xs font-semibold tracking-[0.18em] uppercase text-white/40 mb-4">Investing</h3>
+          <ul class="space-y-2">
+            {[
+              { label: 'RRSP', href: '/financial-services/registered-retirement-savings-plans/' },
+              { label: 'TFSA', href: '/financial-services/tax-free-savings-accounts/' },
+              { label: 'FHSA', href: '/financial-services/first-home-savings-account/' },
+              { label: 'RESP', href: '/financial-services/registered-education-savings-plans/' },
+              { label: 'Segregated Funds', href: '/financial-services/segregated-fund/' },
+            ].map(link => (
+              <li><a href={link.href} class="font-sans text-sm text-white/65 hover:text-white transition-colors">{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Insurance column -->
+        <div>
+          <h3 class="font-sans text-xs font-semibold tracking-[0.18em] uppercase text-white/40 mb-4">Insurance & Planning</h3>
+          <ul class="space-y-2">
+            {[
+              { label: 'Life Insurance', href: '/financial-services/life-insurance/' },
+              { label: 'Critical Illness', href: '/financial-services/critical-illness-insurance/' },
+              { label: 'Disability Insurance', href: '/financial-services/disability-insurance/' },
+              { label: 'Estate Planning', href: '/financial-services/estate-planning/' },
+              { label: 'Retirement Income', href: '/retirement-income-planning/' },
+              { label: 'Charitable Giving', href: '/charitable-giving/' },
+            ].map(link => (
+              <li><a href={link.href} class="font-sans text-sm text-white/65 hover:text-white transition-colors">{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Quick links column -->
+        <div>
+          <h3 class="font-sans text-xs font-semibold tracking-[0.18em] uppercase text-white/40 mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            {[
+              { label: 'About Heidi', href: '/heidi/' },
+              { label: 'Testimonials', href: '/testimonials/' },
+              { label: 'Videos', href: '/videos/' },
+              { label: 'Blog', href: '/blog/' },
+              { label: 'Resources', href: '/resources/' },
+              { label: 'Contact Us', href: '/contact/' },
+              { label: 'Insurance Quote', href: '/financial-services/insurance-quote/' },
+            ].map(link => (
+              <li><a href={link.href} class="font-sans text-sm text-white/65 hover:text-white transition-colors">{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Compliance zone -->
+  <div class="bg-brand-plumDark text-white/60">
+    <div class="container-content py-8">
+      <!-- CIRO disclosure -->
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-5 mb-6 pb-6 border-b border-white/10">
+        <a
+          href="https://www.ciro.ca"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 group flex-shrink-0"
+          aria-label="Regulated by CIRO — Canadian Investment Regulatory Organization"
+        >
+          <div class="bg-white/10 group-hover:bg-white/15 transition-colors px-4 py-2 rounded flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21ZM9.75 15.75 6 12l1.5-1.5 2.25 2.25 6-6L17.25 8.25l-7.5 7.5Z"/></svg>
+            <span class="font-sans text-xs font-semibold text-white tracking-wide uppercase">Regulated by CIRO</span>
+          </div>
+        </a>
+        <p class="font-sans text-[11px] leading-relaxed text-white/50 max-w-2xl">
+          Heidi Blondin Financial is a member firm of the Canadian Investment Regulatory Organization (CIRO).
+          CIRO is the national self-regulatory organization for investment dealers and mutual fund dealers.
+        </p>
+      </div>
+
+      <!-- Investia disclaimer — verbatim, mandatory on every page -->
+      <div class="mb-5">
+        <p class="font-sans text-[11px] leading-relaxed text-white/55 uppercase tracking-wide">
+          MUTUAL FUNDS, APPROVED EXEMPT MARKET PRODUCTS AND/OR EXCHANGE TRADED FUNDS ARE OFFERED THROUGH INVESTIA FINANCIAL SERVICES INC.
+          LIFE INSURANCE AND RELATED PRODUCTS ARE OFFERED THROUGH HEIDI BLONDIN FINANCIAL / QUALIFIED FINANCIAL SERVICES.
+          THE INFORMATION ON THIS WEBSITE IS INTENDED FOR RESIDENTS OF ONTARIO ONLY. THIS IS NOT AN OFFER TO SELL OR SOLICIT AN OFFER TO BUY SECURITIES.
+          COMMISSIONS, TRAILING COMMISSIONS, MANAGEMENT FEES AND EXPENSES ALL MAY BE ASSOCIATED WITH MUTUAL FUND INVESTMENTS. PLEASE READ THE FUND FACTS BEFORE INVESTING.
+          MUTUAL FUNDS ARE NOT GUARANTEED, THEIR VALUES CHANGE FREQUENTLY AND PAST PERFORMANCE MAY NOT BE REPEATED.
+        </p>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 pt-4 border-t border-white/10">
+        <p class="font-sans text-[11px] text-white/40">
+          &copy; {year} Heidi Blondin Financial Inc. · 785 Midpark Drive, Suite 100, Kingston ON K7M 7G3
+        </p>
+        <div class="flex gap-4">
+          <a href="/privacy-policy/" class="font-sans text-[11px] text-white/45 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="/website-compliance/" class="font-sans text-[11px] text-white/45 hover:text-white transition-colors">Website Compliance</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

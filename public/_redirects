@@ -1,0 +1,40 @@
+# Cloudflare Pages _redirects file
+# Format: /old-path  /new-path  301
+
+# Retired pages — locked retirements (Tammy 2026-04-20)
+/heidi3/              /heidi/               301
+/heidi-2/testimonials/ /testimonials/        301
+/test/                /                     301
+/executor2/           /resources/           301
+
+# Intake form retired (Heidi 2026-04-29)
+/intake/              /contact/             301
+
+# Legacy insurance page (duplicate, under review)
+/financial-services/insuranceprotection/  /financial-services/insurance/  301
+
+# Old whole-life and life-insurance variant pages
+/whole-life-insurance/        /financial-services/life-insurance/  301
+/life-insurance-peace-of-mind/ /financial-services/life-insurance/  301
+/life-insurance-for-parents/   /financial-services/life-insurance/  301
+/life-insurance-broker/        /financial-services/life-insurance/  301
+
+# Old sign-up and workshop pages
+/sign-up/             /contact/             301
+/workshop/            /contact/             301
+
+# Legacy investments URLs
+/investments/         /financial-services/investments/   301
+/insurance/           /financial-services/insurance/     301
+
+# Thank-you page (legacy WordPress page ID 148)
+/thank-you/           /contact-thank-you/   301
+
+# Ensure trailing slashes are canonical
+/heidi                /heidi/               301
+/testimonials         /testimonials/        301
+/contact              /contact/             301
+/resources            /resources/           301
+/blog                 /blog/                301
+/videos               /videos/              301
+/financial-services   /financial-services/  301

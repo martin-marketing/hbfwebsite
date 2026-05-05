@@ -1,0 +1,53 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogCard from '@/components/BlogCard.astro';
+import CTABand from '@/components/CTABand.astro';
+import { getAllPosts } from '@/lib/posts';
+
+const posts = await getAllPosts();
+const categories = [...new Set(posts.map(p => p.category).filter(Boolean))];
+---
+
+<BaseLayout
+  title="Financial Planning Blog | Heidi Blondin Financial"
+  description="Financial insights for Ontario families — retirement, insurance, estate planning, tax strategy, and more. From CFP® Heidi Blondin in Kingston, Ontario."
+>
+
+  <!-- Hero -->
+  <section class="bg-brand-plum py-20">
+    <div class="container-content">
+      <p class="eyebrow-light mb-5">The Blog</p>
+      <h1 class="font-serif text-display text-white max-w-xl text-balance" style="font-optical-sizing: auto;">
+        Financial insights worth reading.
+      </h1>
+      <p class="font-sans text-[18px] text-white/65 mt-5 max-w-lg">
+        Plain-language articles on retirement, insurance, investing, and estate planning — written for real Ontario families.
+      </p>
+    </div>
+  </section>
+
+  <!-- Posts grid -->
+  <section class="bg-brand-tintSage section-gap">
+    <div class="container-content">
+      {posts.length === 0 ? (
+        <p class="font-sans text-brand-ink/60 text-center py-20">No posts yet. Check back soon.</p>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map(post => (
+            <BlogCard
+              slug={post.slug}
+              title={post.title}
+              excerpt={post.excerpt}
+              category={post.category}
+              published_at={post.published_at}
+              cover_image={post.cover_image}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <CTABand heading="Have a financial question?" sub="Book a free consultation — no article required." />
+
+</BaseLayout>

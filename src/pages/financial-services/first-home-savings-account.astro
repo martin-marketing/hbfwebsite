@@ -1,0 +1,73 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTABand from '@/components/CTABand.astro';
+---
+
+<BaseLayout
+  title="FHSA — First Home Savings Account | Heidi Blondin Financial"
+  description="Canada's newest registered account gives first-time homebuyers tax deductions on contributions AND tax-free withdrawals. Learn how to maximize the FHSA."
+>
+
+  <section class="bg-brand-plum py-20">
+    <div class="container-content max-w-3xl">
+      <p class="eyebrow-light mb-5">Investing</p>
+      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">First Home Savings Account (FHSA)</h1>
+      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
+        Canada's newest registered account combines the best of both worlds: tax-deductible contributions like an RRSP, and tax-free withdrawals like a TFSA — specifically designed to help you buy your first home.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white section-gap">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">The best of both registered accounts</h2>
+      <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
+        <p>Introduced in 2023, the First Home Savings Account (FHSA) is available to first-time homebuyers who want a meaningful tax advantage while saving for a down payment. It's one of the most generous registered accounts the federal government has created in years.</p>
+        <p>You can contribute up to $8,000 per year (up to a lifetime maximum of $40,000), and the money can be invested in mutual funds and other eligible investments — not just parked as cash.</p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="bg-brand-tintPlum p-6">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Tax deduction on contributions</h3>
+          <p class="font-sans text-[13px] text-brand-ink/65 leading-relaxed">Like an RRSP, every dollar you contribute reduces your taxable income. Contributing $8,000 in a 40% tax bracket effectively costs you $4,800 after your refund.</p>
+        </div>
+        <div class="bg-brand-tintPlum p-6">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Tax-free withdrawals</h3>
+          <p class="font-sans text-[13px] text-brand-ink/65 leading-relaxed">Unlike an RRSP, you don't pay any tax when you withdraw — as long as the funds are used to purchase a qualifying first home.</p>
+        </div>
+        <div class="bg-brand-tintPlum p-6">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Tax-free growth inside the account</h3>
+          <p class="font-sans text-[13px] text-brand-ink/65 leading-relaxed">Dividends and capital gains earned inside the FHSA are sheltered from tax — your money compounds faster than in a taxable account.</p>
+        </div>
+        <div class="bg-brand-tintPlum p-6">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Transfer to RRSP if unused</h3>
+          <p class="font-sans text-[13px] text-brand-ink/65 leading-relaxed">If you don't use the FHSA for a home purchase within 15 years of opening it, you can transfer the balance to your RRSP or RRIF without tax — no contribution room needed.</p>
+        </div>
+        <div class="bg-brand-tintPlum p-6">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Stackable with Home Buyers' Plan</h3>
+          <p class="font-sans text-[13px] text-brand-ink/65 leading-relaxed">You can use both the FHSA and the RRSP Home Buyers' Plan (up to $60,000) together on the same purchase — potentially a significant combined down payment boost.</p>
+        </div>
+        <div class="bg-brand-tintPlum p-6">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Unused room carries forward</h3>
+          <p class="font-sans text-[13px] text-brand-ink/65 leading-relaxed">If you contribute less than $8,000 in a year, the unused room (up to $8,000) carries forward to the next year — so you can catch up if needed.</p>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Who qualifies?</h2>
+        <ul class="font-sans text-[16px] text-brand-ink/75 leading-relaxed space-y-2">
+          <li class="flex items-start gap-2"><span class="text-brand-gold mt-1">→</span><span>You are a Canadian resident aged 18 or older (and under 71)</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-gold mt-1">→</span><span>You are a first-time home buyer (you have not owned a principal residence in the current year or the preceding four calendar years)</span></li>
+          <li class="flex items-start gap-2"><span class="text-brand-gold mt-1">→</span><span>You have a Social Insurance Number (SIN)</span></li>
+        </ul>
+      </div>
+
+      <div class="mt-10 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
+        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">Mutual funds are offered through Investia Financial Services Inc. This article is for general information purposes only and does not constitute personalized financial advice. FHSA rules are set by the Canada Revenue Agency — rules and limits may change. Please consult a qualified advisor before making any financial decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <CTABand heading="Saving for your first home?" sub="Book a free consultation and we'll put together a plan using the FHSA, TFSA, and RRSP together." />
+
+</BaseLayout>

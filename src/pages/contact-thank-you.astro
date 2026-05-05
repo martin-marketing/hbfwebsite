@@ -1,0 +1,27 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Thank You | Heidi Blondin Financial"
+  description="Thank you for reaching out to Heidi Blondin Financial."
+  noindex={true}
+>
+
+  <section class="bg-brand-plum py-32">
+    <div class="container-content text-center max-w-xl">
+      <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mx-auto mb-8">
+        <svg class="w-8 h-8 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Thank you for reaching out.</h1>
+      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
+        We've received your message and will be in touch within 1–2 business days. If your matter is urgent, please call us directly.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="tel:6138872726" class="btn-ghost-light">613-887-2726 (Heidi)</a>
+        <a href="/" class="btn-primary-gold">Back to home</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

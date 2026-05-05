@@ -1,0 +1,70 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Client Resources | Heidi Blondin Financial"
+  description="Resources and tools for Heidi Blondin Financial clients."
+  noindex={true}
+>
+
+  <section class="bg-brand-plum py-20">
+    <div class="container-content max-w-2xl">
+      <p class="eyebrow-light mb-5">For Clients</p>
+      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Client Resources</h1>
+      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
+        Welcome back. This page is shared privately with our clients. Please bookmark it for easy access.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white section-gap">
+    <div class="container-content max-w-2xl">
+
+      <!-- Book an Appointment -->
+      <div class="mb-12">
+        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Book an Appointment</h2>
+        <p class="font-sans text-[16px] text-brand-ink/70 leading-relaxed mb-6">
+          Use the calendar below to schedule your next meeting with Heidi. Appointments are by invitation — if you haven't received your booking link, please contact us directly.
+        </p>
+        <!-- Calendly embed placeholder — replace with actual Calendly URL -->
+        <div class="bg-brand-tintPlum p-8 text-center border border-brand-plum/10">
+          <p class="font-sans text-sm text-brand-ink/50">[Calendly booking widget — link provided by Heidi]</p>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="mb-12">
+        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Useful Links</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { name: 'Investia Client Portal', href: 'https://www.investia.ca', desc: 'Access your investment account statements and documents.' },
+            { name: 'My Insurance (Canada Life)', href: 'https://www.canadalife.com', desc: 'View your Canada Life policy details and documents.' },
+            { name: 'My Insurance (Sun Life)', href: 'https://www.sunlife.ca', desc: 'View your Sun Life policy details and documents.' },
+            { name: 'CRA My Account', href: 'https://www.canada.ca/en/revenue-agency/services/e-services/digital-services-individuals/account-individuals.html', desc: 'Check your RRSP room, tax returns, and benefit payments.' },
+            { name: 'TFSA Room (CRA)', href: 'https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/tax-free-savings-account.html', desc: 'Verify your available TFSA contribution room.' },
+            { name: 'Service Canada (CPP & OAS)', href: 'https://www.canada.ca/en/services/benefits/publicpensions.html', desc: 'Manage your CPP and OAS applications and payments.' },
+          ].map(link => (
+            <a href={link.href} target="_blank" rel="noopener noreferrer" class="group border border-brand-plum/10 p-4 hover:border-brand-plum/25 hover:shadow-sm transition-all">
+              <h3 class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors mb-1">{link.name}</h3>
+              <p class="font-sans text-[12px] text-brand-ink/55 leading-relaxed">{link.desc}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Downloads -->
+      <div>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Planning Documents</h2>
+        <p class="font-sans text-[16px] text-brand-ink/70 leading-relaxed mb-4">
+          All our downloadable planning tools are also available on the public <a href="/resources/" class="text-brand-gold hover:underline">Resources page</a>.
+        </p>
+      </div>
+
+      <div class="mt-10 border-t border-brand-plum/10 pt-8">
+        <p class="font-sans text-sm text-brand-ink/50">Questions? Contact us at <a href="mailto:hbadmin@heidiblondin.com" class="text-brand-gold hover:underline">hbadmin@heidiblondin.com</a> or call <a href="tel:18558443927" class="text-brand-gold hover:underline">1-855-844-3927</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

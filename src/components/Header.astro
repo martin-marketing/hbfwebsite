@@ -1,0 +1,273 @@
+---
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/heidi/' },
+  { label: 'Testimonials', href: '/testimonials/' },
+  { label: 'Financial Services', href: '/financial-services/', hasMega: true },
+  { label: 'Videos', href: '/videos/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Contact', href: '/contact/' },
+  { label: 'Resources', href: '/resources/' },
+];
+
+const megaMenu = {
+  Investing: [
+    { label: 'Investments Overview', href: '/financial-services/investments/' },
+    { label: 'RRSP', href: '/financial-services/registered-retirement-savings-plans/' },
+    { label: 'TFSA', href: '/financial-services/tax-free-savings-accounts/' },
+    { label: 'FHSA', href: '/financial-services/first-home-savings-account/' },
+    { label: 'RESP', href: '/financial-services/registered-education-savings-plans/' },
+    { label: 'Group Retirement Savings', href: '/financial-services/group-savings-plans/' },
+    { label: 'Segregated Funds', href: '/financial-services/segregated-fund/' },
+  ],
+  Insurance: [
+    { label: 'Insurance Overview', href: '/financial-services/insurance/' },
+    { label: 'Life Insurance', href: '/financial-services/life-insurance/' },
+    { label: 'Critical Illness', href: '/financial-services/critical-illness-insurance/' },
+    { label: 'Disability Insurance', href: '/financial-services/disability-insurance/' },
+    { label: 'Combination Insurance', href: '/financial-services/combination-insurance/' },
+    { label: 'Individual Health & Dental', href: '/financial-services/individual-health-dental-plans/' },
+    { label: 'Travel Insurance', href: '/financial-services/travel-insurance/' },
+    { label: 'Group Benefits & Savings', href: '/financial-services/employee-group-benefits-plans/' },
+  ],
+  Planning: [
+    { label: 'Estate Planning', href: '/financial-services/estate-planning/' },
+    { label: 'Charitable Giving', href: '/charitable-giving/' },
+    { label: 'Retirement Income Planning', href: '/retirement-income-planning/' },
+  ],
+};
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white border-b border-brand-plum/10 transition-shadow" id="site-header">
+  <div class="container-content">
+    <div class="flex items-center justify-between h-18 py-3">
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0" aria-label="Heidi Blondin Financial — Home">
+        <div class="flex flex-col leading-tight">
+          <span class="font-serif text-brand-plum text-xl font-normal tracking-tight" style="font-optical-sizing: auto;">Heidi Blondin</span>
+          <span class="font-sans text-brand-sageDark text-[11px] tracking-[0.18em] uppercase font-medium">Financial Inc.</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+        {navLinks.map((link) => (
+          link.hasMega ? (
+            <div class="relative group" id="mega-trigger">
+              <button
+                class={`nav-link flex items-center gap-1 px-3 ${currentPath.startsWith('/financial-services') ? 'nav-link-active' : ''}`}
+                aria-expanded="false"
+                aria-haspopup="true"
+                id="mega-btn"
+              >
+                {link.label}
+                <svg class="w-3.5 h-3.5 text-brand-plumMid transition-transform group-focus-within:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+              </button>
+              <!-- Mega menu -->
+              <div
+                id="mega-menu"
+                class="mega-menu hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[680px] bg-white shadow-xl border border-brand-plum/8 p-6 grid grid-cols-3 gap-6"
+                role="menu"
+              >
+                {Object.entries(megaMenu).map(([col, items]) => (
+                  <div>
+                    <a
+                      href={`/financial-services/?view=${col.toLowerCase()}`}
+                      class="font-serif text-sm text-brand-plum font-normal mb-3 block border-b border-brand-tintPlum pb-2 hover:text-brand-gold transition-colors"
+                      style="font-optical-sizing: auto;"
+                    >
+                      {col}
+                    </a>
+                    <ul class="space-y-1.5">
+                      {items.map((item) => (
+                        <li>
+                          <a href={item.href} class="font-sans text-[13px] text-brand-ink/75 hover:text-brand-plum transition-colors block py-0.5" role="menuitem">
+                            {item.label}
+                          </a>
+                        </li>
+                      ))}
+                      {col === 'Insurance' && (
+                        <li class="pt-2">
+                          <a href="/financial-services/insurance-quote/" class="font-sans text-[12px] font-medium text-brand-gold border border-brand-gold px-3 py-1.5 hover:bg-brand-gold hover:text-white transition-colors inline-block tracking-wide uppercase">
+                            Request a Quote →
+                          </a>
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a
+              href={link.href}
+              class={`nav-link px-3 ${currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) ? 'nav-link-active' : ''}`}
+            >
+              {link.label}
+            </a>
+          )
+        ))}
+      </nav>
+
+      <!-- Phone CTA + hamburger -->
+      <div class="flex items-center gap-4">
+        <a href="tel:18558443927" class="hidden lg:flex items-center gap-2 font-sans text-sm font-medium text-brand-plum hover:text-brand-gold transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z"/></svg>
+          1-855-844-3927
+        </a>
+        <button
+          id="mobile-menu-btn"
+          class="lg:hidden p-2 text-brand-plum"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+        >
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div id="mobile-drawer" class="mobile-drawer closed fixed inset-0 z-40 lg:hidden" aria-hidden="true">
+  <div class="absolute inset-0 bg-brand-plumDark/50" id="drawer-overlay"></div>
+  <nav class="absolute left-0 top-0 h-full w-72 bg-white overflow-y-auto" aria-label="Mobile navigation">
+    <div class="p-6 border-b border-brand-plum/10">
+      <div class="font-serif text-brand-plum text-xl" style="font-optical-sizing: auto;">Heidi Blondin Financial</div>
+    </div>
+    <div class="p-4 space-y-1">
+      {navLinks.map((link) => (
+        link.hasMega ? (
+          <div>
+            <button
+              class="mobile-accordion-btn w-full flex items-center justify-between px-3 py-3 font-sans text-sm font-medium text-brand-ink hover:text-brand-plum"
+              aria-expanded="false"
+            >
+              Financial Services
+              <svg class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="mobile-accordion-body accordion-body">
+              <div class="pl-4 pb-2 space-y-3">
+                {Object.entries(megaMenu).map(([col, items]) => (
+                  <div>
+                    <div class="font-serif text-brand-plumMid text-xs mb-1 px-3" style="font-optical-sizing: auto;">{col}</div>
+                    {items.map((item) => (
+                      <a href={item.href} class="block px-3 py-1.5 font-sans text-[13px] text-brand-ink/70 hover:text-brand-plum">
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                ))}
+                <a href="/financial-services/insurance-quote/" class="mx-3 block font-sans text-[12px] font-medium text-brand-gold border border-brand-gold px-3 py-1.5 text-center hover:bg-brand-gold hover:text-white transition-colors">
+                  Request a Quote →
+                </a>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a href={link.href} class="block px-3 py-3 font-sans text-sm font-medium text-brand-ink hover:text-brand-plum">
+            {link.label}
+          </a>
+        )
+      ))}
+    </div>
+    <div class="p-4 border-t border-brand-plum/10 mt-2">
+      <a href="tel:18558443927" class="flex items-center gap-2 font-sans text-sm font-medium text-brand-plum">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z"/></svg>
+        1-855-844-3927
+      </a>
+      <a href="tel:6138872726" class="flex items-center gap-2 mt-2 font-sans text-sm text-brand-ink/60">
+        613-887-2726 (Heidi)
+      </a>
+    </div>
+  </nav>
+</div>
+
+<script>
+  // Mega menu
+  const megaBtn = document.getElementById('mega-btn');
+  const megaMenu = document.getElementById('mega-menu');
+  let megaOpen = false;
+
+  function openMega() {
+    megaOpen = true;
+    megaMenu?.classList.remove('hidden');
+    megaMenu?.classList.add('visible');
+    megaBtn?.setAttribute('aria-expanded', 'true');
+  }
+  function closeMega() {
+    megaOpen = false;
+    megaMenu?.classList.remove('visible');
+    megaMenu?.classList.add('hidden');
+    megaBtn?.setAttribute('aria-expanded', 'false');
+  }
+
+  megaBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    megaOpen ? closeMega() : openMega();
+  });
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('mega-trigger')?.contains(e.target as Node)) closeMega();
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMega(); });
+
+  // Mobile drawer
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const drawer = document.getElementById('mobile-drawer');
+  const overlay = document.getElementById('drawer-overlay');
+  const hamburger = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  let drawerOpen = false;
+
+  function openDrawer() {
+    drawerOpen = true;
+    drawer?.classList.remove('closed');
+    drawer?.classList.add('open');
+    drawer?.removeAttribute('aria-hidden');
+    mobileBtn?.setAttribute('aria-expanded', 'true');
+    hamburger?.classList.add('hidden');
+    closeIcon?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawerOpen = false;
+    drawer?.classList.remove('open');
+    drawer?.classList.add('closed');
+    drawer?.setAttribute('aria-hidden', 'true');
+    mobileBtn?.setAttribute('aria-expanded', 'false');
+    hamburger?.classList.remove('hidden');
+    closeIcon?.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  mobileBtn?.addEventListener('click', () => drawerOpen ? closeDrawer() : openDrawer());
+  overlay?.addEventListener('click', closeDrawer);
+
+  // Mobile accordions
+  document.querySelectorAll('.mobile-accordion-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const body = btn.nextElementSibling as HTMLElement;
+      const isOpen = body?.classList.contains('open');
+      body?.classList.toggle('open', !isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      const arrow = btn.querySelector('svg');
+      arrow?.classList.toggle('rotate-180', !isOpen);
+    });
+  });
+
+  // Sticky header shadow
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header?.classList.toggle('shadow-md', window.scrollY > 8);
+  }, { passive: true });
+</script>

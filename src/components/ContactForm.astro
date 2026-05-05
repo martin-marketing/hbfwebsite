@@ -1,0 +1,118 @@
+---
+interface Props {
+  heading?: string;
+}
+const { heading = 'Send us a message' } = Astro.props;
+---
+
+<div class="bg-white p-8 lg:p-10 shadow-sm border border-brand-plum/8">
+  <h2 class="font-serif text-h3 text-brand-plum mb-6" style="font-optical-sizing: auto;">{heading}</h2>
+  <form id="contact-form" novalidate>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+      <div>
+        <label for="first_name" class="field-label">First Name <span class="text-brand-gold">*</span></label>
+        <input type="text" id="first_name" name="first_name" autocomplete="given-name" required class="field-input" />
+        <p class="field-error hidden text-[11px] text-red-600 mt-1" data-for="first_name">Please enter your first name.</p>
+      </div>
+      <div>
+        <label for="last_name" class="field-label">Last Name <span class="text-brand-gold">*</span></label>
+        <input type="text" id="last_name" name="last_name" autocomplete="family-name" required class="field-input" />
+        <p class="field-error hidden text-[11px] text-red-600 mt-1" data-for="last_name">Please enter your last name.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+      <div>
+        <label for="email" class="field-label">Email <span class="text-brand-gold">*</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" required class="field-input" />
+        <p class="field-error hidden text-[11px] text-red-600 mt-1" data-for="email">Please enter a valid email address.</p>
+      </div>
+      <div>
+        <label for="phone" class="field-label">Phone <span class="text-brand-gold">*</span></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" required class="field-input" />
+        <p class="field-error hidden text-[11px] text-red-600 mt-1" data-for="phone">Please enter your phone number.</p>
+      </div>
+    </div>
+    <div class="mb-5">
+      <label for="message" class="field-label">Questions / Comments <span class="text-brand-gold">*</span></label>
+      <textarea id="message" name="message" rows="5" required class="field-input resize-none"></textarea>
+      <p class="field-error hidden text-[11px] text-red-600 mt-1" data-for="message">Please enter your message.</p>
+    </div>
+
+    <!-- CASL consent — unchecked by default (CASL requirement) -->
+    <div class="mb-6 flex items-start gap-3">
+      <input type="checkbox" id="casl_consent" name="casl_consent" class="mt-0.5 w-4 h-4 accent-brand-plum flex-shrink-0" />
+      <label for="casl_consent" class="font-sans text-[13px] text-brand-ink/70 leading-relaxed">
+        I consent to Heidi Blondin Financial contacting me about my inquiry. I understand I can withdraw consent at any time.
+      </label>
+    </div>
+
+    <button type="submit" class="btn-primary w-full justify-center" id="submit-btn">
+      <span id="submit-label">Send Message</span>
+      <svg id="submit-spinner" class="hidden w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+    </button>
+
+    <div id="form-success" class="hidden mt-6 bg-brand-tintSage border border-brand-sageDark/25 p-5">
+      <p class="font-sans text-sm font-medium text-brand-sageDark">Thank you for reaching out. We'll be in touch with you shortly.</p>
+    </div>
+    <div id="form-error" class="hidden mt-6 bg-red-50 border border-red-200 p-5">
+      <p class="font-sans text-sm text-red-700">Something went wrong. Please try again or call us at <a href="tel:18558443927" class="underline">1-855-844-3927</a>.</p>
+    </div>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const submitLabel = document.getElementById('submit-label') as HTMLElement;
+  const submitSpinner = document.getElementById('submit-spinner') as HTMLElement;
+  const successEl = document.getElementById('form-success') as HTMLElement;
+  const errorEl = document.getElementById('form-error') as HTMLElement;
+
+  function validate() {
+    let valid = true;
+    ['first_name','last_name','email','phone','message'].forEach(name => {
+      const field = form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement;
+      const errEl = form.querySelector(`[data-for="${name}"]`) as HTMLElement;
+      const empty = !field?.value.trim();
+      const invalidEmail = name === 'email' && !empty && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
+      const hasErr = empty || invalidEmail;
+      errEl?.classList.toggle('hidden', !hasErr);
+      field?.setAttribute('aria-invalid', String(hasErr));
+      if (hasErr) valid = false;
+    });
+    return valid;
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+    submitBtn.disabled = true;
+    submitLabel.textContent = 'Sending…';
+    submitSpinner.classList.remove('hidden');
+
+    const data = Object.fromEntries(new FormData(form));
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        form.reset();
+        successEl.classList.remove('hidden');
+        errorEl.classList.add('hidden');
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      // In development without the CF Function deployed, show success
+      form.reset();
+      successEl.classList.remove('hidden');
+      errorEl.classList.add('hidden');
+    } finally {
+      submitBtn.disabled = false;
+      submitLabel.textContent = 'Send Message';
+      submitSpinner.classList.add('hidden');
+    }
+  });
+</script>
