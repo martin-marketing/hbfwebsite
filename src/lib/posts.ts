@@ -19,6 +19,7 @@ export interface Post {
 }
 
 export async function getAllPosts(): Promise<Post[]> {
+  if (!supabase) return [];
   const { data, error } = await supabase
     .from('posts')
     .select('*')
@@ -33,6 +34,7 @@ export async function getAllPosts(): Promise<Post[]> {
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
+  if (!supabase) return null;
   const { data, error } = await supabase
     .from('posts')
     .select('*')
