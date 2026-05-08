@@ -1,70 +1,150 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import CTABand from '@/components/CTABand.astro';
 
 const videos = [
-  { id: 'placeholder-fhsa', title: 'What Is the First Home Savings Account (FHSA)?', category: 'Investing', desc: 'An overview of Canada\'s newest registered account and how it helps first-time homebuyers.' },
-  { id: 'placeholder-tfsa', title: 'How a TFSA Works and Why You Need One', category: 'Investing', desc: 'The basics of the Tax-Free Savings Account and the most common mistakes to avoid.' },
-  { id: 'placeholder-rrsp', title: 'RRSP vs. TFSA — Which Should You Prioritize?', category: 'Investing', desc: 'A plain-language comparison to help you decide where to put your next dollar.' },
-  { id: 'placeholder-cpp', title: 'When Should You Start CPP?', category: 'Retirement', desc: 'How the timing of your CPP election affects your lifetime benefit — and how to decide.' },
-  { id: 'placeholder-oas', title: 'Understanding Old Age Security (OAS) and the Clawback', category: 'Retirement', desc: 'What the OAS clawback is, who it affects, and how to plan around it.' },
-  { id: 'placeholder-retirement', title: 'Building a Retirement Income Plan', category: 'Retirement', desc: 'How to turn your savings into reliable income — from RRIFs to TFSAs to CPP.' },
-  { id: 'placeholder-life-ins', title: 'Do You Have Enough Life Insurance?', category: 'Insurance', desc: 'How to figure out the right amount of coverage for your family\'s situation.' },
-  { id: 'placeholder-resp', title: 'How to Maximize Your RESP', category: 'Investing', desc: 'Making the most of the Canada Education Savings Grant and growing your child\'s education fund.' },
-  { id: 'placeholder-estate', title: 'Estate Planning Basics for Ontario Families', category: 'Planning', desc: 'Wills, powers of attorney, beneficiary designations, and what happens if you don\'t have them.' },
-  { id: 'placeholder-executor', title: 'What Does an Executor Actually Do?', category: 'Planning', desc: 'A practical walkthrough of the executor\'s responsibilities in Ontario.' },
-  { id: 'placeholder-disability', title: 'Why Disability Insurance Matters More Than You Think', category: 'Insurance', desc: 'The risk of disability is higher than most people realize — and the financial impact is significant.' },
-  { id: 'placeholder-seg-funds', title: 'What Are Segregated Funds?', category: 'Investing', desc: 'How seg funds work, what guarantees they offer, and who they\'re best suited for.' },
+  {
+    id: '2oBV4sjy-n4',
+    title: 'Saving for Your First Home.',
+    desc: "Have you heard about the new Tax Free First Home Savings Account (FHSA)? It's a great new program designed to help qualified Canadians save for their first home.",
+  },
+  {
+    id: '8D9r-Zkzu0E',
+    title: 'How to accumulate a home down payment.',
+    desc: 'Have you been wondering how to accumulate a home down payment? Today Heidi is sharing a couple of strategies to help you achieve your home down payment goals.',
+  },
+  {
+    id: 'OEQ2ajxUU04',
+    title: 'About Tax Free Savings Accounts',
+    desc: 'Tax Free Savings Accounts are a great way for you to grow your money, and never worry about paying tax on the growth. Watch this video to learn more.',
+  },
+  {
+    id: 'mY3KIXAOPxU',
+    title: 'RRSP vs TFSA',
+    desc: "Both RRSP's and TFSA's have their benefits. In this video we discuss the differences between them, to help you decide what suits your personal situation.",
+  },
+  {
+    id: '9xArPZMvADQ',
+    title: 'Financial Planning Basics',
+    desc: 'We all have the ability to change our financial story. In order to take control of our finances, we need to have clear goals, a good understanding of our current situation and budget, and a plan to help us move toward our goals.',
+  },
+  {
+    id: 'AIT49TXYJc0',
+    title: 'Investing in Yourself',
+    desc: 'In order to transform our financial situation, there are three main areas we should invest in: our financial health, mental wellbeing and personal superpowers. Knowledge truly is power and can help us increase our earning capacity and give our money direction.',
+  },
+  {
+    id: 'VtpwNg2dBaQ',
+    title: 'Practicing Patience',
+    desc: 'If we look around us, everyone appears to be living well. But the truth is, many people are just renting a lifestyle by buying everything on credit. This video helps you win financially by being patient.',
+  },
+  {
+    id: 'uzOP0O1AHA4',
+    title: 'Protection Strategies',
+    desc: 'Our number one asset is our ability to earn an income. This video shares three different ways to protect ourselves, our loved ones and our earning capacity.',
+  },
+  {
+    id: 'i3vilq7kwP4',
+    title: 'Critical Illness',
+    desc: 'Critical Illness protection is often overlooked, but it can be an important component of your financial plan. Contact us today to learn if it\'s right for you.',
+  },
+  {
+    id: 'GOLVl7qOj7o',
+    title: 'Insurance Options for You',
+    desc: 'This video explains several Life Insurance Options. Contact us today to explore the various options that suit your needs and budget.',
+  },
+  {
+    id: 'NZRFR-T1SiM',
+    title: "Capturing Free Money for your Child's Education (Its Not too Late!)",
+    desc: 'To learn more about capturing free money from the government for your kids or grandkids education, contact Heidi today!',
+  },
+  {
+    id: 'fUlIltB1ilE',
+    title: 'When Should i Start Saving for Retirement?',
+    desc: 'To learn more about when and how to save for your retirement dreams, contact Heidi today!',
+  },
+  {
+    id: 'Vxaf7zCO3GA',
+    title: 'Redeeming From your RESP',
+    desc: "Redeeming from your Registered Education Savings Plan can be a confusing, to make sure you're doing it efficiently click here or contact Heidi today!",
+  },
+  {
+    id: 'baiQYFIIiIg',
+    title: 'How is my Will an Important Component of my Financial Plan?',
+    desc: 'Your Will is a very important component of your Financial Plan, to learn more contact Heidi today!',
+  },
+  {
+    id: 'wNjucJrARfQ',
+    title: 'Why do I Need a Power of Attorney?',
+    desc: 'To learn more about why you need two Power if Attorney documents, contact Heidi today!',
+  },
+  {
+    id: 'IZK-5C4FKZ0',
+    title: 'Group RSP',
+    desc: 'Help inspire and incent your employees to plan for their future with a Group Retirement Savings Plan. Contact Heidi for more details.',
+  },
+  {
+    id: '8FWB3irPVys',
+    title: 'How to Leave a Tax Efficient Legacy',
+    desc: 'There are many ways to transition wealth from one generation to the next. Learn how to leave a tax efficient legacy by contacting Heidi today!',
+  },
+  {
+    id: 'QAvnaWiG4pc',
+    title: 'How Much Do I Need to Retire?',
+    desc: 'Saving for retirement is something that is different for each and every person, to find out more contact Heidi today.',
+  },
+  {
+    id: 'SIChb4OsM88',
+    title: 'How can I Retire With Confidence?',
+    desc: 'So you want to retire? Want to make sure that you can live the life you want to after retirement? Contact Heidi today !',
+  },
+  {
+    id: 'lfvul2ZhRbU',
+    title: 'When Should I Start Taking Canadian Pension Plan?',
+    desc: 'Deciding when to start Canada Pension Plan payments can be difficult. Each situation is unique. Contact Heidi today to learn what timing is right for you!',
+  },
+  {
+    id: 'cn65RYvcjPU',
+    title: 'Why I do What I do',
+    desc: 'Heidi is Passionate about enhancing the financial lives of others, contact her today to book your free consultation.',
+  },
 ];
-
-const categories = ['All', 'Investing', 'Retirement', 'Insurance', 'Planning'];
 ---
 
 <BaseLayout
   title="Financial Education Videos | Heidi Blondin Financial"
-  description="Plain-language videos on RRSPs, TFSAs, RESPs, life insurance, retirement income planning, estate planning, and more. From Heidi Blondin Financial in Kingston, Ontario."
+  description="This page includes numerous videos designed to teach you about financial planning. New: Financial Literacy Mini-Series to help Transform your Finances."
 >
 
   <section class="bg-brand-plum py-20">
     <div class="container-content">
-      <p class="eyebrow-light mb-5">Videos</p>
       <h1 class="font-serif text-display text-white max-w-2xl text-balance" style="font-optical-sizing: auto;">
-        Financial education, plain and simple.
+        Heidi Blondin Financial Videos
       </h1>
-      <p class="font-sans text-[18px] text-white/65 mt-5 max-w-lg">
-        Short videos on the topics that matter most — retirement, insurance, investing, and estate planning. No jargon, no sales pitch.
-      </p>
     </div>
   </section>
 
   <section class="bg-brand-tintSage section-gap">
     <div class="container-content">
 
-      <!-- Category filter -->
-      <div class="flex flex-wrap gap-2 mb-10" id="video-filters">
-        {categories.map(cat => (
-          <button
-            data-category={cat}
-            class={`font-sans text-xs font-medium px-4 py-2 transition-all border ${cat === 'All' ? 'bg-brand-plum text-white border-brand-plum' : 'bg-white text-brand-plum border-brand-plum/20 hover:border-brand-plum/50'}`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
       <!-- Video grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="video-grid">
         {videos.map(video => (
-          <div class="bg-white video-card" data-category={video.category}>
-            <!-- Video embed placeholder — replace id with real YouTube video ID -->
-            <div class="aspect-video bg-brand-plum/10 flex items-center justify-center relative group cursor-pointer">
-              <div class="w-14 h-14 bg-brand-plum rounded-full flex items-center justify-center group-hover:bg-brand-gold transition-colors">
-                <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <span class="absolute bottom-3 right-3 font-sans text-[10px] text-brand-plum/40 bg-white/80 px-2 py-0.5">YouTube</span>
+          <div class="bg-white">
+            <!-- YouTube embed -->
+            <div class="aspect-video">
+              <iframe
+                title={video.title}
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${video.id}`}
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                class="w-full h-full"
+              ></iframe>
             </div>
             <div class="p-5">
-              <span class="font-sans text-[10px] font-medium text-brand-sageDark tracking-widest uppercase">{video.category}</span>
               <h3 class="font-sans text-sm font-semibold text-brand-plum mt-1.5 mb-2 leading-snug">{video.title}</h3>
               <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed">{video.desc}</p>
             </div>
@@ -74,27 +154,4 @@ const categories = ['All', 'Investing', 'Retirement', 'Insurance', 'Planning'];
     </div>
   </section>
 
-  <CTABand heading="Questions after watching?" sub="Book a free consultation — we'll apply these concepts to your specific situation." />
-
 </BaseLayout>
-
-<script>
-  const filters = document.querySelectorAll('#video-filters button');
-  const cards = document.querySelectorAll('.video-card');
-
-  filters.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cat = btn.getAttribute('data-category');
-
-      filters.forEach(b => b.classList.remove('bg-brand-plum', 'text-white', 'border-brand-plum'));
-      filters.forEach(b => b.classList.add('bg-white', 'text-brand-plum', 'border-brand-plum/20'));
-      btn.classList.remove('bg-white', 'text-brand-plum', 'border-brand-plum/20');
-      btn.classList.add('bg-brand-plum', 'text-white', 'border-brand-plum');
-
-      cards.forEach(card => {
-        const cardCat = card.getAttribute('data-category');
-        (card as HTMLElement).style.display = (cat === 'All' || cardCat === cat) ? '' : 'none';
-      });
-    });
-  });
-</script>

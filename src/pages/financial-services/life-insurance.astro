@@ -1,13 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
-
-const types = [
-  { name: 'Term Life Insurance', desc: 'Coverage for a defined period — 10, 20, or 30 years — at lower cost. Ideal when you need maximum protection during your peak income-earning years, while paying a mortgage, or raising children.' },
-  { name: 'Whole Life Insurance', desc: 'Permanent coverage that never expires, with a cash value component that builds over time. Used for estate planning, wealth transfer, and long-term financial planning.' },
-  { name: 'Universal Life Insurance', desc: 'Flexible permanent coverage that combines a death benefit with an investment component. You can adjust premiums and benefit amounts as your life changes.' },
-  { name: 'Life Insurance Without Medical', desc: 'Simplified or guaranteed issue policies for applicants who may not qualify for traditional coverage due to health history. Coverage amounts are typically lower, but the approval process is much simpler.' },
-];
 ---
 
 <BaseLayout
@@ -15,48 +8,393 @@ const types = [
   description="Find the right life insurance coverage for your family. Term, whole life, and universal life options explained by an independent CFP® advisor in Kingston, Ontario."
 >
 
+  <!-- Hero -->
   <section class="bg-brand-plum py-20">
     <div class="container-content max-w-3xl">
       <p class="eyebrow-light mb-5">Insurance</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Life Insurance</h1>
+      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Life Insurance: It's Peace of Mind</h1>
       <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
-        Life insurance isn't about you — it's about the people who depend on you. The right policy makes sure they're never left in a financially vulnerable position.
+        Whether you're safeguarding your family's future, protecting your hard-earned savings, or building long-term financial security, our tailored insurance solutions are designed to meet your unique needs. With trusted insurance providers, clear advice, and a caring approach, we make it easy for Canadians to make confident, informed decisions that protect what matters most.
       </p>
     </div>
   </section>
 
+  <!-- Why invest in life insurance -->
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">What life insurance actually does</h2>
-      <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
-        <p>At its core, life insurance replaces the income — or covers the debts and responsibilities — that your family would lose if you were no longer here. It's how you ensure a mortgage gets paid, children's education continues, and your spouse isn't forced to make financial decisions from a place of crisis.</p>
-        <p>But life insurance also plays a role in estate planning, wealth transfer, business succession, and tax-efficient giving. The policy that's right for you depends on where you are in life, what you're protecting, and how long you need coverage.</p>
-        <p>As independent advisors, we work with multiple insurance companies — not just one — which means we can compare coverage options and pricing across carriers to find a solution well-matched to your situation.</p>
-      </div>
-
-      <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Types of life insurance</h2>
-        <div class="space-y-4">
-          {types.map(item => (
-            <div class="border-l-2 border-brand-plum/20 pl-5 py-1">
-              <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">{item.name}</h3>
-              <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
+      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Why You Should Invest in Life Insurance</h2>
+      <div class="space-y-4">
+        <div class="border-l-2 border-brand-plum/20 pl-5 py-1">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1">Protect Your Loved Ones</h3>
+          <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed">Life insurance provides financial security for your family or business if the unexpected happens—helping cover expenses, debts, and future needs. Especially important for the primary source of family income.</p>
+        </div>
+        <div class="border-l-2 border-brand-plum/20 pl-5 py-1">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1">Affordable Safety Net</h3>
+          <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed">Protect your family during key life stages.</p>
+        </div>
+        <div class="border-l-2 border-brand-plum/20 pl-5 py-1">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1">Peace of Mind</h3>
+          <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed">Rest easy knowing your loved ones are protected—today, tomorrow, and beyond.</p>
+        </div>
+        <div class="border-l-2 border-brand-plum/20 pl-5 py-1">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1">Build Wealth &amp; Leave a Legacy</h3>
+          <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed">Grow your wealth tax efficiently and plan your legacy with a meaningful gift to the people and causes you care about.</p>
         </div>
       </div>
 
-      <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">How much coverage do you need?</h2>
-        <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-3">
-          <p>A common rule of thumb is 10× your annual income — but that's a starting point, not a plan. The right amount depends on your mortgage balance, number of dependents, other assets, and what standard of living you want to protect for your family.</p>
-          <p>We walk through a proper needs analysis with every client to make sure coverage is calibrated to your actual situation — not a formula.</p>
+      <div class="mt-8">
+        <a href="/contact" class="btn-primary inline-block">Request A Life Insurance Quote Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Term Life Insurance -->
+  <section class="bg-brand-tintPlum section-gap">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-2" style="font-optical-sizing: auto;">Term Life Insurance</h2>
+      <p class="font-sans text-[17px] text-brand-ink/70 italic mb-5">Affordable coverage for your working years.</p>
+      <ul class="font-sans text-[15px] text-brand-ink/75 leading-relaxed space-y-2 mb-6 list-disc list-inside">
+        <li>Low monthly cost for high coverage</li>
+        <li>Choose 10, 20, or 30 year terms to match your needs</li>
+        <li>Simple protection with flexible options to extend or convert later</li>
+        <li>Great for families and professionals who want peace of mind without breaking the budget.</li>
+      </ul>
+
+      <!-- Expandable: Top Reasons to Buy Term Life Insurance -->
+      <details class="border border-brand-plum/20 rounded-lg overflow-hidden">
+        <summary class="cursor-pointer bg-white px-5 py-4 font-sans text-sm font-semibold text-brand-plum select-none">Top Reasons to Buy Term Life Insurance</summary>
+        <div class="bg-white px-5 pb-5 pt-3 space-y-5">
+          <div>
+            <h4 class="font-sans text-sm font-semibold text-brand-plum mb-1">1. Affordable Protection During High-Responsibility Years</h4>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Term life insurance offers high coverage at a low monthly cost, making it ideal for families, homeowners, and professionals during their prime working years. You can secure the protection you need without straining your budget.</p>
+          </div>
+          <div>
+            <h4 class="font-sans text-sm font-semibold text-brand-plum mb-1">2. Income Replacement &amp; Debt Coverage</h4>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">If the primary income earner passes away, term life insurance provides a tax-free lump sum to help surviving family members: Replace lost income / Pay off mortgages or loans / Cover final expenses like funerals and taxes. This is especially important given that a large portion of Canadian families are financially vulnerable and would face hardship quickly if they lost their primary income.</p>
+          </div>
+          <div>
+            <h4 class="font-sans text-sm font-semibold text-brand-plum mb-1">3. Customizable Terms</h4>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">You can choose coverage for 10, 20, or 30 years to match your financial obligations. Like raising children / paying off a mortgage / running a business</p>
+          </div>
+          <div>
+            <h4 class="font-sans text-sm font-semibold text-brand-plum mb-1">4. Simplicity &amp; Flexibility</h4>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Term life is easy to understand—no investment components, just pure protection. Many term insurance policies offer the ability to exchange to a longer term or convert to permanent coverage without a medical exam. Converting to permanent coverage allows you to create a legacy with lifetime protection.</p>
+          </div>
+          <div>
+            <h4 class="font-sans text-sm font-semibold text-brand-plum mb-1">5. Ideal for Canadians at Key Life Stages</h4>
+            <ul class="font-sans text-[14px] text-brand-ink/70 leading-relaxed list-disc list-inside space-y-1 mt-1">
+              <li>Young families protecting children's future</li>
+              <li>Homeowners covering mortgage debt</li>
+              <li>Business owners securing loans, key employees or succession plans</li>
+              <li>Anyone with dependents who rely on their income</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Whole Life Insurance -->
+  <section class="bg-white section-gap">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-2" style="font-optical-sizing: auto;">Whole Life Insurance</h2>
+      <p class="font-sans text-[17px] text-brand-ink/70 italic mb-5">Lifetime protection with built-in savings.</p>
+      <ul class="font-sans text-[15px] text-brand-ink/75 leading-relaxed space-y-2 mb-6 list-disc list-inside">
+        <li>Coverage that never expires</li>
+        <li>Builds cash value you can leverage or leave as a legacy</li>
+        <li>Fixed premiums and long-term financial growth</li>
+        <li>Ideal for estate planning, gifting, or creating a lasting legacy for loved ones.</li>
+      </ul>
+
+      <!-- Expandable: Top Reasons to Buy Whole Life Insurance -->
+      <details class="border border-brand-plum/20 rounded-lg overflow-hidden mb-8">
+        <summary class="cursor-pointer bg-brand-tintPlum px-5 py-4 font-sans text-sm font-semibold text-brand-plum select-none">Top Reasons to Buy Whole Life Insurance</summary>
+        <div class="bg-brand-tintPlum px-5 pb-5 pt-3 space-y-5">
+          <div>
+            <h4 class="font-sans text-sm font-semibold text-brand-plum mb-1">1. Lifelong Coverage</h4>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Whole life insurance provides guaranteed protection for your entire life, as long as premiums are paid. Unlike term life insurance, which expires after a set period, whole life ensures your loved ones receive a tax-free death benefit no matter when you pass away.</p>
+          </div>
+          <div>
+            <h4 class="font-sans text-sm font-semibold text-brand-plum mb-1">2. Cash Value Growth</h4>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">A portion of your premium builds cash value that grows tax-deferred over time. This can be: Borrowed against for emergencies, business opportunities, or retirement / Used to offset future premiums / Left untouched to increase the death benefit</p>
+          </div>
+          <div>
+            <h4 class="font-sans text-sm font-semibold text-brand-plum mb-1">3. Fixed Premiums</h4>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Whole life policies come with level premiums that never increase, making budgeting easier and more predictable over time. There is also an option to accelerate your premiums to a fix term (i.e. 10 or 20 years) to pay off the premiums during your working years.</p>
+          </div>
+          <div>
+            <h4 class="font-sans text-sm font-semibold text-brand-plum mb-1">4. Estate Planning &amp; Legacy Building</h4>
+            <ul class="font-sans text-[14px] text-brand-ink/70 leading-relaxed list-disc list-inside space-y-1 mt-1">
+              <li>Cover final expenses and estate taxes</li>
+              <li>Ensure the family cottage stays with those who love it most</li>
+              <li>Leave a financial legacy for children or grandchildren</li>
+              <li>Support business succession by creating liquidity to help your business transition smoothly</li>
+              <li>Leaving a meaningful gift to your favorite charity</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-sans text-sm font-semibold text-brand-plum mb-1">5. Dividends &amp; Participation</h4>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Many Canadian insurers offer participating whole life policies, which may pay annual dividends. These can be: Taken as cash / Used to buy additional coverage / Applied to reduce premiums</p>
+          </div>
+          <div>
+            <h4 class="font-sans text-sm font-semibold text-brand-plum mb-1">6. Tax Advantages</h4>
+            <ul class="font-sans text-[14px] text-brand-ink/70 leading-relaxed list-disc list-inside space-y-1 mt-1">
+              <li>Cash value growth is tax-deferred inside the policy</li>
+              <li>Third party collateral loans are not taxable</li>
+              <li>Death benefits are generally tax-free to beneficiaries</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- Whole Life closing copy -->
+      <div class="bg-brand-tintPlum border-l-4 border-brand-plum/30 p-6 rounded-r-lg space-y-4">
+        <h3 class="font-serif text-h3 text-brand-plum" style="font-optical-sizing: auto;">Whole Life Insurance: A Lifetime of Protection and Peace of Mind</h3>
+        <p class="font-sans text-[15px] text-brand-ink/75 leading-relaxed">Whole life insurance is more than just coverage—it's a lifelong financial asset. With guaranteed protection that never expires, fixed premiums that stay the same, and a cash value that grows over time, whole life insurance offers stability you can count on. Whether you're planning your legacy, covering final expenses, or building a tax-advantaged savings cushion, this policy is designed to support your long-term goals. Whole life insurance is a gift that keeps on giving.</p>
+        <p class="font-sans text-[15px] text-brand-ink/75 leading-relaxed">At Heidi Blondin Financial, we help you choose a plan that fits your life today and grows with you into tomorrow. Let's build a future that's secure, flexible, and full of possibility.</p>
+        <p class="font-sans text-[15px] text-brand-ink/75 leading-relaxed">We would be happy to build a personalized whole life illustrations showing projected cash values and guaranteed death benefits to suit your personal goals. Request a quote today!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Pricing -->
+  <section class="bg-brand-tintPlum section-gap">
+    <div class="container-content max-w-4xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Sample 10-year Life Insurance Pricing:</h2>
+
+      <!-- Male table -->
+      <h3 class="font-sans text-base font-semibold text-brand-plum mb-3">Male, 10-year Term Insurance - Non-Smoker</h3>
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full font-sans text-[14px] border-collapse">
+          <thead>
+            <tr class="bg-brand-plum text-white">
+              <th class="px-4 py-3 text-left font-semibold">Coverage</th>
+              <th class="px-4 py-3 text-center font-semibold">Age 25</th>
+              <th class="px-4 py-3 text-center font-semibold">Age 35</th>
+              <th class="px-4 py-3 text-center font-semibold">Age 45</th>
+              <th class="px-4 py-3 text-center font-semibold">Age 55</th>
+              <th class="px-4 py-3 text-center font-semibold">Age 65</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink/75">
+            <tr class="bg-white">
+              <td class="px-4 py-3 font-medium">$250,000</td>
+              <td class="px-4 py-3 text-center">$13.95/mo</td>
+              <td class="px-4 py-3 text-center">$13.95/mo</td>
+              <td class="px-4 py-3 text-center">$23.85/mo</td>
+              <td class="px-4 py-3 text-center">$61.70/mo</td>
+              <td class="px-4 py-3 text-center">$189.23/mo</td>
+            </tr>
+            <tr class="bg-brand-tintPlum">
+              <td class="px-4 py-3 font-medium">$500,000</td>
+              <td class="px-4 py-3 text-center">$22.05/mo</td>
+              <td class="px-4 py-3 text-center">$22.05/mo</td>
+              <td class="px-4 py-3 text-center">$40.95/mo</td>
+              <td class="px-4 py-3 text-center">$97.83/mo</td>
+              <td class="px-4 py-3 text-center">$349.65/mo</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-4 py-3 font-medium">$750,000</td>
+              <td class="px-4 py-3 text-center">$30.83/mo</td>
+              <td class="px-4 py-3 text-center">$30.83/mo</td>
+              <td class="px-4 py-3 text-center">$59.18/mo</td>
+              <td class="px-4 py-3 text-center">$144.95/mo</td>
+              <td class="px-4 py-3 text-center">$522.23/mo</td>
+            </tr>
+            <tr class="bg-brand-tintPlum">
+              <td class="px-4 py-3 font-medium">$1,000,000</td>
+              <td class="px-4 py-3 text-center">$36.90/mo</td>
+              <td class="px-4 py-3 text-center">$36.90/mo</td>
+              <td class="px-4 py-3 text-center">$75.60/mo</td>
+              <td class="px-4 py-3 text-center">$188.19/mo</td>
+              <td class="px-4 py-3 text-center">$664.20/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Female table -->
+      <h3 class="font-sans text-base font-semibold text-brand-plum mb-3">Female, 10-year Term Insurance - Non-Smoker</h3>
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full font-sans text-[14px] border-collapse">
+          <thead>
+            <tr class="bg-brand-plum text-white">
+              <th class="px-4 py-3 text-left font-semibold">Coverage</th>
+              <th class="px-4 py-3 text-center font-semibold">Age 25</th>
+              <th class="px-4 py-3 text-center font-semibold">Age 35</th>
+              <th class="px-4 py-3 text-center font-semibold">Age 45</th>
+              <th class="px-4 py-3 text-center font-semibold">Age 55</th>
+              <th class="px-4 py-3 text-center font-semibold">Age 65</th>
+            </tr>
+          </thead>
+          <tbody class="text-brand-ink/75">
+            <tr class="bg-white">
+              <td class="px-4 py-3 font-medium">$250,000</td>
+              <td class="px-4 py-3 text-center">$10.58/mo</td>
+              <td class="px-4 py-3 text-center">$10.80/mo</td>
+              <td class="px-4 py-3 text-center">$17.55/mo</td>
+              <td class="px-4 py-3 text-center">$46.13/mo</td>
+              <td class="px-4 py-3 text-center">$126.90/mo</td>
+            </tr>
+            <tr class="bg-brand-tintPlum">
+              <td class="px-4 py-3 font-medium">$500,000</td>
+              <td class="px-4 py-3 text-center">$14.40/mo</td>
+              <td class="px-4 py-3 text-center">$15.75/mo</td>
+              <td class="px-4 py-3 text-center">$27.90/mo</td>
+              <td class="px-4 py-3 text-center">$74.21/mo</td>
+              <td class="px-4 py-3 text-center">$243.00/mo</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-4 py-3 font-medium">$750,000</td>
+              <td class="px-4 py-3 text-center">$19.35/mo</td>
+              <td class="px-4 py-3 text-center">$21.38/mo</td>
+              <td class="px-4 py-3 text-center">$39.60/mo</td>
+              <td class="px-4 py-3 text-center">$109.51/mo</td>
+              <td class="px-4 py-3 text-center">$362.25/mo</td>
+            </tr>
+            <tr class="bg-brand-tintPlum">
+              <td class="px-4 py-3 font-medium">$1,000,000</td>
+              <td class="px-4 py-3 text-center">$22.50/mo</td>
+              <td class="px-4 py-3 text-center">$26.10/mo</td>
+              <td class="px-4 py-3 text-center">$51.30/mo</td>
+              <td class="px-4 py-3 text-center">$132.66/mo</td>
+              <td class="px-4 py-3 text-center">$467.70/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pricing disclaimer -->
+      <div class="bg-white border-l-2 border-brand-plum/20 p-4">
+        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">The sample pricing charts provided on this website are for informational purposes only and are based on Term 10 life insurance rates as of September 16th, 2025. Please note that all pricing is subject to change without prior notice and may vary depending on individual underwriting and approval by the insurance provider. Final rates are determined based on age, health, lifestyle, and other underwriting criteria. This chart does not constitute an offer or guarantee of coverage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="bg-white section-gap">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">How It Works</h2>
+      <ol class="space-y-4">
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-plum text-white font-sans text-sm font-semibold flex items-center justify-center">1</span>
+          <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed pt-1">Fill out our quick inquiry form.</p>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-plum text-white font-sans text-sm font-semibold flex items-center justify-center">2</span>
+          <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed pt-1">Connect with one of our Licensed Insurance Advisors who will clarify your needs and explore the various options available.</p>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-plum text-white font-sans text-sm font-semibold flex items-center justify-center">3</span>
+          <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed pt-1">Review and select the right coverage option for your situation and submit an application with our guidance.</p>
+        </li>
+        <li class="flex gap-4">
+          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-plum text-white font-sans text-sm font-semibold flex items-center justify-center">4</span>
+          <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed pt-1">Accept your new policy and enjoy the peace of mind knowing your loved ones are protected.</p>
+        </li>
+      </ol>
+
+      <div class="mt-8">
+        <a href="/contact" class="btn-primary inline-block">Request A Life Insurance Quote Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learn More About The Process -->
+  <section class="bg-brand-tintPlum section-gap">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-3" style="font-optical-sizing: auto;">Learn More About The Process</h2>
+      <p class="font-sans text-[17px] text-brand-ink/70 mb-8 leading-relaxed">We believe in keeping things simple, transparent, and efficient for you. Getting life insurance with us is straightforward:</p>
+
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-lg">
+          <h3 class="font-sans text-base font-semibold text-brand-plum mb-2">Personalized Needs Analysis</h3>
+          <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Schedule a chat. We'll start with a friendly conversation (phone or Zoom, whatever works for you) to understand your situation and goals. One of our Insurance advisors will ask a few questions about your family, finances, and what you want the insurance to do (e.g., cover your mortgage, leave money for education, etc.). This helps us figure out how much coverage you actually need and what type fits best. Because we're brokers, we then research quotes from multiple insurers to find the best options for you (considering price and coverage features).</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg">
+          <h3 class="font-sans text-base font-semibold text-brand-plum mb-2">Choose Your Plan &amp; Apply</h3>
+          <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Review your options. Your Insurance advisor will present you with the top 1-3 insurance solutions that match your needs. They will explain the differences (cost, coverage highlights, any unique perks) so you can make an informed decision. Once you pick a plan you're comfortable with, we handle the application paperwork together. Your insurance advisor will help you fill out the application form (it's shorter than you might think) and coordinate any next steps like a medical questionnaire or arranging a quick paramedical exam, if required. Don't worry – many applications don't need an exam these days, and if they do, it's usually just a quick nurse visit for blood pressure and blood sample, paid for by the insurer. We make this step as convenient as possible, guiding you through every field and form.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg">
+          <h3 class="font-sans text-base font-semibold text-brand-plum mb-2">Approval &amp; Policy Delivery</h3>
+          <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Get covered. We submit your application to the insurance company (often electronically). Then we keep you updated as it moves through underwriting. If the insurer has any follow-up questions, we liaise and help you answer them. Once approved, we'll deliver your policy documents. Your Insurance advisor will walk you through the key details of your new policy so you fully understand it. And that's it – you can rest easy knowing you've secured the best solution available on the market, tailored just for you.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg">
+          <h3 class="font-sans text-base font-semibold text-brand-plum mb-2">Ongoing Support</h3>
+          <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Our relationship doesn't end at delivery. We're here for you over the years to come. Need to update a beneficiary? Have questions about your coverage? Want to review if your coverage amount is still adequate? Just reach out – we provide ongoing customer support. And when the time comes (hopefully far in the future) that your family needs to file a claim, we'll be there to assist and make sure it's handled smoothly.</p>
         </div>
       </div>
 
-      <div class="mt-10 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
-        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">Insurance products are offered through Heidi Blondin Financial / Qualified Financial Services. This article is for general information purposes only and does not constitute personalized insurance advice. Please consult with a qualified advisor to determine what coverage is appropriate for your situation.</p>
+      <div class="mt-8 bg-white border-l-4 border-brand-plum/30 p-6 rounded-r-lg">
+        <h3 class="font-sans text-base font-semibold text-brand-plum mb-2">No Stress, No Hassle – Guaranteed</h3>
+        <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">From start to finish, we aim to make buying life insurance refreshingly easy. We know your time is valuable, so we do the heavy lifting. Our clients often tell us they're surprised by how quick and painless the process is compared to what they expected. We take care of the details so you can focus on what matters: enjoying life knowing your loved ones are protected.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Why Work With Us -->
+  <section class="bg-white section-gap">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Why work with us?</h2>
+      <div class="space-y-4">
+        <div class="border-l-2 border-brand-plum/20 pl-5 py-1">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1">Independent &amp; Unbiased</h3>
+          <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed">As independent brokers, we shop from numerous top insurers to find you the best coverage at the best price. We are not tied to one company – our only goal is to secure you the right policy.</p>
+        </div>
+        <div class="border-l-2 border-brand-plum/20 pl-5 py-1">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1">Trusted by Our Community—Year After Year</h3>
+          <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed">At Heidi Blondin Financial, we're proud to be recognized for excellence. With countless 5-star Google reviews and the honour of being named Best Financial Services Firm by Three Best Rated for eight consecutive years, our commitment to client care speaks for itself. We've also been voted Best Financial Advisor by our local community multiple times—and we're deeply grateful for the many referrals from happy clients. Curious what others are saying? We invite you to explore our testimonials and Google reviews to see why families and individuals continue to choose us with confidence.</p>
+        </div>
+        <div class="border-l-2 border-brand-plum/20 pl-5 py-1">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1">Specialized Guidance</h3>
+          <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed">One of our qualified Insurance Advisors will personally walk you through the entire process. From first conversation to policy in hand, we make it simple and stress-free, answering all your questions along the way.</p>
+        </div>
+        <div class="border-l-2 border-brand-plum/20 pl-5 py-1">
+          <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1">Trusted Providers</h3>
+          <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed">We have an established relationship with many reliable, long-standing insurance companies, so you can have confidence in the coverage we put in place. We only recommend policies from insurers known for their financial strength and prompt claims service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-brand-tintPlum section-gap">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">What our clients are saying...</h2>
+
+      <div class="space-y-6">
+        <blockquote class="bg-white p-6 rounded-lg border-l-4 border-brand-plum/30">
+          <p class="font-sans text-[15px] text-brand-ink/75 leading-relaxed italic mb-3">"I never imagined insurance could be this straightforward. The team turned what I expected to be a stressful process into something refreshingly simple and smooth. Their clarity, patience, and professionalism made all the difference."</p>
+          <footer class="font-sans text-sm font-semibold text-brand-plum">— M.G., Kingston, Ontario</footer>
+        </blockquote>
+
+        <blockquote class="bg-white p-6 rounded-lg border-l-4 border-brand-plum/30">
+          <p class="font-sans text-[15px] text-brand-ink/75 leading-relaxed italic mb-3">"Thank you for helping me put the right insurance in place to protect my family and I in the event of illness or death. I really appreciated the time you took to walk me through the many options. I learned a great deal throughout the process which allowed me to make an informed decision. In the end we put in place a nice combination of products to suit my requirements and budget. With proper coverage in place I have peace of mind knowing my family will be safe.<br /><br />Thanks again for all your help!"</p>
+          <footer class="font-sans text-sm font-semibold text-brand-plum">LW – Kingston, Ontario</footer>
+        </blockquote>
+      </div>
+
+      <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed mt-8">Have you been searching for a Kingston, Ontario Life Insurance Advisor that will put your needs first? Heidi Blondin offers personalized, professional service in a comfortable and honest environment. No matter what your age, health, or risk factors, Heidi can find a quality solution to suit your needs.</p>
+    </div>
+  </section>
+
+  <!-- Dedicated To Client Satisfaction -->
+  <section class="bg-white section-gap">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Dedicated To Client Satisfaction</h2>
+      <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed">Whether you're looking for life insurance for yourself or a loved one, Heidi or Joanne can make the process informative and as smooth as possible. They have strong relationships with numerous insurance carriers across Canada. They use their expertise and precision to detail to narrow down the best and most cost effective options for you to choose from. Heidi or Joanne will explain the terms and conditions and help you make an informed decision.</p>
+    </div>
+  </section>
+
+  <!-- At Your Service -->
+  <section class="bg-brand-tintPlum section-gap">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">At Your Service</h2>
+      <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed mb-8">As established Kingston, ON, life insurance advisors, Heidi Blondin and Joanne Charron proudly serve customers throughout Ontario and New Brunswick. For your convenience, they offer flexible appointment times, online applications, and a quick response to all inquiries. To schedule a consultation, call today. 855-844-3927</p>
+      <a href="/contact" class="btn-primary inline-block">Request A Life Insurance Quote Online</a>
     </div>
   </section>
 

@@ -2,13 +2,58 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
 
-const sources = [
-  { name: 'Canada Pension Plan (CPP)', desc: 'When you start CPP matters — taking it at 60 vs. 70 can mean a difference of over 60% in your monthly benefit. We model the optimal start date for your situation.' },
-  { name: 'Old Age Security (OAS)', desc: 'OAS begins at 65 (or 70 if deferred for a 36% increase) and may be reduced by the OAS clawback if your income exceeds the threshold. We plan to minimize or avoid the clawback.' },
-  { name: 'Registered accounts (RRSP/RRIF)', desc: 'Your RRSP converts to a RRIF at 71 with mandatory minimum withdrawals. The order and timing of RRSP drawdowns can significantly reduce lifetime taxes paid.' },
-  { name: 'Tax-Free Savings Account (TFSA)', desc: "TFSA withdrawals are not counted as income for OAS clawback or GIS eligibility purposes. Used strategically, TFSAs can fund significant retirement spending tax-free." },
-  { name: 'Defined benefit or workplace pension', desc: 'If you have a DB pension, it integrates with government benefits in important ways. We model the combined income to find the most efficient strategy.' },
-  { name: 'Non-registered savings', desc: 'Capital gains, dividends, and interest from non-registered accounts all affect your income picture. We help sequence withdrawals to minimize annual tax.' },
+const helpList = [
+  'Maximize income from RRSPs, TFSAs, pensions, and non-registered accounts',
+  'Optimize government benefits like CPP and OAS',
+  'Minimize taxes through smart withdrawal strategies and income splitting',
+  'Plan for major purchases: Budget for vehicles, home repairs, and other anticipated big expenses in your retirement strategy.',
+  'Plan for inflation, healthcare costs, and longevity risk',
+  'Align your financial plan with your personal goals and values',
+];
+
+const docList = [
+  'Employer Pension statements and projections',
+  'Group retirement savings details (employee/employer contributions)',
+  'Investment statements (RRSP, TFSA, non-registered)',
+  'Insurance policy details',
+  'Corporate structure (if incorporated)',
+  'Monthly budget (use our Worry-Free Budget Template)',
+  'Target after-tax retirement income',
+  'CPP and OAS projections',
+  'List of goals, priorities, and major upcoming purchases',
+  'Dates of birth for all family members',
+  'Current savings contributions',
+  'List of people you want to provide a legacy for',
+  'Details of any Charitable Giving you want to incorporate into your plan',
+];
+
+const steps = [
+  {
+    label: 'Step 1: Discovery',
+    body: "We start with a deep dive into your goals, lifestyle, and financial picture. You'll complete our New Client Intake Form and Wealth Map.",
+  },
+  {
+    label: 'Step 2: Gather Your Documents',
+    body: null,
+  },
+  {
+    label: 'Step 3: Analysis & Planning',
+    body: 'We prepare a Retirement Readiness Number and model various scenarios to show how long your savings will last, what gaps exist, and how to fill them.',
+  },
+  {
+    label: 'Step 4: Presentation',
+    body: 'You\'ll receive either a 6-page simplified summary or a 25–30 page comprehensive plan—your choice. We walk you through every detail so you feel confident and informed.',
+  },
+  {
+    label: 'Step 5: Ongoing Support',
+    body: 'Your plan is a living document. We revisit it after major life changes or every few years to ensure it stays aligned with your evolving goals.',
+  },
+];
+
+const reasons = [
+  { title: 'Personalized Planning', desc: 'Every plan is tailored to your unique goals and lifestyle.' },
+  { title: 'Creative Approach', desc: 'We blend financial expertise with creativity to make planning approachable and empowering.' },
+  { title: 'Trusted Experience', desc: "With over a decade of service, we've helped hundreds of families in Kingston and beyond prepare for retirement with clarity and confidence." },
 ];
 ---
 
@@ -20,27 +65,67 @@ const sources = [
   <section class="bg-brand-plum py-20">
     <div class="container-content max-w-3xl">
       <p class="eyebrow-light mb-5">Planning</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Retirement Income Planning</h1>
+      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Retirement Income Planning: Your Path to Peace of Mind</h1>
       <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
-        Saving for retirement is one challenge. Turning those savings into reliable, tax-efficient income that lasts is another. We help you build a retirement income plan that works for the life you've built.
+        What if your retirement could be your most confident and rewarding chapter yet? At Heidi Blondin Financial, we believe retirement should be a time of freedom—not financial stress. Whether you're five years away or already retired, our Retirement Income Planning services are designed to help you build a reliable, tax-efficient income stream that supports your lifestyle and legacy.
       </p>
     </div>
   </section>
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Retirement income is more complex than it looks</h2>
+
+      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">What Is Retirement Income Planning?</h2>
       <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
-        <p>Most Canadians have multiple potential income sources in retirement — and the decisions you make about when to start each one, and in what order to draw from them, can mean the difference of tens of thousands of dollars in lifetime taxes paid.</p>
-        <p>A good retirement income plan coordinates all of these sources deliberately. It accounts for your spending needs, your tax situation, your spouse's income (if applicable), and the sequence of withdrawals across your accounts — not just whether you have "enough" saved.</p>
+        <p>Retirement Income Planning is the process of transforming your savings into a sustainable income that lasts throughout retirement. It's not just about having enough—it's about strategically managing withdrawals, taxes, and investments so you can enjoy life without worrying about market volatility or unexpected expenses. A well-crafted retirement income plan, allows you to approach your future with confidence, knowing your finances are structured to support your goals and provide peace of mind throughout your retirement years.</p>
       </div>
 
-      <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Your retirement income sources</h2>
-        <div class="space-y-4">
-          {sources.map(item => (
+      <div class="mt-8">
+        <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-4">We help you:</p>
+        <ul class="space-y-2">
+          {helpList.map(item => (
+            <li class="flex items-start gap-3">
+              <span class="text-brand-gold font-bold mt-1">&#8226;</span>
+              <span class="font-sans text-[16px] text-brand-ink/75 leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-16">
+        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Our Process: From Vision to Plan</h2>
+        <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-8">Creating a Comprehensive Financial Plan is like assembling a puzzle—each piece matters. Here's how we guide you:</p>
+
+        <div class="space-y-8">
+          {steps.map(step => (
             <div class="border-l-2 border-brand-gold/40 pl-5 py-2">
-              <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1.5">{item.name}</h3>
+              <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">{step.label}</h3>
+              {step.label === 'Step 2: Gather Your Documents' ? (
+                <div>
+                  <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed mb-3">To build your plan, we'll need:</p>
+                  <ul class="space-y-1.5">
+                    {docList.map(doc => (
+                      <li class="flex items-start gap-3">
+                        <span class="text-brand-gold font-bold mt-0.5">&#8226;</span>
+                        <span class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">{doc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed">{step.body}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Why Clients Choose Us</h2>
+        <div class="space-y-4">
+          {reasons.map(item => (
+            <div class="border-l-2 border-brand-gold/40 pl-5 py-2">
+              <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1.5">{item.title}</h3>
               <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">{item.desc}</p>
             </div>
           ))}
@@ -48,17 +133,14 @@ const sources = [
       </div>
 
       <div class="mt-12 bg-brand-tintPlum p-7">
-        <h3 class="font-serif text-lg text-brand-plum mb-3" style="font-optical-sizing: auto;">The three retirement income questions we answer together</h3>
-        <ul class="font-sans text-[15px] text-brand-ink/70 space-y-3">
-          <li class="flex items-start gap-3"><span class="text-brand-gold font-bold">1</span><span><strong class="text-brand-plum">How much will I have?</strong> — A projection of all income sources, indexed to inflation, across your expected retirement horizon.</span></li>
-          <li class="flex items-start gap-3"><span class="text-brand-gold font-bold">2</span><span><strong class="text-brand-plum">Will it be enough?</strong> — A spending needs analysis that accounts for the life you want to live, healthcare costs as you age, and contingencies.</span></li>
-          <li class="flex items-start gap-3"><span class="text-brand-gold font-bold">3</span><span><strong class="text-brand-plum">How do I make it last?</strong> — A sustainable drawdown strategy that minimizes taxes, preserves flexibility, and adapts as your life changes.</span></li>
-        </ul>
+        <h3 class="font-serif text-lg text-brand-plum mb-3" style="font-optical-sizing: auto;">Download Our Retirement Planning Checklist</h3>
+        <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed">Call us at <a href="tel:6138872726" class="text-brand-plum font-semibold hover:underline">613-887-2726</a> to speak with our team.</p>
       </div>
 
-      <div class="mt-10 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
-        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">Mutual funds are offered through Investia Financial Services Inc. This article is for general information purposes only and does not constitute personalized financial advice. CPP, OAS, and tax rules are subject to change. Please consult a qualified advisor before making any retirement income decisions.</p>
+      <div class="mt-10">
+        <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed italic">Let's build your retirement masterpiece—one thoughtful step at a time.</p>
       </div>
+
     </div>
   </section>
 

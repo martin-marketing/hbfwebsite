@@ -5,67 +5,45 @@ import ContactForm from '@/components/ContactForm.astro';
 
 <BaseLayout
   title="Contact Heidi Blondin Financial | Kingston, Ontario"
-  description="Get in touch with Heidi Blondin Financial. Schedule your free consultation. Office in Kingston, ON — serving all of Ontario."
+  description="Contact Heidi Blondin Financial Services - Kingston - Belleville. 855 - 844 - 3927 (Toll Free)"
 >
 
-  <!-- Hero -->
-  <section class="bg-brand-plum py-20">
+  <!-- Page header -->
+  <section class="bg-brand-plum py-16">
     <div class="container-content">
-      <p class="eyebrow-light mb-5">Get in Touch</p>
-      <h1 class="font-serif text-display text-white max-w-xl text-balance" style="font-optical-sizing: auto;">
-        Let's start a conversation.
+      <h1 class="font-serif text-display text-white" style="font-optical-sizing: auto;">
+        Contact
       </h1>
-      <p class="font-sans text-[18px] text-white/65 mt-5 max-w-lg">
-        Your first consultation is complimentary and comes with no obligation. Tell us a little about your situation and we'll be in touch.
-      </p>
     </div>
   </section>
 
   <!-- Contact content -->
   <section class="bg-brand-tintPlum section-gap">
     <div class="container-content">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-        <!-- Sidebar info -->
-        <div class="space-y-10">
-          <div>
-            <h2 class="font-serif text-xl text-brand-plum mb-4" style="font-optical-sizing: auto;">Our Office</h2>
-            <address class="not-italic font-sans text-sm text-brand-ink/75 leading-relaxed space-y-1">
-              <div class="font-medium text-brand-plum">Heidi Blondin Financial Inc.</div>
-              <div>785 Midpark Drive, Suite 100</div>
-              <div>Kingston, ON K7M 7G3</div>
-            </address>
-          </div>
-          <div>
-            <h2 class="font-serif text-xl text-brand-plum mb-4" style="font-optical-sizing: auto;">Phone</h2>
-            <div class="space-y-2 font-sans text-sm text-brand-ink/75">
-              <div><a href="tel:18558443927" class="text-brand-plum hover:text-brand-gold transition-colors">1-855-844-3927</a> <span class="text-brand-ink/40">(Toll Free)</span></div>
-              <div><a href="tel:6138872726" class="text-brand-plum hover:text-brand-gold transition-colors">613-887-2726</a> <span class="text-brand-ink/40">(Heidi)</span></div>
-              <div><a href="tel:6138179641" class="text-brand-plum hover:text-brand-gold transition-colors">613-817-9641</a> <span class="text-brand-ink/40">(Angela)</span></div>
-            </div>
-          </div>
-          <div>
-            <h2 class="font-serif text-xl text-brand-plum mb-4" style="font-optical-sizing: auto;">Email</h2>
-            <a href="mailto:hbadmin@heidiblondin.com" class="font-sans text-sm text-brand-gold hover:text-amber-700 transition-colors">hbadmin@heidiblondin.com</a>
-          </div>
-          <div>
-            <h2 class="font-serif text-xl text-brand-plum mb-4" style="font-optical-sizing: auto;">Service Area</h2>
-            <p class="font-sans text-sm text-brand-ink/70 leading-relaxed">
-              We serve clients throughout <strong>Ontario</strong>. We welcome in-person meetings at our Kingston office and virtual appointments for clients across the province.
-            </p>
-          </div>
-          <div class="bg-brand-plum/5 border border-brand-plum/12 p-5">
-            <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">
-              <strong class="text-brand-plum">Insurance Quote:</strong> If you're interested in a life, critical illness, disability, or travel insurance quote, please use our <a href="/financial-services/insurance-quote/" class="text-brand-gold hover:underline">Insurance Quote form</a> for a more detailed inquiry.
-            </p>
-          </div>
+      <!-- Form -->
+      <div class="max-w-2xl">
+        <ContactForm heading="Contact Heidi" />
+      </div>
+
+      <!-- Contact info block -->
+      <div class="mt-12 max-w-2xl font-sans text-sm text-brand-ink/75 leading-relaxed space-y-4">
+        <div>
+          <p class="font-semibold text-brand-plum">Contact</p>
+          <p class="font-medium text-brand-plum">Heidi Blondin Financial Inc.</p>
+          <p><a href="tel:6138872726" class="text-brand-plum hover:text-brand-gold transition-colors">613.887.2726</a> (Heidi)</p>
+          <p><a href="tel:6138179641" class="text-brand-plum hover:text-brand-gold transition-colors">613.817.9641</a> (Angela &ndash; Heidi&rsquo;s Assistant) <a href="mailto:hbadmin@heidiblondin.com" class="text-brand-gold hover:text-amber-700 transition-colors">hbadmin@heidiblondin.com</a></p>
+          <p><a href="tel:8558443927" class="text-brand-plum hover:text-brand-gold transition-colors">855.844.3927</a> (Toll Free)</p>
         </div>
-
-        <!-- Form -->
-        <div class="lg:col-span-2">
-          <ContactForm heading="Send us a message" />
+        <div>
+          <p class="font-medium text-brand-plum">Kingston Office</p>
+          <address class="not-italic">
+            785 Midpark Drive, Suite 100<br />
+            Kingston, ON&nbsp;&nbsp;K7M 7G3
+          </address>
         </div>
       </div>
+
     </div>
   </section>
 

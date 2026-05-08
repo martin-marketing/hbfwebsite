@@ -1,23 +1,103 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import CTABand from '@/components/CTABand.astro';
 
-const calculators = [
-  { name: 'Budget & Income Worksheet', desc: 'Track monthly income and expenses. A great starting point for any financial plan.', file: '/downloads/budget-worksheet.xlsx', icon: '📊' },
-  { name: 'Net Worth Calculator', desc: 'Add up your assets and liabilities to understand your complete financial picture.', file: '/downloads/net-worth-calculator.xlsx', icon: '💰' },
-  { name: 'Education Savings Calculator', desc: 'Estimate how much you need to save for a child\'s post-secondary education.', file: '/downloads/education-savings-calculator.xlsx', icon: '🎓' },
-  { name: 'Mortgage Calculator', desc: 'Calculate monthly payments and total interest for any mortgage scenario.', file: '/downloads/mortgage-calculator.xlsx', icon: '🏠' },
-  { name: 'Retirement Income Calculator', desc: 'Project your retirement income from CPP, OAS, pensions, and personal savings.', file: '/downloads/retirement-income-calculator.xlsx', icon: '📈' },
+const gettingOrganized = [
+  {
+    name: 'Worry Free Budget Calculator',
+    desc: 'Click here and download our preferred budget calculator. We have also launched a video that includes how to use this spreadsheet. Visit our Videos page and watch the first video in the Transforming your Finances Series.',
+    file: '/downloads/worry-free-budget-calculator.xlsx',
+    icon: '📊',
+  },
+  {
+    name: '30 Day Financial Challenge',
+    desc: 'This 30 day Challenge is a great exercise to go through to get your financial house in order. Once you have a good handle on all your numbers, you will be on your way to better financial health.',
+    file: '/downloads/30-day-financial-challenge.pdf',
+    icon: '📋',
+  },
+  {
+    name: 'Net Worth Calculator',
+    desc: 'Your net worth is like your financial report card. It helps you see the net result of all the assets and liabilities you\'ve accumulated so far. Over time, the goal is to see your net worth increase.',
+    file: '/downloads/net-worth-calculator.xlsx',
+    icon: '💰',
+  },
 ];
 
-const planningDocs = [
-  { name: 'Legacy Planning Checklist', desc: 'A step-by-step guide to organizing your estate documents, wishes, and key information for your family.', file: '/downloads/legacy-planning-checklist.pdf', icon: '📋' },
-  { name: 'Personal Records Organizer (Canada Life)', desc: 'Canada Life\'s comprehensive guide to organizing your important personal and financial records.', file: '/downloads/personal-records-organizer-canada-life.pdf', icon: '📁' },
-  { name: 'Personal Records Organizer (Sun Life)', desc: 'Sun Life\'s version of the personal records organizer — great for documenting policies and accounts.', file: '/downloads/personal-records-organizer-sun-life.pdf', icon: '📁' },
-  { name: 'Empire Life Executor Checklist', desc: 'A practical checklist for executors navigating estate administration duties in Ontario.', file: '/downloads/executor-checklist.pdf', icon: '✅' },
-  { name: 'Will Planning Worksheet', desc: 'Organize your wishes before meeting with an estate lawyer. A thoughtful way to prepare.', file: '/downloads/will-planning-worksheet.pdf', icon: '📝' },
-  { name: 'Power of Attorney Guide', desc: 'Understanding powers of attorney in Ontario — what they cover and why they matter.', file: '/downloads/power-of-attorney-guide.pdf', icon: '⚖️' },
-  { name: 'Digital Assets Worksheet', desc: 'Document your online accounts, passwords hints, and digital assets for your executor.', file: '/downloads/digital-assets-worksheet.pdf', icon: '💻' },
+const educationResources = [
+  {
+    name: 'Education Savings Calculator',
+    desc: 'This calculator will help you plan for you or your child\'s education.',
+    file: '/downloads/education-savings-calculator.xlsx',
+    icon: '🎓',
+  },
+];
+
+const mortgageResources = [
+  {
+    name: 'Mortgage Payment Calculator',
+    desc: 'This calculator will help you plan out how to pay back your mortgage.',
+    file: '/downloads/mortgage-payment-calculator.xlsx',
+    icon: '🏠',
+  },
+];
+
+const retirementResources = [
+  {
+    name: 'Retirement Income Calculator',
+    desc: 'This Calculator will help you estimate your annual Income after retirement.',
+    file: '/downloads/retirement-income-calculator.xlsx',
+    icon: '📈',
+  },
+];
+
+const estatePlanning = [
+  {
+    name: 'Legacy Planning Checklist',
+    desc: 'Putting together a well documented Legacy Plan can leave a lasting impact. It can also make the role of your Executor much easier. This checklist can help you round up all the important documents and details to include with your Legacy documentation.',
+    file: '/downloads/legacy-planning-checklist.pdf',
+    icon: '📋',
+  },
+  {
+    name: 'Personal Records Organizer (Canada Life)',
+    desc: 'We have two Personal Records Organizers to choose from. Take the time to complete one of the two booklets and set your Executor up for success. This document will capture a great deal of information your Executor will need to settle your estate. The Canada Life Personal Records Organizer is a condensed document that allows you to record all your pertinent account details.',
+    file: '/downloads/personal-records-organizer-canada-life.pdf',
+    icon: '📁',
+  },
+  {
+    name: 'Personal Records Organizer (Sun Life)',
+    desc: 'The Sun Life Personal Information and Executor Guide is a more comprehensive document that captures even more details and helps to walk your Executor through the process of settling your estate.',
+    file: '/downloads/personal-records-organizer-sun-life.pdf',
+    icon: '📁',
+  },
+  {
+    name: 'Empire Life Tax and Estate Executor Checklist',
+    desc: 'Taking on the role of Executor can be daunting. So it may be helpful to use this step by step guide to walk through the responsibility of settling an estate. It can help you prioritize all the tasks that you will need to complete.',
+    file: '/downloads/empire-life-executor-checklist.pdf',
+    icon: '✅',
+  },
+  {
+    name: 'Will Planning Worksheet',
+    desc: 'Before you meet with your lawyer to put your will in place, be sure to take the time to work through this worksheet. The more information and decisions you have made, the less expensive it will be to craft your will and power of attorney documents.',
+    file: '/downloads/will-planning-worksheet.pdf',
+    icon: '📝',
+  },
+  {
+    name: 'Power of Attorney Documents',
+    desc: 'This includes some good templates to put together your POA for Health and POA for Property. You will need one of each.',
+    file: '/downloads/power-of-attorney-documents.pdf',
+    icon: '⚖️',
+  },
+  {
+    name: 'Estate Planning in the Cyber Age',
+    desc: 'What are digital assets? This includes everything from music and data to electronic wallets, and passwords to all your online accounts. Be sure to address these in your estate planning worksheet and review with your lawyer.',
+    file: '/downloads/estate-planning-cyber-age.pdf',
+    icon: '💻',
+  },
+  {
+    name: 'Planning for Digital Assets Worksheet',
+    desc: 'Be sure to address your Digital Assets in your Estate Planning. This worksheet will help you document everything you have held electronically and in the cloud.',
+    file: '/downloads/planning-for-digital-assets-worksheet.pdf',
+    icon: '💻',
+  },
 ];
 ---
 
@@ -26,28 +106,37 @@ const planningDocs = [
   description="Free financial planning tools: calculators, estate planning checklists, personal records organizers, and more. From Heidi Blondin Financial, Kingston ON."
 >
 
-  <!-- Hero -->
+  <!-- Page Header -->
   <section class="bg-brand-plum py-20">
     <div class="container-content">
-      <p class="eyebrow-light mb-5">Resources</p>
       <h1 class="font-serif text-display text-white max-w-xl text-balance" style="font-optical-sizing: auto;">
-        Tools to take control of your financial life.
+        Resources
       </h1>
-      <p class="font-sans text-[18px] text-white/65 mt-5 max-w-lg">
-        Complimentary calculators and planning documents to help you get organized, think clearly, and plan with confidence.
-      </p>
     </div>
   </section>
 
-  <!-- Calculators -->
-  <section class="bg-white section-gap">
+  <!-- Intro -->
+  <section class="bg-white py-12">
+    <div class="container-content max-w-3xl">
+      <p class="font-sans text-[17px] text-brand-ink leading-relaxed mb-6">
+        Knowing your own numbers is an important step in the financial planning process. Below you will find several spreadsheets and calculators to help you project and track your progress toward your goals.
+      </p>
+      <div class="border-l-4 border-brand-gold pl-5 py-1">
+        <p class="font-sans text-[15px] text-brand-ink/80 leading-relaxed">
+          <strong>TIP:</strong> Write your goals down, along with the steps to accomplish them. This will significantly improve the likelihood of you achieving your goals.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Organized -->
+  <section class="bg-white section-gap pt-0">
     <div class="container-content">
-      <div class="mb-12">
-        <p class="eyebrow mb-3">Calculators</p>
-        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Run the numbers</h2>
+      <div class="mb-10">
+        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Getting Organized:</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {calculators.map(item => (
+        {gettingOrganized.map(item => (
           <a
             href={item.file}
             download
@@ -68,15 +157,14 @@ const planningDocs = [
     </div>
   </section>
 
-  <!-- Planning documents -->
+  <!-- Education Resources -->
   <section class="bg-brand-tintSage section-gap">
     <div class="container-content">
-      <div class="mb-12">
-        <p class="eyebrow mb-3">Planning Documents</p>
-        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Estate & life planning guides</h2>
+      <div class="mb-10">
+        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Education Resources:</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {planningDocs.map(item => (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {educationResources.map(item => (
           <a
             href={item.file}
             download
@@ -97,6 +185,88 @@ const planningDocs = [
     </div>
   </section>
 
-  <CTABand heading="Want help making sense of any of these?" sub="Book a free consultation and we'll walk through your numbers together." />
+  <!-- Mortgage Resources -->
+  <section class="bg-white section-gap">
+    <div class="container-content">
+      <div class="mb-10">
+        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Mortgage Resources:</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {mortgageResources.map(item => (
+          <a
+            href={item.file}
+            download
+            class="group flex items-start gap-4 border border-brand-plum/10 p-6 hover:border-brand-plum/25 hover:shadow-sm transition-all"
+          >
+            <span class="text-2xl flex-shrink-0">{item.icon}</span>
+            <div>
+              <h3 class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors mb-1">{item.name}</h3>
+              <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed mb-3">{item.desc}</p>
+              <span class="font-sans text-[11px] font-medium text-brand-gold flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                Download
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Retirement Resources -->
+  <section class="bg-brand-tintSage section-gap">
+    <div class="container-content">
+      <div class="mb-10">
+        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Retirement Resources:</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {retirementResources.map(item => (
+          <a
+            href={item.file}
+            download
+            class="group flex items-start gap-4 bg-white border border-brand-plum/8 p-6 hover:border-brand-plum/20 hover:shadow-sm transition-all"
+          >
+            <span class="text-2xl flex-shrink-0">{item.icon}</span>
+            <div>
+              <h3 class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors mb-1">{item.name}</h3>
+              <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed mb-3">{item.desc}</p>
+              <span class="font-sans text-[11px] font-medium text-brand-gold flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                Download
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Estate Planning -->
+  <section class="bg-white section-gap">
+    <div class="container-content">
+      <div class="mb-10">
+        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Estate Planning:</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {estatePlanning.map(item => (
+          <a
+            href={item.file}
+            download
+            class="group flex items-start gap-4 border border-brand-plum/10 p-6 hover:border-brand-plum/25 hover:shadow-sm transition-all"
+          >
+            <span class="text-2xl flex-shrink-0">{item.icon}</span>
+            <div>
+              <h3 class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors mb-1">{item.name}</h3>
+              <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed mb-3">{item.desc}</p>
+              <span class="font-sans text-[11px] font-medium text-brand-gold flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                Download
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 
 </BaseLayout>

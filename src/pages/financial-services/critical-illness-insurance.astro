@@ -4,61 +4,75 @@ import CTABand from '@/components/CTABand.astro';
 ---
 
 <BaseLayout
-  title="Critical Illness Insurance | Heidi Blondin Financial"
-  description="A tax-free lump sum if you're diagnosed with a serious illness. Learn how critical illness insurance works and who needs it — Heidi Blondin Financial, Kingston ON."
+  title="Critical Illness Insurance in Kingston, ON | Heidi Blondin Financial"
+  description="Critical illness insurance for Kingston, ON. A lump-sum payout upon diagnosis of a covered illness — Heidi Blondin Financial."
 >
-
-  <section class="bg-brand-plum py-20">
-    <div class="container-content max-w-3xl">
-      <p class="eyebrow-light mb-5">Insurance</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Critical Illness Insurance</h1>
-      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
-        A serious diagnosis changes everything. Critical illness insurance gives you a tax-free lump sum so you can focus on getting better — not on how you'll pay for it.
-      </p>
-    </div>
-  </section>
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">What critical illness insurance covers</h2>
+      <h1 class="font-serif text-display text-brand-plum mb-6 text-balance" style="font-optical-sizing: auto;">Resilience Starts Here: Critical Illness Insurance for a Stronger Recovery</h1>
       <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
-        <p>Critical illness insurance pays a one-time, tax-free lump sum benefit if you're diagnosed with a covered serious illness and survive a waiting period (typically 30 days). Unlike disability insurance — which replaces your income on an ongoing basis — the CI benefit is paid all at once, giving you complete flexibility in how you use it.</p>
-        <p>Most policies cover the three most common life-altering conditions: heart attack, stroke, and life-threatening cancer. Comprehensive policies may cover 25 or more conditions, including multiple sclerosis, Alzheimer's disease, organ failure, and more.</p>
+        <p>A serious illness can change everything—your health, your finances, your future. Critical Illness Insurance helps you stay in control when life takes a turn and helps you bounce back stronger.</p>
       </div>
-
-      <div class="mt-10">
-        <h2 class="font-serif text-h2 text-brand-plum mb-5" style="font-optical-sizing: auto;">What you can do with the benefit</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[
-            'Cover out-of-pocket medical expenses not covered by OHIP',
-            'Replace lost income while you\'re off work',
-            'Pay for private care, home modifications, or specialized treatments',
-            'Keep up with mortgage payments and household expenses',
-            'Travel for treatment or convalescence',
-            'Give yourself time to recover without rushing back to work',
-          ].map(item => (
-            <div class="flex items-start gap-3 bg-brand-tintSage p-4">
-              <span class="text-brand-gold mt-0.5 flex-shrink-0">→</span>
-              <span class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">{item}</span>
-            </div>
-          ))}
-        </div>
+      <div class="mt-6">
+        <a href="/financial-services/insurance-quote/" class="btn-primary">Request an Insurance Quote Today</a>
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Is critical illness insurance right for you?</h2>
-        <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-3">
-          <p>Consider this: nearly 1 in 2 Canadians will develop cancer in their lifetime. Survival rates are improving — which means more people are living through serious illness and dealing with the financial consequences of it. If you're a working-age adult with financial obligations, CI insurance is worth serious consideration.</p>
-          <p>It's particularly valuable if you are self-employed or your employer doesn't offer comprehensive disability benefits, if you have dependents who rely on your income, or if you want to preserve your savings and investments if you're ever unable to work for an extended period.</p>
-        </div>
+        <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed">In Canada, the following 26 illnesses are typically covered by Critical Illness Insurance.</p>
+        <p class="font-sans text-[15px] text-brand-ink/60 leading-relaxed mt-3 italic">[The list may vary from one insurance company to another. It's also important to note that each illness has a criteria/definition to qualify for full payout through your Critical Illness coverage.]</p>
       </div>
 
-      <div class="mt-10 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
-        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">Insurance products are offered through Heidi Blondin Financial / Qualified Financial Services. This article is for general information purposes only and does not constitute personalized insurance advice. Coverage conditions and exclusions vary by policy and insurer. Please consult with a qualified advisor to determine what coverage is appropriate for your situation.</p>
+      <div class="mt-12">
+        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">The Risks</h2>
+        <ul class="space-y-4 font-sans text-[17px] text-brand-ink/75 leading-relaxed">
+          <li>Nearly <strong>1 in 2 Canadians</strong> will develop cancer in their lifetime. ¹</li>
+          <li>Cancer, heart attack, and stroke account for the majority of critical illness insurance claims. ²</li>
+          <li>A diagnosis like cancer, heart attack, or stroke can lead to <strong>months of recovery</strong> and <strong>thousands in expenses</strong>. ³</li>
+          <li>Even with health coverage, <strong>out-of-pocket costs</strong> and <strong>lost income</strong> can be overwhelming. ⁴</li>
+          <li>The financial impact may force you to dip into long term savings. ⁵</li>
+          <li>Financial stress can delay treatment, impact recovery, and take its toll on your family. ⁶</li>
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">The Benefits</h2>
+        <ul class="space-y-5 font-sans text-[17px] text-brand-ink/75 leading-relaxed">
+          <li><strong>Lump-Sum Payout –</strong> Receive a <strong>tax-free cash benefit</strong> upon diagnosis of a covered illness — such as cancer, heart attack, or stroke. Use the money however you choose — medical bills, mortgage payments, hire homecare, travel for treatment, or simply taking time off work to recover.</li>
+          <li><strong>Protect Your Savings –</strong> Avoid dipping into retirement funds or emergency savings. The insurance benefit helps cover unexpected costs so you can focus on healing without financial stress.</li>
+          <li><strong>Stress-Free Recovery –</strong> Financial support during a health crisis can reduce stress and improve recovery outcomes. You'll have peace of mind knowing your expenses are covered while you prioritize your health.</li>
+          <li><strong>Return of Premium Option –</strong> If you stay healthy and never make a claim, some policies allow you to cancel after 15 years and receive <strong>100% of your premiums back</strong>—a unique feature that rewards wellness and offers long-term value.</li>
+          <li><strong>Virtual Healthcare Access –</strong> Some plans include <strong>24/7 virtual healthcare</strong>, offering quick access to doctors, prescriptions, and medical second opinions.</li>
+          <li><strong>Flexible Coverage Options –</strong> Choose from term options (e.g., 10 years or to age 75), coverage amounts, and add-ons benefits like partial payout for early detection and non-life threatening conditions, or savings by bundling coverage with life insurance.</li>
+          <li>Peace of mind knowing you're protected when it matters most.</li>
+        </ul>
+      </div>
+
+      <div class="mt-12 bg-brand-tintPlum p-8">
+        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Let's Talk About Your Protection</h2>
+        <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-6">Whether you're planning for your family, your future, or your peace of mind—<strong>we're here to help</strong>. Fill out the form below and take the first step toward <strong>simple, powerful protection</strong>.</p>
+        <a href="/financial-services/insurance-quote/" class="btn-primary">Request an Insurance Quote Today</a>
+      </div>
+
+      <div class="mt-10 font-sans text-[13px] text-brand-ink/50 leading-relaxed space-y-1">
+        <p>SOURCE¹: Canadian Cancer Society – Canadian Cancer Statistics 2023</p>
+        <p>SOURCE²: Canada Life Internal Reports 2023</p>
+        <p>SOURCE³: National Library of Medicine 2021</p>
+        <p>SOURCE⁴: Canadian Cancer Society – Canadian Cancer Statistics 2024</p>
+        <p>SOURCE⁵: Investing Executive 2002</p>
+        <p>SOURCE⁶: National Library of Medicine 2018</p>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-brand-tintPlum">
+        <blockquote class="quote-mark">
+          <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed italic">My partner and I have worked with Heidi Blondin of Blondin Financial for almost a year. We recently retired and needed help with our financial planning and investments. We needed sound, honest and prudent advice. First and foremost was to find someone that we could trust, feel comfortable and confident with and who understood our personal needs and desires. This is Heidi. More than thrilled to have found someone that meets all of our requirements and more. We honestly feel so fortunate to have found her.</p>
+          <footer class="font-sans text-sm font-medium text-brand-plum mt-3">P.M. – Kingston, Ontario</footer>
+        </blockquote>
+        <p class="mt-6"><a href="https://www.google.com/maps/place/Heidi+Blondin+Financial/@44.2602899,-76.5399038,17z/data=!4m8!3m7!1s0x4cd2ab2e0b9dc5f3:0xf4fc562e5c6d96cc!8m2!3d44.2602899!4d-76.5377151!9m1!1b1" class="font-sans text-sm font-medium text-brand-gold underline underline-offset-2 hover:text-amber-700" target="_blank" rel="noopener">See &amp; Write Reviews for Heidi</a></p>
       </div>
     </div>
   </section>
 
-  <CTABand heading="Get a critical illness quote" sub="Book a free consultation or request a quote and we'll find coverage that fits your situation and budget." />
+  <CTABand />
 
 </BaseLayout>

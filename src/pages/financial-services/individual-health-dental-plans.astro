@@ -5,57 +5,46 @@ import CTABand from '@/components/CTABand.astro';
 
 <BaseLayout
   title="Individual Health & Dental Plans | Heidi Blondin Financial"
-  description="Prescription drug, dental, vision, and paramedical coverage for Ontarians without group benefits. Independent health insurance advice from Heidi Blondin Financial."
+  description="Individual health and dental plans for self-employed, retired, or Canadians without group benefits — Heidi Blondin Financial, Kingston ON."
 >
-
-  <section class="bg-brand-plum py-20">
-    <div class="container-content max-w-3xl">
-      <p class="eyebrow-light mb-5">Insurance</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Individual Health & Dental Plans</h1>
-      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
-        OHIP covers a lot — but not everything. If you're self-employed, retired, or between jobs, an individual health and dental plan fills the gaps that government coverage leaves behind.
-      </p>
-    </div>
-  </section>
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Who needs individual health coverage</h2>
-      <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
-        <p>Group benefits through an employer are one of the most common ways Ontarians access extended health coverage. But when you leave a job, start a business, retire early, or simply don't have access to a group plan, your healthcare costs don't disappear — they just stop being reimbursed.</p>
-        <p>Individual health and dental plans provide private coverage for expenses that fall outside OHIP: prescription drugs, dental work, vision care, physiotherapy, chiropractic, massage therapy, and more. We help you find coverage that fits your situation and health needs without paying for benefits you won't use.</p>
+      <h1 class="font-serif text-display text-brand-plum mb-6 text-balance" style="font-optical-sizing: auto;">Individual Health Plans and Dental Plans</h1>
+
+      <h2 class="font-serif text-h2 text-brand-plum mb-5" style="font-optical-sizing: auto;">Don't have Employee Benefits through your Employer?</h2>
+
+      <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-5">
+        <p>Heidi Blondin Financial offers a wide range of Individual Health Packages and Dental Plans to choose from. Whether you're self-employed, between jobs or retired, there is a perfect health care package of benefits available for you and your family. With the ongoing changes to provincial health care plans, it is important to ensure you have affordable protection against unexpected medical expenses. The Individual Health Plans offer an excellent range of supplementary health and dental benefits, including prescription drugs, vision and hospital.</p>
+        <p>The premiums for your individual health plan are eligible medical expenses under the Canadian Federal Income Tax Act.</p>
+        <p>You can review various plan options and pricing <a href="/financial-services/insurance-quote/" class="text-brand-gold underline underline-offset-2 hover:text-amber-700">here</a>.</p>
       </div>
 
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5">
-        {[
-          { title: 'Prescription drugs', desc: 'Coverage for eligible prescription medications, often with a drug formulary that covers most common medications.' },
-          { title: 'Dental care', desc: 'Preventive (cleanings, x-rays), basic restorative (fillings), and major (crowns, bridges) coverage — plans vary by benefit level.' },
-          { title: 'Vision care', desc: 'Eye exams and prescription glasses or contact lenses covered up to a plan maximum every two years.' },
-          { title: 'Paramedical services', desc: 'Physiotherapy, massage therapy, chiropractic care, naturopathy, acupuncture, and more — covered up to annual maximums.' },
-          { title: 'Hospital coverage', desc: 'Private or semi-private room upgrades when OHIP only covers a ward bed.' },
-          { title: 'Emergency travel medical', desc: 'Some plans include emergency out-of-province or out-of-country medical coverage for short trips.' },
-        ].map(item => (
-          <div class="bg-brand-tintSage p-5">
-            <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">{item.title}</h3>
-            <p class="font-sans text-[13px] text-brand-ink/65 leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
+      <div class="mt-6">
+        <a href="/financial-services/insurance-quote/" class="btn-ghost">Options &amp; Pricing</a>
       </div>
 
-      <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Timing matters</h2>
-        <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-3">
-          <p>Many individual health plans have a "guaranteed acceptance" window when you leave a group benefit plan — typically 60–90 days. During this window, you can get coverage without medical questions or exclusions for pre-existing conditions. Once that window closes, applying becomes harder if you have health issues.</p>
-          <p>If you're changing jobs, retiring, or leaving a group plan for any reason, reach out to us early so we can make sure you don't miss this window.</p>
+      <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mt-4">Contact Heidi Blondin directly for additional plan options.</p>
+
+      <div class="mt-12 bg-brand-tintPlum p-8">
+        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Are you leaving your Employer?</h2>
+        <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
+          <p>You can continue to receive coverage similar to the employee health benefits and dental plans you have today. Heidi Blondin Financial offers several group benefit plan conversion options from your existing group plan.</p>
+          <p><strong>Don't wait – <a href="/financial-services/insurance-quote/" class="text-brand-gold underline underline-offset-2 hover:text-amber-700">Apply now</a>!</strong> The conversion of your Health Plan needs to be completed in the first 60 days after you leave your employer.</p>
+          <p>Contact us today for further details. Or visit to select the right plan for you.</p>
         </div>
       </div>
 
-      <div class="mt-10 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
-        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">Insurance products are offered through Heidi Blondin Financial / Qualified Financial Services. Coverage details vary by plan and insurer. This article is for general information purposes only. Please consult with a qualified advisor to determine what coverage is appropriate for your situation.</p>
+      <div class="mt-12 pt-8 border-t border-brand-tintPlum">
+        <blockquote class="quote-mark">
+          <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed italic">My partner and I have worked with Heidi Blondin of Blondin Financial for almost a year. We recently retired and needed help with our financial planning and investments. We needed sound, honest and prudent advice. First and foremost was to find someone that we could trust, feel comfortable and confident with and who understood our personal needs and desires. This is Heidi. More than thrilled to have found someone that meets all of our requirements and more. We honestly feel so fortunate to have found her.</p>
+          <footer class="font-sans text-sm font-medium text-brand-plum mt-3">P.M. – Kingston, Ontario</footer>
+        </blockquote>
+        <p class="mt-6"><a href="https://www.google.com/maps/place/Heidi+Blondin+Financial/@44.2602899,-76.5399038,17z/data=!4m8!3m7!1s0x4cd2ab2e0b9dc5f3:0xf4fc562e5c6d96cc!8m2!3d44.2602899!4d-76.5377151!9m1!1b1" class="font-sans text-sm font-medium text-brand-gold underline underline-offset-2 hover:text-amber-700" target="_blank" rel="noopener">See &amp; Write Reviews for Heidi</a></p>
       </div>
     </div>
   </section>
 
-  <CTABand heading="Find the right health coverage" sub="Book a free consultation and we'll match you with a plan that covers what you actually need." />
+  <CTABand />
 
 </BaseLayout>

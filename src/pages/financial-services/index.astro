@@ -1,149 +1,81 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import CTABand from '@/components/CTABand.astro';
 
-const investing = [
-  { name: 'Investments', href: '/financial-services/investments/', desc: 'Build and grow your wealth with a strategy tailored to your goals and timeline.' },
-  { name: 'Registered Retirement Savings Plans (RRSP)', href: '/financial-services/registered-retirement-savings-plans/', desc: 'Reduce your taxable income today while building your retirement nest egg.' },
-  { name: 'Tax-Free Savings Accounts (TFSA)', href: '/financial-services/tax-free-savings-accounts/', desc: 'Grow and withdraw your savings completely tax-free at any stage of life.' },
-  { name: 'First Home Savings Account (FHSA)', href: '/financial-services/first-home-savings-account/', desc: 'The newest registered account — save for your first home with tax advantages on both ends.' },
-  { name: 'Registered Education Savings Plans (RESP)', href: '/financial-services/registered-education-savings-plans/', desc: 'Start saving for a child\'s education and collect the federal Canada Education Savings Grant.' },
-  { name: 'Group Retirement Savings Plans', href: '/financial-services/group-savings-plans/', desc: 'Employer-sponsored savings programs designed to help your team build financial security.' },
-  { name: 'Segregated Funds', href: '/financial-services/segregated-fund/', desc: 'Investment funds with built-in protection — market growth potential with principal guarantees.' },
-];
-
-const insurance = [
-  { name: 'Insurance Overview', href: '/financial-services/insurance/', desc: 'Protect what matters most — an overview of every coverage type we offer.' },
-  { name: 'Life Insurance', href: '/financial-services/life-insurance/', desc: 'Ensure your family is financially secure no matter what happens to you.' },
-  { name: 'Critical Illness Insurance', href: '/financial-services/critical-illness-insurance/', desc: 'A lump-sum payout when you\'re diagnosed with a covered serious illness — so you can focus on recovery.' },
-  { name: 'Disability Insurance', href: '/financial-services/disability-insurance/', desc: 'Replace a portion of your income if you can\'t work due to injury or illness.' },
-  { name: 'Combination Insurance', href: '/financial-services/combination-insurance/', desc: 'Layer life, critical illness, and disability coverage into one integrated plan.' },
-  { name: 'Individual Health & Dental Plans', href: '/financial-services/individual-health-dental-plans/', desc: 'Prescription, dental, vision, and paramedical coverage — for those without group benefits.' },
-  { name: 'Travel Insurance', href: '/financial-services/travel-insurance/', desc: 'Medical emergency, trip cancellation, and baggage coverage for every trip.' },
-  { name: 'Group Benefits & Savings', href: '/financial-services/employee-group-benefits-plans/', desc: 'Attract and retain great people with a benefits package your team will value.' },
-];
-
-const planning = [
-  { name: 'Estate Planning', href: '/financial-services/estate-planning/', desc: 'Protect your legacy and ensure your wishes are followed — for every life stage.' },
-  { name: 'Charitable Giving', href: '/charitable-giving/', desc: 'Make your generosity work harder with tax-efficient strategies for giving.' },
-  { name: 'Retirement Income Planning', href: '/retirement-income-planning/', desc: 'Turn your savings into reliable income — CPP, OAS, pensions, and personal assets working together.' },
+const services = [
+  { name: 'Retirement Savings Solutions', href: '/financial-services/retirement-savings-solutions/' },
+  { name: 'Individual Pension Plans', href: '/financial-services/individual-pension-plans/' },
+  { name: 'Group Retirement and Pension Plans', href: '/financial-services/group-retirement-and-pension-plans/' },
+  { name: 'Education Savings Plans', href: '/financial-services/education-savings-plans/' },
+  { name: 'Tax Free Savings Accounts', href: '/financial-services/tax-free-savings-accounts/' },
+  { name: 'First Home Savings Accounts', href: '/financial-services/first-home-savings-accounts/' },
+  { name: 'Corporate Savings', href: '/financial-services/corporate-savings/' },
+  { name: 'Registered Disability Savings', href: '/financial-services/registered-disability-savings/' },
+  { name: 'Estate Planning', href: '/financial-services/estate-planning/' },
+  { name: 'Life Insurance', href: '/financial-services/life-insurance/' },
+  { name: 'Critical Illness Plans', href: '/financial-services/critical-illness-plans/' },
+  { name: 'Disability Insurance', href: '/financial-services/disability-insurance/' },
+  { name: 'Guaranteed Issue Life Insurance', href: '/financial-services/guaranteed-issue-life-insurance/' },
+  { name: 'Individual Health & Dental Plans', href: '/financial-services/individual-health-dental-plans/' },
+  { name: 'Group Benefit Plans', href: '/financial-services/group-benefit-plans/' },
+  { name: 'Long Term Care', href: '/financial-services/long-term-care/' },
+  { name: 'Travel Insurance', href: '/financial-services/travel-insurance/' },
+  { name: 'Charitable Giving', href: '/financial-services/charitable-giving/' },
+  { name: 'Segregated Funds', href: '/financial-services/segregated-funds/' },
 ];
 ---
 
 <BaseLayout
   title="Financial Services | Heidi Blondin Financial"
-  description="Investing, insurance, and planning solutions for Ontario families. RRSP, TFSA, FHSA, RESP, life insurance, critical illness, disability, estate planning, and more."
+  description="Investing, insurance, and planning solutions for Ontario families. Retirement savings, life insurance, critical illness, disability, estate planning, and more."
 >
 
-  <!-- Hero -->
+  <!-- Page Header -->
   <section class="bg-brand-plum py-20 lg:py-28">
     <div class="container-content">
-      <p class="eyebrow-light mb-5">Financial Services</p>
       <h1 class="font-serif text-display text-white max-w-2xl text-balance" style="font-optical-sizing: auto;">
-        Everything you need.<br>One trusted team.
+        Financial Services
       </h1>
-      <p class="font-sans text-[18px] text-white/65 mt-6 max-w-xl">
-        From building wealth to protecting what you've worked for — we bring together investing, insurance, and planning under one roof, so nothing falls through the cracks.
+    </div>
+  </section>
+
+  <!-- Flat Service List -->
+  <section class="bg-white section-gap">
+    <div class="container-content">
+      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {services.map(item => (
+          <li>
+            <a href={item.href} class="group flex items-center gap-2 border border-brand-plum/10 px-5 py-4 hover:border-brand-plum/25 hover:shadow-sm transition-all">
+              <span class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors flex-1">{item.name}</span>
+              <svg class="w-3.5 h-3.5 text-brand-gold group-hover:translate-x-0.5 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-tintPlum section-gap">
+    <div class="container-content text-center max-w-2xl mx-auto">
+      <p class="font-sans text-[17px] text-brand-ink/80 leading-relaxed mb-8">
+        If you have questions or would like more information, Contact Heidi today or ask for a quote.
       </p>
-      <div class="mt-10 flex flex-wrap gap-4">
-        <a href="#investing" class="btn-ghost-light">Investing</a>
-        <a href="#insurance" class="btn-ghost-light">Insurance</a>
-        <a href="#planning" class="btn-ghost-light">Planning</a>
-      </div>
+      <a href="/contact/" class="btn-primary-gold">Contact Heidi</a>
     </div>
   </section>
 
-  <!-- Investing -->
-  <section id="investing" class="bg-white section-gap">
-    <div class="container-content">
-      <div class="mb-12">
-        <p class="eyebrow mb-3">Investing</p>
-        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Build wealth with purpose</h2>
-        <p class="font-sans text-[17px] text-brand-ink/70 mt-4 max-w-2xl leading-relaxed">
-          Smart investing isn't just about returns — it's about choosing the right accounts, strategies, and timelines for your life. We help you make every dollar work harder.
+  <!-- Testimonial -->
+  <section class="bg-white section-gap">
+    <div class="container-content max-w-3xl mx-auto">
+      <blockquote class="border-l-4 border-brand-gold pl-8">
+        <p class="font-sans text-[17px] text-brand-ink/80 leading-relaxed">
+          My partner and I have worked with Heidi Blondin of Blondin Financial for almost a year. We recently retired and needed help with our financial planning and investments. We needed sound, honest and prudent advice. First and foremost was to find someone that we could trust, feel comfortable and confident with and who understood our personal needs and desires. This is Heidi. More than thrilled to have found someone that meets all of our requirements and more. We honestly feel so fortunate to have found her. P.M. &ndash; Kingston, Ontario
         </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {investing.map(item => (
-          <a href={item.href} class="group flex flex-col border border-brand-plum/10 p-6 hover:border-brand-plum/25 hover:shadow-sm transition-all">
-            <h3 class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors mb-2">{item.name}</h3>
-            <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed flex-1 mb-4">{item.desc}</p>
-            <span class="font-sans text-[11px] font-medium text-brand-gold flex items-center gap-1.5">
-              Learn more
-              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
-          </a>
-        ))}
+      </blockquote>
+      <div class="mt-8 pl-8">
+        <a href="/reviews/" class="font-sans text-sm font-semibold text-brand-gold hover:underline">See &amp; Write Reviews for Heidi</a>
       </div>
     </div>
   </section>
-
-  <!-- Insurance -->
-  <section id="insurance" class="bg-brand-tintPlum section-gap">
-    <div class="container-content">
-      <div class="mb-12">
-        <p class="eyebrow mb-3">Insurance</p>
-        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Protect what you've built</h2>
-        <p class="font-sans text-[17px] text-brand-ink/70 mt-4 max-w-2xl leading-relaxed">
-          The right coverage means your family isn't left scrambling when life doesn't go to plan. We help you find coverage that fits your situation — not just a generic policy.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {insurance.map(item => (
-          <a href={item.href} class="group flex flex-col bg-white border border-brand-plum/8 p-6 hover:border-brand-plum/20 hover:shadow-sm transition-all">
-            <h3 class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors mb-2">{item.name}</h3>
-            <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed flex-1 mb-4">{item.desc}</p>
-            <span class="font-sans text-[11px] font-medium text-brand-gold flex items-center gap-1.5">
-              Learn more
-              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
-          </a>
-        ))}
-      </div>
-      <!-- Insurance Quote CTA -->
-      <div class="mt-10 bg-brand-plum p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-        <div>
-          <p class="font-serif text-xl text-white" style="font-optical-sizing: auto;">Ready for an insurance quote?</p>
-          <p class="font-sans text-sm text-white/65 mt-1">Tell us about your situation and we'll put together a no-obligation quote.</p>
-        </div>
-        <a href="/financial-services/insurance-quote/" class="btn-primary-gold flex-shrink-0">Request a Quote</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Planning -->
-  <section id="planning" class="bg-brand-tintSage section-gap">
-    <div class="container-content">
-      <div class="mb-12">
-        <p class="eyebrow-sage mb-3">Planning</p>
-        <h2 class="font-serif text-h2 text-brand-plum text-balance" style="font-optical-sizing: auto;">Plan for what matters most</h2>
-        <p class="font-sans text-[17px] text-brand-ink/70 mt-4 max-w-2xl leading-relaxed">
-          Financial planning is about more than the numbers — it's about what you want your life to look like. We help you build a plan that works today and holds up over time.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {planning.map(item => (
-          <a href={item.href} class="group flex flex-col bg-white border border-brand-plum/8 p-6 hover:border-brand-plum/20 hover:shadow-sm transition-all">
-            <h3 class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors mb-2">{item.name}</h3>
-            <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed flex-1 mb-4">{item.desc}</p>
-            <span class="font-sans text-[11px] font-medium text-brand-gold flex items-center gap-1.5">
-              Learn more
-              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <CTABand heading="Not sure where to start?" sub="Book a free consultation — we'll help you figure out what makes sense for your situation." />
-
-  <div class="bg-white border-t border-brand-plum/8">
-    <div class="container-content py-5">
-      <p class="font-sans text-[11px] text-brand-ink/40 leading-relaxed">
-        Mutual funds are offered through Investia Financial Services Inc. Insurance products are offered through Heidi Blondin Financial / Qualified Financial Services. This website is for general information purposes only and does not constitute personalized financial advice.
-      </p>
-    </div>
-  </div>
 
 </BaseLayout>

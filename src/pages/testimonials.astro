@@ -1,14 +1,31 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import CTABand from '@/components/CTABand.astro';
 
 const testimonials = [
-  { quote: 'Heidi has been my trusted advisor and friend for several years. She and her team have provided sound financial guidance in the investment of my life savings.', attribution: 'T.O. · Kingston, Ontario' },
-  { quote: 'I can\'t thank Heidi and her team enough for their constant support. I first came to Heidi when I was in great debt — she was very positive and encouraging. I followed her advice completely and I am now financially on track.', attribution: 'D.R. · Ontario' },
-  { quote: 'Heidi is a true professional who I feel actually cares about my financial wellbeing. She explains everything clearly and always has time for my questions. I wouldn\'t trust anyone else with my retirement.', attribution: 'M.K. · Kingston, Ontario' },
-  { quote: 'Working with Heidi and her team has given me real peace of mind. My financial plan is finally something I understand and believe in. They listen — that\'s not something I\'ve always found with advisors.', attribution: 'A.F. · Kingston, Ontario' },
-  { quote: 'What sets Heidi apart is that she genuinely cares about you as a person, not just as a client. She takes the time to understand your goals and fears, and she helps you build something you can actually count on.', attribution: 'S.B. · Ontario' },
-  { quote: 'The whole team at Heidi Blondin Financial has been exceptional. From the first call with Angela to every meeting with Heidi, I\'ve always felt informed, respected, and confident in the advice I\'ve received.', attribution: 'P.L. · Kingston, Ontario' },
+  {
+    quote: "Dear Heidi,\nI'd like to take this opportunity to thank you for providing exceptional service. You have guided my financial direction since 2007 and have tailored a plan to suit my budget and goals. Your knowledge, professionalism, and honest approach have allowed me to relax and trust that you have my best interests in hand.\nIt's obvious that you are passionate about helping others and as a result I have a great deal of confidence knowing that you are helping me plan for my future.\nSincerely,",
+    attribution: 'A.F. – Kingston, Ontario',
+  },
+  {
+    quote: "Dear Heidi,\nThank you for helping me put the right insurance in place to protect my family and I in the event of illness or death. I really appreciated the time you took to walk me through the many options. I learned a great deal throughout the process which allowed me to make an informed decision. In the end we put in place a nice combination of products to suit my requirements and budget. With proper coverage in place I have peace of mind knowing my family will be safe.\nThanks again for all your help!",
+    attribution: 'LW – Kingston, Ontario',
+  },
+  {
+    quote: "After my husband passed away, I found myself in need of sound financial advice. I was thrilled to have Heidi in my life to lean on. She and her team at Heidi Blondin Financial helped me make some tough decisions and develop a plan for my future. Heidi has helped me build an investment portfolio that allows me to stay invested even when news headlines cause me to think otherwise. She has taught me many valuable strategies about investing.\nHeidi has a caring and honest approach. I would whole-heartedly recommend her to anyone needing solid financial advice.\nSincerely,",
+    attribution: 'O.S. – Kingston, Ontario',
+  },
+  {
+    quote: "Heidi has been my trusted advisor and friend for several years. She and her team have provided sound financial guidance in the investment of my life savings. I am able to sleep at night knowing that they are invested according to my risk comfort levels. I also reap the rewards of various solutions that provide the most tax efficient income in my retirement.\nI would encourage anyone looking for a great Financial Advisor to call Heidi.",
+    attribution: 'T.O. – Kingston, Ontario',
+  },
+  {
+    quote: "My partner and I have worked with Heidi Blondin of Blondin Financial for almost a year. We recently retired and needed help with our financial planning and investments. We needed sound, honest and prudent advice. First and foremost was to find someone that we could trust, feel comfortable and confident with and who understood our personal needs and desires. This is Heidi. More than thrilled to have found someone that meets all of our requirements and more. We honestly feel so fortunate to have found her.",
+    attribution: 'P.M. – Kingston, Ontario',
+  },
+  {
+    quote: "It is a true pleasure to work with Heidi. She is professional, responsive and provides an excellent holistic overview to her clients to help them plan for their financial future.",
+    attribution: 'K.M. – Kingston, Ontario',
+  },
 ];
 ---
 
@@ -38,22 +55,16 @@ const testimonials = [
           <div class="bg-brand-tintPlum p-8 flex flex-col">
             <div class="font-serif text-brand-gold text-5xl leading-none mb-4 select-none" style="font-optical-sizing: auto;">&ldquo;</div>
             <blockquote class="font-serif text-lg text-brand-plum leading-relaxed flex-1 mb-6" style="font-optical-sizing: auto; font-style: italic; font-variation-settings: 'SOFT' 60;">
-              {t.quote}
+              {t.quote.split('\n').map((line, i, arr) => (
+                <Fragment>{line}{i < arr.length - 1 && <br />}</Fragment>
+              ))}
             </blockquote>
             <cite class="font-sans text-xs tracking-[0.18em] uppercase text-brand-sageDark not-italic">{t.attribution}</cite>
           </div>
         ))}
       </div>
 
-      <div class="mt-16 bg-brand-plumDark py-14 px-10 text-center">
-        <p class="font-serif text-2xl text-white/80 italic mb-4" style="font-optical-sizing: auto; font-variation-settings: 'SOFT' 60;">
-          &ldquo;Testimonials are presented with client permission. Names are represented by initials to protect privacy, as required under advisor advertising guidelines.&rdquo;
-        </p>
-        <p class="font-sans text-xs text-white/40 tracking-wide uppercase">Heidi Blondin Financial Inc.</p>
-      </div>
     </div>
   </section>
-
-  <CTABand heading="Ready to become one of our success stories?" sub="Your first consultation is free and comes with no obligation." />
 
 </BaseLayout>

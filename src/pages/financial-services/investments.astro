@@ -2,64 +2,63 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
 
-const approaches = [
-  { title: 'Goal-based investing', desc: 'Every investment recommendation starts with your specific goals — retirement, education, a home — and works backward from there.' },
-  { title: 'Risk-appropriate portfolios', desc: 'We match your tolerance for volatility with a portfolio you can actually stay invested in through market ups and downs.' },
-  { title: 'Tax-efficient account selection', desc: 'The right investment in the wrong account costs you money. We help you optimize across RRSP, TFSA, FHSA, and non-registered accounts.' },
-  { title: 'Ongoing monitoring and rebalancing', desc: 'Markets move. Life changes. We review your portfolio regularly and make adjustments so your plan stays on track.' },
+const investmentPlans = [
+  'Retirement Savings Plans (RSP)',
+  'Registered Education Savings Plans (RESP)',
+  'Tax Free Savings Accounts (TFSA)',
+  'Registered Disability Savings Plans (RDSP)',
+  'Corporate Savings',
+  'Individual Pension Plans',
+  'Group Pension Plans',
+  'Group Retirement Savings Plans',
+  'Mutual Funds and Segregated Funds',
 ];
 ---
 
 <BaseLayout
-  title="Investment Planning | Heidi Blondin Financial"
-  description="Goal-based investment planning for Ontario families. We help you choose the right accounts and strategies to grow your wealth for retirement, education, and beyond."
+  title="Investments | Heidi Blondin Financial"
+  description="Heidi Blondin is a Financial Advisor offering personalized investment planning including RSP, RESP, TFSA, RDSP, and more for clients across Ontario."
 >
 
   <section class="bg-brand-plum py-20">
     <div class="container-content max-w-3xl">
-      <p class="eyebrow-light mb-5">Investing</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Invest with intention.</h1>
-      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
-        Growing your wealth isn't about chasing returns — it's about building a strategy that aligns with your life, your timeline, and your goals.
-      </p>
+      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Investments</h1>
     </div>
   </section>
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">A personalized approach to growing your wealth</h2>
       <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
-        <p>Whether you're just starting to invest or looking to make better use of what you've already built, the right strategy makes a meaningful difference over time. At Heidi Blondin Financial, we work with mutual funds offered through Investia Financial Services Inc. to create investment portfolios tailored to your unique situation.</p>
-        <p>We take time to understand where you are financially, where you want to go, and how you feel about risk — then we build a plan that makes sense for you specifically, not just for someone your age.</p>
+        <p>Canadians that work with a Financial Advisor tend to be more disciplined with their savings, have more confidence about their financial future, and accumulate more assets. So given these trends, why are so many people trying to go it alone?</p>
+        <p>When it comes to investing, a Financial Advisor can help you establish a budget, prepare for the unexpected, set realistic goals and strategies, and help you make educated decisions about your money. This increases your chances of financial success. The only thing you need to get started is a commitment to your financial future.</p>
+        <p>Heidi Blondin is a Financial Advisor that thoroughly enjoys the process of establishing goals and developing strategies to achieve them. She provides personalized service to help clients fine tune their monthly budget to better address their goals and priorities.</p>
+        <p>Heidi offers a broad range of investment plans including:</p>
       </div>
 
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-        {approaches.map(item => (
-          <div class="bg-brand-tintPlum p-6">
-            <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">{item.title}</h3>
-            <p class="font-sans text-[13px] text-brand-ink/65 leading-relaxed">{item.desc}</p>
-          </div>
+      <ul class="mt-4 font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-1.5">
+        {investmentPlans.map(plan => (
+          <li class="flex items-start gap-2">
+            <span class="text-brand-gold mt-0.5">→</span>
+            <span>{plan}</span>
+          </li>
         ))}
-      </div>
-
-      <div class="mt-12 bg-brand-tintSage p-6 border-l-2 border-brand-sage">
-        <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Registered account options</h3>
-        <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed mb-4">We help you choose between — and maximize — every registered account available to you:</p>
-        <ul class="font-sans text-[14px] text-brand-ink/70 space-y-1.5">
-          <li class="flex items-start gap-2"><span class="text-brand-gold mt-0.5">→</span><span><a href="/financial-services/registered-retirement-savings-plans/" class="text-brand-plum hover:text-brand-gold transition-colors font-medium">RRSP</a> — pre-tax contributions, tax-deferred growth</span></li>
-          <li class="flex items-start gap-2"><span class="text-brand-gold mt-0.5">→</span><span><a href="/financial-services/tax-free-savings-accounts/" class="text-brand-plum hover:text-brand-gold transition-colors font-medium">TFSA</a> — after-tax contributions, completely tax-free growth and withdrawals</span></li>
-          <li class="flex items-start gap-2"><span class="text-brand-gold mt-0.5">→</span><span><a href="/financial-services/first-home-savings-account/" class="text-brand-plum hover:text-brand-gold transition-colors font-medium">FHSA</a> — tax-deductible contributions + tax-free withdrawals for first-time homebuyers</span></li>
-          <li class="flex items-start gap-2"><span class="text-brand-gold mt-0.5">→</span><span><a href="/financial-services/registered-education-savings-plans/" class="text-brand-plum hover:text-brand-gold transition-colors font-medium">RESP</a> — education savings with government grants</span></li>
-          <li class="flex items-start gap-2"><span class="text-brand-gold mt-0.5">→</span><span><a href="/financial-services/segregated-fund/" class="text-brand-plum hover:text-brand-gold transition-colors font-medium">Segregated Funds</a> — investment funds with principal guarantees</span></li>
-        </ul>
-      </div>
-
-      <div class="mt-10 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
-        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">Mutual funds are offered through Investia Financial Services Inc. Commissions, trailing commissions, management fees and expenses all may be associated with mutual fund investments. Please read the prospectus before investing. Mutual funds are not guaranteed, their values change frequently and past performance may not be repeated.</p>
-      </div>
+      </ul>
     </div>
   </section>
 
-  <CTABand heading="Ready to invest with a plan?" sub="Book a free consultation and we'll talk through the strategy that makes sense for your goals." />
+  <CTABand heading="Contact Heidi Today" />
+
+  <section class="bg-brand-tintPlum section-gap">
+    <div class="container-content max-w-3xl">
+      <div class="bg-white p-8 border-l-4 border-brand-gold">
+        <blockquote class="font-sans text-[17px] text-brand-ink/75 leading-relaxed italic">
+          "Heidi has been my trusted advisor and friend for several years. She and her team have provided sound financial guidance in the investment of my life savings. I am able to sleep at night knowing that they are invested according to my risk comfort levels. I also reap the rewards of various solutions that provide the most tax efficient income in my retirement. I would encourage anyone looking for a great Financial Advisor to call Heidi. T.O. – Kingston, Ontario"
+        </blockquote>
+        <p class="mt-6 font-sans text-[14px] text-brand-plum font-medium">
+          <a href="https://www.google.com/search?q=Heidi+Blondin+Financial" class="hover:text-brand-gold transition-colors underline">Write A Review For Heidi On Google+</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
 </BaseLayout>

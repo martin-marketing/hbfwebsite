@@ -1,64 +1,52 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
-
-const features = [
-  { title: 'Completely tax-free growth', desc: 'Interest, dividends, and capital gains earned inside your TFSA are never taxed — not even when you withdraw them.' },
-  { title: 'Withdraw any time', desc: 'Unlike an RRSP, there are no restrictions on when you can take money out. Spend it on anything — and your contribution room comes back the following year.' },
-  { title: 'Cumulative contribution room', desc: 'If you were 18 or older in 2009, you may have up to $95,000 in available TFSA room (as of 2024). Unused room carries forward every year.' },
-  { title: 'No impact on income-tested benefits', desc: 'TFSA withdrawals don\'t count as income, so they don\'t affect your eligibility for OAS, GIS, or other income-tested government programs.' },
-  { title: 'Flexible investment options', desc: 'Your TFSA can hold mutual funds, GICs, ETFs, and more — not just cash. We help you invest it strategically for your goals.' },
-  { title: 'Estate planning benefit', desc: 'With a named successor holder or beneficiary, your TFSA passes directly to a spouse or can avoid probate — a useful estate planning tool.' },
-];
 ---
 
 <BaseLayout
-  title="TFSA — Tax-Free Savings Account | Heidi Blondin Financial"
-  description="Grow your savings tax-free and withdraw whenever you need. Learn how TFSAs work and how to maximize your contribution room with Heidi Blondin Financial."
+  title="Tax Free Savings Accounts | Heidi Blondin Financial"
+  description="Learn how Tax Free Savings Accounts (TFSAs) work, who they're ideal for, and how to maximize your contribution room with Heidi Blondin Financial."
 >
-
-  <section class="bg-brand-plum py-20">
-    <div class="container-content max-w-3xl">
-      <p class="eyebrow-light mb-5">Investing</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Tax-Free Savings Account (TFSA)</h1>
-      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
-        Every dollar you earn inside a TFSA stays yours — no tax on growth, no tax on withdrawals. It's one of the most flexible financial tools available to Canadians.
-      </p>
-    </div>
-  </section>
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">More than a savings account</h2>
-      <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
-        <p>Despite the name, a TFSA isn't just for savings — it's a registered account that can hold a full range of investments and shelter every dollar of growth from tax. You contribute with after-tax dollars, but everything that happens inside the account (growth, income, withdrawals) is completely tax-free.</p>
-        <p>For many Canadians, especially those in lower tax brackets now who expect higher income in retirement, a TFSA is the smarter first priority. It also makes an excellent complement to an RRSP — the two accounts work together to cover different needs across your financial life.</p>
-      </div>
+      <h1 class="font-serif text-display text-brand-plum mb-8" style="font-optical-sizing: auto;">Tax Free Savings Accounts</h1>
 
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5">
-        {features.map(item => (
-          <div class="bg-brand-tintSage p-6">
-            <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">{item.title}</h3>
-            <p class="font-sans text-[13px] text-brand-ink/65 leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
+      <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
+        <p>In 2009, the Canadian government introduced a registered plan called the Tax Free Savings Account (TFSA). They are designed to help Canadians save for various short or long-term goals. You must be at least 18 years of age and have a Social Insurance Number (SIN) to set up a TFSA.</p>
+        <p>The name Tax Free Savings Account is misleading. May people think they can only invest their savings in a 'Savings Account'. The truth is, TFSA's can be invested in numerous vehicles including: mutual funds, segregated funds and bank accounts. They can be invested using conservative or aggressive investment strategies or anywhere in between.</p>
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Common TFSA mistakes to avoid</h2>
-        <ul class="font-sans text-[16px] text-brand-ink/75 leading-relaxed space-y-3">
-          <li class="flex items-start gap-3"><span class="text-brand-gold font-bold mt-0.5">01</span><span><strong class="text-brand-plum">Over-contributing:</strong> Contributing more than your available room triggers a 1% per month penalty tax. We track your room and help you stay within limits.</span></li>
-          <li class="flex items-start gap-3"><span class="text-brand-gold font-bold mt-0.5">02</span><span><strong class="text-brand-plum">Holding it as cash:</strong> Many people leave their TFSA in a savings account earning minimal interest. Investing it properly can make a significant difference over time.</span></li>
-          <li class="flex items-start gap-3"><span class="text-brand-gold font-bold mt-0.5">03</span><span><strong class="text-brand-plum">Withdrawing and re-contributing in the same year:</strong> Your contribution room from a withdrawal only returns on January 1 of the next calendar year.</span></li>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Is a Tax Free Savings Account for me?</h2>
+        <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-4">TFSAs are ideal for:</p>
+        <ul class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-2 list-disc list-inside">
+          <li>Canadians making less than $50,000 per year</li>
+          <li>Self Employed individuals with dividend income</li>
+          <li>Someone expecting large pension income</li>
+          <li>Salaried employee looking for flexibility</li>
+          <li>Someone saving for a short term goal (i.e. buying a car) or long term (i.e. retirement)</li>
         </ul>
       </div>
 
-      <div class="mt-10 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
-        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">Mutual funds are offered through Investia Financial Services Inc. This article is for general information purposes only and does not constitute personalized financial advice. Please consult a qualified advisor before making any financial decisions.</p>
+      <div class="mt-8 font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
+        <p>As of 2025, if you have never contributed to a TFSA, you would have $102,000 in contribution room. Each year the contribution limit will be increased by $7,000. To avoid penalties from Revenue Canada, you will need to ensure you don't exceed your contribution limit.</p>
+        <p>Unlike the RRSP, contributions to a TFSA are not deductible for tax purposes, but they have significant benefits. The investment growth is not taxable and withdrawals are not taxable. This makes make them ideal for short and long-term savings of your after tax dollars. You never need to worry about the growth affecting your income. It's a great compliment to pension income. It also won't affect your income calculation for Guaranteed Income Supplement (GIS) and Old Age Security (OAS). As the name indicates: it is Tax Free!</p>
+      </div>
+
+      <div class="mt-10">
+        <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed">Contact Heidi for more information.</p>
+      </div>
+
+      <div class="mt-10">
+        <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Related Links</h3>
+        <ul class="font-sans text-[16px] text-brand-ink/75 space-y-1">
+          <li><a href="#" class="underline hover:text-brand-plum transition-colors">Taking your TFSA to the Limit</a></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <CTABand heading="Maximize your TFSA" sub="Book a free consultation and we'll show you how to put your TFSA to work for your goals." />
+  <CTABand heading="Contact Heidi for more information." sub="" />
 
 </BaseLayout>

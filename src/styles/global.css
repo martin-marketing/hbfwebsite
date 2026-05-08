@@ -147,6 +147,13 @@
   .nav-link-active {
     @apply text-brand-plum font-semibold;
   }
+  /* Nav link — for dark (plum) header backgrounds */
+  .nav-link-light {
+    @apply font-sans text-sm font-medium text-white/80 hover:text-white transition-colors duration-150 py-1;
+  }
+  .nav-link-active-light {
+    @apply text-white font-semibold;
+  }
 }
 
 @layer utilities {
