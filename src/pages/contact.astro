@@ -20,30 +20,41 @@ import ContactForm from '@/components/ContactForm.astro';
   <!-- Contact content -->
   <section class="bg-brand-tintPlum section-gap">
     <div class="container-content">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-      <!-- Form -->
-      <div class="max-w-2xl">
-        <ContactForm heading="Contact Heidi" />
-      </div>
-
-      <!-- Contact info block -->
-      <div class="mt-12 max-w-2xl font-sans text-sm text-brand-ink/75 leading-relaxed space-y-4">
+        <!-- Left: form + contact info -->
         <div>
-          <p class="font-semibold text-brand-plum">Contact</p>
-          <p class="font-medium text-brand-plum">Heidi Blondin Financial Inc.</p>
-          <p><a href="tel:6138872726" class="text-brand-plum hover:text-brand-gold transition-colors">613.887.2726</a> (Heidi)</p>
-          <p><a href="tel:6138179641" class="text-brand-plum hover:text-brand-gold transition-colors">613.817.9641</a> (Angela &ndash; Heidi&rsquo;s Assistant) <a href="mailto:hbadmin@heidiblondin.com" class="text-brand-gold hover:text-amber-700 transition-colors">hbadmin@heidiblondin.com</a></p>
-          <p><a href="tel:8558443927" class="text-brand-plum hover:text-brand-gold transition-colors">855.844.3927</a> (Toll Free)</p>
-        </div>
-        <div>
-          <p class="font-medium text-brand-plum">Kingston Office</p>
-          <address class="not-italic">
-            785 Midpark Drive, Suite 100<br />
-            Kingston, ON&nbsp;&nbsp;K7M 7G3
-          </address>
-        </div>
-      </div>
+          <ContactForm heading="Contact Heidi" />
 
+          <div class="mt-12 font-sans text-sm text-brand-ink/75 leading-relaxed space-y-4">
+            <div>
+              <p class="font-semibold text-brand-plum">Contact</p>
+              <p class="font-medium text-brand-plum">Heidi Blondin Financial Inc.</p>
+              <p><a href="tel:6138872726" class="text-brand-plum hover:text-brand-gold transition-colors">613.887.2726</a> (Heidi)</p>
+              <p><a href="tel:6138179641" class="text-brand-plum hover:text-brand-gold transition-colors">613.817.9641</a> (Angela &ndash; Heidi&rsquo;s Assistant) <a href="mailto:hbadmin@heidiblondin.com" class="text-brand-gold hover:text-amber-700 transition-colors">hbadmin@heidiblondin.com</a></p>
+              <p><a href="tel:8558443927" class="text-brand-plum hover:text-brand-gold transition-colors">855.844.3927</a> (Toll Free)</p>
+            </div>
+            <div>
+              <p class="font-medium text-brand-plum">Kingston Office</p>
+              <address class="not-italic">
+                785 Midpark Drive, Suite 100<br />
+                Kingston, ON&nbsp;&nbsp;K7M 7G3
+              </address>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: photo -->
+        <div class="lg:sticky lg:top-8">
+          <img
+            src="/office/contact.jpeg"
+            alt="Heidi Blondin Financial office — Kingston, Ontario"
+            class="w-full"
+            loading="eager"
+          />
+        </div>
+
+      </div>
     </div>
   </section>
 
