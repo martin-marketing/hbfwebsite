@@ -13,24 +13,24 @@ const recentPosts = (await getAllPosts()).slice(0, 3);
 >
 
   <!-- Hero -->
-  <section class="relative overflow-hidden min-h-[600px] lg:min-h-[680px] flex items-center">
+  <section class="relative overflow-hidden min-h-[600px] lg:min-h-[680px] flex items-end">
     <!-- Background photo -->
     <div class="absolute inset-0">
       <img
         src="/team/team-corp367.jpeg"
         alt="The Heidi Blondin Financial team — Kingston, Ontario"
-        class="w-full h-full object-cover object-center"
+        class="w-full h-full object-cover object-top"
         loading="eager"
       />
-      <!-- Gradient: full plum on mobile, left-to-transparent on desktop -->
-      <div class="absolute inset-0 bg-brand-plumDark/90 lg:bg-transparent"></div>
-      <div class="absolute inset-0 hidden lg:block" style="background: linear-gradient(to right, #3F2C3E 0%, rgba(63,44,62,0.92) 30%, rgba(63,44,62,0.55) 55%, transparent 75%);"></div>
+      <!-- Gradient: full plum on mobile, bottom-up on desktop -->
+      <div class="absolute inset-0 bg-brand-plumDark/85 lg:bg-transparent"></div>
+      <div class="absolute inset-0 hidden lg:block" style="background: linear-gradient(to top, #3F2C3E 0%, rgba(63,44,62,0.85) 25%, rgba(63,44,62,0.3) 55%, transparent 80%);"></div>
     </div>
 
-    <!-- Text content -->
-    <div class="relative container-content py-20 lg:py-28">
-      <div class="max-w-xl">
-        <h1 class="font-serif text-display text-white mb-0 text-balance leading-[1.05]" style="font-optical-sizing: auto;">
+    <!-- Text content — sits at the bottom over legs -->
+    <div class="relative container-content pb-12 lg:pb-16 pt-20">
+      <div class="max-w-2xl">
+        <h1 class="font-serif text-display text-white text-balance leading-[1.05]" style="font-optical-sizing: auto;">
           Are your life goals &amp; your money<br/><em class="text-brand-gold" style="font-style: italic; font-variation-settings: 'SOFT' 80;">working in harmony?</em>
         </h1>
       </div>
