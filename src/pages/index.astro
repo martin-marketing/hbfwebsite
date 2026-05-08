@@ -62,37 +62,37 @@ const recentPosts = (await getAllPosts()).slice(0, 3);
     </div>
   </section>
 
-  <!-- Body copy -->
+  <!-- Body copy + office photo -->
   <section class="bg-white section-gap">
     <div class="container-content">
-      <div class="max-w-2xl mx-auto text-center space-y-5">
-        <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed">
-          At Heidi Blondin Financial, we've been helping professionals just like you, answer these questions in a way that allows you to spend more time enjoying life - and less time fretting about your financial future.
-        </p>
-        <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed">
-          We provide one-on-one financial planning and fun interactive workshops to help you learn, grow, and succeed.
-        </p>
-        <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed">
-          If you're ready to start taking control of your money, contact us to schedule a free consultation.
-        </p>
-        <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed font-medium">
-          You're one phone call away from living life the way YOU want.
-        </p>
-        <div class="pt-4">
-          <a href="tel:18558443927" class="btn-primary">Call 1 (855) 844-3927</a>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="space-y-5">
+          <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed">
+            At Heidi Blondin Financial, we've been helping professionals just like you, answer these questions in a way that allows you to spend more time enjoying life - and less time fretting about your financial future.
+          </p>
+          <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed">
+            We provide one-on-one financial planning and fun interactive workshops to help you learn, grow, and succeed.
+          </p>
+          <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed">
+            If you're ready to start taking control of your money, contact us to schedule a free consultation.
+          </p>
+          <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed font-medium">
+            You're one phone call away from living life the way YOU want.
+          </p>
+          <div class="pt-2">
+            <a href="tel:18558443927" class="btn-primary">Call 1 (855) 844-3927</a>
+          </div>
+        </div>
+        <div>
+          <img
+            src="/office/reception.jpeg"
+            alt="Heidi Blondin Financial office — Kingston, Ontario"
+            class="w-full"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Office photo -->
-  <section>
-    <img
-      src="/office/reception.jpeg"
-      alt="Heidi Blondin Financial office — Kingston, Ontario"
-      class="w-full block"
-      loading="lazy"
-    />
   </section>
 
   <!-- Recent blog posts -->
