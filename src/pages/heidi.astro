@@ -7,17 +7,27 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   description="Are you looking for honest, and holistic financial planning advice? Heidi Blondin Financial is locally owned an operated by women who genuinely care."
 >
 
-  <!-- Why us? -->
+  <!-- Why us? — two column with team photo -->
   <section class="bg-brand-tintPlum section-gap">
     <div class="container-content">
-      <div class="max-w-3xl">
-        <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Why us?</h2>
-        <div class="space-y-5 font-sans text-[17px] text-brand-ink/75 leading-relaxed">
-          <p>For some of us, thinking about and talking about money is intimidating and stressful. After all, you probably didn't learn about making a budget or doing your taxes in school!</p>
-          <p>You may have big questions, like when can I retire? Or how will my family cope if we experience a big change? Is now the time to invest and, if so, into what?</p>
-          <p>Our team is passionate about helping families eliminate debt, protect their loved ones and live the retirement of their dreams.</p>
-          <p>When you meet with us, we map out your current situation and develop goals and strategies which will accelerate your financial success. We look at the big picture and create a straightforward approach that helps you create peace of mind. Heidi Blondin Financial is locally owned and operated by women who genuinely care about their clients.</p>
-          <p>When you're ready, please <a href="/contact/" class="text-brand-plum underline underline-offset-2">connect with us</a>.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Why us?</h2>
+          <div class="space-y-5 font-sans text-[17px] text-brand-ink/75 leading-relaxed">
+            <p>For some of us, thinking about and talking about money is intimidating and stressful. After all, you probably didn't learn about making a budget or doing your taxes in school!</p>
+            <p>You may have big questions, like when can I retire? Or how will my family cope if we experience a big change? Is now the time to invest and, if so, into what?</p>
+            <p>Our team is passionate about helping families eliminate debt, protect their loved ones and live the retirement of their dreams.</p>
+            <p>When you meet with us, we map out your current situation and develop goals and strategies which will accelerate your financial success. We look at the big picture and create a straightforward approach that helps you create peace of mind. Heidi Blondin Financial is locally owned and operated by women who genuinely care about their clients.</p>
+            <p>When you're ready, please <a href="/contact/" class="text-brand-plum underline underline-offset-2">connect with us</a>.</p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="/team/team-corp482.jpeg"
+            alt="The Heidi Blondin Financial team — Kingston, Ontario"
+            class="w-full"
+            loading="eager"
+          />
         </div>
       </div>
     </div>
@@ -29,8 +39,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         <div class="relative">
           <img
-            src="/team/heidi-portrait.jpg"
-            alt="Female Certified financial planner Kingston Ontario Financial Advisor Retirement Planning Insurance Broker"
+            src="/team/heidi-corp386.jpeg"
+            alt="Heidi Blondin, CFP® — Certified Financial Planner, Kingston Ontario"
             class="w-full aspect-[3/4] object-cover object-top"
             loading="lazy"
           />
