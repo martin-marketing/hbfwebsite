@@ -95,6 +95,37 @@ const recentPosts = (await getAllPosts()).slice(0, 3);
     </div>
   </section>
 
+  <!-- Video -->
+  <section class="bg-brand-tintPlum section-gap">
+    <div class="container-content max-w-3xl">
+      <div class="aspect-video w-full">
+        <iframe
+          src="https://www.youtube.com/embed/oFLLha7E304"
+          title="About Heidi Blondin Financial"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          class="w-full h-full"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards -->
+  <section class="bg-white section-gap">
+    <div class="container-content">
+      <p class="eyebrow text-center mb-10">Heidi Blondin Financial Recent Awards</p>
+      <div class="flex justify-center">
+        <img
+          src="/awards.png"
+          alt="Heidi Blondin Financial awards — ThreeBest Rated, CommunityVotes Kingston"
+          class="max-w-full"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
   <!-- Recent blog posts -->
   {recentPosts.length > 0 && (
     <section class="bg-brand-tintSage section-gap">
