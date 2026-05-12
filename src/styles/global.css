@@ -128,6 +128,18 @@
   .prose-hbf ol li {
     @apply list-decimal;
   }
+  .prose-hbf h4 {
+    @apply font-serif text-xl text-brand-plum mt-6 mb-2;
+  }
+  .prose-hbf img {
+    @apply max-w-full h-auto rounded-sm;
+  }
+  .prose-hbf figure {
+    @apply my-6;
+  }
+  .prose-hbf blockquote {
+    @apply border-l-4 border-brand-gold pl-5 italic text-brand-ink/70 my-6;
+  }
 
   /* Form fields */
   .field-label {

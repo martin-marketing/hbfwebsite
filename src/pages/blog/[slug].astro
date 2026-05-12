@@ -31,7 +31,8 @@ function simpleMarkdown(md: string): string {
     }).join('\n');
 }
 
-const bodyHtml = simpleMarkdown(post.body);
+// WordPress posts store HTML directly; hand-written posts use markdown
+const bodyHtml = post.body.trim().startsWith('<') ? post.body : simpleMarkdown(post.body);
 ---
 
 <BaseLayout

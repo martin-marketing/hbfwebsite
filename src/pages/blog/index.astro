@@ -5,7 +5,29 @@ import CTABand from '@/components/CTABand.astro';
 import { getAllPosts } from '@/lib/posts';
 
 const posts = await getAllPosts();
-const categories = [...new Set(posts.map(p => p.category).filter(Boolean))];
+
+// Category label overrides for cleaner display
+const CATEGORY_LABELS: Record<string, string> = {
+  'Saving Money': 'Saving Money',
+  'Insurance': 'Insurance',
+  'Retirement Planning': 'Retirement',
+  'Estate Planning': 'Estate Planning',
+  'Investments': 'Investments',
+  'Taxes': 'Taxes',
+  'HBF Team': 'HBF Team',
+  'Blog': 'General',
+  'Uncategorized': 'General',
+  'Financial Planning': 'Financial Planning',
+};
+
+// Merge Blog + Uncategorized under "General" for filter UI
+const FILTER_CATEGORY = (cat: string | null) => {
+  if (!cat || cat === 'Blog' || cat === 'Uncategorized') return 'General';
+  return cat;
+};
+
+const filterCategories = [...new Set(posts.map(p => FILTER_CATEGORY(p.category)))].sort();
+const totalPosts = posts.length;
 ---
 
 <BaseLayout
@@ -26,24 +48,57 @@ const categories = [...new Set(posts.map(p => p.category).filter(Boolean))];
     </div>
   </section>
 
-  <!-- Posts grid -->
+  <!-- Filter + Posts -->
   <section class="bg-brand-tintSage section-gap">
     <div class="container-content">
+
       {posts.length === 0 ? (
         <p class="font-sans text-brand-ink/60 text-center py-20">No posts yet. Check back soon.</p>
       ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map(post => (
-            <BlogCard
-              slug={post.slug}
-              title={post.title}
-              excerpt={post.excerpt}
-              category={post.category}
-              published_at={post.published_at}
-              cover_image={post.cover_image}
-            />
-          ))}
-        </div>
+        <>
+          <!-- Category filter bar -->
+          <div class="flex flex-wrap gap-2 mb-10" id="filter-bar">
+            <button
+              data-filter="all"
+              class="filter-btn active font-sans text-xs font-medium tracking-wide uppercase px-4 py-2 border transition-colors"
+            >
+              All <span class="ml-1 opacity-60">({totalPosts})</span>
+            </button>
+            {filterCategories.map(cat => {
+              const count = posts.filter(p => FILTER_CATEGORY(p.category) === cat).length;
+              return (
+                <button
+                  data-filter={cat}
+                  class="filter-btn font-sans text-xs font-medium tracking-wide uppercase px-4 py-2 border transition-colors"
+                >
+                  {cat} <span class="ml-1 opacity-60">({count})</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <!-- Post count line -->
+          <p class="font-sans text-sm text-brand-ink/50 mb-6" id="post-count">Showing all {totalPosts} articles</p>
+
+          <!-- Posts grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="posts-grid">
+            {posts.map(post => (
+              <div data-filter-cat={FILTER_CATEGORY(post.category)} class="post-item">
+                <BlogCard
+                  slug={post.slug}
+                  title={post.title}
+                  excerpt={post.excerpt}
+                  category={post.category}
+                  published_at={post.published_at}
+                  cover_image={post.cover_image}
+                />
+              </div>
+            ))}
+          </div>
+
+          <!-- No results -->
+          <p class="font-sans text-brand-ink/50 text-center py-12 hidden" id="no-results">No articles in this category yet.</p>
+        </>
       )}
     </div>
   </section>
@@ -51,3 +106,63 @@ const categories = [...new Set(posts.map(p => p.category).filter(Boolean))];
   <CTABand heading="Have a financial question?" sub="Book a free consultation — no article required." />
 
 </BaseLayout>
+
+<style>
+  .filter-btn {
+    color: var(--brand-plum, #593D58);
+    border-color: #593D58;
+    border-opacity: 0.2;
+    border-color: color-mix(in srgb, #593D58 25%, transparent);
+    background: transparent;
+  }
+  .filter-btn:hover {
+    background: #593D58;
+    color: white;
+    border-color: #593D58;
+  }
+  .filter-btn.active {
+    background: #593D58;
+    color: white;
+    border-color: #593D58;
+  }
+</style>
+
+<script>
+  const btns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const items = document.querySelectorAll<HTMLElement>('.post-item');
+  const countEl = document.getElementById('post-count');
+  const noResults = document.getElementById('no-results');
+  const grid = document.getElementById('posts-grid');
+
+  let active = 'all';
+
+  function applyFilter(filter: string) {
+    active = filter;
+    let visible = 0;
+
+    items.forEach(item => {
+      const cat = item.dataset.filterCat ?? '';
+      const show = filter === 'all' || cat === filter;
+      item.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    btns.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.filter === filter);
+    });
+
+    const total = items.length;
+    if (countEl) {
+      countEl.textContent = filter === 'all'
+        ? `Showing all ${total} articles`
+        : `Showing ${visible} article${visible !== 1 ? 's' : ''} in ${filter}`;
+    }
+
+    if (noResults) noResults.classList.toggle('hidden', visible > 0);
+    if (grid) grid.classList.toggle('hidden', visible === 0);
+  }
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => applyFilter(btn.dataset.filter ?? 'all'));
+  });
+</script>
