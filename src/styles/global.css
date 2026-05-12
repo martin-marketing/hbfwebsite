@@ -99,7 +99,7 @@
     @apply text-brand-ink leading-relaxed;
   }
   .prose-hbf h2 {
-    @apply font-serif text-h2 text-brand-plum mt-10 mb-4;
+    @apply font-serif text-xl text-brand-plum mt-10 mb-4;
   }
   .prose-hbf h3 {
     @apply font-serif text-h3 text-brand-plum mt-8 mb-3;

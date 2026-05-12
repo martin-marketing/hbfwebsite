@@ -18,12 +18,6 @@ const { slug, title, excerpt, category, published_at, cover_image } = Astro.prop
     </div>
   )}
   <div class="p-6 flex flex-col flex-1">
-    <div class="flex items-center gap-3 mb-3">
-      {category && (
-        <span class="eyebrow-sage text-[10px]">{category}</span>
-      )}
-      <span class="font-sans text-[11px] text-brand-ink/40">{formatDate(published_at)}</span>
-    </div>
     <h3 class="font-serif text-xl text-brand-plum mb-3 leading-snug group-hover:text-brand-gold transition-colors flex-1" style="font-optical-sizing: auto;">
       <a href={`/blog/${slug}/`} class="stretched-link">{title}</a>
     </h3>

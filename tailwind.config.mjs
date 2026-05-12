@@ -24,9 +24,9 @@ export default {
         sans:  ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'display': ['clamp(2.5rem, 6vw, 4.5rem)', { lineHeight: '1.06', letterSpacing: '-0.02em' }],
-        'h2':      ['clamp(1.75rem, 3.5vw, 3rem)',  { lineHeight: '1.12', letterSpacing: '-0.02em' }],
-        'h3':      ['clamp(1.25rem, 2.5vw, 2rem)',   { lineHeight: '1.2',  letterSpacing: '-0.01em' }],
+        'display': ['clamp(1.75rem, 3.5vw, 2.5rem)',    { lineHeight: '1.1',  letterSpacing: '-0.02em' }],
+        'h2':      ['clamp(1.25rem, 2vw, 1.75rem)',     { lineHeight: '1.15', letterSpacing: '-0.01em' }],
+        'h3':      ['clamp(0.9375rem, 1.5vw, 1.25rem)', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
       },
       maxWidth: {
         content: '1100px',

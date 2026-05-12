@@ -42,23 +42,9 @@ const bodyHtml = post.body.trim().startsWith('<') ? post.body : simpleMarkdown(p
 >
 
   <!-- Hero -->
-  <section class="bg-brand-plum py-16 lg:py-20">
+  <section class="bg-brand-plum py-12 lg:py-16">
     <div class="container-content max-w-3xl">
-      <div class="flex items-center gap-3 mb-6">
-        {post.category && <span class="eyebrow-light">{post.category}</span>}
-        <span class="font-sans text-xs text-white/40">{formatDate(post.published_at)}</span>
-      </div>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">{post.title}</h1>
-      {post.excerpt && (
-        <p class="font-sans text-[17px] text-white/65 mt-5 leading-relaxed">{post.excerpt}</p>
-      )}
-      <div class="mt-8 pt-6 border-t border-white/10 flex items-center gap-3">
-        <img src="/team/heidi-portrait.jpg" alt="Heidi Blondin" class="w-10 h-10 object-cover object-top" />
-        <div>
-          <div class="font-sans text-sm font-medium text-white">{post.author}</div>
-          <div class="font-sans text-xs text-white/45">CFP®, EPC · Heidi Blondin Financial</div>
-        </div>
-      </div>
+      <h1 class="font-serif text-2xl lg:text-[2rem] text-white text-balance" style="font-optical-sizing: auto; line-height: 1.2; letter-spacing: -0.01em;">{post.title}</h1>
     </div>
   </section>
 
@@ -67,20 +53,32 @@ const bodyHtml = post.body.trim().startsWith('<') ? post.body : simpleMarkdown(p
     <div class="container-content max-w-3xl">
       <div class="prose-hbf" set:html={bodyHtml} />
 
+      <!-- Author -->
+      <div class="mt-12 pt-8 border-t border-brand-plum/10 flex items-center gap-4">
+        <img src="/team/heidi-portrait.jpg" alt="Heidi Blondin" class="w-14 h-14 object-cover object-top flex-shrink-0" />
+        <div>
+          <div class="font-sans text-sm font-semibold text-brand-plum">{post.author}</div>
+          <div class="font-sans text-xs text-brand-ink/55 mt-0.5">CFP®, EPC · Heidi Blondin Financial</div>
+          {post.published_at && (
+            <div class="font-sans text-xs text-brand-ink/40 mt-0.5">{formatDate(post.published_at)}</div>
+          )}
+        </div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="mt-8 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
+        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">
+          This article is for general information purposes only and does not constitute personalized financial advice. Mutual funds are offered through Investia Financial Services Inc. Insurance products are offered through Heidi Blondin Financial / Qualified Financial Services. Please consult with a qualified financial advisor before making any financial decisions.
+        </p>
+      </div>
+
       {post.tags && post.tags.length > 0 && (
-        <div class="mt-12 pt-8 border-t border-brand-plum/10 flex flex-wrap gap-2">
+        <div class="mt-6 flex flex-wrap gap-2">
           {post.tags.map(tag => (
             <span class="font-sans text-[11px] font-medium text-brand-sageDark bg-brand-tintSage px-3 py-1.5 tracking-wide uppercase">{tag}</span>
           ))}
         </div>
       )}
-
-      <!-- Disclaimer -->
-      <div class="mt-10 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
-        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">
-          This article is for general information purposes only and does not constitute personalized financial advice. Mutual funds are offered through Investia Financial Services Inc. Insurance products are offered through Heidi Blondin Financial / Qualified Financial Services. Please consult with a qualified financial advisor before making any financial decisions.
-        </p>
-      </div>
 
       <div class="mt-10">
         <a href="/blog/" class="font-sans text-sm font-medium text-brand-gold flex items-center gap-2 hover:gap-3 transition-all">
