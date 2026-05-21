@@ -105,10 +105,8 @@ const { heading = 'Send us a message' } = Astro.props;
         throw new Error('Server error');
       }
     } catch {
-      // In development without the CF Function deployed, show success
-      form.reset();
-      successEl.classList.remove('hidden');
-      errorEl.classList.add('hidden');
+      errorEl.classList.remove('hidden');
+      successEl.classList.add('hidden');
     } finally {
       submitBtn.disabled = false;
       submitLabel.textContent = 'Send Message';
