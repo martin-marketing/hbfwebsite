@@ -1,10 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = import.meta.env.SUPABASE_URL;
-const serviceRoleKey = import.meta.env.SUPABASE_SERVICE_ROLE_KEY;
+const supabaseAnonKey = import.meta.env.SUPABASE_ANON_KEY;
 
-export const supabaseServer = supabaseUrl && serviceRoleKey
-  ? createClient(supabaseUrl, serviceRoleKey, {
+// Uses the anon key — the insert_contact_submission RPC function is
+// SECURITY DEFINER so it can write to the private schema, but anon
+// still cannot read from it.
+export const supabaseServer = supabaseUrl && supabaseAnonKey
+  ? createClient(supabaseUrl, supabaseAnonKey, {
       auth: { persistSession: false },
     })
   : null;

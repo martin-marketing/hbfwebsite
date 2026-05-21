@@ -58,9 +58,8 @@ export const POST: APIRoute = async ({ request }) => {
   });
   if (emailError) errors.push(`Email: ${emailError.message}`);
 
-  // Return 200 as long as at least the email sent — lead is captured
+  // Return 200 as long as at least one succeeded
   if (errors.length === 2) {
-    // Both failed
     console.error('Contact form errors:', errors);
     return new Response(JSON.stringify({ error: 'Submission failed' }), { status: 500 });
   }
