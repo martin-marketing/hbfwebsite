@@ -3,6 +3,7 @@ interface Props {
   heading?: string;
 }
 const { heading = 'Send us a message' } = Astro.props;
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <div class="bg-white p-8 lg:p-10 shadow-sm border border-brand-plum/8">
@@ -45,6 +46,9 @@ const { heading = 'Send us a message' } = Astro.props;
         I consent to Heidi Blondin Financial contacting me about my inquiry. I understand I can withdraw consent at any time.
       </label>
     </div>
+
+    <!-- Cloudflare Turnstile -->
+    <div class="mb-5 cf-turnstile" data-sitekey={siteKey} data-theme="light"></div>
 
     <button type="submit" class="btn-primary w-full justify-center" id="submit-btn">
       <span id="submit-label">Send Message</span>
@@ -99,6 +103,10 @@ const { heading = 'Send us a message' } = Astro.props;
       });
       if (res.ok) {
         form.reset();
+        // Reset Turnstile widget so it can be used again
+        if (typeof (window as any).turnstile !== 'undefined') {
+          (window as any).turnstile.reset();
+        }
         successEl.classList.remove('hidden');
         errorEl.classList.add('hidden');
       } else {
@@ -114,3 +122,5 @@ const { heading = 'Send us a message' } = Astro.props;
     }
   });
 </script>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

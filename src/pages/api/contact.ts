@@ -14,7 +14,21 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ error: 'Invalid request' }), { status: 400 });
   }
 
-  const { first_name, last_name, email, phone, message, casl_consent } = body;
+  const { first_name, last_name, email, phone, message, casl_consent, 'cf-turnstile-response': turnstileToken } = body;
+
+  // Verify Turnstile token
+  const turnstileSecret = import.meta.env.TURNSTILE_SECRET_KEY;
+  if (turnstileSecret) {
+    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret: turnstileSecret, response: turnstileToken }),
+    });
+    const verifyData = await verifyRes.json();
+    if (!verifyData.success) {
+      return new Response(JSON.stringify({ error: 'Bot check failed. Please try again.' }), { status: 400 });
+    }
+  }
 
   // Basic server-side validation
   if (!first_name?.trim() || !last_name?.trim() || !email?.trim() || !phone?.trim() || !message?.trim()) {
