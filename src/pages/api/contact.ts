@@ -4,9 +4,9 @@ import { supabaseServer } from '@/lib/supabase-server';
 
 export const prerender = false;
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
-
 export const POST: APIRoute = async ({ request }) => {
+  const resendKey = import.meta.env.RESEND_API_KEY;
+  const resend = resendKey ? new Resend(resendKey) : null;
   let body: Record<string, string>;
   try {
     body = await request.json();
@@ -54,6 +54,9 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   // Send email notification via Resend
+  if (!resend) {
+    errors.push('Email: RESEND_API_KEY not configured');
+  } else {
   const { error: emailError } = await resend.emails.send({
     from: 'Contact Form <noreply@heidiblondin.com>',
     to: 'heidi@heidiblondin.com',
@@ -71,11 +74,12 @@ export const POST: APIRoute = async ({ request }) => {
     `,
   });
   if (emailError) errors.push(`Email: ${emailError.message}`);
+  }
 
   // Return 200 as long as at least one succeeded
   if (errors.length === 2) {
     console.error('Contact form errors:', errors);
-    return new Response(JSON.stringify({ error: 'Submission failed' }), { status: 500 });
+    return new Response(JSON.stringify({ error: 'Submission failed', debug: errors }), { status: 500 });
   }
 
   return new Response(JSON.stringify({ ok: true }), { status: 200 });
