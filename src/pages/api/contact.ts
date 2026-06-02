@@ -26,7 +26,7 @@ export const POST: APIRoute = async ({ request }) => {
     });
     const verifyData = await verifyRes.json();
     if (!verifyData.success) {
-      return new Response(JSON.stringify({ error: 'Bot check failed. Please try again.', codes: verifyData['error-codes'] }), { status: 400 });
+      return new Response(JSON.stringify({ error: 'Bot check failed. Please try again.' }), { status: 400 });
     }
   }
 
@@ -79,7 +79,7 @@ export const POST: APIRoute = async ({ request }) => {
   // Return 200 as long as at least one succeeded
   if (errors.length === 2) {
     console.error('Contact form errors:', errors);
-    return new Response(JSON.stringify({ error: 'Submission failed', details: errors }), { status: 500 });
+    return new Response(JSON.stringify({ error: 'Submission failed' }), { status: 500 });
   }
 
   return new Response(JSON.stringify({ ok: true }), { status: 200 });
