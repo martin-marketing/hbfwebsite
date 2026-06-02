@@ -102,13 +102,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         body: JSON.stringify(data),
       });
       if (res.ok) {
-        form.reset();
-        // Reset Turnstile widget so it can be used again
-        if (typeof (window as any).turnstile !== 'undefined') {
-          (window as any).turnstile.reset();
-        }
-        successEl.classList.remove('hidden');
-        errorEl.classList.add('hidden');
+        window.location.href = '/contact-thank-you/';
       } else {
         throw new Error('Server error');
       }
