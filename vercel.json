@@ -1,6 +1,16 @@
 {
   "redirects": [
     {
+      "source": "/sitemap-index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap-0.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
       "source": "/maximize-your-oas-benefits-old-age-security-simplified/",
       "destination": "/blog/maximize-your-oas-benefits-old-age-security-simplified/",
       "permanent": true
