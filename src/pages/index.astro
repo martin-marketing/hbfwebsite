@@ -47,12 +47,12 @@ const recentPosts = (await getAllPosts()).slice(0, 3);
       <p class="eyebrow-light text-center mb-8">The questions we answer every day</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
         {[
-          { num: '01', q: 'Will I have enough money?' },
-          { num: '02', q: 'Will my family be ok if life throws them a curveball?' },
-          { num: '03', q: "Do I feel good about the way I'm investing my money?" },
+          { num: '1', q: 'Will I have enough money?' },
+          { num: '2', q: 'Will my family be ok if life throws them a curveball?' },
+          { num: '3', q: "Do I feel good about the way I'm investing my money?" },
         ].map(item => (
           <div class="text-center">
-            <div class="font-serif text-4xl text-brand-gold/25 font-normal mb-3" style="font-optical-sizing: auto;">{item.num}</div>
+            <div class="font-serif text-4xl text-white font-normal mb-3" style="font-optical-sizing: auto;">{item.num}</div>
             <p class="font-serif text-xl text-white leading-snug" style="font-optical-sizing: auto; font-style: italic; font-variation-settings: 'SOFT' 60;">
               &ldquo;{item.q}&rdquo;
             </p>
