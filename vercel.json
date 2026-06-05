@@ -6,6 +6,26 @@
       "permanent": true
     },
     {
+      "source": "/insurance/",
+      "destination": "/financial-services/insurance-quote/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance",
+      "destination": "/financial-services/insurance-quote/",
+      "permanent": true
+    },
+    {
+      "source": "/life-insurance/thank-you/",
+      "destination": "/thank-you/",
+      "permanent": true
+    },
+    {
+      "source": "/life-insurance/thank-you",
+      "destination": "/thank-you/",
+      "permanent": true
+    },
+    {
       "source": "/sitemap-0.xml",
       "destination": "/sitemap.xml",
       "permanent": true
