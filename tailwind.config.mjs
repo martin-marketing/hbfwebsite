@@ -29,7 +29,7 @@ export default {
         'h3':      ['clamp(0.9375rem, 1.5vw, 1.25rem)', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
       },
       maxWidth: {
-        content: '1100px',
+        content: '1280px',
       },
       spacing: {
         section: 'clamp(4rem, 8vw, 8rem)',
