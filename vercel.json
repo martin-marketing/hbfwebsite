@@ -112,12 +112,22 @@
     },
     {
       "source": "/the-most-underestimated-risk-in-retirement-planning-sickspan/",
-      "destination": "/blog/the-most-underestimated-risk-in-retirement-planning-sickspan/",
+      "destination": "/blog/the-most-underestimated-risk-in-retirement/",
       "permanent": true
     },
     {
       "source": "/the-most-underestimated-risk-in-retirement-planning-sickspan",
-      "destination": "/blog/the-most-underestimated-risk-in-retirement-planning-sickspan/",
+      "destination": "/blog/the-most-underestimated-risk-in-retirement/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-most-underestimated-risk-in-retirement-planning-sickspan/",
+      "destination": "/blog/the-most-underestimated-risk-in-retirement/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-most-underestimated-risk-in-retirement-planning-sickspan",
+      "destination": "/blog/the-most-underestimated-risk-in-retirement/",
       "permanent": true
     },
     {
