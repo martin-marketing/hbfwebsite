@@ -21,6 +21,26 @@
       "permanent": true
     },
     {
+      "source": "/maximize-your-oas-benefits/",
+      "destination": "/blog/maximize-your-oas-benefits-old-age-security-simplified/",
+      "permanent": true
+    },
+    {
+      "source": "/maximize-your-oas-benefits",
+      "destination": "/blog/maximize-your-oas-benefits-old-age-security-simplified/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/maximize-your-oas-benefits/",
+      "destination": "/blog/maximize-your-oas-benefits-old-age-security-simplified/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/maximize-your-oas-benefits",
+      "destination": "/blog/maximize-your-oas-benefits-old-age-security-simplified/",
+      "permanent": true
+    },
+    {
       "source": "/mortgage-insurance-vs-life-insurance-what-you-need-to-know/",
       "destination": "/blog/mortgage-insurance-vs-life-insurance-what-you-need-to-know/",
       "permanent": true
