@@ -102,12 +102,22 @@
     },
     {
       "source": "/executor-essentials-navigating-your-responsibilities-with-confidence/",
-      "destination": "/blog/executor-essentials-navigating-your-responsibilities-with-confidence/",
+      "destination": "/blog/executor-essentials-navigating-responsibilities/",
       "permanent": true
     },
     {
       "source": "/executor-essentials-navigating-your-responsibilities-with-confidence",
-      "destination": "/blog/executor-essentials-navigating-your-responsibilities-with-confidence/",
+      "destination": "/blog/executor-essentials-navigating-responsibilities/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/executor-essentials-navigating-your-responsibilities-with-confidence/",
+      "destination": "/blog/executor-essentials-navigating-responsibilities/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/executor-essentials-navigating-your-responsibilities-with-confidence",
+      "destination": "/blog/executor-essentials-navigating-responsibilities/",
       "permanent": true
     },
     {
