@@ -1,0 +1,88 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogCard from '@/components/BlogCard.astro';
+import CTABand from '@/components/CTABand.astro';
+import { getAllPosts, type Post } from '@/lib/posts';
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 9;
+  const allPosts = await getAllPosts();
+  const totalPages = Math.ceil(allPosts.length / PAGE_SIZE);
+
+  return Array.from({ length: totalPages - 1 }, (_, i) => {
+    const pageNum = i + 2;
+    const start = (pageNum - 1) * PAGE_SIZE;
+    return {
+      params: { page: String(pageNum) },
+      props: {
+        posts: allPosts.slice(start, start + PAGE_SIZE),
+        pageNum,
+        totalPages,
+      },
+    };
+  });
+}
+
+interface Props {
+  posts: Post[];
+  pageNum: number;
+  totalPages: number;
+}
+
+const { posts, pageNum, totalPages } = Astro.props;
+const prevUrl = pageNum === 2 ? '/blog/' : `/blog/page/${pageNum - 1}/`;
+const nextUrl = pageNum < totalPages ? `/blog/page/${pageNum + 1}/` : null;
+---
+
+<BaseLayout
+  title={`Financial Planning Blog — Page ${pageNum} | Heidi Blondin Financial`}
+  description="Financial insights for Ontario families — retirement, insurance, estate planning, tax strategy, and more."
+>
+
+  <!-- Hero -->
+  <section class="bg-brand-plum py-20">
+    <div class="container-content">
+      <p class="eyebrow-light mb-5">The Blog</p>
+      <h1 class="font-serif text-2xl lg:text-[2rem] text-white max-w-xl text-balance" style="font-optical-sizing: auto; line-height: 1.2; letter-spacing: -0.01em;">
+        Financial insights worth reading.
+      </h1>
+      <p class="font-sans text-[18px] text-white/65 mt-5 max-w-lg">
+        Plain-language articles on retirement, insurance, investing, and estate planning — written for real Ontario families.
+      </p>
+    </div>
+  </section>
+
+  <!-- Posts -->
+  <section class="bg-brand-tintSage section-gap">
+    <div class="container-content">
+
+      <!-- Posts grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map(post => (
+          <BlogCard
+            slug={post.slug}
+            title={post.title}
+            excerpt={post.excerpt}
+            category={post.category}
+            published_at={post.published_at}
+            cover_image={post.cover_image}
+          />
+        ))}
+      </div>
+
+      <!-- Pagination nav -->
+      <div class="flex items-center justify-between mt-12">
+        <a href={prevUrl} class="btn-ghost">← Previous</a>
+        <span class="font-sans text-sm text-brand-ink/50">Page {pageNum} of {totalPages}</span>
+        {nextUrl
+          ? <a href={nextUrl} class="btn-ghost">Next →</a>
+          : <span />
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <CTABand heading="Have a financial question?" sub="Book a free consultation — no article required." />
+
+</BaseLayout>

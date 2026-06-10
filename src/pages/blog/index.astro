@@ -4,7 +4,10 @@ import BlogCard from '@/components/BlogCard.astro';
 import CTABand from '@/components/CTABand.astro';
 import { getAllPosts } from '@/lib/posts';
 
-const posts = await getAllPosts();
+const allPosts = await getAllPosts();
+const PAGE_SIZE = 9;
+const posts = allPosts.slice(0, PAGE_SIZE);
+const totalPages = Math.ceil(allPosts.length / PAGE_SIZE);
 
 // Category label overrides for cleaner display
 const CATEGORY_LABELS: Record<string, string> = {
@@ -98,6 +101,13 @@ const totalPosts = posts.length;
 
           <!-- No results -->
           <p class="font-sans text-brand-ink/50 text-center py-12 hidden" id="no-results">No articles in this category yet.</p>
+
+          <!-- Pagination nav -->
+          {totalPages > 1 && (
+            <div class="flex justify-center mt-12">
+              <a href="/blog/page/2/" class="btn-ghost">Next Page →</a>
+            </div>
+          )}
         </>
       )}
     </div>
