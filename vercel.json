@@ -31,6 +31,16 @@
       "permanent": true
     },
     {
+      "source": "/blog/mortgage-insurance-vs-life-insurance/",
+      "destination": "/blog/mortgage-insurance-vs-life-insurance-what-you-need-to-know/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mortgage-insurance-vs-life-insurance",
+      "destination": "/blog/mortgage-insurance-vs-life-insurance-what-you-need-to-know/",
+      "permanent": true
+    },
+    {
       "source": "/fundex_merger/",
       "destination": "/blog/fundex_merger/",
       "permanent": true
