@@ -11,6 +11,16 @@
       "permanent": true
     },
     {
+      "source": "/blog/first-home-savings/",
+      "destination": "/blog/first-home-buyer-savings/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/first-home-savings",
+      "destination": "/blog/first-home-buyer-savings/",
+      "permanent": true
+    },
+    {
       "source": "/maximize-your-oas-benefits-old-age-security-simplified/",
       "destination": "/blog/maximize-your-oas-benefits-old-age-security-simplified/",
       "permanent": true
