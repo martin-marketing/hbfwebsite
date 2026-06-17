@@ -120,7 +120,7 @@
     @apply italic;
   }
   .prose-hbf a {
-    @apply text-brand-gold underline underline-offset-2 hover:text-amber-700;
+    @apply text-brand-gold underline underline-offset-2 hover:text-brand-plum;
   }
   .prose-hbf ol {
     @apply mb-5 pl-6 space-y-2;
