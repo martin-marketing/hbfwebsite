@@ -1,0 +1,218 @@
+<!--
+  HEIDI BLONDIN FINANCIAL — First Home Protection Article
+  Paste into WordPress: Gutenberg → Add Block → Custom HTML → paste everything below
+  Or: Classic Editor → Text tab → paste everything below
+-->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.hbf-article {
+  font-family: 'Inter', sans-serif;
+  color: #2d2d2d;
+  line-height: 1.7;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.hbf-article p { margin: 0 0 1.2em; font-size: 16px; }
+.hbf-article h3 { font-size: 17px; font-weight: 700; color: #593d58; margin: 1.6em 0 0.4em; }
+
+/* ── Divider ── */
+.hbf-divider { border: none; border-top: 2px solid #ede5ec; margin: 36px 0; }
+
+/* ── Numbered protection blocks ── */
+.hbf-tool { margin-bottom: 40px; }
+.hbf-tool-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.hbf-tool-number {
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  background: #593d58; color: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 800;
+}
+.hbf-tool-header h3 { margin: 0; font-size: 19px; font-weight: 700; color: #593d58; }
+.hbf-tool-content { width: 100%; }
+
+/* ── Callout box ── */
+.hbf-callout {
+  background: linear-gradient(135deg, #593d58 0%, #7a5577 100%);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin: 20px 0;
+  color: white;
+}
+.hbf-callout strong {
+  display: block; font-size: 13px; font-weight: 700;
+  color: #c8d4a8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;
+}
+.hbf-callout p { font-size: 14px; color: #e0d0df; margin: 0; line-height: 1.65; }
+.hbf-callout p em { color: white; font-style: normal; font-weight: 600; }
+
+/* ── Tip box ── */
+.hbf-tip {
+  background: #f5f0f5;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 16px 0;
+  border-left: 3px solid #593d58;
+}
+.hbf-tip p { margin: 0; font-size: 15px; color: #593d58; font-weight: 600; }
+
+/* ── Comparison table ── */
+.hbf-table-wrap { overflow-x: auto; margin: 20px 0; border-radius: 12px; box-shadow: 0 2px 16px rgba(89,61,88,0.09); }
+.hbf-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.hbf-table thead tr { background: #593d58; color: white; }
+.hbf-table thead th { padding: 13px 16px; text-align: left; font-weight: 700; font-size: 13px; }
+.hbf-table tbody tr:nth-child(even) { background: #faf7fa; }
+.hbf-table tbody tr:nth-child(odd) { background: #ffffff; }
+.hbf-table tbody td { padding: 12px 16px; border-bottom: 1px solid #ede5ec; }
+.hbf-table tbody td:first-child { font-weight: 600; color: #593d58; }
+.hbf-table .check { color: #7a7d5e; font-weight: 700; }
+.hbf-table .cross { color: #b87b1e; font-weight: 700; }
+
+/* ── Section header strip ── */
+.hbf-section-header {
+  background: #f5f0f5;
+  border-left: 4px solid #593d58;
+  border-radius: 0 10px 10px 0;
+  padding: 14px 20px;
+  margin: 36px 0 28px;
+}
+.hbf-section-header p { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #593d58; margin: 0; }
+
+/* ── Bridge ── */
+.hbf-bridge { background: #f5f0f5; border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+.hbf-bridge p { margin: 0; font-size: 15px; }
+.hbf-bridge a { color: #593d58; font-weight: 700; }
+
+/* ── CTA ── */
+.hbf-cta { background: linear-gradient(135deg, #593d58 0%, #7a5577 100%); border-radius: 18px; padding: 36px 40px; text-align: center; margin-top: 36px; }
+.hbf-cta p { color: #e0d0df; font-size: 15px; margin: 0 0 8px; }
+.hbf-cta h3 { color: white; font-size: 22px; font-weight: 800; margin: 0 0 20px; }
+.hbf-cta a.btn { display: inline-block; background: #c8d4a8; color: #2d3318; font-weight: 800; font-size: 15px; padding: 14px 32px; border-radius: 50px; text-decoration: none; }
+
+/* ── Featured image ── */
+.hbf-featured-image { margin-top: 36px; border-radius: 18px; overflow: hidden; line-height: 0; }
+.hbf-featured-image img { width: 100%; height: auto; display: block; border-radius: 18px; }
+</style>
+
+<div class="hbf-article">
+
+  <p>Saving for your home takes years of discipline. Getting to closing day is a milestone worth celebrating.</p>
+  <p>But the real goal isn't just getting in — it's staying in. And that means making sure one unexpected event can't unravel everything you've worked for.</p>
+
+  <div class="hbf-section-header"><p>Three Protections Every New Homeowner Should Have</p></div>
+
+  <!-- ── Protection 1: Life Insurance ── -->
+  <div class="hbf-tool">
+    <div class="hbf-tool-header">
+      <div class="hbf-tool-number">1</div>
+      <h3>Mortgage Life Insurance vs. Personal Life Insurance</h3>
+    </div>
+    <div class="hbf-tool-content">
+      <p>When you sign your mortgage, your lender will probably offer you mortgage life insurance. You should understand what you're actually buying before you say yes.</p>
+      <p>Lender-provided mortgage insurance covers the bank — not your family. The payout goes directly toward paying off your mortgage; the benefit decreases as your balance goes down, and you can't take it with you if you change lenders.</p>
+      <p>A personal life insurance policy pays your family. They decide what to do with the money — pay off the mortgage, cover living expenses, keep the kids in school. You own it, you control it, and the coverage doesn't shrink over time.</p>
+
+      <div class="hbf-table-wrap">
+        <table class="hbf-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Lender Mortgage Insurance</th>
+              <th>Personal Life Insurance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Payout goes to</td>
+              <td>The bank</td>
+              <td class="check">Your family</td>
+            </tr>
+            <tr>
+              <td>Coverage over time</td>
+              <td class="cross">Decreases as mortgage shrinks</td>
+              <td class="check">Stays level</td>
+            </tr>
+            <tr>
+              <td>Who decides how money is used</td>
+              <td class="cross">The lender — no choice</td>
+              <td class="check">Your family has full control</td>
+            </tr>
+            <tr>
+              <td>Portable if you switch lenders</td>
+              <td class="cross">No</td>
+              <td class="check">Yes — you own it</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>For most new homeowners, a term life policy is an affordable, flexible way to make sure the people you love can stay in that home no matter what happens. In many cases, it's also more cost-effective than lender insurance — so you get better coverage for less.</p>
+    </div>
+  </div>
+
+  <hr class="hbf-divider">
+
+  <!-- ── Protection 2: Critical Illness ── -->
+  <div class="hbf-tool">
+    <div class="hbf-tool-header">
+      <div class="hbf-tool-number">2</div>
+      <h3>Critical Illness Insurance</h3>
+    </div>
+    <div class="hbf-tool-content">
+      <p>Here's the scenario nobody talks about: you get sick, you survive — but you can't work for months.</p>
+      <p>Cancer, a heart attack, a stroke. These are survivable far more often than they used to be. But the recovery takes time, and the bills don't stop coming just because you're in treatment.</p>
+
+      <div class="hbf-callout">
+        <strong>What critical illness insurance covers</strong>
+        <p>A <em>tax-free lump sum</em> paid directly to you if you're diagnosed with a covered illness. Use it however you need to — cover your mortgage, replace lost income, pay for out-of-pocket medical costs, or give yourself the breathing room to actually focus on getting better.</p>
+      </div>
+
+      <p>For a new homeowner with a mortgage, this coverage isn't optional. It's the piece of the plan that keeps everything else intact when life goes sideways.</p>
+    </div>
+  </div>
+
+  <hr class="hbf-divider">
+
+  <!-- ── Protection 3: Disability ── -->
+  <div class="hbf-tool">
+    <div class="hbf-tool-header">
+      <div class="hbf-tool-number">3</div>
+      <h3>Disability Insurance</h3>
+    </div>
+    <div class="hbf-tool-content">
+      <p>Critical illness covers the big diagnoses. But what about everything else?</p>
+      <p>A back injury that keeps you off work for eight months. A mental health crisis that requires time away to recover. A prolonged illness that isn't on the CI list — but still means your paycheque stops while the mortgage doesn't.</p>
+
+      <div class="hbf-callout">
+        <strong>How it works</strong>
+        <p>Disability insurance replaces <em>60 to 70% of your income</em> if you're unable to work due to illness or injury — a monthly benefit that keeps coming in while you focus on getting better.</p>
+      </div>
+
+      <div class="hbf-tip">
+        <p>&#x1f4a1; Your income isn't just how you pay the bills today. It's the engine behind every financial goal you've built — your mortgage, your savings, your retirement. Disability insurance protects that engine.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="hbf-divider">
+
+  <!-- ── Bridge to Article 1 ── -->
+  <div class="hbf-bridge">
+    <p>Haven't mapped out your savings strategy yet? Start with <a href="https://heidiblondin.com/first-home-buyer-savings/"><strong>How to Save for Your First Home in Canada</strong></a> — we cover the FHSA, the Home Buyers' Plan, and TFSA in plain language.</p>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="hbf-cta">
+    <p>Not sure which protections make sense for your situation?</p>
+    <h3>Let's build your plan.</h3>
+    <a class="btn" href="https://heidiblondin.com/contact/">Book a Free Consultation</a>
+  </div>
+
+  <div class="hbf-featured-image">
+    <img src="/wp-content/uploads/Home-Buyer-Protection.png" alt="Home buyer protection insurance" />
+  </div>
+
+</div>

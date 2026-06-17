@@ -1,0 +1,694 @@
+<!-- Heidi Blondin Financial — First Home Blog Article -->
+<!-- Paste this into WordPress > Custom HTML block -->
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* All styles scoped to .hbf-article to avoid touching WordPress theme */
+  .hbf-article {
+    --plum: #593d58;
+    --plum-light: #7a5679;
+    --plum-pale: #f0eaf0;
+    --plum-tint: #e0d5e0;
+    --sage: #a2a47d;
+    --sage-light: #b8ba98;
+    --sage-pale: #f4f5ee;
+    --sage-tint: #e8e9da;
+    --gray: #666666;
+    --gray-light: #999;
+    --gray-pale: #f7f7f7;
+    --white: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--gray);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.75;
+    box-sizing: border-box;
+  }
+
+  .hbf-article *, .hbf-article *::before, .hbf-article *::after {
+    box-sizing: border-box;
+  }
+
+  /* Prose */
+  .hbf-article p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 22px;
+  }
+  .hbf-article p:last-child { margin-bottom: 0; }
+
+  .hbf-article p.lead {
+    font-size: 17.5px;
+    line-height: 1.75;
+    color: #555;
+    margin-bottom: 26px;
+  }
+
+  /* Headings */
+  .hbf-article h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--plum);
+    margin: 52px 0 18px;
+    line-height: 1.25;
+  }
+  .hbf-article h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--plum);
+    margin: 36px 0 12px;
+    line-height: 1.3;
+  }
+
+  /* Numbered tool heading */
+  .hbf-article .tool-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin: 40px 0 14px;
+  }
+  .hbf-article .tool-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--plum-tint);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .hbf-article .tool-heading h3 {
+    margin: 0;
+    font-size: 19px;
+  }
+
+  /* Bullet list */
+  .hbf-article ul {
+    margin: 0 0 22px 0;
+    padding: 0;
+    list-style: none;
+  }
+  .hbf-article ul li {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--gray);
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .hbf-article ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 7px; height: 7px;
+    background: var(--sage);
+    border-radius: 50%;
+  }
+
+  /* Strategy pull quote */
+  .hbf-article .strategy-line {
+    margin: 28px 0;
+    padding: 18px 24px;
+    border-left: 3px solid var(--plum);
+    background: var(--plum-pale);
+    border-radius: 0 10px 10px 0;
+    font-size: 15.5px;
+    font-weight: 500;
+    color: var(--plum);
+    line-height: 1.6;
+  }
+
+  /* Section divider */
+  .hbf-article .section-rule {
+    border: none;
+    border-top: 2px solid var(--plum-tint);
+    margin: 52px 0;
+    position: relative;
+  }
+  .hbf-article .section-rule::after {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    color: var(--sage);
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  /* Comparison table */
+  .hbf-article .compare-wrap {
+    margin: 28px 0;
+    border: 1.5px solid var(--plum-tint);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .hbf-article .compare-header {
+    background: var(--plum);
+    padding: 13px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+  }
+  .hbf-article .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .hbf-article .compare-table th {
+    background: var(--plum-pale);
+    color: var(--plum);
+    font-weight: 600;
+    padding: 10px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--plum-tint);
+  }
+  .hbf-article .compare-table th:first-child { width: 36%; }
+  .hbf-article .compare-table td {
+    padding: 10px 18px;
+    border-bottom: 1px solid var(--plum-tint);
+    color: var(--gray);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  .hbf-article .compare-table tr:last-child td { border-bottom: none; }
+  .hbf-article .compare-table tr:nth-child(even) td { background: var(--gray-pale); }
+  .hbf-article .tag-good { color: #5e8a5e; font-weight: 600; }
+  .hbf-article .tag-bad  { color: #a05050; font-weight: 600; }
+
+  /* Critical illness callout */
+  .hbf-article .ci-callout {
+    margin: 28px 0;
+    background: var(--sage-pale);
+    border: 1.5px solid var(--sage-tint);
+    border-radius: 12px;
+    padding: 24px 26px;
+  }
+  .hbf-article .ci-callout .ci-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+  .hbf-article .ci-callout p {
+    font-size: 15px;
+    color: var(--gray);
+    margin-bottom: 0;
+  }
+
+  /* CTA block */
+  .hbf-article .cta-block {
+    margin-top: 48px;
+    background: var(--plum);
+    border-radius: 14px;
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hbf-article .cta-text { flex: 1; min-width: 200px; }
+  .hbf-article .cta-text p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.80);
+    margin-bottom: 0;
+    line-height: 1.65;
+  }
+  .hbf-article .cta-text p strong {
+    color: var(--white);
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .hbf-article .cta-btn {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 9px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── INFOGRAPHIC ── */
+  .hbf-article .infographic {
+    margin: 36px 0;
+    border: 1.5px solid var(--plum-tint);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(89,61,88,0.08);
+  }
+  .hbf-article .ig-header {
+    background: var(--plum);
+    padding: 22px 28px 18px;
+  }
+  .hbf-article .ig-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 5px;
+  }
+  .hbf-article .ig-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.28;
+  }
+  .hbf-article .ig-title em { font-style: normal; color: var(--sage-light); }
+  .hbf-article .ig-assumptions {
+    background: var(--plum-pale);
+    border-bottom: 1px solid var(--plum-tint);
+    padding: 11px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+  }
+  .hbf-article .assump-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--gray);
+  }
+  .hbf-article .assump-item .a-dot {
+    width: 5px; height: 5px;
+    background: var(--plum);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .hbf-article .ig-body { padding: 22px 28px 18px; }
+  .hbf-article .ig-legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .hbf-article .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--gray);
+  }
+  .hbf-article .legend-swatch {
+    width: 12px; height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .hbf-article .chart-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 22px;
+  }
+  .hbf-article .chart-row {
+    display: grid;
+    grid-template-columns: 58px 1fr 130px;
+    align-items: center;
+    gap: 12px;
+  }
+  .hbf-article .year-badge {
+    background: var(--plum);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 6px;
+    letter-spacing: 0.04em;
+  }
+  .hbf-article .bar-wrap {
+    height: 34px;
+    background: var(--plum-pale);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+  }
+  .hbf-article .bar-contrib {
+    background: var(--plum);
+    height: 100%;
+    position: relative;
+  }
+  .hbf-article .bar-contrib-label {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    white-space: nowrap;
+  }
+  .hbf-article .bar-growth { background: var(--sage); height: 100%; }
+  .hbf-article .bar-meta { text-align: right; line-height: 1.4; }
+  .hbf-article .bm-balance { font-weight: 600; color: var(--plum); font-size: 13.5px; }
+  .hbf-article .bm-tax { font-size: 11.5px; color: var(--sage); font-weight: 500; }
+  .hbf-article .ig-divider {
+    border: none;
+    border-top: 1px solid var(--plum-tint);
+    margin: 0 0 18px;
+  }
+  .hbf-article .totals-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 11px;
+    margin-bottom: 18px;
+  }
+  .hbf-article .total-card {
+    border-radius: 10px;
+    padding: 15px 16px;
+    text-align: center;
+  }
+  .hbf-article .tc-plum { background: var(--plum); }
+  .hbf-article .tc-sage  { background: var(--sage); }
+  .hbf-article .tc-outline { background: var(--white); border: 1.5px solid var(--plum-tint); }
+  .hbf-article .tc-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .hbf-article .tc-plum .tc-label,
+  .hbf-article .tc-sage .tc-label { color: rgba(255,255,255,0.7); }
+  .hbf-article .tc-outline .tc-label { color: var(--gray-light); }
+  .hbf-article .tc-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hbf-article .tc-plum .tc-value,
+  .hbf-article .tc-sage .tc-value { color: var(--white); }
+  .hbf-article .tc-outline .tc-value { color: var(--plum); }
+  .hbf-article .tc-sub { font-size: 10.5px; line-height: 1.4; }
+  .hbf-article .tc-plum .tc-sub,
+  .hbf-article .tc-sage .tc-sub { color: rgba(255,255,255,0.6); }
+  .hbf-article .tc-outline .tc-sub { color: var(--gray-light); }
+  .hbf-article .insight-box {
+    background: var(--plum);
+    border-radius: 9px;
+    padding: 15px 18px;
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+  }
+  .hbf-article .insight-icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+  .hbf-article .insight-text { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,0.85); }
+  .hbf-article .insight-text strong { color: var(--white); }
+  .hbf-article .ig-footnote {
+    padding: 10px 28px;
+    background: var(--gray-pale);
+    border-top: 1px solid var(--plum-tint);
+    font-size: 10.5px;
+    line-height: 1.6;
+    color: var(--gray-light);
+  }
+  .hbf-article .ig-footnote sup { font-size: 9px; }
+
+  /* Featured image */
+  .hbf-article .article-featured-image {
+    margin-top: 48px;
+    border-radius: 14px;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .hbf-article .article-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+  }
+
+  /* Responsive */
+  @media (max-width: 680px) {
+    .hbf-article .chart-row { grid-template-columns: 46px 1fr 105px; gap: 8px; }
+    .hbf-article .totals-row { grid-template-columns: 1fr; }
+    .hbf-article .cta-block { padding: 28px 24px; }
+    .hbf-article .ig-body,
+    .hbf-article .ig-assumptions,
+    .hbf-article .ig-header,
+    .hbf-article .ig-footnote { padding-left: 18px; padding-right: 18px; }
+    .hbf-article .compare-table th,
+    .hbf-article .compare-table td { padding: 8px 12px; }
+  }
+</style>
+
+<!-- Article content starts here — paste inside your WordPress page content area -->
+<div class="hbf-article">
+
+  <!-- ── INTRO ── -->
+  <p class="lead">Buying your first home is one of the biggest financial moves you'll ever make. It's exciting, it's a little overwhelming, and — if you plan it right — it's completely doable.</p>
+
+  <p>The good news? Canada now has some of the best savings tools ever offered for first-time buyers. The challenge is knowing which ones to use, in what order, and how to protect what you build once you get there.</p>
+
+  <p>Let's walk through it.</p>
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 1: THREE TOOLS ── -->
+  <h2>The Three Savings Tools Every First-Time Buyer Should Know</h2>
+
+  <!-- FHSA -->
+  <div class="tool-heading">
+    <span class="tool-num">1</span>
+    <h3>The First Home Savings Account (FHSA)</h3>
+  </div>
+
+  <p>If you haven't opened an FHSA yet, do it today. Seriously — even if you're not buying for several years, the contribution room starts accumulating the year you open the account.</p>
+
+  <p>The FHSA is one of those rare accounts that works like both an RRSP and a TFSA at the same time:</p>
+
+  <ul>
+    <li>You get the tax deduction on contributions (like an RRSP), which reduces your taxable income for the year.</li>
+    <li>Withdrawals are completely tax-free when used to buy your first qualifying home (like a TFSA).</li>
+  </ul>
+
+  <p>You can contribute up to $8,000 per year, with a lifetime maximum of $40,000. Unlike the TFSA, unused FHSA room only carries forward one year — so if you contribute $5,000 this year, you'll have $11,000 of room next year, but unused room doesn't keep accumulating beyond that.</p>
+
+  <p>For most first-time buyers, the FHSA is your first stop. Max it out before you put money anywhere else for this goal.</p>
+
+  <p>Using a 5% annual return and assuming $50,000 of income in Ontario, we can pair each $8,000 contribution with an estimated annual tax reduction of about $1,500–$1,600 (using a ~19–20% combined marginal rate at that income).</p>
+
+  <!-- ── INFOGRAPHIC ── -->
+  <div class="infographic">
+    <div class="ig-header">
+      <div class="ig-eyebrow">FHSA Growth Example · 5% Annual Return</div>
+      <div class="ig-title">FHSA Growth + <em>Estimated Tax Savings</em> at $50,000 Income (Ontario)</div>
+    </div>
+    <div class="ig-assumptions">
+      <div class="assump-item"><span class="a-dot"></span>Income: <strong>&nbsp;$50,000</strong>, Ontario resident</div>
+      <div class="assump-item"><span class="a-dot"></span>Contributions: <strong>&nbsp;$8,000/yr</strong> at start of year</div>
+      <div class="assump-item"><span class="a-dot"></span>Return: <strong>&nbsp;5% annually</strong></div>
+      <div class="assump-item"><span class="a-dot"></span>Marginal rate: <strong>&nbsp;≈19–20%</strong> combined</div>
+    </div>
+    <div class="ig-body">
+      <div class="ig-legend">
+        <div class="legend-item"><div class="legend-swatch" style="background:#593d58"></div> Cumulative Contributions</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#a2a47d"></div> Tax-Free Growth</div>
+      </div>
+      <div class="chart-rows">
+        <div class="chart-row">
+          <div class="year-badge">Year 1</div>
+          <div class="bar-wrap">
+            <div class="bar-contrib" style="width:15.86%"><span class="bar-contrib-label">$8,000</span></div>
+            <div class="bar-growth" style="width:0.79%"></div>
+          </div>
+          <div class="bar-meta"><div class="bm-balance">≈ $8,400</div><div class="bm-tax">≈ $1,560 tax saved</div></div>
+        </div>
+        <div class="chart-row">
+          <div class="year-badge">Year 2</div>
+          <div class="bar-wrap">
+            <div class="bar-contrib" style="width:31.71%"><span class="bar-contrib-label">$16,000</span></div>
+            <div class="bar-growth" style="width:2.42%"></div>
+          </div>
+          <div class="bar-meta"><div class="bm-balance">≈ $17,220</div><div class="bm-tax">≈ $1,560 tax saved</div></div>
+        </div>
+        <div class="chart-row">
+          <div class="year-badge">Year 3</div>
+          <div class="bar-wrap">
+            <div class="bar-contrib" style="width:47.57%"><span class="bar-contrib-label">$24,000</span></div>
+            <div class="bar-growth" style="width:4.92%"></div>
+          </div>
+          <div class="bar-meta"><div class="bm-balance">≈ $26,481</div><div class="bm-tax">≈ $1,560 tax saved</div></div>
+        </div>
+        <div class="chart-row">
+          <div class="year-badge">Year 4</div>
+          <div class="bar-wrap">
+            <div class="bar-contrib" style="width:63.42%"><span class="bar-contrib-label">$32,000</span></div>
+            <div class="bar-growth" style="width:8.33%"></div>
+          </div>
+          <div class="bar-meta"><div class="bm-balance">≈ $36,205</div><div class="bm-tax">≈ $1,560 tax saved</div></div>
+        </div>
+        <div class="chart-row">
+          <div class="year-badge">Year 5</div>
+          <div class="bar-wrap">
+            <div class="bar-contrib" style="width:79.28%"><span class="bar-contrib-label">$40,000</span></div>
+            <div class="bar-growth" style="width:12.71%"></div>
+          </div>
+          <div class="bar-meta"><div class="bm-balance">≈ $46,415</div><div class="bm-tax">≈ $1,560 tax saved</div></div>
+        </div>
+      </div>
+      <hr class="ig-divider">
+      <div class="totals-row">
+        <div class="total-card tc-plum">
+          <div class="tc-label">Total Contributed</div>
+          <div class="tc-value">$40,000</div>
+          <div class="tc-sub">$8,000 × 5 years</div>
+        </div>
+        <div class="total-card tc-sage">
+          <div class="tc-label">Tax-Free Growth</div>
+          <div class="tc-value">~$6,400</div>
+          <div class="tc-sub">Earned inside FHSA — never taxed</div>
+        </div>
+        <div class="total-card tc-outline">
+          <div class="tc-label">Est. 5-Yr Tax Savings</div>
+          <div class="tc-value">~$7,800</div>
+          <div class="tc-sub">≈$1,560/yr × 5 in annual refunds</div>
+        </div>
+      </div>
+      <div class="insight-box">
+        <div class="insight-icon">💡</div>
+        <div class="insight-text"><strong>Every $8,000 contribution effectively costs you about $6,400 out of pocket</strong> after the tax refund — while the full $8,000 stays invested and grows completely tax-free. That's why the FHSA is so powerful at this income level.</div>
+      </div>
+    </div>
+    <div class="ig-footnote"><sup>*</sup> Tax saved per year is based on an approximate 19–20% combined marginal rate at $50,000 of income in Ontario. Actual amounts will vary depending on credits and exact taxable income. This is a simplified illustration; speak with a financial advisor for guidance specific to your situation.</div>
+  </div>
+  <!-- ── END INFOGRAPHIC ── -->
+
+  <!-- HBP -->
+  <div class="tool-heading">
+    <span class="tool-num">2</span>
+    <h3>The Home Buyers' Plan (HBP)</h3>
+  </div>
+
+  <p>Already have an RRSP? The Home Buyers' Plan lets you withdraw up to $60,000 from your RRSP, tax-free, to put toward your first home.</p>
+
+  <p>That's $60,000 per person — so if you're buying with a partner, you could access up to $120,000 combined from your RRSPs without paying a dollar of tax on it.</p>
+
+  <p>The catch: you have to pay it back. The repayment window is 15 years, starting two years after you make the withdrawal. If you don't repay in a given year, that amount gets added to your taxable income.</p>
+
+  <p>The HBP pairs beautifully with the FHSA. Use both, and you've got a powerful, tax-efficient down payment strategy that most Canadians aren't taking full advantage of.</p>
+
+  <!-- TFSA -->
+  <div class="tool-heading">
+    <span class="tool-num">3</span>
+    <h3>The TFSA</h3>
+  </div>
+
+  <p>Your Tax-Free Savings Account is the flexible third layer of your strategy.</p>
+
+  <p>Once your FHSA is maxed, your TFSA is the next best place to save for your home. Contributions aren't tax-deductible, but the growth and withdrawals are completely tax-free — no strings attached. No repayment required.</p>
+
+  <p>Your TFSA is especially useful if your timeline is shorter (under three years) or if you've already used your FHSA and RRSP room. It's also the right tool for saving above and beyond those limits.</p>
+
+  <div class="strategy-line">
+    The smart approach: FHSA first, RRSP (via HBP) second, TFSA third. Layer all three, and you've built a strategy your future self will thank you for.
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 2: PROTECTION ── -->
+  <h2>You Got the Keys — Now Protect What You Built</h2>
+
+  <p>Saving for a home takes years of discipline. The last thing you want is for an unexpected illness or injury to put that investment at risk.</p>
+
+  <p>This is the part most people skip — and it's the part that matters most.</p>
+
+  <h3>Mortgage Life Insurance vs. Personal Life Insurance</h3>
+
+  <p>When you sign your mortgage, your lender will probably offer you mortgage life insurance. You should understand what you're actually buying before you say yes.</p>
+
+  <p>Lender-provided mortgage insurance covers the bank — not your family. The payout goes directly toward paying off your mortgage; the benefit decreases as your mortgage balance goes down, and you can't take it with you if you change lenders.</p>
+
+  <p>A personal life insurance policy, on the other hand, pays your family. They decide what to do with the money — pay off the mortgage, cover living expenses, keep the kids in school. You own it, you control it, and the coverage doesn't shrink over time.</p>
+
+  <div class="compare-wrap">
+    <div class="compare-header">Side-by-Side Comparison</div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Lender Mortgage Insurance</th>
+          <th>Personal Life Insurance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Payout goes to</td>
+          <td><span class="tag-bad">The bank</span></td>
+          <td><span class="tag-good">Your family</span></td>
+        </tr>
+        <tr>
+          <td>Coverage over time</td>
+          <td><span class="tag-bad">Decreases as mortgage shrinks</span></td>
+          <td><span class="tag-good">Stays level</span></td>
+        </tr>
+        <tr>
+          <td>Who decides how money is used</td>
+          <td><span class="tag-bad">The lender — no choice</span></td>
+          <td><span class="tag-good">Your family has full control</span></td>
+        </tr>
+        <tr>
+          <td>Portable if you switch lenders</td>
+          <td><span class="tag-bad">No</span></td>
+          <td><span class="tag-good">Yes — you own it</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>For most new homeowners, a term life policy is an affordable, flexible way to make sure the people you love can stay in that home no matter what happens.</p>
+
+  <h3>Critical Illness Insurance</h3>
+
+  <p>Here's the scenario nobody talks about: you get sick, you survive — but you can't work for months.</p>
+
+  <p>Cancer, a heart attack, a stroke. These are survivable far more often than they used to be. But the recovery takes time, and the bills don't stop coming just because you're in treatment.</p>
+
+  <div class="ci-callout">
+    <div class="ci-label">What critical illness insurance covers</div>
+    <p>Critical illness insurance pays you a tax-free lump sum if you're diagnosed with a covered illness. You can use that money however you need to — cover your mortgage, replace lost income, pay for out-of-pocket medical costs, or give yourself the breathing room to actually focus on getting better.</p>
+  </div>
+
+  <p>For a new homeowner with a mortgage, this coverage isn't optional. It's the piece of the plan that keeps everything else intact when life goes sideways.</p>
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 3: CONCLUSION ── -->
+  <h2>A Plan That Covers Both Ends</h2>
+
+  <p>Getting into your first home is a milestone worth working toward. But the path there is more than just picking an account and making deposits. The right savings vehicles depend on your income, your timeline, your existing accounts, and how much room you want to leave for protection — because insurance needs to be part of the plan from the start, not an afterthought once the mortgage is signed.</p>
+
+  <p>Four to five years isn't fast, but it isn't forever either. The path is real, the tools exist, and the longer you wait to start, the longer the runway gets.</p>
+
+  <div class="cta-block">
+    <div class="cta-text">
+      <p><strong>Come talk to us before you open anything.</strong>We'll help you use the right savings vehicles in the right order — and make sure there's room in your plan for the protection that keeps it all intact.</p>
+    </div>
+    <a href="#" class="cta-btn">Book a Free Consultation →</a>
+  </div>
+
+  <div class="article-featured-image">
+    <img src="/wp-content/uploads/first-time-home-buyers.png" alt="First time home buyers" />
+  </div>
+
+</div><!-- .hbf-article -->
