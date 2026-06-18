@@ -1,0 +1,56 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTABand from '@/components/CTABand.astro';
+
+const features = [
+  'Get unlimited daily banking - including debit transactions, e-Transfers, and withdrawals.',
+  'Earn high interest on every dollar you save.',
+  'Have your $8 monthly fee waived when you save $100 or more each month.',
+  'Maximize the interest you earn with Savings Sweep – which automatically moves excess money from your everyday banking into your savings account each night.',
+  'Make purchases with Apple Pay, Google Pay™, and Samsung Pay using your ManulifeMONEY+ Visa card.',
+  'Get insights on your spending habits and learn about personal finance from MAI, our new AI-powered financial assistant.',
+];
+---
+
+<BaseLayout
+  title="Manulife All-In Banking Package | Heidi Blondin Financial"
+  description="The Manulife All-In Banking Package gives you everyday banking, high-interest savings, a no-fee cash back credit card, and travel insurance — all for $8/month."
+>
+
+  <section class="bg-white section-gap">
+    <div class="container-content max-w-3xl">
+      <h1 class="font-serif text-display text-brand-plum mb-8" style="font-optical-sizing: auto;">Manulife All-In Banking Package<sup class="text-[0.5em] align-super">TM</sup></h1>
+
+      <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
+        <p>The Manulife All-in Banking Package<sup>TM</sup> gives you an everyday bank account, high-interest savings, a no-fee cash back credit card, and travel insurance, wrapped into one amazing mobile experience. All that for just $8 a month.</p>
+        <p class="font-semibold text-brand-plum">We'll rebate the $8 fee each month that you save $100 or more!</p>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">As a Manulife Bank All-In Banking customer you will also be able to:</h2>
+        <ul class="space-y-3">
+          {features.map(item => (
+            <li class="flex items-start gap-3">
+              <span class="text-brand-gold font-bold mt-1">&#8226;</span>
+              <span class="font-sans text-[16px] text-brand-ink/75 leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <a
+          href="https://www.manulife.ca/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block font-sans text-sm font-semibold text-white bg-brand-plum px-6 py-3 hover:bg-brand-plumDark transition-colors"
+        >
+          Get Started with Manulife →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTABand heading="Questions about Manulife All-In Banking?" sub="Contact Heidi to learn more about how this banking package can work for you." />
+
+</BaseLayout>
