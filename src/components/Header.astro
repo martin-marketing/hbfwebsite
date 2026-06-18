@@ -69,9 +69,15 @@ const currentPath = Astro.url.pathname;
               <!-- Mega menu -->
               <div
                 id="mega-menu"
-                class="mega-menu hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[680px] bg-white shadow-xl border border-brand-plum/8 p-6 grid grid-cols-3 gap-6"
+                class="mega-menu hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[680px] bg-white shadow-xl border border-brand-plum/8 p-6"
                 role="menu"
               >
+                <div class="mb-4 pb-3 border-b border-brand-tintPlum">
+                  <a href="/financial-services/" class="font-sans text-[13px] font-semibold text-brand-plum hover:text-brand-gold transition-colors">
+                    View All Financial Services →
+                  </a>
+                </div>
+                <div class="grid grid-cols-3 gap-6">
                 {Object.entries(megaMenu).map(([col, items]) => (
                   <div>
                     <a
@@ -99,6 +105,7 @@ const currentPath = Astro.url.pathname;
                     </ul>
                   </div>
                 ))}
+                </div>
               </div>
             </div>
           ) : (
