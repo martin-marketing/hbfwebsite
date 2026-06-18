@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <BaseLayout
@@ -131,6 +132,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
                 </label>
               </div>
 
+              <div class="cf-turnstile" data-sitekey={siteKey} data-theme="light"></div>
+
               <div id="form-error" class="hidden bg-red-50 border border-red-200 p-4">
                 <p class="font-sans text-sm text-red-700">There was an error sending your request. Please try again or call us at <a href="tel:6138872726" class="font-medium underline">613-887-2726</a>.</p>
               </div>
@@ -157,6 +160,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       </div>
     </div>
   </section>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <script>
     const form = document.getElementById('quote-form') as HTMLFormElement;
