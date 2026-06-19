@@ -1,26 +1,45 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
-const services = [
-  { name: 'Retirement Savings Solutions', href: '/financial-services/retirement-savings-solutions/' },
-  { name: 'Individual Pension Plans', href: '/financial-services/individual-pension-plans/' },
-  { name: 'Group Retirement and Pension Plans', href: '/financial-services/group-retirement-and-pension-plans/' },
-  { name: 'Education Savings Plans', href: '/financial-services/education-savings-plans/' },
-  { name: 'Tax Free Savings Accounts', href: '/financial-services/tax-free-savings-accounts/' },
-  { name: 'First Home Savings Accounts', href: '/financial-services/first-home-savings-accounts/' },
-  { name: 'Corporate Savings', href: '/financial-services/corporate-savings/' },
-  { name: 'Registered Disability Savings', href: '/financial-services/registered-disability-savings/' },
-  { name: 'Estate Planning', href: '/financial-services/estate-planning/' },
-  { name: 'Life Insurance', href: '/financial-services/life-insurance/' },
-  { name: 'Critical Illness Plans', href: '/financial-services/critical-illness-plans/' },
-  { name: 'Disability Insurance', href: '/financial-services/disability-insurance/' },
-  { name: 'Guaranteed Issue Life Insurance', href: '/financial-services/guaranteed-issue-life-insurance/' },
-  { name: 'Individual Health & Dental Plans', href: '/financial-services/individual-health-dental-plans/' },
-  { name: 'Group Benefit Plans', href: '/financial-services/group-benefit-plans/' },
-  { name: 'Long Term Care', href: '/financial-services/long-term-care/' },
-  { name: 'Travel Insurance', href: '/financial-services/travel-insurance/' },
-  { name: 'Charitable Giving', href: '/financial-services/charitable-giving/' },
-  { name: 'Segregated Funds', href: '/financial-services/segregated-funds/' },
+const sections = [
+  {
+    heading: 'Investing',
+    overview: { label: 'Investments Overview', href: '/financial-services/investments/' },
+    links: [
+      { label: 'RRSP', href: '/financial-services/registered-retirement-savings-plans/' },
+      { label: 'TFSA', href: '/financial-services/tax-free-savings-accounts/' },
+      { label: 'FHSA', href: '/financial-services/first-home-savings-account/' },
+      { label: 'RESP', href: '/financial-services/registered-education-savings-plans/' },
+      { label: 'Group Retirement Savings', href: '/financial-services/group-savings-plans/' },
+      { label: 'Segregated Funds', href: '/financial-services/segregated-fund/' },
+      { label: 'Manulife', href: '/all-in-banking/' },
+    ],
+    cta: null,
+  },
+  {
+    heading: 'Insurance',
+    overview: { label: 'Insurance Overview', href: '/financial-services/insurance/' },
+    links: [
+      { label: 'Life Insurance', href: '/financial-services/life-insurance/' },
+      { label: 'Critical Illness', href: '/financial-services/critical-illness-insurance/' },
+      { label: 'Disability Insurance', href: '/financial-services/disability-insurance/' },
+      { label: 'Combination Insurance', href: '/financial-services/combination-insurance/' },
+      { label: 'Individual Health & Dental', href: '/financial-services/individual-health-dental-plans/' },
+      { label: 'Travel Insurance', href: '/financial-services/travel-insurance/' },
+      { label: 'Group Benefits & Savings', href: '/financial-services/employee-group-benefits-plans/' },
+    ],
+    cta: { label: 'Request a Quote', href: '/financial-services/insurance-quote/' },
+  },
+  {
+    heading: 'Planning',
+    overview: null,
+    links: [
+      { label: 'Estate Planning', href: '/financial-services/estate-planning/' },
+      { label: 'Charitable Giving', href: '/charitable-giving/' },
+      { label: 'Retirement Income Planning', href: '/retirement-income-planning/' },
+    ],
+    cta: null,
+  },
 ];
 ---
 
@@ -38,19 +57,57 @@ const services = [
     </div>
   </section>
 
-  <!-- Flat Service List -->
+  <!-- Three-Column Service Sections -->
   <section class="bg-white section-gap">
     <div class="container-content">
-      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.map(item => (
-          <li>
-            <a href={item.href} class="group flex items-center gap-2 border border-brand-plum/10 px-5 py-4 hover:border-brand-plum/25 hover:shadow-sm transition-all">
-              <span class="font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors flex-1">{item.name}</span>
-              <svg class="w-3.5 h-3.5 text-brand-gold group-hover:translate-x-0.5 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </a>
-          </li>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+        {sections.map(section => (
+          <div>
+            <!-- Section heading -->
+            <h2 class="font-serif text-xl text-brand-plum border-b border-brand-tintPlum pb-3 mb-5" style="font-optical-sizing: auto;">
+              {section.heading}
+            </h2>
+
+            <!-- Overview link -->
+            {section.overview && (
+              <a
+                href={section.overview.href}
+                class="group flex items-center gap-2 mb-4 font-sans text-sm font-semibold text-brand-plum hover:text-brand-gold transition-colors"
+              >
+                {section.overview.label}
+                <svg class="w-3.5 h-3.5 text-brand-gold group-hover:translate-x-0.5 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </a>
+            )}
+
+            <!-- Sub-links -->
+            <ul class="space-y-2">
+              {section.links.map(item => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group flex items-center gap-2 font-sans text-[14px] text-brand-ink/75 hover:text-brand-plum transition-colors py-0.5"
+                  >
+                    <svg class="w-3 h-3 text-brand-gold/60 group-hover:text-brand-gold group-hover:translate-x-0.5 transition-all flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <!-- Section CTA -->
+            {section.cta && (
+              <div class="mt-5">
+                <a
+                  href={section.cta.href}
+                  class="font-sans text-[12px] font-medium text-brand-gold border border-brand-gold px-4 py-2 hover:bg-brand-gold hover:text-white transition-colors inline-block tracking-wide uppercase"
+                >
+                  {section.cta.label} &rarr;
+                </a>
+              </div>
+            )}
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   </section>
 
