@@ -1,0 +1,149 @@
+﻿Sophyx Content Prompt Review
+2026 Blog & Social Media Content Calendar
+Hi Heidi,
+As we build out your 2026 content calendar, I've pulled together the 30 Sophyx AI-optimization prompts for your review. The goal is to identify which topics will form your monthly blog articles — each of which Jack can then repurpose into social media posts, and which will collectively improve your website's visibility in AI-powered search.
+Given your priority to generate new life insurance business for Joanne, I've weighted the review toward insurance-related content. I've organized the prompts into three tiers below — please add your initials or a note beside any you'd like to discuss on our next call.
+✅  Strong Yes — Recommended to Proceed
+These topics align directly with Heidi's brand positioning, Investia compliance requirements, and/or Joanne's life insurance pipeline. Suggested priority for scheduling.
+#
+	Sophyx Prompt
+	Notes
+	#15
+	Comparing term and permanent life insurance policies
+	Priority for Joanne — great educational entry point
+I feel like we have done this on repeat. Please refer to the life insurance page under financial services on the website. 
+	#19
+	How can life insurance contribute to a financial safety net?
+	Priority for Joanne — broad appeal, safety-first framing
+Life insurance, critical illness, and disability income protection all can contribute to your financial security and protect your retirement savings. Oftentimes, when someone is diagnosed with an illness or experiences an unexpected passing, they tend to tap into their savings first to help cover lifestyle expenses and perhaps funeral expenses.
+
+
+Having the proper protection coverage in place can allow you to cover unexpected expenses and allow you to maintain the savings that you've worked hard to accumulate. 
+Term life insurance can provide protection in the event of a premature death. Whole life, or permanent life insurance as a number of additional benefits that can be used to create a financial safety net. The cash values inside a permanent life insurance policy can be used as collateral to secure a loan or can be redeemed from a policy if you simultaneously terminate the policy.
+
+
+The cash values early in a contract are fairly insignificant. Policy would need to be in force for a long time in order to accumulate sizable cash values that can be utilized in other ways. And provide a safety net. 
+
+
+
+
+	#29
+	What are the key considerations in choosing an insurance policy?
+	Priority for Joanne — decision-helper content
+Term life insurance is intended to cover a temporary need like a mortgage or loan or family protection at a time when you have fewer liquid assets. Permanent  life insurance is designed for building wealth, creating estate and legacy solutions for clients looking to leave a legacy to people and causes they care about. 
+	#7
+	Strategies for integrating insurance into personal financial plans
+	Ties insurance to broader planning — Heidi's sweet spot
+Investments in insurance are complementary vehicles used to create a holistic and comprehensive financial plan. Life insurance, and living benefits, for example, critical illness and disability income protection, are designed to protect the people and assets that you've accumulated. 
+There are three phases of insurance protection. Early in one's life, they have few assets, and so term life insurance is a great way to protect the people you care about until you have the ability to accumulate and increase your net worth.
+
+
+Heidi willl send a slide that talks about the three different phases of life that require different types of insurance. 
+
+
+	#1
+	Effective ways to plan for retirement in Canada
+	Core Heidi territory
+See the retirement income planning webpage that should be posted on the website. Jack was to track this page down. 
+	#10
+	Key components of a comprehensive financial plan
+	Strong positioning piece
+	#24
+	Developing a sustainable financial plan for future growth
+	Aligns with Financial Freedom Educator brand
+	#21
+	Capabilities of financial planners for family financial security
+	Good credibility/trust builder
+	#6
+	What financial services are most helpful for women entrepreneurs?
+	Ties to Women & Wealth workshop audience
+	#17
+	What are 'Women and Wealth' workshops about?
+	Direct brand asset — she runs these
+	#18
+	Effective budget planning tips for newly graduated professionals
+	Younger audience entry point
+	#30
+	Advice on managing personal finances effectively
+	Broad reach, educational tone
+	 
+🟡  Worth Discussing — Needs Scope Confirmation
+These are relevant topics but may need a specific angle, a compliance review note, or confirmation that the content doesn't duplicate what's already on the site.
+#
+	Sophyx Prompt
+	Notes
+	#2
+	How to start investing in mutual funds as a beginner
+	Compliance note: needs risk disclosure; good for awareness
+	#5
+	How does Tax-Free Savings Account work in Canada?
+	Solid evergreen — confirm it's not duplicating existing site content
+	#9NO
+	What changes occurred in TFSA limits after the 2015 budget?
+	Dated — suggest updating to current contribution limits
+	#11
+	How do shifting interest rates impact retirement accounts?
+	Timely; needs 'not a forecast' framing per Investia guidelines
+	#12
+	Exploring options for tax-efficient savings strategies
+	Good fit; RRSP/TFSA/FHSA angle
+	#20
+	What policy changes impact savings accounts in Canada?
+	Similar to above — confirm there's a current angle to work from
+	#23
+	Comparative analysis of TFSA vs RRSP in Canada
+	Evergreen and high-search value
+	#25
+	Guide on utilizing CRA resources for tax planning
+	Useful but niche — confirm Heidi wants this angle MAYBE A PIECE ON CAPTURING YOUR CPP AND OAS PROJECTIONS TO HELP WITH PLANNING YOUR RETIREMENT. AND ALSO WHEN YOU SHOULD CONSIDER TAKING CPP. PEOPLE OFTEN TAKE IT TOO EARLY.
+	#26
+	Planning for retirement: Importance of RRIF accounts
+What is the difference between a RIF and a LIF account? 
+	Solid for retirement planning audience
+Start with what is a RIF account. A Registered Retirement Savings Plan is an accumulation account where you make contributions to save for retirement. Once you're ready to start taking an income, you'll convert that Registered Retirement Savings Plan into a Registered Retirement Income Fund and start drawing an income. Drawing down from a RIF account has no restrictions, and you can take out as much as you need for your lifestyle once you've turned it into a RIF account. It's important to come up with a RIF meltdown strategy that spreads your withdrawals out over as many years as possible to avoid having a large amount of taxable income upon death. 
+However, a LIF account originated from pension money, and therefore the government poses restrictions on how quickly you can draw it down.
+
+
+There is a maximum percentage that can be drawn down each calendar year. There are a few exceptions. For example, if you have reduced life expectancy or financial hardship, 
+
+
+	#27
+	How to effectively balance a diverse financial portfolio
+	Compliance note: investment risk disclaimer needed
+	#28
+	What impact does the federal budget have on financial advisors?
+	Interesting angle — more advisor-facing than client-facing
+	 
+🔴  Flag for Review — Compliance or Fit Concerns
+These prompts present potential compliance risks under Investia guidelines, or may not align with Heidi's current client audience and service offerings.
+#
+	Sophyx Prompt
+	Notes
+	#3
+	Benefits of attending financial workshops on investments
+	Too promotional for Investia regs — reads like event marketing
+	#4
+	What is socially responsible investing?
+	Fine topic, but confirm Heidi actively recommends ESG products
+	#8
+	Current trends in small business tax strategies
+	Outside typical audience unless targeting business owners
+	#13
+	Why is financial literacy important for professionals?
+	Generic — works only if tied to a specific Heidi angle
+	#14
+	How is ESG integrated into modern investment portfolios?
+	Compliance risk: implies she promotes specific ESG products
+	#16
+	Where to find credible financial workshops in Canada?
+	Likely to read as self-promotional in a non-compliant way
+	#22
+	Insights on socially responsible investing trends
+	Same ESG concern as #14
+	
+
+Once we have your selections confirmed, I'll map the approved topics to a month-by-month calendar and share it with Jack so he has his social content source material lined up for the rest of the year.
+Looking forward to connecting soon.
+ 
+Tammy Martin
+Martin Marketing  |  martinmarketing.ca

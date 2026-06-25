@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HBF Brand Direction Moodboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Inter:wght@300;400;500;600;700&family=Figtree:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  /* Heidi's locked brand palette:
+     Plum dominant  #593d58   Plum mid  #7a5577
+     Sage green     #a2a47d   Sage dark #7a7d5e
+     Warm gold      #b87b1e
+     Light plum tint #f5f0f5  Light sage tint #f2f2ea  Page bg #f0ecf0
+  */
+  :root {
+    --plum: #593d58;
+    --plum-mid: #7a5577;
+    --sage: #a2a47d;
+    --sage-dark: #7a7d5e;
+    --gold: #b87b1e;
+    --tint-plum: #f5f0f5;
+    --tint-sage: #f2f2ea;
+    --tint-page: #f0ecf0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--plum); background: var(--plum); -webkit-font-smoothing: antialiased; }
+
+  /* Shell chrome — brand plum framing around each direction */
+  .shell-intro { background: var(--plum); color: var(--tint-plum); padding: 80px 40px 60px; text-align: center; }
+  .shell-intro h1 { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 32px; letter-spacing: -0.02em; margin: 0 0 16px; color: var(--tint-plum); }
+  .shell-intro p { color: #d9c8d8; max-width: 640px; margin: 0 auto; font-size: 15px; line-height: 1.6; }
+  .shell-intro .nav { margin-top: 32px; display: flex; gap: 24px; justify-content: center; font-size: 13px; flex-wrap: wrap; }
+  .shell-intro .nav a { color: var(--tint-plum); text-decoration: none; border-bottom: 1px solid #a88ea7; padding-bottom: 2px; }
+  .shell-intro .nav a:hover { border-bottom-color: var(--gold); color: var(--gold); }
+
+  .direction-label { background: var(--plum); color: var(--tint-plum); padding: 60px 40px 40px; }
+  .direction-label .inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .direction-label .tag { font-family: 'Inter', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #c4a8c3; margin-bottom: 12px; }
+  .direction-label h2 { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 36px; margin: 0 0 16px; letter-spacing: -0.02em; color: var(--tint-plum); }
+  .direction-label p { color: #d9c8d8; font-size: 14px; line-height: 1.7; margin: 0 0 8px; }
+  .direction-label .meta { font-size: 13px; color: var(--tint-plum); }
+  .direction-label .meta strong { color: #c4a8c3; font-weight: 400; display: inline-block; min-width: 72px; }
+  .swatches { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .swatch { width: 40px; height: 40px; border-radius: 4px; position: relative; }
+  .swatch::after { content: attr(data-hex); position: absolute; top: 100%; left: 0; font-size: 10px; color: #c4a8c3; margin-top: 4px; font-family: monospace; white-space: nowrap; }
+  .swatches-wrap { margin-top: 28px; padding-bottom: 30px; }
+
+  /* ==================== DIRECTION 1: EDITORIAL AUTHORITY ==================== */
+  /* Emphasizes: plum + warm gold. Light plum tint bg. Regal, established, editorial. */
+  .d1 { background: var(--tint-plum); color: var(--plum); font-family: 'Inter', sans-serif; padding: 100px 40px; }
+  .d1 .inner { max-width: 1100px; margin: 0 auto; }
+  .d1 .eyebrow { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; font-weight: 500; }
+  .d1 h1 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 76px; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 32px; max-width: 16ch; color: var(--plum); font-variation-settings: "SOFT" 0, "opsz" 100; }
+  .d1 h1 em { font-style: italic; font-variation-settings: "SOFT" 100; color: var(--gold); font-weight: 300; }
+  .d1 .lede { font-size: 19px; line-height: 1.6; max-width: 56ch; color: var(--plum-mid); margin: 0 0 40px; }
+  .d1 .cta { display: inline-block; padding: 18px 32px; background: var(--plum); color: var(--tint-plum); text-decoration: none; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; transition: background 0.2s; }
+  .d1 .cta:hover { background: var(--gold); }
+  .d1 .rule { border: 0; border-top: 1px solid #d9c8d8; margin: 100px 0 60px; }
+  .d1 .services { display: grid; grid-template-columns: 1fr; gap: 0; }
+  .d1 .service { display: grid; grid-template-columns: 80px 1fr 2fr; gap: 40px; padding: 40px 0; border-bottom: 1px solid #d9c8d8; align-items: baseline; }
+  .d1 .service .num { font-family: 'Fraunces', serif; font-size: 28px; color: var(--gold); font-weight: 300; }
+  .d1 .service h3 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 400; margin: 0; letter-spacing: -0.01em; color: var(--plum); }
+  .d1 .service p { font-size: 15px; line-height: 1.6; color: var(--plum-mid); margin: 0; }
+  .d1 .quote-section { margin-top: 100px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto; }
+  .d1 .quote { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic; font-size: 32px; line-height: 1.4; color: var(--plum); margin: 0 0 32px; }
+  .d1 .attr { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--sage-dark); }
+
+  /* ==================== DIRECTION 2: WARM MODERN ==================== */
+  /* Emphasizes: plum + sage + gold. Page bg. Rounded, humanist, inviting. */
+  .d2 { background: var(--tint-page); color: var(--plum); font-family: 'Inter', sans-serif; padding: 100px 40px; }
+  .d2 .inner { max-width: 1100px; margin: 0 auto; }
+  .d2 .hero { text-align: center; max-width: 820px; margin: 0 auto 80px; }
+  .d2 .eyebrow { font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 600; color: var(--gold); margin-bottom: 24px; letter-spacing: -0.005em; }
+  .d2 h1 { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: 68px; line-height: 1.08; letter-spacing: -0.035em; margin: 0 0 28px; color: var(--plum); }
+  .d2 h1 .hl { color: var(--gold); }
+  .d2 .lede { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.6; color: var(--plum-mid); margin: 0 0 40px; max-width: 58ch; margin-left: auto; margin-right: auto; }
+  .d2 .cta { display: inline-block; padding: 18px 36px; background: var(--plum); color: var(--tint-plum); text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 999px; font-family: 'Figtree', sans-serif; transition: background 0.2s; }
+  .d2 .cta:hover { background: var(--plum-mid); }
+  .d2 .cta-secondary { color: var(--plum); margin-left: 16px; text-decoration: none; font-weight: 500; font-size: 15px; border-bottom: 1.5px solid var(--plum); padding-bottom: 2px; }
+  .d2 .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 60px; }
+  .d2 .service { background: #ffffff; padding: 36px; border-radius: 18px; box-shadow: 0 1px 0 rgba(89,61,88,0.06), 0 8px 24px -12px rgba(89,61,88,0.18); }
+  .d2 .service .icon { width: 44px; height: 44px; border-radius: 12px; background: var(--tint-sage); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+  .d2 .service .icon-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--sage); }
+  .d2 .service h3 { font-family: 'Figtree', sans-serif; font-size: 22px; font-weight: 600; margin: 0 0 12px; letter-spacing: -0.01em; color: var(--plum); }
+  .d2 .service p { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.55; color: var(--plum-mid); margin: 0; }
+  .d2 .quote-section { margin-top: 80px; background: var(--tint-sage); padding: 60px; border-radius: 24px; display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; }
+  .d2 .avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; color: #ffffff; font-family: 'Figtree', sans-serif; font-weight: 600; font-size: 20px; }
+  .d2 .quote { font-family: 'Inter', sans-serif; font-size: 19px; line-height: 1.55; color: var(--plum); margin: 0 0 12px; font-weight: 400; }
+  .d2 .attr { font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 600; color: var(--sage-dark); }
+
+  /* ==================== DIRECTION 3: QUIET CONFIDENCE ==================== */
+  /* Emphasizes: plum + sage. Light sage tint bg. Restrained, grid-driven, quiet. */
+  .d3 { background: var(--tint-sage); color: var(--plum); font-family: 'DM Sans', sans-serif; padding: 100px 40px; }
+  .d3 .inner { max-width: 1040px; margin: 0 auto; }
+  .d3 .meta-line { display: flex; justify-content: space-between; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage-dark); border-bottom: 1px solid #c8cab0; padding-bottom: 16px; margin-bottom: 80px; }
+  .d3 h1 { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 56px; line-height: 1.1; letter-spacing: -0.035em; margin: 0 0 40px; max-width: 20ch; color: var(--plum); }
+  .d3 .lede { font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.6; color: var(--plum-mid); margin: 0 0 48px; max-width: 52ch; font-weight: 400; }
+  .d3 .cta-row { display: flex; gap: 24px; align-items: center; }
+  .d3 .cta { display: inline-block; padding: 14px 24px; background: var(--plum); color: var(--tint-sage); text-decoration: none; font-weight: 500; font-size: 14px; font-family: 'DM Sans', sans-serif; border-radius: 2px; transition: background 0.2s; }
+  .d3 .cta:hover { background: var(--sage-dark); }
+  .d3 .cta-ghost { color: var(--plum); text-decoration: none; font-weight: 500; font-size: 14px; }
+  .d3 .cta-ghost::after { content: " →"; color: var(--sage-dark); }
+  .d3 .rule { border: 0; border-top: 1px solid #c8cab0; margin: 100px 0 0; }
+  .d3 .services { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 0; }
+  .d3 .service { padding: 48px 32px 48px 0; border-right: 1px solid #c8cab0; }
+  .d3 .service:last-child { border-right: 0; padding-right: 0; }
+  .d3 .service:first-child { padding-left: 0; }
+  .d3 .service:not(:first-child) { padding-left: 32px; }
+  .d3 .service .label { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 16px; }
+  .d3 .service h3 { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 500; letter-spacing: -0.015em; margin: 0 0 12px; color: var(--plum); }
+  .d3 .service p { font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.6; color: var(--plum-mid); margin: 0 0 24px; }
+  .d3 .service .arrow { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--sage-dark); font-weight: 500; }
+  .d3 .quote-section { margin-top: 100px; padding-top: 60px; border-top: 1px solid #c8cab0; display: grid; grid-template-columns: 140px 1fr; gap: 40px; }
+  .d3 .quote-label { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage-dark); }
+  .d3 .quote { font-family: 'DM Sans', sans-serif; font-size: 22px; line-height: 1.45; color: var(--plum); margin: 0 0 20px; font-weight: 400; letter-spacing: -0.01em; }
+  .d3 .attr { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--sage-dark); }
+
+  /* Footer */
+  .final { background: var(--plum); color: var(--tint-plum); padding: 80px 40px; text-align: center; }
+  .final h2 { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 28px; margin: 0 0 16px; letter-spacing: -0.02em; color: var(--tint-plum); }
+  .final p { color: #d9c8d8; max-width: 640px; margin: 0 auto 8px; font-size: 15px; line-height: 1.7; }
+
+  @media (max-width: 900px) {
+    .direction-label .inner { grid-template-columns: 1fr; gap: 20px; }
+    .d1 h1 { font-size: 48px; }
+    .d2 h1 { font-size: 44px; }
+    .d3 h1 { font-size: 40px; }
+    .d1 .service { grid-template-columns: 60px 1fr; }
+    .d1 .service p { grid-column: 2; }
+    .d2 .services, .d3 .services { grid-template-columns: 1fr; }
+    .d3 .service { border-right: 0; border-bottom: 1px solid #c8cab0; padding: 32px 0 !important; }
+    .d2 .quote-section { grid-template-columns: 1fr; text-align: center; }
+    .d2 .avatar { margin: 0 auto; }
+    .d3 .quote-section { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== INTRO ==================== -->
+<section class="shell-intro">
+  <h1>HBF Brand Direction Moodboard</h1>
+  <p>Three distinct design directions, all using Heidi's locked brand palette (plum, sage, warm gold). Logo and colors stay the same — what changes is typography, layout, and which slice of the palette leads. Same content in every direction so you can compare directly.</p>
+  <div class="nav">
+    <a href="#d1">1. Editorial Authority</a>
+    <a href="#d2">2. Warm Modern</a>
+    <a href="#d3">3. Quiet Confidence</a>
+  </div>
+</section>
+
+<!-- ==================== DIRECTION 1 LABEL ==================== -->
+<section class="direction-label" id="d1">
+  <div class="inner">
+    <div>
+      <div class="tag">Direction 01</div>
+      <h2>Editorial Authority</h2>
+      <p>Plum plus warm gold. Light plum tint background. Reads like a trusted publication — signals deep expertise and permanence. Long-form-ready layout with numbered services and pull-quote testimonials.</p>
+      <p style="margin-top:16px;">Natural fit if Heidi wants to lean into the "20 years of experience, CFP, has seen every market cycle" side of her positioning.</p>
+    </div>
+    <div>
+      <div class="meta"><strong>Heading</strong> Fraunces (variable serif)</div>
+      <div class="meta" style="margin-top:6px"><strong>Body</strong> Inter</div>
+      <div class="meta" style="margin-top:6px"><strong>Leads with</strong> Plum + warm gold</div>
+      <div class="swatches-wrap">
+        <div class="meta" style="margin-bottom:20px"><strong>Palette use</strong></div>
+        <div class="swatches">
+          <div class="swatch" style="background:#f5f0f5" data-hex="#f5f0f5"></div>
+          <div class="swatch" style="background:#593d58" data-hex="#593d58"></div>
+          <div class="swatch" style="background:#7a5577" data-hex="#7a5577"></div>
+          <div class="swatch" style="background:#b87b1e" data-hex="#b87b1e"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIRECTION 1 MOCKUP ==================== -->
+<section class="d1">
+  <div class="inner">
+    <div class="eyebrow">Heidi Blondin Financial · Kingston, ON</div>
+    <h1>Your money, <em>in harmony</em> with the life you actually want to live.</h1>
+    <p class="lede">For nearly two decades, Heidi Blondin has helped families in Kingston and across Ontario align their financial lives with what matters most — eliminating debt, protecting loved ones, and building retirements worth looking forward to.</p>
+    <a href="#" class="cta">Schedule a Consultation</a>
+
+    <hr class="rule">
+
+    <div class="services">
+      <div class="service">
+        <div class="num">01</div>
+        <div>
+          <h3>Retirement Planning</h3>
+        </div>
+        <p>Map a path from where you are now to the retirement you want. Tax-efficient income strategies, RRSP/TFSA optimization, CPP timing, and the long-term plan behind every short-term decision.</p>
+      </div>
+      <div class="service">
+        <div class="num">02</div>
+        <div>
+          <h3>Estate Planning</h3>
+        </div>
+        <p>Thoughtful preparation for what you leave behind. Wills, powers of attorney, executor readiness, and the conversations most families never quite get around to having.</p>
+      </div>
+      <div class="service">
+        <div class="num">03</div>
+        <div>
+          <h3>Life &amp; Disability Insurance</h3>
+        </div>
+        <p>The right protection for your family's earning capacity — life insurance, critical illness, disability, and the combinations that fit how you actually live.</p>
+      </div>
+    </div>
+
+    <div class="quote-section">
+      <p class="quote">"Heidi has been my trusted advisor and friend for several years. She and her team have provided sound financial guidance in the investment of my life savings."</p>
+      <div class="attr">T.O. · Kingston, Ontario</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIRECTION 2 LABEL ==================== -->
+<section class="direction-label" id="d2">
+  <div class="inner">
+    <div>
+      <div class="tag">Direction 02</div>
+      <h2>Warm Modern</h2>
+      <p>Plum plus sage plus gold. Page-background neutral. Rounded shapes, soft shadows, a humanist sans. Signals approachability without losing professionalism — planning as a relationship, not a transaction.</p>
+      <p style="margin-top:16px;">Natural fit if Heidi wants to lean into the "locally owned, women-led, we actually care" identity her existing About copy already carries.</p>
+    </div>
+    <div>
+      <div class="meta"><strong>Heading</strong> Figtree (humanist sans)</div>
+      <div class="meta" style="margin-top:6px"><strong>Body</strong> Inter</div>
+      <div class="meta" style="margin-top:6px"><strong>Leads with</strong> Plum + sage + gold</div>
+      <div class="swatches-wrap">
+        <div class="meta" style="margin-bottom:20px"><strong>Palette use</strong></div>
+        <div class="swatches">
+          <div class="swatch" style="background:#f0ecf0" data-hex="#f0ecf0"></div>
+          <div class="swatch" style="background:#593d58" data-hex="#593d58"></div>
+          <div class="swatch" style="background:#a2a47d" data-hex="#a2a47d"></div>
+          <div class="swatch" style="background:#f2f2ea" data-hex="#f2f2ea"></div>
+          <div class="swatch" style="background:#b87b1e" data-hex="#b87b1e"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIRECTION 2 MOCKUP ==================== -->
+<section class="d2">
+  <div class="inner">
+    <div class="hero">
+      <div class="eyebrow">Real planning for real life</div>
+      <h1>Money that works as hard as <span class="hl">you do</span>.</h1>
+      <p class="lede">We help Ontario families eliminate debt, protect what matters, and build a retirement they'll actually look forward to. Locally owned, women-led, and genuinely invested in you.</p>
+      <div>
+        <a href="#" class="cta">Book your free consultation</a>
+        <a href="#" class="cta-secondary">Or call 1-855-844-3927</a>
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="service">
+        <div class="icon"><div class="icon-dot"></div></div>
+        <h3>Retirement Planning</h3>
+        <p>A clear path from where you are to where you want to be — with the flexibility to enjoy the journey.</p>
+      </div>
+      <div class="service">
+        <div class="icon"><div class="icon-dot"></div></div>
+        <h3>Estate Planning</h3>
+        <p>Practical preparation for the future — so your family isn't left guessing and your wishes are honored.</p>
+      </div>
+      <div class="service">
+        <div class="icon"><div class="icon-dot"></div></div>
+        <h3>Life &amp; Disability Insurance</h3>
+        <p>The right protection for your family's earning power — tailored, not templated.</p>
+      </div>
+    </div>
+
+    <div class="quote-section">
+      <div class="avatar">TO</div>
+      <div>
+        <p class="quote">"Heidi has been my trusted advisor and friend for several years. She and her team have provided sound financial guidance in the investment of my life savings."</p>
+        <div class="attr">T.O., Kingston</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIRECTION 3 LABEL ==================== -->
+<section class="direction-label" id="d3">
+  <div class="inner">
+    <div>
+      <div class="tag">Direction 03</div>
+      <h2>Quiet Confidence</h2>
+      <p>Plum plus sage. Light sage tint background. Minimal chrome, strong grid, no gold accents — every element earning its place. Signals competence without needing to shout about it.</p>
+      <p style="margin-top:16px;">Natural fit if Heidi wants to differentiate from every other advisor site in Kingston — most lean heavily on stock imagery and motion. This is the contrarian move.</p>
+    </div>
+    <div>
+      <div class="meta"><strong>Heading</strong> DM Sans (geometric sans)</div>
+      <div class="meta" style="margin-top:6px"><strong>Body</strong> DM Sans (lighter weights)</div>
+      <div class="meta" style="margin-top:6px"><strong>Leads with</strong> Plum + sage (no gold)</div>
+      <div class="swatches-wrap">
+        <div class="meta" style="margin-bottom:20px"><strong>Palette use</strong></div>
+        <div class="swatches">
+          <div class="swatch" style="background:#f2f2ea" data-hex="#f2f2ea"></div>
+          <div class="swatch" style="background:#593d58" data-hex="#593d58"></div>
+          <div class="swatch" style="background:#7a5577" data-hex="#7a5577"></div>
+          <div class="swatch" style="background:#7a7d5e" data-hex="#7a7d5e"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIRECTION 3 MOCKUP ==================== -->
+<section class="d3">
+  <div class="inner">
+    <div class="meta-line">
+      <div>Heidi Blondin Financial Inc.</div>
+      <div>Est. 2013 · Kingston, Ontario</div>
+    </div>
+
+    <h1>A financial plan that holds up when life doesn't.</h1>
+    <p class="lede">Independent financial planning for Ontario families. Mutual funds, insurance, and estate strategy, delivered by a CFP who's been doing this since 2007. No jargon. No pressure. No surprises.</p>
+    <div class="cta-row">
+      <a href="#" class="cta">Schedule a consultation</a>
+      <a href="#" class="cta-ghost">View services</a>
+    </div>
+
+    <hr class="rule">
+
+    <div class="services">
+      <div class="service">
+        <div class="label">01 · Planning</div>
+        <h3>Retirement</h3>
+        <p>From accumulation to income. Tax strategy, RRSP/TFSA balance, CPP timing, and the long view behind every decision.</p>
+        <div class="arrow">Read more →</div>
+      </div>
+      <div class="service">
+        <div class="label">02 · Preparation</div>
+        <h3>Estate</h3>
+        <p>Wills, POAs, executor readiness, and the practical preparation that saves your family real grief.</p>
+        <div class="arrow">Read more →</div>
+      </div>
+      <div class="service">
+        <div class="label">03 · Protection</div>
+        <h3>Insurance</h3>
+        <p>Life, critical illness, disability. The right protection for your family's earning capacity — sized to what you actually need.</p>
+        <div class="arrow">Read more →</div>
+      </div>
+    </div>
+
+    <div class="quote-section">
+      <div class="quote-label">Client testimony</div>
+      <div>
+        <p class="quote">"Heidi has been my trusted advisor and friend for several years. She and her team have provided sound financial guidance in the investment of my life savings."</p>
+        <div class="attr">T.O. · Kingston, Ontario</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FINAL ==================== -->
+<section class="final">
+  <h2>What's next</h2>
+  <p>Live with these for a day. Notice which direction you keep returning to — and which ones you're already arguing with. Then bring me three to five counterexamples from sites (any industry) that feel closer to what Heidi should signal, and we'll refine from there.</p>
+  <p style="margin-top:24px; font-size:13px;">All three directions are built to scale across mobile, work with Heidi's existing logo, and support every page type we inventoried.</p>
+</section>
+
+</body>
+</html>
