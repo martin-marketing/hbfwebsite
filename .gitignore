@@ -1,3 +1,6 @@
+# article publish backups (scripts/publish-article.mjs)
+.article-backups/
+
 # build output
 dist/
 .output/
