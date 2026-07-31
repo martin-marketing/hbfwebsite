@@ -38,8 +38,9 @@ pnpm-debug.log*
 .vercel
 
 # raw source assets (not deployed; keep out of git)
-uploads/
-Office photos/
-Team photos/
-Inspiration website elements/
-zipuploads.php
+# anchored to repo root so deployed assets in public/wp-content/uploads/ stay tracked
+/uploads/
+/Office photos/
+/Team photos/
+/Inspiration website elements/
+/zipuploads.php
