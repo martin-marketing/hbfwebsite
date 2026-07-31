@@ -1,0 +1,35 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  titleClass?: string;
+  subtitle?: string;
+  subtitleClass?: string;
+  padding?: string;
+  center?: boolean;
+  containerClass?: string;
+}
+const {
+  eyebrow,
+  title,
+  titleClass = 'font-serif text-display text-white text-balance',
+  subtitle,
+  subtitleClass = 'font-sans text-[18px] text-white/65 mt-5 leading-relaxed',
+  padding = 'py-20',
+  center = false,
+  containerClass = '',
+} = Astro.props;
+
+const containerClasses = ['container-content', center && 'text-center', containerClass]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<section class={`bg-brand-plum ${padding}`}>
+  <div class={containerClasses}>
+    {eyebrow && <p class="eyebrow-light mb-5">{eyebrow}</p>}
+    <h1 class={titleClass} set:html={title} />
+    {subtitle && <p class={subtitleClass} set:html={subtitle} />}
+    <slot />
+  </div>
+</section>

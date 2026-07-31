@@ -14,7 +14,7 @@ interface Props {
 const {
   title,
   description = 'Heidi Blondin Financial Inc. — Certified Financial Planner serving Kingston and Ontario families since 2007. Mutual funds through Investia Financial Services Inc.',
-  image = '/og-default.jpg',
+  image = '/team/team-2026.jpg',
   noindex = false,
   canonical,
 } = Astro.props;
@@ -22,6 +22,9 @@ const {
 const siteUrl = 'https://heidiblondin.com';
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 const ogImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
+
+const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
+const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
 ---
 
 <!doctype html>
@@ -51,6 +54,8 @@ const ogImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+  {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
+
   <!-- Organization schema on every page -->
   <script type="application/ld+json">
     {JSON.stringify({
@@ -58,7 +63,7 @@ const ogImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
       "@type": ["Organization", "FinancialService", "LocalBusiness"],
       "name": "Heidi Blondin Financial Inc.",
       "url": "https://heidiblondin.com",
-      "logo": "https://heidiblondin.com/logo.svg",
+      "logo": "https://heidiblondin.com/logos/heidiblondinfinancial_investia_logos_header_V1.png",
       "telephone": ["+16138872726", "+18558443927"],
       "email": "hbadmin@heidiblondin.com",
       "address": {
@@ -76,6 +81,67 @@ const ogImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
       "foundingDate": "2013",
       "sameAs": []
     })}
+  </script>
+
+  {ga4Id && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+      <script is:inline define:vars={{ ga4Id }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', ga4Id, { anonymize_ip: true });
+      </script>
+    </>
+  )}
+
+  <!-- Attribution capture -->
+  <script is:inline>
+    (function () {
+      try {
+        if (sessionStorage.getItem('hbf_attribution')) return;
+
+        var params = new URLSearchParams(location.search);
+        var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
+        var found = {};
+        var hasParam = false;
+        keys.forEach(function (key) {
+          var value = params.get(key);
+          if (value) {
+            found[key] = value;
+            hasParam = true;
+          }
+        });
+
+        var referrer = document.referrer || '';
+        var isExternalReferrer = referrer && referrer.indexOf(location.hostname) === -1;
+
+        if (hasParam || isExternalReferrer) {
+          found.referrer = referrer;
+          found.landing_page = location.pathname;
+          sessionStorage.setItem('hbf_attribution', JSON.stringify(found));
+        }
+      } catch (e) {
+        /* sessionStorage unavailable, no-op */
+      }
+    })();
+  </script>
+
+  <!-- tel:/mailto: click tracking -->
+  <script is:inline>
+    (function () {
+      document.addEventListener('click', function (e) {
+        if (typeof window.gtag !== 'function') return;
+        var link = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!link) return;
+        var href = link.getAttribute('href') || '';
+        if (href.indexOf('tel:') === 0) {
+          window.gtag('event', 'phone_call');
+        } else if (href.indexOf('mailto:') === 0) {
+          window.gtag('event', 'email_click');
+        }
+      });
+    })();
   </script>
 </head>
 <body>

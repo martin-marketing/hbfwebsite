@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -7,12 +8,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   description="Disability insurance provides a monthly benefit if you cannot work due to illness or injury. Contact Heidi Blondin to explore disability and income-protection strategies."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <p class="eyebrow-light mb-5">Insurance</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Disability Insurance</h1>
-    </div>
-  </section>
+  <PageHero eyebrow="Insurance" title="Disability Insurance" />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">

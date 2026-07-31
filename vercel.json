@@ -1,13 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/sitemap-index.xml",
-      "destination": "/sitemap.xml",
-      "permanent": true
-    },
-    {
-      "source": "/sitemap-0.xml",
-      "destination": "/sitemap.xml",
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
       "permanent": true
     },
     {
@@ -129,6 +124,143 @@
       "source": "/blog/the-most-underestimated-risk-in-retirement",
       "destination": "/the-most-underestimated-risk-in-retirement/",
       "permanent": true
+    },
+    {
+      "source": "/heidi3/",
+      "destination": "/heidi/",
+      "permanent": true
+    },
+    {
+      "source": "/heidi-2/testimonials/",
+      "destination": "/testimonials/",
+      "permanent": true
+    },
+    {
+      "source": "/test/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/executor2/",
+      "destination": "/resources/",
+      "permanent": true
+    },
+    {
+      "source": "/intake/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/financial-services/insuranceprotection/",
+      "destination": "/financial-services/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/whole-life-insurance/",
+      "destination": "/financial-services/life-insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/life-insurance-peace-of-mind/",
+      "destination": "/financial-services/life-insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/life-insurance-for-parents/",
+      "destination": "/financial-services/life-insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/life-insurance-broker/",
+      "destination": "/financial-services/life-insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/sign-up/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/workshop/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/investments/",
+      "destination": "/financial-services/investments/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/",
+      "destination": "/financial-services/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you/",
+      "destination": "/contact-thank-you/",
+      "permanent": true
+    },
+    {
+      "source": "/heidi",
+      "destination": "/heidi/",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials",
+      "destination": "/testimonials/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/resources/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/videos",
+      "destination": "/videos/",
+      "permanent": true
+    },
+    {
+      "source": "/financial-services",
+      "destination": "/financial-services/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
     }
   ]
 }

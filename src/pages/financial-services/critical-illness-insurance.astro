@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,12 +9,7 @@ import CTABand from '@/components/CTABand.astro';
   description="Critical illness insurance for Kingston, ON. A lump-sum payout upon diagnosis of a covered illness — Heidi Blondin Financial."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <p class="eyebrow-light mb-5">Insurance</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Resilience Starts Here: Critical Illness Insurance for a Stronger Recovery</h1>
-    </div>
-  </section>
+  <PageHero eyebrow="Insurance" title="Resilience Starts Here: Critical Illness Insurance for a Stronger Recovery" />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
@@ -35,11 +31,11 @@ import CTABand from '@/components/CTABand.astro';
             class="w-full max-w-[600px]"
           />
         </div>
-        <p class="font-sans text-[15px] text-brand-ink/60 leading-relaxed mt-3 italic">[The list may vary from one insurance company to another. It's also important to note that each illness has a criteria/definition to qualify for full payout through your Critical Illness coverage.]</p>
+        <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed mt-3 italic">[The list may vary from one insurance company to another. It's also important to note that each illness has a criteria/definition to qualify for full payout through your Critical Illness coverage.]</p>
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">The Risks</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-6">The Risks</h2>
         <ul class="space-y-4 font-sans text-[17px] text-brand-ink/75 leading-relaxed">
           <li>Nearly <strong>1 in 2 Canadians</strong> will develop cancer in their lifetime. ¹</li>
           <li>Cancer, heart attack, and stroke account for the majority of critical illness insurance claims. ²</li>
@@ -51,7 +47,7 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">The Benefits</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-6">The Benefits</h2>
         <ul class="space-y-5 font-sans text-[17px] text-brand-ink/75 leading-relaxed">
           <li><strong>Lump-Sum Payout –</strong> Receive a <strong>tax-free cash benefit</strong> upon diagnosis of a covered illness — such as cancer, heart attack, or stroke. Use the money however you choose — medical bills, mortgage payments, hire homecare, travel for treatment, or simply taking time off work to recover.</li>
           <li><strong>Protect Your Savings –</strong> Avoid dipping into retirement funds or emergency savings. The insurance benefit helps cover unexpected costs so you can focus on healing without financial stress.</li>
@@ -64,12 +60,12 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12 bg-brand-tintPlum p-8">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Let's Talk About Your Protection</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">Let's Talk About Your Protection</h2>
         <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-6">Whether you're planning for your family, your future, or your peace of mind—<strong>we're here to help</strong>. Fill out the form below and take the first step toward <strong>simple, powerful protection</strong>.</p>
         <a href="/financial-services/insurance-quote/" class="btn-primary">Request an Insurance Quote Today</a>
       </div>
 
-      <div class="mt-10 font-sans text-[13px] text-brand-ink/50 leading-relaxed space-y-1">
+      <div class="mt-10 font-sans text-[13px] text-brand-ink/70 leading-relaxed space-y-1">
         <p>SOURCE¹: Canadian Cancer Society – Canadian Cancer Statistics 2023</p>
         <p>SOURCE²: Canada Life Internal Reports 2023</p>
         <p>SOURCE³: National Library of Medicine 2021</p>
@@ -83,14 +79,14 @@ import CTABand from '@/components/CTABand.astro';
           <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed italic">My partner and I have worked with Heidi Blondin of Blondin Financial for almost a year. We recently retired and needed help with our financial planning and investments. We needed sound, honest and prudent advice. First and foremost was to find someone that we could trust, feel comfortable and confident with and who understood our personal needs and desires. This is Heidi. More than thrilled to have found someone that meets all of our requirements and more. We honestly feel so fortunate to have found her.</p>
           <footer class="font-sans text-sm font-medium text-brand-plum mt-3">P.M. – Kingston, Ontario</footer>
         </blockquote>
-        <p class="mt-6"><a href="https://www.google.com/maps/place/Heidi+Blondin+Financial/@44.2602899,-76.5399038,17z/data=!4m8!3m7!1s0x4cd2ab2e0b9dc5f3:0xf4fc562e5c6d96cc!8m2!3d44.2602899!4d-76.5377151!9m1!1b1" class="font-sans text-sm font-medium text-brand-gold underline underline-offset-2 hover:text-amber-700" target="_blank" rel="noopener">See &amp; Write Reviews for Heidi</a></p>
+        <p class="mt-6"><a href="https://www.google.com/maps/place/Heidi+Blondin+Financial/@44.2602899,-76.5399038,17z/data=!4m8!3m7!1s0x4cd2ab2e0b9dc5f3:0xf4fc562e5c6d96cc!8m2!3d44.2602899!4d-76.5377151!9m1!1b1" class="font-sans text-sm font-medium text-brand-goldDark underline underline-offset-2 hover:text-amber-700" target="_blank" rel="noopener">See &amp; Write Reviews for Heidi</a></p>
       </div>
     </div>
   </section>
 
   <section class="bg-brand-tintSage section-gap">
     <div class="container-content">
-      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Watch &amp; Learn</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-8">Watch &amp; Learn</h2>
       <div class="max-w-2xl">
         <div class="bg-white">
           <div class="aspect-video">
@@ -103,6 +99,7 @@ import CTABand from '@/components/CTABand.astro';
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
+              loading="lazy"
               class="w-full h-full"
             ></iframe>
           </div>

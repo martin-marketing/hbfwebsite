@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,12 +9,7 @@ import CTABand from '@/components/CTABand.astro';
   description="Protect your legacy and ensure your wishes are followed. Wills, powers of attorney, beneficiary designations, and tax-efficient estate strategies from Heidi Blondin Financial."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <p class="eyebrow-light mb-5">Planning</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Estate Planning: Build a Legacy That Lasts</h1>
-    </div>
-  </section>
+  <PageHero eyebrow="Planning" title="Estate Planning: Build a Legacy That Lasts" />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
@@ -25,80 +21,80 @@ import CTABand from '@/components/CTABand.astro';
 
       <!-- Why Work with a Financial Planner? -->
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Why Work with a Financial Planner?</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">Why Work with a Financial Planner?</h2>
         <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-6">A Financial Planner plays a key role in helping you:</p>
         <div class="space-y-5">
           <div class="bg-brand-tintPlum p-6">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Avoid Probate</h3>
-            <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">Use segregated funds to bypass the estate process and ensure assets are paid directly to beneficiaries—quickly and privately.</p>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Use segregated funds to bypass the estate process and ensure assets are paid directly to beneficiaries—quickly and privately.</p>
           </div>
           <div class="bg-brand-tintPlum p-6">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Reduce Taxes</h3>
-            <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">Strategically incorporate charitable donations to minimize estate taxes and create lasting impact.</p>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Strategically incorporate charitable donations to minimize estate taxes and create lasting impact.</p>
           </div>
           <div class="bg-brand-tintPlum p-6">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Align Beneficiaries</h3>
-            <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">Ensure your investment and insurance beneficiary designations match your will to avoid conflicts and delays.</p>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Ensure your investment and insurance beneficiary designations match your will to avoid conflicts and delays.</p>
           </div>
           <div class="bg-brand-tintPlum p-6">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Simplify Executor Duties</h3>
-            <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">Provide your executor with a clear roadmap, reducing stress and confusion during a difficult time.</p>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Provide your executor with a clear roadmap, reducing stress and confusion during a difficult time.</p>
           </div>
         </div>
       </div>
 
       <!-- Featured Resources -->
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Featured Resources</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">Featured Resources</h2>
         <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-6">We offer a suite of tools to help you build your legacy plan:</p>
         <div class="space-y-5">
           <div class="bg-brand-tintPlum p-6">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Legacy Planning Checklist</h3>
-            <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">A comprehensive guide to help you gather and organize all the documents and details your executor will need. From wills and POAs to funeral preferences and digital assets, this checklist ensures nothing is overlooked. <a href="/resources/" class="text-brand-gold hover:underline">Click here to download.</a></p>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">A comprehensive guide to help you gather and organize all the documents and details your executor will need. From wills and POAs to funeral preferences and digital assets, this checklist ensures nothing is overlooked. <a href="/resources/" class="text-brand-goldDark hover:underline">Click here to download.</a></p>
           </div>
           <div class="bg-brand-tintPlum p-6">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Personal Records Organizers</h3>
-            <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">Choose from two organizer formats to document your financial accounts, insurance policies, passwords, and more. These booklets are designed to give your executor everything they need to settle your estate efficiently. <a href="/resources/" class="text-brand-gold hover:underline">Canada Life Organizer Download</a> | <a href="/resources/" class="text-brand-gold hover:underline">Sun Life Organizer Download</a></p>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">Choose from two organizer formats to document your financial accounts, insurance policies, passwords, and more. These booklets are designed to give your executor everything they need to settle your estate efficiently. <a href="/resources/" class="text-brand-goldDark hover:underline">Canada Life Organizer Download</a> | <a href="/resources/" class="text-brand-goldDark hover:underline">Sun Life Organizer Download</a></p>
           </div>
           <div class="bg-brand-tintPlum p-6">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Will Planning Worksheet</h3>
-            <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">While we do not draft legal documents, we provide a worksheet to help you outline your wishes before meeting with a lawyer. This can help reduce legal costs and ensure your intentions are clearly communicated. <a href="/resources/" class="text-brand-gold hover:underline">Click here to download.</a></p>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">While we do not draft legal documents, we provide a worksheet to help you outline your wishes before meeting with a lawyer. This can help reduce legal costs and ensure your intentions are clearly communicated. <a href="/resources/" class="text-brand-goldDark hover:underline">Click here to download.</a></p>
           </div>
           <div class="bg-brand-tintPlum p-6">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mb-2">Planning for your Digital Assets</h3>
-            <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">We have two worksheets to help ensure you don't overlook documenting your digital assets: <a href="/resources/" class="text-brand-gold hover:underline">Estate Planning in the Cyber Age</a> | <a href="/resources/" class="text-brand-gold hover:underline">Planning for Digital Assets Worksheet</a></p>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">We have two worksheets to help ensure you don't overlook documenting your digital assets: <a href="/resources/" class="text-brand-goldDark hover:underline">Estate Planning in the Cyber Age</a> | <a href="/resources/" class="text-brand-goldDark hover:underline">Planning for Digital Assets Worksheet</a></p>
           </div>
         </div>
       </div>
 
       <!-- Videos & Blogs -->
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Videos &amp; Blogs</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">Videos &amp; Blogs</h2>
         <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-6">Explore our growing library of estate planning content:</p>
         <ul class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-3 list-disc list-inside mb-8">
           <li><strong>Estate Planning Strategies:</strong> Learn how segregated funds, insurance, and charitable giving can enhance your legacy.</li>
-          <li><strong>How to Leave a Tax Efficient Estate</strong> — <a href="/resources/" class="text-brand-gold hover:underline">Click here to watch video.</a></li>
-          <li><strong>What are Segregated Funds?</strong> — <a href="/resources/" class="text-brand-gold hover:underline">Click here to watch video.</a></li>
-          <li><strong>The Forgotten Estate Benefits:</strong> Discover overlooked survivor benefits and group insurance claims. <a href="/resources/" class="text-brand-gold hover:underline">Click here to watch video.</a></li>
-          <li><strong>Estate Planning Opportunities:</strong> Charitable Giving can be a great way to reduce taxes while have an impact on charities and causes you care about. <a href="/charitable-giving/" class="text-brand-gold hover:underline">Charitable Giving Page.</a></li>
+          <li><strong>How to Leave a Tax Efficient Estate</strong> — <a href="/resources/" class="text-brand-goldDark hover:underline">Click here to watch video.</a></li>
+          <li><strong>What are Segregated Funds?</strong> — <a href="/resources/" class="text-brand-goldDark hover:underline">Click here to watch video.</a></li>
+          <li><strong>The Forgotten Estate Benefits:</strong> Discover overlooked survivor benefits and group insurance claims. <a href="/resources/" class="text-brand-goldDark hover:underline">Click here to watch video.</a></li>
+          <li><strong>Estate Planning Opportunities:</strong> Charitable Giving can be a great way to reduce taxes while have an impact on charities and causes you care about. <a href="/charitable-giving/" class="text-brand-goldDark hover:underline">Charitable Giving Page.</a></li>
         </ul>
 
         <h3 class="font-sans text-sm font-semibold text-brand-plum mb-4">Blog Articles:</h3>
         <div class="space-y-5">
           <a href="/how-to-easily-reduce-the-emotional-and-financial-burden-of-settling-your-estate1/" class="block bg-brand-tintPlum p-6 hover:bg-brand-tintPlum/70 transition-colors group">
             <h4 class="font-sans text-sm font-semibold text-brand-plum mb-2 group-hover:text-brand-gold transition-colors">"How to Reduce the Emotional and Financial Burden of Settling Your Estate" →</h4>
-            <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">This article highlights all the features and benefits of using Segregated Funds in your estate planning. It also provides some creative ways to leave a legacy with different estate settlement options.</p>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">This article highlights all the features and benefits of using Segregated Funds in your estate planning. It also provides some creative ways to leave a legacy with different estate settlement options.</p>
           </a>
           <a href="/executor-essentials-navigating-responsibilities/" class="block bg-brand-tintPlum p-6 hover:bg-brand-tintPlum/70 transition-colors group">
             <h4 class="font-sans text-sm font-semibold text-brand-plum mb-2 group-hover:text-brand-gold transition-colors">"Executor Essentials: Navigating Your Responsibilities with Confidence" →</h4>
-            <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">This helpful article shares tips and trick to help your executor work through the journey of settling your estate with ease.</p>
+            <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">This helpful article shares tips and trick to help your executor work through the journey of settling your estate with ease.</p>
           </a>
         </div>
       </div>
 
       <!-- FAQ -->
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Frequently Asked Questions</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-6">Frequently Asked Questions</h2>
         <div class="space-y-6">
 
           <div>
@@ -137,7 +133,7 @@ import CTABand from '@/components/CTABand.astro';
               <p><strong>Charitable Bequests:</strong> You can include donations to charities in your will. This allows you to specify a particular amount or a percentage of your estate to be given to a charity of your choice. You can also donate appreciated investments to avoid having to pay tax on the taxable gains.</p>
               <p><strong>Donor Advised Funds:</strong> Setting up a Donor Advised Fund is like establishing your own personal foundation, but without all the administrative headaches. This allows you to provide ongoing support to your chosen charities and create a lasting legacy.</p>
               <p><strong>Beneficiary Designations:</strong> You can name a charity as a beneficiary of your life insurance or investment accounts. This is a straightforward way to ensure that a portion of your assets goes to a charitable cause.</p>
-              <p>These options not only support causes you care about but can also provide tax benefits and help minimize your estate taxes. See more details and options on our <a href="/charitable-giving/" class="text-brand-gold hover:underline">Charitable Giving page.</a></p>
+              <p>These options not only support causes you care about but can also provide tax benefits and help minimize your estate taxes. See more details and options on our <a href="/charitable-giving/" class="text-brand-goldDark hover:underline">Charitable Giving page.</a></p>
             </div>
           </div>
 
@@ -164,14 +160,14 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-10 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
-        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">This article is for general information purposes only and does not constitute personalized financial, legal, or tax advice. Estate planning often involves legal documents (wills, powers of attorney) that require a qualified estate lawyer. We work alongside your legal advisor as part of an integrated planning team.</p>
+        <p class="font-sans text-xs text-brand-ink/70 leading-relaxed">This article is for general information purposes only and does not constitute personalized financial, legal, or tax advice. Estate planning often involves legal documents (wills, powers of attorney) that require a qualified estate lawyer. We work alongside your legal advisor as part of an integrated planning team.</p>
       </div>
     </div>
   </section>
 
   <section class="bg-brand-tintSage section-gap">
     <div class="container-content">
-      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Watch &amp; Learn</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-8">Watch &amp; Learn</h2>
       <div class="max-w-2xl">
         <div class="bg-white">
           <div class="aspect-video">
@@ -184,6 +180,7 @@ import CTABand from '@/components/CTABand.astro';
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
+              loading="lazy"
               class="w-full h-full"
             ></iframe>
           </div>

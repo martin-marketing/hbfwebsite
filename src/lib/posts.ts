@@ -19,7 +19,15 @@ export interface Post {
 }
 
 export async function getAllPosts(): Promise<Post[]> {
-  if (!supabase) return [];
+  if (!supabase) {
+    if (import.meta.env.PROD) {
+      throw new Error(
+        'getAllPosts: Supabase client is not configured. Check that SUPABASE_URL and SUPABASE_ANON_KEY (or equivalent env vars) are set for this build.'
+      );
+    }
+    console.warn('getAllPosts: Supabase client is not configured; returning empty list (dev mode).');
+    return [];
+  }
   const { data, error } = await supabase
     .from('posts')
     .select('*')
@@ -27,6 +35,9 @@ export async function getAllPosts(): Promise<Post[]> {
     .order('published_at', { ascending: false });
 
   if (error) {
+    if (import.meta.env.PROD) {
+      throw new Error(`getAllPosts: failed to fetch posts from Supabase: ${error.message}`);
+    }
     console.error('Error fetching posts:', error);
     return [];
   }
@@ -34,7 +45,15 @@ export async function getAllPosts(): Promise<Post[]> {
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-  if (!supabase) return null;
+  if (!supabase) {
+    if (import.meta.env.PROD) {
+      throw new Error(
+        'getPostBySlug: Supabase client is not configured. Check that SUPABASE_URL and SUPABASE_ANON_KEY (or equivalent env vars) are set for this build.'
+      );
+    }
+    console.warn('getPostBySlug: Supabase client is not configured; returning null (dev mode).');
+    return null;
+  }
   const { data, error } = await supabase
     .from('posts')
     .select('*')
@@ -43,6 +62,9 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     .single();
 
   if (error) {
+    if (import.meta.env.PROD) {
+      throw new Error(`getPostBySlug: failed to fetch post "${slug}" from Supabase: ${error.message}`);
+    }
     console.error('Error fetching post:', error);
     return null;
   }

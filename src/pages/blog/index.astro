@@ -42,7 +42,7 @@ const totalPosts = posts.length;
   <section class="bg-brand-plum py-20">
     <div class="container-content">
       <p class="eyebrow-light mb-5">The Blog</p>
-      <h1 class="font-serif text-2xl lg:text-[2rem] text-white max-w-xl text-balance" style="font-optical-sizing: auto; line-height: 1.2; letter-spacing: -0.01em;">
+      <h1 class="font-serif text-2xl lg:text-[2rem] text-white max-w-xl text-balance" style="line-height: 1.2; letter-spacing: -0.01em;">
         Financial insights worth reading.
       </h1>
       <p class="font-sans text-[18px] text-white/65 mt-5 max-w-lg">
@@ -56,7 +56,7 @@ const totalPosts = posts.length;
     <div class="container-content">
 
       {posts.length === 0 ? (
-        <p class="font-sans text-brand-ink/60 text-center py-20">No posts yet. Check back soon.</p>
+        <p class="font-sans text-brand-ink/70 text-center py-20">No posts yet. Check back soon.</p>
       ) : (
         <>
           <!-- Category filter bar -->
@@ -81,7 +81,7 @@ const totalPosts = posts.length;
           </div>
 
           <!-- Post count line -->
-          <p class="font-sans text-sm text-brand-ink/50 mb-6" id="post-count">Showing all {totalPosts} articles</p>
+          <p class="font-sans text-sm text-brand-ink/70 mb-6" id="post-count">Showing all {totalPosts} articles</p>
 
           <!-- Posts grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="posts-grid">
@@ -100,7 +100,7 @@ const totalPosts = posts.length;
           </div>
 
           <!-- No results -->
-          <p class="font-sans text-brand-ink/50 text-center py-12 hidden" id="no-results">No articles in this category yet.</p>
+          <p class="font-sans text-brand-ink/70 text-center py-12 hidden" id="no-results">No articles in this category yet.</p>
 
           <!-- Pagination nav -->
           {totalPages > 1 && (

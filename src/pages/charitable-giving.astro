@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,14 +9,10 @@ import CTABand from '@/components/CTABand.astro';
   description="Charitable giving is a powerful tool, enabling individuals and families to create meaningful change in their communities and beyond."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Maximize the Impact of Your Charitable Giving</h1>
-      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
-        Empower your Philanthropy through smart Financial Planning
-      </p>
-    </div>
-  </section>
+  <PageHero
+    title="Maximize the Impact of Your Charitable Giving"
+    subtitle="Empower your Philanthropy through smart Financial Planning"
+  />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
@@ -25,7 +22,7 @@ import CTABand from '@/components/CTABand.astro';
       </p>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Executive Summary: Popular Donation Strategies</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-6">Executive Summary: Popular Donation Strategies</h2>
         <ul class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-3 list-disc pl-6">
           <li><strong>Direct Donation</strong> to a registered charity of your choice and receive a tax receipt.</li>
           <li><strong>In-Kind Gift of Securities:</strong> Donate Appreciated Stocks or Mutual Funds to avoid realizing a taxable capital gain and receive a tax receipt for the market value.</li>
@@ -36,7 +33,7 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Direct Donations</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">Direct Donations</h2>
         <h3 class="font-sans text-[15px] font-semibold text-brand-plum mb-3">Key Features and Tax Benefits:</h3>
         <ul class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-3 list-disc pl-6">
           <li><strong>Simplicity</strong>: Directly donate to your chosen charity.</li>
@@ -68,7 +65,7 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Donor-Advised Fund: Create Your Own Charitable Foundation</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">Donor-Advised Fund: Create Your Own Charitable Foundation</h2>
         <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-4">
           The Mackenzie Charitable Giving Program empowers donors to establish their own charitable foundation with streamlined simplicity and professional support. This program acts as a donor-advised fund (DAF), allowing you to contribute assets, select grant distributions to registered charities, and cultivate a lasting legacy of philanthropy.
         </p>
@@ -86,7 +83,7 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Life Insurance Gifts: Donation Strategies for Lasting Impact</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">Life Insurance Gifts: Donation Strategies for Lasting Impact</h2>
         <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-4">
           Gifting life insurance to a charity is an innovative way to increase your philanthropic reach, often allowing for larger legacy gifts than you might otherwise be able to make.
         </p>
@@ -104,7 +101,7 @@ import CTABand from '@/components/CTABand.astro';
       <div class="mt-12">
         <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-start">
           <div>
-            <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Using a Segregated Fund for Charitable Giving</h2>
+            <h2 class="font-serif text-h2 text-brand-plum mb-4">Using a Segregated Fund for Charitable Giving</h2>
 
             <h4 class="font-sans text-[15px] font-semibold text-brand-plum mb-3">Key Features and Benefits:</h4>
             <ul class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-3 list-disc pl-6">
@@ -126,6 +123,7 @@ import CTABand from '@/components/CTABand.astro';
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
+                loading="lazy"
                 class="w-full h-full"
               ></iframe>
             </div>
@@ -134,7 +132,7 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">How Charitable Giving Integrates with Financial and Estate Planning</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">How Charitable Giving Integrates with Financial and Estate Planning</h2>
         <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-4">
           Effective charitable giving is best achieved in partnership with a comprehensive financial plan. By integrating philanthropic goals into your overall financial and estate planning, you can maximize tax efficiency, ensure legacy continuity, and create a lasting impact. Working with a trusted financial planner allows you to tailor giving strategies to your unique circumstances and goals.
         </p>
@@ -147,7 +145,7 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Give with Purpose, Plan for Impact</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">Give with Purpose, Plan for Impact</h2>
         <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
           <p>Charitable giving is more than generosity&#8212;it&#8217;s strategic. By leveraging tailored options like the Donor-Advised Funds, in-kind donations of stocks, life insurance and segregated fund gifts, you can maximize your philanthropic impact and optimize your financial plan. Discover the satisfaction that comes from making a difference while benefiting from significant tax advantages.</p>
           <p>For personalized advice on charitable giving strategies and to learn more about setting up your own charitable foundation, donating securities, or gifting life insurance, connect with our team today. Let us help you build your philanthropic legacy and achieve your financial planning goals.</p>

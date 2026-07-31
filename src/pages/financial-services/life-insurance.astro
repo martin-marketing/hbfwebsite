@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,21 +9,16 @@ import CTABand from '@/components/CTABand.astro';
   description="Find the right life insurance coverage for your family. Term, whole life, and universal life options explained by an independent CFP® advisor in Kingston, Ontario."
 >
 
-  <!-- Hero -->
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <p class="eyebrow-light mb-5">Insurance</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Life Insurance: It's Peace of Mind</h1>
-      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
-        Whether you're safeguarding your family's future, protecting your hard-earned savings, or building long-term financial security, our tailored insurance solutions are designed to meet your unique needs. With trusted insurance providers, clear advice, and a caring approach, we make it easy for Canadians to make confident, informed decisions that protect what matters most.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Insurance"
+    title="Life Insurance: It's Peace of Mind"
+    subtitle="Whether you're safeguarding your family's future, protecting your hard-earned savings, or building long-term financial security, our tailored insurance solutions are designed to meet your unique needs. With trusted insurance providers, clear advice, and a caring approach, we make it easy for Canadians to make confident, informed decisions that protect what matters most."
+  />
 
   <!-- Why invest in life insurance -->
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Why You Should Invest in Life Insurance</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-6">Why You Should Invest in Life Insurance</h2>
       <div class="space-y-4">
         <div class="border-l-2 border-brand-plum/20 pl-5 py-1">
           <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1">Protect Your Loved Ones</h3>
@@ -51,7 +47,7 @@ import CTABand from '@/components/CTABand.astro';
   <!-- Term Life Insurance -->
   <section class="bg-brand-tintPlum section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-2" style="font-optical-sizing: auto;">Term Life Insurance</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-2">Term Life Insurance</h2>
       <p class="font-sans text-[17px] text-brand-ink/70 italic mb-5">Affordable coverage for your working years.</p>
       <ul class="font-sans text-[15px] text-brand-ink/75 leading-relaxed space-y-2 mb-6 list-disc list-inside">
         <li>Low monthly cost for high coverage</li>
@@ -97,7 +93,7 @@ import CTABand from '@/components/CTABand.astro';
   <!-- Whole Life Insurance -->
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-2" style="font-optical-sizing: auto;">Whole Life Insurance</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-2">Whole Life Insurance</h2>
       <p class="font-sans text-[17px] text-brand-ink/70 italic mb-5">Lifetime protection with built-in savings.</p>
       <ul class="font-sans text-[15px] text-brand-ink/75 leading-relaxed space-y-2 mb-6 list-disc list-inside">
         <li>Coverage that never expires</li>
@@ -149,7 +145,7 @@ import CTABand from '@/components/CTABand.astro';
 
       <!-- Whole Life closing copy -->
       <div class="bg-brand-tintPlum border-l-4 border-brand-plum/30 p-6 rounded-r-lg space-y-4">
-        <h3 class="font-serif text-h3 text-brand-plum" style="font-optical-sizing: auto;">Whole Life Insurance: A Lifetime of Protection and Peace of Mind</h3>
+        <h3 class="font-serif text-h3 text-brand-plum">Whole Life Insurance: A Lifetime of Protection and Peace of Mind</h3>
         <p class="font-sans text-[15px] text-brand-ink/75 leading-relaxed">Whole life insurance is more than just coverage—it's a lifelong financial asset. With guaranteed protection that never expires, fixed premiums that stay the same, and a cash value that grows over time, whole life insurance offers stability you can count on. Whether you're planning your legacy, covering final expenses, or building a tax-advantaged savings cushion, this policy is designed to support your long-term goals. Whole life insurance is a gift that keeps on giving.</p>
         <p class="font-sans text-[15px] text-brand-ink/75 leading-relaxed">At Heidi Blondin Financial, we help you choose a plan that fits your life today and grows with you into tomorrow. Let's build a future that's secure, flexible, and full of possibility.</p>
         <p class="font-sans text-[15px] text-brand-ink/75 leading-relaxed">We would be happy to build a personalized whole life illustrations showing projected cash values and guaranteed death benefits to suit your personal goals. Request a quote today!</p>
@@ -160,7 +156,7 @@ import CTABand from '@/components/CTABand.astro';
   <!-- Which type of life insurance is right for you -->
   <section class="bg-brand-tintPlum section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Which type of life insurance is right for you?</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-6">Which type of life insurance is right for you?</h2>
       <div class="space-y-5">
         <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed">Term is intended to cover a temporary need: a mortgage, a loan, or family protection at a time in your life when you have fewer liquid assets. It's the right starting point for most younger Canadians.</p>
         <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed">Permanent life insurance is designed for building wealth, creating estate solutions, and leaving a legacy to the people and causes you care about. It's a long-game strategy that works best for clients thinking beyond protection alone.</p>
@@ -172,7 +168,7 @@ import CTABand from '@/components/CTABand.astro';
   <!-- Sample Pricing -->
   <section class="bg-white section-gap">
     <div class="container-content max-w-4xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Sample 10-year Life Insurance Pricing:</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-8">Sample 10-year Life Insurance Pricing:</h2>
 
       <!-- Male table -->
       <h3 class="font-sans text-base font-semibold text-brand-plum mb-3">Male, 10-year Term Insurance - Non-Smoker</h3>
@@ -278,7 +274,7 @@ import CTABand from '@/components/CTABand.astro';
 
       <!-- Pricing disclaimer -->
       <div class="bg-brand-tintPlum border-l-2 border-brand-plum/20 p-4">
-        <p class="font-sans text-xs text-brand-ink/55 leading-relaxed">The sample pricing charts provided on this website are for informational purposes only and are based on Term 10 life insurance rates as of September 16th, 2025. Please note that all pricing is subject to change without prior notice and may vary depending on individual underwriting and approval by the insurance provider. Final rates are determined based on age, health, lifestyle, and other underwriting criteria. This chart does not constitute an offer or guarantee of coverage.</p>
+        <p class="font-sans text-xs text-brand-ink/70 leading-relaxed">The sample pricing charts provided on this website are for informational purposes only and are based on Term 10 life insurance rates as of September 16th, 2025. Please note that all pricing is subject to change without prior notice and may vary depending on individual underwriting and approval by the insurance provider. Final rates are determined based on age, health, lifestyle, and other underwriting criteria. This chart does not constitute an offer or guarantee of coverage.</p>
       </div>
     </div>
   </section>
@@ -286,7 +282,7 @@ import CTABand from '@/components/CTABand.astro';
   <!-- How It Works -->
   <section class="bg-brand-tintPlum section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">How It Works</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-8">How It Works</h2>
       <ol class="space-y-4">
         <li class="flex gap-4">
           <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-plum text-white font-sans text-sm font-semibold flex items-center justify-center">1</span>
@@ -315,7 +311,7 @@ import CTABand from '@/components/CTABand.astro';
   <!-- Life insurance as part of your complete financial plan -->
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Life insurance as part of your complete financial plan</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-6">Life insurance as part of your complete financial plan</h2>
       <div class="space-y-5">
         <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed">Investments and insurance are complementary vehicles used to create a holistic and comprehensive financial plan. Life insurance and living benefits are designed to protect the assets you've accumulated and people you care about.</p>
         <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed">There are three phases of protection. Early in life, when assets are few, term insurance protects the people you care about until your net worth grows. As your wealth builds, permanent coverage shifts from protection to legacy. And living benefits (critical illness and disability) protect your savings from being depleted if illness or injury interrupts your income.</p>
@@ -327,7 +323,7 @@ import CTABand from '@/components/CTABand.astro';
   <!-- Learn More About The Process -->
   <section class="bg-brand-tintPlum section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-3" style="font-optical-sizing: auto;">Learn More About The Process</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-3">Learn More About The Process</h2>
       <p class="font-sans text-[17px] text-brand-ink/70 mb-8 leading-relaxed">We believe in keeping things simple, transparent, and efficient for you. Getting life insurance with us is straightforward:</p>
 
       <div class="space-y-6">
@@ -361,7 +357,7 @@ import CTABand from '@/components/CTABand.astro';
   <!-- Why Work With Us -->
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Why work with us?</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-8">Why work with us?</h2>
       <div class="space-y-4">
         <div class="border-l-2 border-brand-plum/20 pl-5 py-1">
           <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1">Independent &amp; Unbiased</h3>
@@ -386,7 +382,7 @@ import CTABand from '@/components/CTABand.astro';
   <!-- Testimonials -->
   <section class="bg-brand-tintPlum section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">What our clients are saying...</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-8">What our clients are saying...</h2>
 
       <div class="space-y-6">
         <blockquote class="bg-white p-6 rounded-lg border-l-4 border-brand-plum/30">
@@ -407,7 +403,7 @@ import CTABand from '@/components/CTABand.astro';
   <!-- Dedicated To Client Satisfaction -->
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Dedicated To Client Satisfaction</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-4">Dedicated To Client Satisfaction</h2>
       <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed">Whether you're looking for life insurance for yourself or a loved one, Heidi or Joanne can make the process informative and as smooth as possible. They have strong relationships with numerous insurance carriers across Canada. They use their expertise and precision to detail to narrow down the best and most cost effective options for you to choose from. Heidi or Joanne will explain the terms and conditions and help you make an informed decision.</p>
     </div>
   </section>
@@ -415,7 +411,7 @@ import CTABand from '@/components/CTABand.astro';
   <!-- At Your Service -->
   <section class="bg-brand-tintPlum section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">At Your Service</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-4">At Your Service</h2>
       <p class="font-sans text-[16px] text-brand-ink/75 leading-relaxed mb-8">As established Kingston, ON, life insurance advisors, Heidi Blondin and Joanne Charron proudly serve customers throughout Ontario and New Brunswick. For your convenience, they offer flexible appointment times, online applications, and a quick response to all inquiries. To schedule a consultation, call today. 855-844-3927</p>
       <a href="/contact" class="btn-primary inline-block">Request A Life Insurance Quote Online</a>
     </div>

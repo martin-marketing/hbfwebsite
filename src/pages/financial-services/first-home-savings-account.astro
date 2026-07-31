@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,12 +9,7 @@ import CTABand from '@/components/CTABand.astro';
   description="The FHSA combines tax-deductible contributions and tax-free withdrawals to help Canadians fund their first home purchase. Learn about limits, eligibility, and how to combine it with the HBP."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <p class="eyebrow-light mb-5">Financial Services</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Saving for a Home with the Tax-Free First Home Savings Account (FHSA)</h1>
-    </div>
-  </section>
+  <PageHero eyebrow="Financial Services" title="Saving for a Home with the Tax-Free First Home Savings Account (FHSA)" />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
@@ -32,6 +28,7 @@ import CTABand from '@/components/CTABand.astro';
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
+              loading="lazy"
               class="w-full h-full"
             ></iframe>
           </div>
@@ -39,7 +36,7 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Key Features:</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-6">Key Features:</h2>
         <ul class="font-sans text-[16px] text-brand-ink/75 leading-relaxed space-y-2">
           <li class="flex items-start gap-2"><span class="text-brand-gold mt-1">&#8594;</span><span><strong>Lifetime Contribution Limit:</strong> $40,000</span></li>
           <li class="flex items-start gap-2"><span class="text-brand-gold mt-1">&#8594;</span><span><strong>Annual Contribution Limit:</strong> $8,000</span></li>
@@ -50,7 +47,7 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Additional Details:</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-6">Additional Details:</h2>
         <ul class="font-sans text-[16px] text-brand-ink/75 leading-relaxed space-y-4">
           <li class="flex items-start gap-2"><span class="text-brand-gold mt-1">&#8594;</span><span>If you don't buy a qualifying home within 15 years, the FHSA must be closed. Remaining funds can be transferred tax-free to an RRSP or RRIF (even if you don't have available contribution room), or withdrawn on a taxable basis.</span></li>
           <li class="flex items-start gap-2"><span class="text-brand-gold mt-1">&#8594;</span><span>Eligibility requires you to be at least 18 years old, a Canadian resident, and not have owned a home (or lived in one owned by your spouse) in the current or previous four calendar years.</span></li>
@@ -62,7 +59,7 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Let's Structure Your Savings Plan</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">Let's Structure Your Savings Plan</h2>
         <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-6">Whether you're just starting to save or ready to make your first home purchase, we're here to help you make the most of the FHSA and other available programs. We'll work with you to:</p>
         <ul class="font-sans text-[16px] text-brand-ink/75 leading-relaxed space-y-2">
           <li class="flex items-start gap-2"><span class="text-brand-gold mt-1">&#8594;</span><span>Maximize your tax benefits</span></li>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found | Heidi Blondin Financial"
+  description="The page you are looking for could not be found."
+  noindex={true}
+>
+
+  <section class="bg-brand-plum py-32">
+    <div class="container-content text-center max-w-xl">
+      <p class="font-sans text-sm uppercase tracking-widest text-brand-goldDark mb-4">404</p>
+      <h1 class="font-serif text-display text-white text-balance">Page not found.</h1>
+      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
+        The page you are looking for may have been moved or no longer exists.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/" class="btn-primary-gold">Back to home</a>
+        <a href="/financial-services/" class="btn-ghost-light">Financial services</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

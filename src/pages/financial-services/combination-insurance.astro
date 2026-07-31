@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,16 +9,11 @@ import CTABand from '@/components/CTABand.astro';
   description="Combination insurance provides three-in-one protection of disability, critical illness, and life insurance. Learn more from Heidi Blondin Financial in Kingston, Ontario."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <p class="eyebrow-light mb-5">Insurance</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Combination Insurance</h1>
-    </div>
-  </section>
+  <PageHero eyebrow="Insurance" title="Combination Insurance" />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Combination Insurance</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-6">Combination Insurance</h2>
       <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
         <p>What would happen if your paycheque was interrupted for a week, a month or longer?</p>
         <p>Many Canadians don't have the savings to support a short, let alone lengthy, interruption in income. So how will they manage to pay their bills if they get sick or disabled.</p>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,12 +9,7 @@ import CTABand from '@/components/CTABand.astro';
   description="Learn how Tax Free Savings Accounts (TFSAs) work, who they're ideal for, and how to maximize your contribution room with Heidi Blondin Financial."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <p class="eyebrow-light mb-5">Investing</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Tax Free Savings Accounts</h1>
-    </div>
-  </section>
+  <PageHero eyebrow="Investing" title="Tax Free Savings Accounts" />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
@@ -24,7 +20,7 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Is a Tax Free Savings Account for me?</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">Is a Tax Free Savings Account for me?</h2>
         <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-4">TFSAs are ideal for:</p>
         <ul class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-2 list-disc list-inside">
           <li>Canadians making less than $50,000 per year</li>
@@ -55,7 +51,7 @@ import CTABand from '@/components/CTABand.astro';
 
   <section class="bg-brand-tintSage section-gap">
     <div class="container-content">
-      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Watch &amp; Learn</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-8">Watch &amp; Learn</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-white">
           <div class="aspect-video">
@@ -68,12 +64,13 @@ import CTABand from '@/components/CTABand.astro';
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
+              loading="lazy"
               class="w-full h-full"
             ></iframe>
           </div>
           <div class="p-5">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mt-1.5 mb-2 leading-snug">About Tax Free Savings Accounts</h3>
-            <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed">Tax Free Savings Accounts are a great way for you to grow your money, and never worry about paying tax on the growth. Watch this video to learn more.</p>
+            <p class="font-sans text-[13px] text-brand-ink/70 leading-relaxed">Tax Free Savings Accounts are a great way for you to grow your money, and never worry about paying tax on the growth. Watch this video to learn more.</p>
           </div>
         </div>
         <div class="bg-white">
@@ -87,12 +84,13 @@ import CTABand from '@/components/CTABand.astro';
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
+              loading="lazy"
               class="w-full h-full"
             ></iframe>
           </div>
           <div class="p-5">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mt-1.5 mb-2 leading-snug">RRSP vs TFSA</h3>
-            <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed">Both RRSPs and TFSAs have their benefits. In this video we discuss the differences between them, to help you decide what suits your personal situation.</p>
+            <p class="font-sans text-[13px] text-brand-ink/70 leading-relaxed">Both RRSPs and TFSAs have their benefits. In this video we discuss the differences between them, to help you decide what suits your personal situation.</p>
           </div>
         </div>
       </div>

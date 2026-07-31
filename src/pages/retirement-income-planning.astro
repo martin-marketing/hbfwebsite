@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 
 const helpList = [
   'Maximize income from RRSPs, TFSAs, pensions, and non-registered accounts',
@@ -62,22 +63,18 @@ const reasons = [
   description="Turn your savings into reliable income. CPP timing, RRIF drawdowns, OAS optimization, and TFSA strategy for Ontario retirees — Heidi Blondin Financial, Kingston."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <p class="eyebrow-light mb-5">Planning</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Retirement Income Planning: Your Path to Peace of Mind</h1>
-      <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
-        What if your retirement could be your most confident and rewarding chapter yet? At Heidi Blondin Financial, we believe retirement should be a time of freedom—not financial stress. Whether you're five years away or already retired, our Retirement Income Planning services are designed to help you build a reliable, tax-efficient income stream that supports your lifestyle and legacy.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Planning"
+    title="Retirement Income Planning: Your Path to Peace of Mind"
+    subtitle="What if your retirement could be your most confident and rewarding chapter yet? At Heidi Blondin Financial, we believe retirement should be a time of freedom—not financial stress. Whether you're five years away or already retired, our Retirement Income Planning services are designed to help you build a reliable, tax-efficient income stream that supports your lifestyle and legacy."
+  />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
 
       <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-start">
         <div>
-          <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">What Is Retirement Income Planning?</h2>
+          <h2 class="font-serif text-h2 text-brand-plum mb-6">What Is Retirement Income Planning?</h2>
           <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
             <p>Retirement Income Planning is the process of transforming your savings into a sustainable income that lasts throughout retirement. It's not just about having enough—it's about strategically managing withdrawals, taxes, and investments so you can enjoy life without worrying about market volatility or unexpected expenses. A well-crafted retirement income plan, allows you to approach your future with confidence, knowing your finances are structured to support your goals and provide peace of mind throughout your retirement years.</p>
           </div>
@@ -93,6 +90,7 @@ const reasons = [
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
+              loading="lazy"
               class="w-full h-full"
             ></iframe>
           </div>
@@ -112,7 +110,7 @@ const reasons = [
       </div>
 
       <div class="mt-16">
-        <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Our Process: From Vision to Plan</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-4">Our Process: From Vision to Plan</h2>
         <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-8">Creating a Comprehensive Financial Plan is like assembling a puzzle—each piece matters. Here's how we guide you:</p>
 
         <div class="space-y-8">
@@ -126,7 +124,7 @@ const reasons = [
                     {docList.map(doc => (
                       <li class="flex items-start gap-3">
                         <span class="text-brand-gold font-bold mt-0.5">&#8226;</span>
-                        <span class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">{doc}</span>
+                        <span class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">{doc}</span>
                       </li>
                     ))}
                   </ul>
@@ -140,19 +138,19 @@ const reasons = [
       </div>
 
       <div class="mt-16">
-        <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Why Clients Choose Us</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-8">Why Clients Choose Us</h2>
         <div class="space-y-4">
           {reasons.map(item => (
             <div class="border-l-2 border-brand-gold/40 pl-5 py-2">
               <h3 class="font-sans text-sm font-semibold text-brand-plum mb-1.5">{item.title}</h3>
-              <p class="font-sans text-[14px] text-brand-ink/65 leading-relaxed">{item.desc}</p>
+              <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
       </div>
 
       <div class="mt-12 bg-brand-tintPlum p-7">
-        <h3 class="font-serif text-lg text-brand-plum mb-3" style="font-optical-sizing: auto;">Download Our Retirement Planning Checklist</h3>
+        <h3 class="font-serif text-lg text-brand-plum mb-3">Download Our Retirement Planning Checklist</h3>
         <p class="font-sans text-[15px] text-brand-ink/70 leading-relaxed">Call us at <a href="tel:6138872726" class="text-brand-plum font-semibold hover:underline">613-887-2726</a> to speak with our team.</p>
       </div>
 
@@ -165,7 +163,7 @@ const reasons = [
 
   <section class="bg-brand-tintSage section-gap">
     <div class="container-content">
-      <h2 class="font-serif text-h2 text-brand-plum mb-8" style="font-optical-sizing: auto;">Watch &amp; Learn</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-8">Watch &amp; Learn</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-white">
           <div class="aspect-video">
@@ -178,12 +176,13 @@ const reasons = [
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
+              loading="lazy"
               class="w-full h-full"
             ></iframe>
           </div>
           <div class="p-5">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mt-1.5 mb-2 leading-snug">How can I Retire With Confidence?</h3>
-            <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed">So you want to retire? Want to make sure that you can live the life you want to after retirement? Contact Heidi today!</p>
+            <p class="font-sans text-[13px] text-brand-ink/70 leading-relaxed">So you want to retire? Want to make sure that you can live the life you want to after retirement? Contact Heidi today!</p>
           </div>
         </div>
         <div class="bg-white">
@@ -197,12 +196,13 @@ const reasons = [
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
+              loading="lazy"
               class="w-full h-full"
             ></iframe>
           </div>
           <div class="p-5">
             <h3 class="font-sans text-sm font-semibold text-brand-plum mt-1.5 mb-2 leading-snug">When Should I Start Taking Canadian Pension Plan?</h3>
-            <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed">Deciding when to start Canada Pension Plan payments can be difficult. Each situation is unique. Contact Heidi today to learn what timing is right for you!</p>
+            <p class="font-sans text-[13px] text-brand-ink/70 leading-relaxed">Deciding when to start Canada Pension Plan payments can be difficult. Each situation is unique. Contact Heidi today to learn what timing is right for you!</p>
           </div>
         </div>
       </div>

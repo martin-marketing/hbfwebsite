@@ -22,11 +22,11 @@ const { quote, attribution, compact = false } = Astro.props;
       <div class="w-[600px] h-[600px] rounded-full border border-white"></div>
     </div>
     <div class="container-content text-center relative">
-      <div class="font-serif text-brand-gold text-7xl leading-none mb-4 select-none" style="font-optical-sizing: auto;">&ldquo;</div>
+      <div class="font-serif text-brand-gold text-7xl leading-none mb-4 select-none">&ldquo;</div>
       <blockquote class="font-serif text-white/90 max-w-3xl mx-auto mb-6 leading-relaxed" style={`font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-optical-sizing: auto; font-style: italic; font-variation-settings: 'SOFT' 60;`}>
         {quote}
       </blockquote>
-      <cite class="font-sans text-xs tracking-[0.2em] uppercase text-white/45 not-italic">{attribution}</cite>
+      <cite class="font-sans text-xs tracking-[0.2em] uppercase text-white/70 not-italic">{attribution}</cite>
     </div>
   </section>
 )}

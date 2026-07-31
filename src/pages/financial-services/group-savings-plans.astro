@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,11 +9,7 @@ import CTABand from '@/components/CTABand.astro';
   description="Employer-sponsored group savings plans that help your team build financial security. Group RRSPs, DPSPs, and pension alternatives for Ontario businesses."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Group Retirement Savings Plans</h1>
-    </div>
-  </section>
+  <PageHero title="Group Retirement Savings Plans" />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
@@ -28,6 +25,7 @@ import CTABand from '@/components/CTABand.astro';
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          loading="lazy"
         ></iframe>
       </div>
 
@@ -51,7 +49,7 @@ import CTABand from '@/components/CTABand.astro';
 
   <section class="bg-brand-tintPlum section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">At your Service</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-6">At your Service</h2>
       <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
         <p>At Heidi Blondin Financial, we will make administering your Group Savings Plan simple. We will also provide access to one-on-one financial advise for each of your employees. This will truly show your employees that you value their services and care about their financial future.</p>
       </div>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
 
 const testimonials = [
   {
@@ -42,18 +43,15 @@ const testimonials = [
   description="What clients say about working with Heidi Blondin Financial. Real experiences from real Ontario families."
 >
 
-  <!-- Hero -->
-  <section class="bg-brand-plum py-20 lg:py-28">
-    <div class="container-content text-center">
-      <p class="eyebrow-light mb-5">Client Stories</p>
-      <h1 class="font-serif text-display text-white max-w-2xl mx-auto text-balance" style="font-optical-sizing: auto;">
-        What our clients say
-      </h1>
-      <p class="font-sans text-[18px] text-white/65 mt-6 max-w-lg mx-auto">
-        We measure success by the confidence our clients feel about their financial future.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Client Stories"
+    title="What our clients say"
+    titleClass="font-serif text-display text-white max-w-2xl mx-auto text-balance"
+    subtitle="We measure success by the confidence our clients feel about their financial future."
+    subtitleClass="font-sans text-[18px] text-white/65 mt-6 max-w-lg mx-auto"
+    padding="py-20 lg:py-28"
+    center
+  />
 
   <!-- Testimonials grid -->
   <section class="bg-white section-gap">
@@ -61,8 +59,8 @@ const testimonials = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {testimonials.map(t => (
           <div class="bg-brand-tintPlum p-8 flex flex-col">
-            <div class="font-serif text-brand-gold text-5xl leading-none mb-4 select-none" style="font-optical-sizing: auto;">&ldquo;</div>
-            <blockquote class="font-serif text-lg text-brand-plum leading-relaxed flex-1 mb-6" style="font-optical-sizing: auto; font-style: italic; font-variation-settings: 'SOFT' 60;">
+            <div class="font-serif text-brand-gold text-5xl leading-none mb-4 select-none">&ldquo;</div>
+            <blockquote class="font-serif text-lg text-brand-plum leading-relaxed flex-1 mb-6" style="font-style: italic; font-variation-settings: 'SOFT' 60;">
               {t.quote.split('\n').map((line, i, arr) => (
                 <Fragment>{line}{i < arr.length - 1 && <br />}</Fragment>
               ))}

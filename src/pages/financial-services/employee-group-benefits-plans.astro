@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,12 +9,7 @@ import CTABand from '@/components/CTABand.astro';
   description="Employer-sponsored group benefits that attract and retain great employees. Health, dental, life, disability, and group savings plans for Ontario businesses."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <p class="eyebrow-light mb-5">Insurance</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Group Benefits and Savings</h1>
-    </div>
-  </section>
+  <PageHero eyebrow="Insurance" title="Group Benefits and Savings" />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
@@ -28,7 +24,7 @@ import CTABand from '@/components/CTABand.astro';
       </div>
 
       <div class="mt-12">
-        <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Excellent Customer Service</h2>
+        <h2 class="font-serif text-h2 text-brand-plum mb-6">Excellent Customer Service</h2>
         <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
           <p>At Heidi Blondin Financial, we understand that the process of choosing an Employee Benefit and Retirement Savings package can be time-consuming and complex. That's why we make it our business to offer excellent customer service every step of the way. When you work with us, we'll take the time to discuss your options and help you make the right decision for your company. Whether you're looking to offer your employees health insurance, life insurance, retirement savings, profit sharing or pension plans, we're here to provide the information you need.</p>
           <p>Give your employees a set of benefits they'll be sure to appreciate.</p>

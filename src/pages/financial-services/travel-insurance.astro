@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,16 +9,11 @@ import CTABand from '@/components/CTABand.astro';
   description="Travel insurance for residents and visitors to Canada. Get peace of mind for your next trip with coverage arranged through Heidi Blondin Financial."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <p class="eyebrow-light mb-5">Insurance</p>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Travel Insurance</h1>
-    </div>
-  </section>
+  <PageHero eyebrow="Insurance" title="Travel Insurance" />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
-      <h2 class="font-serif text-h2 text-brand-plum mb-6" style="font-optical-sizing: auto;">Why do I need Travel Insurance?</h2>
+      <h2 class="font-serif text-h2 text-brand-plum mb-6">Why do I need Travel Insurance?</h2>
       <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
         <p>Sudden illnesses, accidents and theft can instantly turn your fun vacation into a financial nightmare. Don't let your travel plans be ruined by an unforeseen event. Travel Insurance offers you peace of mind so you can enjoy your hard earned vacation.</p>
         <p>Carrying insurance when you travel provides the comfort of knowing that if you break your arm or your luggage is stolen, all of the expenses are covered. That way, you can focus on your family instead of worrying about how you're going to afford medical bills or new clothes and other travel essentials.</p>

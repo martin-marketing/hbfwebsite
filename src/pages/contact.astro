@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ContactForm from '@/components/ContactForm.astro';
+import PageHero from '@/components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,14 +9,7 @@ import ContactForm from '@/components/ContactForm.astro';
   description="Contact Heidi Blondin Financial Services - Kingston - Belleville. 855 - 844 - 3927 (Toll Free)"
 >
 
-  <!-- Page header -->
-  <section class="bg-brand-plum py-16">
-    <div class="container-content">
-      <h1 class="font-serif text-display text-white" style="font-optical-sizing: auto;">
-        Contact
-      </h1>
-    </div>
-  </section>
+  <PageHero title="Contact" titleClass="font-serif text-display text-white" padding="py-16" />
 
   <!-- Contact content -->
   <section class="bg-brand-tintPlum section-gap">
@@ -30,9 +24,9 @@ import ContactForm from '@/components/ContactForm.astro';
             <div>
               <p class="font-semibold text-brand-plum">Contact</p>
               <p class="font-medium text-brand-plum">Heidi Blondin Financial Inc.</p>
-              <p><a href="tel:6138872726" class="text-brand-plum hover:text-brand-gold transition-colors">613.887.2726</a> (Heidi)</p>
-              <p><a href="tel:6138179641" class="text-brand-plum hover:text-brand-gold transition-colors">613.817.9641</a> (Angela &ndash; Heidi&rsquo;s Assistant) <a href="mailto:hbadmin@heidiblondin.com" class="text-brand-gold hover:text-amber-700 transition-colors">hbadmin@heidiblondin.com</a></p>
-              <p><a href="tel:8558443927" class="text-brand-plum hover:text-brand-gold transition-colors">855.844.3927</a> (Toll Free)</p>
+              <p><a href="tel:6138872726" class="text-brand-plum hover:text-brand-goldDark transition-colors">613.887.2726</a> (Heidi)</p>
+              <p><a href="tel:6138179641" class="text-brand-plum hover:text-brand-goldDark transition-colors">613.817.9641</a> (Angela &ndash; Heidi&rsquo;s Assistant) <a href="mailto:hbadmin@heidiblondin.com" class="text-brand-goldDark hover:text-amber-700 transition-colors">hbadmin@heidiblondin.com</a></p>
+              <p><a href="tel:8558443927" class="text-brand-plum hover:text-brand-goldDark transition-colors">855.844.3927</a> (Toll Free)</p>
             </div>
             <div>
               <p class="font-medium text-brand-plum">Kingston Office</p>
@@ -50,7 +44,9 @@ import ContactForm from '@/components/ContactForm.astro';
             src="/office/contact.jpeg"
             alt="Heidi Blondin Financial office — Kingston, Ontario"
             class="w-full"
-            loading="eager"
+            loading="lazy"
+            width="1800"
+            height="1350"
           />
         </div>
 

@@ -43,7 +43,7 @@ const nextUrl = pageNum < totalPages ? `/blog/page/${pageNum + 1}/` : null;
   <section class="bg-brand-plum py-20">
     <div class="container-content">
       <p class="eyebrow-light mb-5">The Blog</p>
-      <h1 class="font-serif text-2xl lg:text-[2rem] text-white max-w-xl text-balance" style="font-optical-sizing: auto; line-height: 1.2; letter-spacing: -0.01em;">
+      <h1 class="font-serif text-2xl lg:text-[2rem] text-white max-w-xl text-balance" style="line-height: 1.2; letter-spacing: -0.01em;">
         Financial insights worth reading.
       </h1>
       <p class="font-sans text-[18px] text-white/65 mt-5 max-w-lg">
@@ -73,7 +73,7 @@ const nextUrl = pageNum < totalPages ? `/blog/page/${pageNum + 1}/` : null;
       <!-- Pagination nav -->
       <div class="flex items-center justify-between mt-12">
         <a href={prevUrl} class="btn-ghost">← Previous</a>
-        <span class="font-sans text-sm text-brand-ink/50">Page {pageNum} of {totalPages}</span>
+        <span class="font-sans text-sm text-brand-ink/70">Page {pageNum} of {totalPages}</span>
         {nextUrl
           ? <a href={nextUrl} class="btn-ghost">Next →</a>
           : <span />

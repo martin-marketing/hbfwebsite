@@ -36,3 +36,10 @@ pnpm-debug.log*
 *.sln
 *.sw?
 .vercel
+
+# raw source assets (not deployed; keep out of git)
+uploads/
+Office photos/
+Team photos/
+Inspiration website elements/
+zipuploads.php

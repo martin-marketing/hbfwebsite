@@ -13,7 +13,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       <div class="w-16 h-16 bg-brand-gold/20 rounded-full flex items-center justify-center mx-auto mb-8">
         <svg class="w-8 h-8 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
       </div>
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Thank you for your request.</h1>
+      <h1 class="font-serif text-display text-white text-balance">Thank you for your request.</h1>
       <p class="font-sans text-[18px] text-white/65 mt-5 leading-relaxed">
         We've received your information and will be in touch within 1–2 business days. If your matter is urgent, please call us directly.
       </p>
@@ -23,5 +23,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', { form: 'insurance_quote' });
+    }
+  </script>
 
 </BaseLayout>

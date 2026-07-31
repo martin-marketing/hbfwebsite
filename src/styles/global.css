@@ -37,12 +37,15 @@
 
   h1, h2, h3, h4 {
     @apply font-serif;
+  }
+
+  h1, h2, h3, h4, .font-serif {
     font-optical-sizing: auto;
   }
 
   /* Skip to content */
   .skip-link {
-    @apply absolute -top-full left-4 z-50 px-4 py-2 bg-brand-gold text-white font-sans font-medium text-sm;
+    @apply absolute -top-full left-4 z-50 px-4 py-2 bg-brand-goldDark text-white font-sans font-medium text-sm;
     transition: top 0.1s;
   }
   .skip-link:focus {
@@ -62,7 +65,7 @@
     @apply inline-flex items-center gap-2 px-7 py-4 bg-brand-plum text-white font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plumDark;
   }
   .btn-primary-gold {
-    @apply inline-flex items-center gap-2 px-7 py-4 bg-brand-gold text-white font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-amber-700;
+    @apply inline-flex items-center gap-2 px-7 py-4 bg-brand-goldDark text-white font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-amber-700;
   }
   .btn-ghost {
     @apply inline-flex items-center gap-2 px-7 py-4 border border-brand-plum text-brand-plum font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plum hover:text-white;
@@ -78,7 +81,7 @@
 
   /* Eyebrow label */
   .eyebrow {
-    @apply font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-gold;
+    @apply font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-goldDark;
   }
   .eyebrow-sage {
     @apply font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-sageDark;
@@ -120,7 +123,7 @@
     @apply italic;
   }
   .prose-hbf a {
-    @apply text-brand-gold underline underline-offset-2 hover:text-brand-plum;
+    @apply text-brand-goldDark underline underline-offset-2 hover:text-brand-plum;
   }
   .prose-hbf ol {
     @apply mb-5 pl-6 space-y-2;
@@ -199,13 +202,16 @@
 
 /* Mobile drawer */
 .mobile-drawer {
-  transition: transform 200ms ease-out;
+  transition: transform 200ms ease-out, visibility 0s linear 200ms;
 }
 .mobile-drawer.closed {
   transform: translateX(-100%);
+  visibility: hidden;
 }
 .mobile-drawer.open {
   transform: translateX(0);
+  visibility: visible;
+  transition: transform 200ms ease-out, visibility 0s linear 0s;
 }
 
 /* Accordion */
@@ -219,6 +225,18 @@
 }
 .accordion-body > div {
   overflow: hidden;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 /* Fraunces italic for emphasis */

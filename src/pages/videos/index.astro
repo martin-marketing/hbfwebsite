@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/PageHero.astro';
 
 const videos = [
   {
@@ -115,13 +116,7 @@ const videos = [
   description="This page includes numerous videos designed to teach you about financial planning. New: Financial Literacy Mini-Series to help Transform your Finances."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content">
-      <h1 class="font-serif text-display text-white max-w-2xl text-balance" style="font-optical-sizing: auto;">
-        Heidi Blondin Financial Videos
-      </h1>
-    </div>
-  </section>
+  <PageHero title="Heidi Blondin Financial Videos" titleClass="font-serif text-display text-white max-w-2xl text-balance" />
 
   <section class="bg-brand-tintSage section-gap">
     <div class="container-content">
@@ -141,12 +136,13 @@ const videos = [
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
+                loading="lazy"
                 class="w-full h-full"
               ></iframe>
             </div>
             <div class="p-5">
               <h3 class="font-sans text-sm font-semibold text-brand-plum mt-1.5 mb-2 leading-snug">{video.title}</h3>
-              <p class="font-sans text-[13px] text-brand-ink/60 leading-relaxed">{video.desc}</p>
+              <p class="font-sans text-[13px] text-brand-ink/70 leading-relaxed">{video.desc}</p>
             </div>
           </div>
         ))}

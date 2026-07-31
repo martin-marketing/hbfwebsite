@@ -7,36 +7,36 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <div class="bg-white p-8 lg:p-10 shadow-sm border border-brand-plum/8">
-  <h2 class="font-serif text-h3 text-brand-plum mb-6" style="font-optical-sizing: auto;">{heading}</h2>
+  <h2 class="font-serif text-h3 text-brand-plum mb-6">{heading}</h2>
   <form id="contact-form" novalidate>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
       <div>
-        <label for="first_name" class="field-label">First Name <span class="text-brand-gold">*</span></label>
-        <input type="text" id="first_name" name="first_name" autocomplete="given-name" required class="field-input" />
-        <p class="field-error hidden text-[11px] text-red-600 mt-1" data-for="first_name">Please enter your first name.</p>
+        <label for="first_name" class="field-label">First Name <span class="text-brand-goldDark">*</span></label>
+        <input type="text" id="first_name" name="first_name" autocomplete="given-name" required class="field-input" aria-describedby="first_name-error" />
+        <p id="first_name-error" class="field-error hidden text-[13px] text-red-600 mt-1" data-for="first_name" aria-live="polite">Please enter your first name.</p>
       </div>
       <div>
-        <label for="last_name" class="field-label">Last Name <span class="text-brand-gold">*</span></label>
-        <input type="text" id="last_name" name="last_name" autocomplete="family-name" required class="field-input" />
-        <p class="field-error hidden text-[11px] text-red-600 mt-1" data-for="last_name">Please enter your last name.</p>
+        <label for="last_name" class="field-label">Last Name <span class="text-brand-goldDark">*</span></label>
+        <input type="text" id="last_name" name="last_name" autocomplete="family-name" required class="field-input" aria-describedby="last_name-error" />
+        <p id="last_name-error" class="field-error hidden text-[13px] text-red-600 mt-1" data-for="last_name" aria-live="polite">Please enter your last name.</p>
       </div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
       <div>
-        <label for="email" class="field-label">Email <span class="text-brand-gold">*</span></label>
-        <input type="email" id="email" name="email" autocomplete="email" required class="field-input" />
-        <p class="field-error hidden text-[11px] text-red-600 mt-1" data-for="email">Please enter a valid email address.</p>
+        <label for="email" class="field-label">Email <span class="text-brand-goldDark">*</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" required class="field-input" aria-describedby="email-error" />
+        <p id="email-error" class="field-error hidden text-[13px] text-red-600 mt-1" data-for="email" aria-live="polite">Please enter a valid email address.</p>
       </div>
       <div>
-        <label for="phone" class="field-label">Phone <span class="text-brand-gold">*</span></label>
-        <input type="tel" id="phone" name="phone" autocomplete="tel" required class="field-input" />
-        <p class="field-error hidden text-[11px] text-red-600 mt-1" data-for="phone">Please enter your phone number.</p>
+        <label for="phone" class="field-label">Phone <span class="text-brand-goldDark">*</span></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" required class="field-input" aria-describedby="phone-error" />
+        <p id="phone-error" class="field-error hidden text-[13px] text-red-600 mt-1" data-for="phone" aria-live="polite">Please enter your phone number.</p>
       </div>
     </div>
     <div class="mb-5">
-      <label for="message" class="field-label">Questions / Comments <span class="text-brand-gold">*</span></label>
-      <textarea id="message" name="message" rows="5" required class="field-input resize-none"></textarea>
-      <p class="field-error hidden text-[11px] text-red-600 mt-1" data-for="message">Please enter your message.</p>
+      <label for="message" class="field-label">Questions / Comments <span class="text-brand-goldDark">*</span></label>
+      <textarea id="message" name="message" rows="5" required class="field-input resize-none" aria-describedby="message-error"></textarea>
+      <p id="message-error" class="field-error hidden text-[13px] text-red-600 mt-1" data-for="message" aria-live="polite">Please enter your message.</p>
     </div>
 
     <!-- CASL consent — unchecked by default (CASL requirement) -->
@@ -55,11 +55,8 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       <svg id="submit-spinner" class="hidden w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
     </button>
 
-    <div id="form-success" class="hidden mt-6 bg-brand-tintSage border border-brand-sageDark/25 p-5">
-      <p class="font-sans text-sm font-medium text-brand-sageDark">Thank you for reaching out. We'll be in touch with you shortly.</p>
-    </div>
-    <div id="form-error" class="hidden mt-6 bg-red-50 border border-red-200 p-5">
-      <p class="font-sans text-sm text-red-700">Something went wrong. Please try again or call us at <a href="tel:18558443927" class="underline">1-855-844-3927</a>.</p>
+    <div id="form-error" class="hidden mt-6 bg-red-50 border border-red-200 p-5" role="alert" aria-live="polite">
+      <p id="form-error-message" class="font-sans text-sm text-red-700">Something went wrong. Please try again or call us at <a href="tel:18558443927" class="underline">1-855-844-3927</a>.</p>
     </div>
   </form>
 </div>
@@ -69,8 +66,10 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
   const submitLabel = document.getElementById('submit-label') as HTMLElement;
   const submitSpinner = document.getElementById('submit-spinner') as HTMLElement;
-  const successEl = document.getElementById('form-success') as HTMLElement;
   const errorEl = document.getElementById('form-error') as HTMLElement;
+  const errorMessageEl = document.getElementById('form-error-message') as HTMLElement;
+  const defaultErrorMessage = errorMessageEl?.innerHTML;
+  const turnstileErrorMessage = 'Please complete the security check before sending your message.';
 
   function validate() {
     let valid = true;
@@ -87,19 +86,39 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     return valid;
   }
 
+  function getAttribution() {
+    try {
+      const raw = sessionStorage.getItem('hbf_attribution');
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === 'object' ? parsed : null;
+    } catch {
+      return null;
+    }
+  }
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    errorEl.classList.add('hidden');
     if (!validate()) return;
+
+    const data = Object.fromEntries(new FormData(form));
+    const turnstileToken = (data['cf-turnstile-response'] as string || '').trim();
+    if (!turnstileToken) {
+      if (errorMessageEl) errorMessageEl.textContent = turnstileErrorMessage;
+      errorEl.classList.remove('hidden');
+      return;
+    }
+
     submitBtn.disabled = true;
     submitLabel.textContent = 'Sending…';
     submitSpinner.classList.remove('hidden');
 
-    const data = Object.fromEntries(new FormData(form));
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, attribution: getAttribution() }),
       });
       if (res.ok) {
         window.location.href = '/contact-thank-you/';
@@ -107,8 +126,8 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         throw new Error('Server error');
       }
     } catch {
+      if (errorMessageEl && defaultErrorMessage) errorMessageEl.innerHTML = defaultErrorMessage;
       errorEl.classList.remove('hidden');
-      successEl.classList.add('hidden');
     } finally {
       submitBtn.disabled = false;
       submitLabel.textContent = 'Send Message';

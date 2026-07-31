@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
 
 const coverages = [
   { name: 'Critical Illness Insurance', href: '/financial-services/critical-illness-insurance/' },
@@ -17,11 +18,7 @@ const coverages = [
   description="Life, critical illness, disability, and health insurance solutions for Ontario families. Independent advice on the coverage that fits your situation."
 >
 
-  <section class="bg-brand-plum py-20">
-    <div class="container-content max-w-3xl">
-      <h1 class="font-serif text-display text-white text-balance" style="font-optical-sizing: auto;">Insurance</h1>
-    </div>
-  </section>
+  <PageHero title="Insurance" containerClass="max-w-3xl" />
 
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl">
@@ -33,7 +30,7 @@ const coverages = [
       <div class="mt-10 space-y-2">
         {coverages.map(item => (
           <a href={item.href} class="group flex items-center gap-3 border border-brand-plum/10 px-5 py-3 hover:border-brand-plum/25 hover:shadow-sm transition-all">
-            <span class="flex-1 font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-gold transition-colors">{item.name}</span>
+            <span class="flex-1 font-sans text-sm font-semibold text-brand-plum group-hover:text-brand-goldDark transition-colors">{item.name}</span>
             <svg class="w-4 h-4 text-brand-gold flex-shrink-0 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
           </a>
         ))}
@@ -45,12 +42,12 @@ const coverages = [
 
       <div class="mt-12 space-y-8">
         <div>
-          <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">Dedicated To Client Satisfaction</h2>
+          <h2 class="font-serif text-h2 text-brand-plum mb-4">Dedicated To Client Satisfaction</h2>
           <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed">Whether you're looking for life insurance for yourself or a loved one, Heidi can make the process informative and as smooth as possible. She has strong relationships with numerous insurance carriers across Canada. She uses her expertise and precision to detail, to narrow down the best and most cost effective options for you to choose from. She will explain the terms and conditions and help you make an informed decision.</p>
         </div>
 
         <div>
-          <h2 class="font-serif text-h2 text-brand-plum mb-4" style="font-optical-sizing: auto;">At Your Service</h2>
+          <h2 class="font-serif text-h2 text-brand-plum mb-4">At Your Service</h2>
           <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
             <p>As an established Kingston, ON, life insurance advisor, Heidi Blondin proudly serves customers throughout Eastern Ontario. For your convenience, she offers flexible appointment times, online applications and quick response to all inquiries.</p>
             <p>To schedule a consultation, call today.</p>
@@ -59,7 +56,7 @@ const coverages = [
       </div>
 
       <div class="mt-12 bg-brand-tintPlum border-l-4 border-brand-plum/40 p-8">
-        <p class="font-sans text-[13px] text-brand-ink/55 italic mb-4 leading-relaxed">"Dear Heidi,<br />Thank you for helping me put the right insurance in place to protect my family and I in the event of illness or death. I really appreciated the time you took to walk me through the many options. I learned a great deal throughout the process which allowed me to make an informed decision. In the end we put in place a nice combination of products to suit my requirements and budget. With proper coverage in place I have peace of mind knowing my family will be safe.<br />Thanks again for all your help!"</p>
+        <p class="font-sans text-[13px] text-brand-ink/70 italic mb-4 leading-relaxed">"Dear Heidi,<br />Thank you for helping me put the right insurance in place to protect my family and I in the event of illness or death. I really appreciated the time you took to walk me through the many options. I learned a great deal throughout the process which allowed me to make an informed decision. In the end we put in place a nice combination of products to suit my requirements and budget. With proper coverage in place I have peace of mind knowing my family will be safe.<br />Thanks again for all your help!"</p>
         <p class="font-sans text-xs font-semibold text-brand-plum/70">LW – Kingston, Ontario</p>
       </div>
     </div>
