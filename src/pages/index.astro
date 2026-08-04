@@ -14,15 +14,18 @@ const recentPosts = (await getAllPosts()).slice(0, 3);
 
   <!-- Hero -->
   <section class="bg-brand-tintPlum">
-    <img
-      src="/team/homepage-banner-2026.jpg"
-      alt="The Heidi Blondin Financial team, Kingston, Ontario"
-      class="w-full block"
-      loading="eager"
-      decoding="async"
-      width="3500"
-      height="1064"
-    />
+    <picture>
+      <source media="(max-width: 767px)" srcset="/team/homepage-banner-2026-mobile.jpg" width="1061" height="613" />
+      <img
+        src="/team/homepage-banner-2026-desktop.jpg"
+        alt="The Heidi Blondin Financial team, Kingston, Ontario"
+        class="w-full block"
+        loading="eager"
+        decoding="async"
+        width="2603"
+        height="613"
+      />
+    </picture>
   </section>
 
   <!-- Headline + body copy -->
