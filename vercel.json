@@ -151,6 +151,16 @@
       "permanent": true
     },
     {
+      "source": "/fundex_merger/",
+      "destination": "/heidi/",
+      "permanent": true
+    },
+    {
+      "source": "/fundex_merger",
+      "destination": "/heidi/",
+      "permanent": true
+    },
+    {
       "source": "/test/",
       "destination": "/",
       "permanent": true
