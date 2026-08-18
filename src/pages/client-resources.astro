@@ -18,7 +18,13 @@ const assistAreas = [
 const bookingLinks = [
   { name: 'Financial Review', href: 'https://calendly.com/heidiblondin/financial-review' },
   { name: '60 Min. Review', href: 'https://calendly.com/heidiblondin/60min' },
-  { name: 'Quick Meeting (30 Min.)', href: 'https://calendly.com/heidiblondin/30min' },
+];
+
+const teamPhotos = [
+  { name: 'Angela McCann', role: 'Licensed Assistant', src: '/team/angela-portrait.jpg', alt: 'Angela McCann', href: '/angela/' },
+  { name: 'Joanne Charron', role: 'Insurance Advisor', src: '/team/joanne-portrait.jpg', alt: 'Joanne Charron - Insurance Advisor', href: '/joanne/' },
+  { name: 'John Blondin', role: 'Operations Manager', src: '/team/john-portrait.jpg', alt: 'About John Blondin - Operations Manager', href: null },
+  { name: 'Jack Blondin', role: 'Assistant', src: '/team/jack-portrait.jpg', alt: 'Jack Blondin Headshot', href: '/jack/' },
 ];
 
 const websiteResources = [
@@ -51,15 +57,6 @@ const socialLinks = [
         At Heidi Blondin Financial, we specialize in financial planning, wealth management services, and insurance solutions. Our team shares the same beliefs in approaching each client with a holistic focus and personalized touch. When we work together, we use your financial goals and personal priorities to guide our advice and recommendations. But we don&rsquo;t know when things change in your personal situation. So please reach out when you have life events that affect your financial plan. We are here as a resource to our clients to help answer financial questions you may be contemplating.
       </p>
 
-      <img
-        src="/wp-content/uploads/heidi_V1-1024x1024.png"
-        alt="Female Certified financial planner Kingston Ontario Financial Advisor Retirement Planning Insurance Broker"
-        class="w-full max-w-md mx-auto mt-10"
-        loading="lazy"
-        width="1024"
-        height="1024"
-      />
-
       <!-- Areas we can assist with -->
       <h2 class="font-serif text-h2 text-brand-plum text-balance mt-14 mb-6">
         If now is a good time to review your financial goals and progress, we are here to help. Here are several areas that we can assist with:
@@ -76,23 +73,34 @@ const socialLinks = [
       <!-- Team contacts -->
       <h2 class="font-serif text-h2 text-brand-plum text-balance mt-14 mb-6">Our team is here to support you&hellip;</h2>
 
-      <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed">
-        <strong class="text-brand-plum">Heidi Blondin</strong> can assist you with Financial and Insurance planning, Retirement Income Planning, and Estate/Legacy strategies. Please contact her directly at <a href="mailto:Heidi@heidiblondin.com" class="text-brand-goldDark hover:underline">Heidi@heidiblondin.com</a>, or by phone at <a href="tel:6138872726" class="text-brand-goldDark hover:underline">613.887.2726</a>.
-      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 items-start">
+        <div class="sm:col-span-2 sm:order-1">
+          <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed">
+            <strong class="text-brand-plum">Heidi Blondin</strong> can assist you with Financial and Insurance planning, Retirement Income Planning, and Estate/Legacy strategies. Please contact her directly at <a href="mailto:Heidi@heidiblondin.com" class="text-brand-goldDark hover:underline">Heidi@heidiblondin.com</a>, or by phone at <a href="tel:6138872726" class="text-brand-goldDark hover:underline">613.887.2726</a>.
+          </p>
 
-      <!-- Booking -->
-      <h3 class="font-serif text-h3 text-brand-plum text-balance mt-12 mb-5">Here is the link to Heidi&rsquo;s calendar to book a financial review:</h3>
-      <div class="flex flex-wrap gap-3">
-        {bookingLinks.map(link => (
-          <a href={link.href} target="_blank" rel="noopener noreferrer" class="btn-primary">{link.name}</a>
-        ))}
+          <!-- Booking -->
+          <h3 class="font-serif text-h3 text-brand-plum text-balance mt-8 mb-5">Here is the link to Heidi&rsquo;s calendar to book a financial review:</h3>
+          <div class="flex flex-wrap gap-3">
+            {bookingLinks.map(link => (
+              <a href={link.href} target="_blank" rel="noopener noreferrer" class="btn-primary">{link.name}</a>
+            ))}
+          </div>
+        </div>
+        <div class="sm:order-2">
+          <img
+            src="/team/heidi-corp386.jpeg"
+            alt="Heidi Blondin, CFP&reg; &mdash; Certified Financial Planner, Kingston Ontario"
+            class="w-40 sm:w-full aspect-[3/4] object-cover object-top"
+            loading="lazy"
+            width="2401"
+            height="3600"
+          />
+        </div>
       </div>
 
       <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed mt-8">
-        Our office is open Monday to Friday, 9-5. Heidi offers appointments from Tuesday to Thursday.
-      </p>
-      <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed mt-4">
-        If you need an appointment outside the times available online, please reach out to Angela or Jack.
+        Our office is open Monday to Friday, 9-5. Heidi offers appointments from Tuesday to Thursday. If you need an appointment outside the times available online, please reach out to Angela or Jack.
       </p>
 
       <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed mt-6">
@@ -107,14 +115,62 @@ const socialLinks = [
 
       <!-- Our Team -->
       <h3 class="font-serif text-h3 text-brand-plum mt-12 mb-5">Our Team:</h3>
-      <img
-        src="/wp-content/uploads/Disclosure_InsertSQU.jpg"
-        alt="Heidi Blondin Financial team disclosure"
-        class="w-full max-w-md"
-        loading="lazy"
-        width="500"
-        height="500"
-      />
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6">
+        {teamPhotos.map(member => (
+          <div class="text-center">
+            {member.href ? (
+              <a href={member.href}>
+                <img
+                  src={member.src}
+                  alt={member.alt}
+                  class="w-full aspect-[3/4] object-cover object-top mb-3"
+                  loading="lazy"
+                  width="2401"
+                  height="3600"
+                />
+              </a>
+            ) : (
+              <img
+                src={member.src}
+                alt={member.alt}
+                class="w-full aspect-[3/4] object-cover object-top mb-3"
+                loading="lazy"
+                width="2401"
+                height="3600"
+              />
+            )}
+            <p class="font-serif text-base text-brand-plum">{member.name}</p>
+            <p class="font-sans text-sm text-brand-ink/70 mt-1">{member.role}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Online Account Access -->
+      <h2 class="font-serif text-h2 text-brand-plum mt-14 mb-6">Online Account Access</h2>
+
+      <div class="bg-brand-tintPlum p-6 sm:p-8">
+        <h3 class="font-sans text-[16px] font-semibold text-brand-plum mb-3">Investia Client Accounts:</h3>
+        <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed">
+          Please be sure to set up your login and password for the Investia Portal. You should have received a secure link to activate your account. Please contact our office if you need your client ID to authenticate your login.
+        </p>
+        <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed mt-4">
+          The Investia client portal allows us to send you documents to review and sign securely. You can also use it to send us documents securely. It is also a great place to monitor the performance of your portfolio and collect tax slips for your income tax return.
+        </p>
+        <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed mt-4">
+          Investia also offers a mobile application with similar features to the web portal. So be sure to download the Investia app from the App Store.
+        </p>
+        <a href="https://www.investia.ca/" target="_blank" rel="noopener noreferrer" class="btn-primary mt-6">Investia Client Portal</a>
+      </div>
+
+      <h3 class="font-sans text-[16px] font-semibold text-brand-plum mt-10 mb-4">Other account portals:</h3>
+      <div class="flex flex-col items-start gap-4">
+        <a href="https://www.manulife.ca/personal/sign-in.html" target="_blank" rel="noopener noreferrer" class="btn-primary">Manulife Investments and Manulife Bank</a>
+        <a href="https://www.my.empire.ca" target="_blank" rel="noopener noreferrer" class="btn-primary">Empire Life Investments</a>
+        <a href="https://slf.ifglobalproducts.com/ifastweb/#!/login" target="_blank" rel="noopener noreferrer" class="btn-primary">Sun Life Segregated Funds and Insurance</a>
+      </div>
+      <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed mt-4">
+        You will need to call into the Sun Life client service line at <a href="tel:18447534437" class="text-brand-goldDark hover:underline">1.844.753.4437</a> to register for access.
+      </p>
 
       <!-- Website Resources -->
       <h3 class="font-serif text-h3 text-brand-plum mt-14 mb-5">Website Resources</h3>
@@ -138,38 +194,6 @@ const socialLinks = [
           <a href={link.href} target="_blank" rel="noopener noreferrer" class="font-sans text-sm font-medium text-brand-plum border border-brand-plum/15 px-4 py-2 hover:border-brand-plum/35 hover:text-brand-goldDark transition-colors">{link.name}</a>
         ))}
       </div>
-
-      <!-- Online Account Access -->
-      <h2 class="font-serif text-h2 text-brand-plum mt-14 mb-6">Online Account Access</h2>
-
-      <h3 class="font-sans text-[16px] font-semibold text-brand-plum mb-3">Investia Client Accounts:</h3>
-      <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed">
-        Please be sure to set up your login and password for the Investia Portal. You should have received a secure link to activate your account. Please contact our office if you need your client ID to authenticate your login. [ <a href="https://www.investia.ca/" target="_blank" rel="noopener noreferrer" class="text-brand-goldDark hover:underline">www.investia.ca</a> ]
-      </p>
-      <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed mt-4">
-        The Investia client portal allows us to send you documents to review and sign securely. You can also use it to send us documents securely. It is also a great place to monitor the performance of your portfolio and collect tax slips for your income tax return.
-      </p>
-      <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed mt-4">
-        Investia also offers a mobile application with similar features to the web portal. So be sure to download the Investia app from the App Store.
-      </p>
-
-      <h3 class="font-sans text-[16px] font-semibold text-brand-plum mt-8 mb-3">Sun Life Segregated Funds and Insurance</h3>
-      <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed break-words">
-        <a href="https://slf.ifglobalproducts.com/ifastweb/#!/login" target="_blank" rel="noopener noreferrer" class="text-brand-goldDark hover:underline">https://slf.ifglobalproducts.com/ifastweb/#!/login</a>
-      </p>
-      <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed mt-4">
-        You will need to call into the client service line at <a href="tel:18447534437" class="text-brand-goldDark hover:underline">1.844.753.4437</a> to register for access.
-      </p>
-
-      <h3 class="font-sans text-[16px] font-semibold text-brand-plum mt-8 mb-3">Manulife Investments and Manulife Bank</h3>
-      <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed break-words">
-        <a href="https://www.manulife.ca/personal/sign-in.html" target="_blank" rel="noopener noreferrer" class="text-brand-goldDark hover:underline">https://www.manulife.ca/personal/sign-in.html</a>
-      </p>
-
-      <h3 class="font-sans text-[16px] font-semibold text-brand-plum mt-8 mb-3">Empire Life Investments</h3>
-      <p class="font-sans text-[16px] text-brand-ink/80 leading-relaxed break-words">
-        <a href="https://www.my.empire.ca" target="_blank" rel="noopener noreferrer" class="text-brand-goldDark hover:underline">https://www.my.empire.ca</a>
-      </p>
 
       <p class="font-sans text-[17px] text-brand-ink leading-relaxed mt-12 pt-8 border-t border-brand-plum/10">
         The Heidi Blondin Financial team is here as a resource to you. Please reach out if you have any questions, or if we can help in any way.
