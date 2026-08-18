@@ -48,8 +48,20 @@ const recentPosts = (await getAllPosts()).slice(0, 3);
   </section>
 
   <!-- Three questions band -->
-  <section class="bg-brand-plum py-16 lg:py-20">
-    <div class="container-content">
+  <section class="relative bg-brand-plum py-16 lg:py-20 overflow-hidden">
+    <img
+      src="/illustrations/home-band.jpg"
+      alt=""
+      aria-hidden="true"
+      width="2400"
+      height="1018"
+      loading="lazy"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover object-right"
+    />
+    <!-- Plum wash keeps the white text readable over the painting -->
+    <div class="absolute inset-0 bg-brand-plum/80 lg:bg-gradient-to-r lg:from-brand-plum lg:via-brand-plum/90 lg:to-brand-plum/70"></div>
+    <div class="container-content relative">
       <p class="eyebrow-light text-center mb-8">The questions we answer every day</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
         {[

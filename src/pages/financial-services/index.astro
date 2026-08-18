@@ -12,6 +12,8 @@ const mostRequested = [
 const sections = [
   {
     heading: 'Investing',
+    image: '/illustrations/investing.jpg',
+    imageAlt: 'A couple sitting together on the front steps of their home at golden hour',
     overview: { label: 'Investments Overview', href: '/financial-services/investments/' },
     links: [
       { label: 'RRSP', href: '/financial-services/registered-retirement-savings-plans/' },
@@ -26,6 +28,8 @@ const sections = [
   },
   {
     heading: 'Insurance',
+    image: '/illustrations/insurance.jpg',
+    imageAlt: 'Parents and two young children reading a picture book together on the sofa',
     overview: { label: 'Insurance Overview', href: '/financial-services/insurance/' },
     links: [
       { label: 'Life Insurance', href: '/financial-services/life-insurance/' },
@@ -40,6 +44,8 @@ const sections = [
   },
   {
     heading: 'Planning',
+    image: '/illustrations/planning.jpg',
+    imageAlt: 'A grandmother and her grandson lifting carrots from a backyard garden',
     overview: { label: 'Planning Overview', href: '/financial-services/planning/' },
     links: [
       { label: 'Charitable Giving', href: '/charitable-giving/' },
@@ -88,6 +94,15 @@ const sections = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
         {sections.map(section => (
           <div>
+            <img
+              src={section.image}
+              alt={section.imageAlt}
+              width="1600"
+              height="1073"
+              loading="lazy"
+              decoding="async"
+              class="w-full aspect-[3/2] object-cover mb-5"
+            />
             <!-- Section heading -->
             <h2 class="font-serif text-xl text-brand-plum border-b border-brand-tintPlum pb-3 mb-5">
               {section.heading}
