@@ -8,6 +8,12 @@ const navLinks = [
   { label: 'Contact', href: '/contact/' },
 ];
 
+const overviewHrefs = {
+  Investing: '/financial-services/investments/',
+  Insurance: '/financial-services/insurance/',
+  Planning: '/financial-services/planning/',
+};
+
 const megaMenu = {
   Investing: [
     { label: 'Investments Overview', href: '/financial-services/investments/' },
@@ -30,6 +36,7 @@ const megaMenu = {
     { label: 'Group Benefits & Savings', href: '/financial-services/employee-group-benefits-plans/' },
   ],
   Planning: [
+    { label: 'Planning Overview', href: '/financial-services/planning/' },
     { label: 'Estate Planning', href: '/financial-services/estate-planning/' },
     { label: 'Charitable Giving', href: '/charitable-giving/' },
     { label: 'Retirement Income Planning', href: '/retirement-income-planning/' },
@@ -82,7 +89,7 @@ const currentPath = Astro.url.pathname;
                 {Object.entries(megaMenu).map(([col, items]) => (
                   <div>
                     <a
-                      href={`/financial-services/?view=${col.toLowerCase()}`}
+                      href={overviewHrefs[col]}
                       class="font-serif text-sm text-brand-plum font-normal mb-3 block border-b border-brand-tintPlum pb-2 hover:text-brand-gold transition-colors"
                      
                     >
