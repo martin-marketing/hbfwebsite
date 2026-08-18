@@ -136,6 +136,21 @@
       "permanent": true
     },
     {
+      "source": "/heidi-2/testimonials",
+      "destination": "/testimonials/",
+      "permanent": true
+    },
+    {
+      "source": "/heidi-2/",
+      "destination": "/heidi/",
+      "permanent": true
+    },
+    {
+      "source": "/heidi-2",
+      "destination": "/heidi/",
+      "permanent": true
+    },
+    {
       "source": "/test/",
       "destination": "/",
       "permanent": true
