@@ -52,7 +52,7 @@ const socialLinks = [
     center
   />
 
-  <section class="bg-white section-gap">
+  <section class="bg-white pt-10 lg:pt-14 pb-20 lg:pb-28">
     <div class="container-content max-w-3xl">
 
       <p class="font-sans text-[17px] text-brand-ink leading-relaxed">
@@ -143,6 +143,9 @@ const socialLinks = [
             )}
             <p class="font-serif text-base text-brand-plum">{member.name}</p>
             <p class="font-sans text-sm text-brand-ink/70 mt-1">{member.role}</p>
+            {member.href && (
+              <a href={member.href} class="inline-flex items-center gap-2 mt-4 px-5 py-2.5 border border-brand-plum text-brand-plum font-sans font-medium text-xs tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plum hover:text-white">Read {member.name.split(' ')[0]}'s bio</a>
+            )}
           </div>
         ))}
       </div>
