@@ -105,7 +105,7 @@
   .hbf-article .ladder-body { padding: 20px 26px 16px; }
   .hbf-article .rung {
     display: grid;
-    grid-template-columns: 168px 1fr 126px;
+    grid-template-columns: 168px 1fr 132px;
     align-items: center;
     gap: 14px;
     padding: 11px 0;
@@ -134,22 +134,24 @@
   .hbf-article .rung-fill {
     height: 100%;
     border-radius: 6px 0 0 6px;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    font-size: 12px;
+  }
+  .hbf-article .rung-meta {
+    text-align: right;
+    line-height: 1.35;
+  }
+  .hbf-article .rung-risk {
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--white);
-    white-space: nowrap;
+    display: block;
+    margin-bottom: 3px;
   }
   .hbf-article .rung-time {
-    text-align: right;
+    display: block;
     font-size: 15px;
     font-weight: 600;
-    color: var(--sage);
-    line-height: 1.35;
+    color: var(--gray);
   }
   .hbf-article .ladder-foot {
     padding: 12px 26px;
@@ -275,7 +277,7 @@
 
   @media (max-width: 680px) {
     .hbf-article .rung { grid-template-columns: 1fr; gap: 7px; padding: 14px 0; }
-    .hbf-article .rung-time { text-align: left; }
+    .hbf-article .rung-meta { text-align: left; }
     .hbf-article .pull-quote p { font-size: 19px; }
     .hbf-article .cta-block { padding: 26px 22px; }
     .hbf-article .ladder-body,
@@ -308,23 +310,23 @@
     <div class="ladder-body">
       <div class="rung">
         <div class="rung-name">High-interest savings<span>Cash, always available</span></div>
-        <div class="rung-track"><div class="rung-fill" style="width:14%; background:#a2a47d">No risk</div></div>
-        <div class="rung-time">Under 1 year</div>
+        <div class="rung-track"><div class="rung-fill" style="width:14%; background:#a2a47d"></div></div>
+        <div class="rung-meta"><span class="rung-risk" style="color:#5f6244">No risk</span><span class="rung-time">Under 1 year</span></div>
       </div>
       <div class="rung">
         <div class="rung-name">GICs<span>Locked in, rate guaranteed</span></div>
-        <div class="rung-track"><div class="rung-fill" style="width:30%; background:#8f9370">Very low</div></div>
-        <div class="rung-time">1 to 3 years</div>
+        <div class="rung-track"><div class="rung-fill" style="width:30%; background:#8f9370"></div></div>
+        <div class="rung-meta"><span class="rung-risk" style="color:#565a3d">Low risk</span><span class="rung-time">1 to 3 years</span></div>
       </div>
       <div class="rung">
         <div class="rung-name">Balanced mix<span>Part bonds, part equities</span></div>
-        <div class="rung-track"><div class="rung-fill" style="width:62%; background:#7a5679">Moderate</div></div>
-        <div class="rung-time">3 to 10 years</div>
+        <div class="rung-track"><div class="rung-fill" style="width:62%; background:#7a5679"></div></div>
+        <div class="rung-meta"><span class="rung-risk" style="color:#6b4a6a">Moderate risk</span><span class="rung-time">3 to 10 years</span></div>
       </div>
       <div class="rung">
         <div class="rung-name">Mostly equities<span>Ownership in companies</span></div>
-        <div class="rung-track"><div class="rung-fill" style="width:100%; background:#593d58">Higher</div></div>
-        <div class="rung-time">10 years or more</div>
+        <div class="rung-track"><div class="rung-fill" style="width:100%; background:#593d58"></div></div>
+        <div class="rung-meta"><span class="rung-risk" style="color:#593d58">Higher risk</span><span class="rung-time">10 years or more</span></div>
       </div>
     </div>
     <div class="ladder-foot">Time frames are general guidance, not a rule. Your own mix depends on the goal, your income, and how much fluctuation you can genuinely live with. Investment values are not guaranteed and will change over time.</div>
@@ -386,9 +388,9 @@
 
   <div class="cta-block">
     <div class="cta-text">
-      <p><strong>Not sure which rung you belong on?</strong> That's a fifteen-minute conversation, not a commitment. Heidi will walk you through matching your goals and timelines to the right mix, at no cost.</p>
+      <p><strong>Not sure which rung you belong on?</strong> That's a fifteen-minute conversation, not a commitment. Heidi and her team work with new investors all the time, and they will help you match your goals and timelines to the right mix, at no cost. You do not need a big balance to be worth their time.</p>
     </div>
-    <a href="/contact" class="cta-btn">Ask Heidi →</a>
+    <a href="/contact" class="cta-btn">Talk to the Team →</a>
   </div>
 
   <div class="article-featured-image">
