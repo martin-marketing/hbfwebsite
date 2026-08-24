@@ -1,0 +1,335 @@
+<!-- Heidi Blondin Financial: The Launch Series, Part 3 -->
+<!-- Paste this into WordPress > Custom HTML block -->
+
+<style>
+  .hbf-article {
+    --plum: #593d58;
+    --plum-light: #7a5679;
+    --plum-pale: #f0eaf0;
+    --plum-tint: #e0d5e0;
+    --sage: #a2a47d;
+    --sage-light: #b8ba98;
+    --sage-pale: #f4f5ee;
+    --sage-tint: #e8e9da;
+    --gold: #b87b1e;
+    --gold-pale: #fdf7ec;
+    --gold-tint: #efdcbc;
+    --rust: #a05050;
+    --rust-pale: #fbf1f1;
+    --rust-tint: #eed6d6;
+    --gray: #666666;
+    --gray-light: #999;
+    --gray-pale: #f7f7f7;
+    --white: #ffffff;
+  }
+
+  /* Series eyebrow */
+  .hbf-article .series-eyebrow {
+    display: inline-block;
+    background: var(--plum-pale);
+    color: var(--plum);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+
+  /* Pull quote */
+  .hbf-article .pull-quote {
+    margin: 36px 0;
+    padding: 4px 0 4px 26px;
+    border-left: 4px solid var(--sage);
+  }
+  .hbf-article .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    line-height: 1.45;
+    color: var(--plum);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .hbf-article .pull-quote .pq-attr {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+  }
+
+  /* Section divider */
+  .hbf-article .section-rule {
+    border: none;
+    border-top: 2px solid var(--plum-tint);
+    margin: 46px 0;
+    position: relative;
+  }
+  .hbf-article .section-rule::after {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    color: var(--sage);
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  /* ── OPTIONS TABLE ── */
+  .hbf-article .compare-wrap {
+    margin: 30px 0;
+    border: 1.5px solid var(--plum-tint);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .hbf-article .compare-header {
+    background: var(--plum);
+    padding: 13px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+  }
+  .hbf-article .compare-scroll { overflow-x: auto; }
+  .hbf-article .compare-table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .hbf-article .compare-table th {
+    background: var(--plum-pale);
+    color: var(--plum);
+    font-weight: 600;
+    padding: 10px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--plum-tint);
+  }
+  .hbf-article .compare-table th:first-child { width: 34%; }
+  .hbf-article .compare-table td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--plum-tint);
+    color: var(--gray);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  .hbf-article .compare-table tr:last-child td { border-bottom: none; }
+  .hbf-article .compare-table tr:nth-child(even) td { background: var(--gray-pale); }
+  .hbf-article .compare-table td strong { color: var(--plum); }
+  .hbf-article .risk-pill {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .hbf-article .rp-low  { background: var(--sage-tint); color: #5f6244; }
+  .hbf-article .rp-med  { background: var(--gold-tint); color: #8a5b13; }
+  .hbf-article .rp-high { background: var(--rust-tint); color: #7d3b3b; }
+
+  /* Risk box */
+  .hbf-article .risk-box {
+    margin: 30px 0;
+    background: var(--rust-pale);
+    border: 1.5px solid var(--rust-tint);
+    border-radius: 12px;
+    padding: 24px 26px;
+  }
+  .hbf-article .risk-box .rb-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 12px;
+  }
+  .hbf-article .risk-box ul { margin: 0; }
+  .hbf-article .risk-box li { font-size: 14.5px; color: var(--gray); margin-bottom: 8px; }
+  .hbf-article .risk-box li:last-child { margin-bottom: 0; }
+  .hbf-article .risk-box li strong { color: var(--rust); }
+
+  /* Closing line box */
+  .hbf-article .strategy-line {
+    margin: 30px 0;
+    padding: 18px 24px;
+    border-left: 3px solid var(--plum);
+    background: var(--plum-pale);
+    border-radius: 0 10px 10px 0;
+    font-size: 15.5px;
+    font-weight: 500;
+    color: var(--plum);
+    line-height: 1.6;
+  }
+
+  /* Bridge */
+  .hbf-bridge { background: #f5f0f5; border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+  .hbf-bridge p { margin: 0; }
+  .hbf-bridge a { color: #593d58; font-weight: 700; }
+
+  /* CTA block */
+  .hbf-article .cta-block {
+    margin-top: 44px;
+    background: var(--plum);
+    border-radius: 14px;
+    padding: 34px 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hbf-article .cta-text { flex: 1; min-width: 200px; }
+  .hbf-article .cta-text p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.80);
+    margin-bottom: 0;
+    line-height: 1.65;
+  }
+  .hbf-article .cta-text p strong {
+    color: var(--white);
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .hbf-article .cta-btn {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 9px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .hbf-article .cta-btn:hover { color: var(--white); }
+
+  /* Featured image */
+  .hbf-article .article-featured-image {
+    margin-top: 44px;
+    border-radius: 14px;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .hbf-article .article-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+  }
+
+  @media (max-width: 680px) {
+    .hbf-article .pull-quote p { font-size: 19px; }
+    .hbf-article .cta-block { padding: 26px 22px; }
+    .hbf-article .compare-table th,
+    .hbf-article .compare-table td { padding: 9px 12px; }
+  }
+</style>
+
+<div class="hbf-article">
+
+  <div class="series-eyebrow">The Launch Series &middot; Part 3</div>
+
+  <p class="lead">The conversation usually opens the same way. Our kid is twenty-six, still in the basement, and we cannot tell whether helping is helping.</p>
+
+  <p>The instinct to step in is a good one. What matters is how, because some kinds of help build something and others just move the same conversation twelve months down the road.</p>
+
+  <p>Here are the three routes parents ask about most, from lightest to heaviest.</p>
+
+  <div class="compare-wrap">
+    <div class="compare-header">Three ways to help, and what each one costs you</div>
+    <div class="compare-scroll">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>The help</th>
+            <th>What it does</th>
+            <th>Risk to your plan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Match what they save</strong><br>Dollar for dollar into their TFSA, up to a cap you set</td>
+            <td>Rewards the habit instead of replacing it. They still have to do the saving.</td>
+            <td><span class="risk-pill rp-low">Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>Cover one specific step</strong><br>First and last month's rent, a move, a certification</td>
+            <td>Removes a single barrier with a clear end date. No ongoing obligation.</td>
+            <td><span class="risk-pill rp-low">Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>Help with a down payment</strong><br>Sometimes borrowed against your home equity</td>
+            <td>Can move them years ahead into the housing market. Also the one that lands on your balance sheet.</td>
+            <td><span class="risk-pill rp-high">Significant</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="section-rule">
+
+  <h2>The home equity conversation</h2>
+
+  <p>This is the one that comes up most with parents who have paid down a good chunk of their mortgage. The idea is simple enough: borrow against the equity in your home through a line of credit, and use it to help your adult child into the real estate market years earlier than they could manage on their own.</p>
+
+  <p>The appeal is real. It starts the clock on an asset that has been a fairly reliable long-term holding in Canada, and it turns rent into equity.</p>
+
+  <div class="pull-quote">
+    <p>"This can set them up for long-term success by allowing them to get into real estate."</p>
+    <div class="pq-attr">Heidi Blondin, CFP</div>
+  </div>
+
+  <p>It is also the option with the most ways to go wrong, and every one of them is worth naming out loud before anyone signs anything.</p>
+
+  <div class="risk-box">
+    <div class="rb-label">Before anyone borrows against a house</div>
+    <ul>
+      <li><strong>The debt is yours.</strong> It is secured against your home, regardless of whose name ends up on the property.</li>
+      <li><strong>Line of credit rates move.</strong> A payment that fits your budget today may not fit it in three years.</li>
+      <li><strong>Borrowing to invest cuts both ways.</strong> It magnifies losses exactly the way it magnifies gains, and property values can fall.</li>
+      <li><strong>If they cannot carry it, you carry it.</strong> Job loss, a breakup, or a rate reset can land the whole thing back on you.</li>
+      <li><strong>Put it in writing.</strong> Who owns what, who pays what, and what happens if they sell, move, or partner up. Get legal advice on the structure.</li>
+    </ul>
+  </div>
+
+  <p>None of that makes it a bad idea. It makes it a decision that needs numbers rather than enthusiasm, and a plan for what happens if the next few years do not go smoothly.</p>
+
+  <hr class="section-rule">
+
+  <h2>The line that does not move</h2>
+
+  <p>Whatever route you pick, it cannot come out of the plan that keeps you independent later.</p>
+
+  <div class="strategy-line">
+    💡 There are loans for their goals. There are none for yours. A parent who runs short at eighty becomes the very thing they were trying to spare their kid.</div>
+
+  <p>That is not a reason to sit on your hands. It is the reason to run the numbers on your own retirement first, see what genuine room exists, and then decide how much help is the right amount of help.</p>
+
+  <div class="hbf-bridge">
+    <p>Want something to send them instead of a lecture? <a href="/starting-to-invest-in-your-twenties"><strong>Part 1: You're Not Behind, You're Early</strong></a> makes the case for starting small and starting now.</p>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-text">
+      <p><strong>Find out what you can actually afford to give.</strong> Heidi will run your own plan first, then show you what room is really there and which type of help fits it. No cost, no obligation.</p>
+    </div>
+    <a href="/contact" class="cta-btn">Book a Conversation →</a>
+  </div>
+
+  <div class="article-featured-image">
+    <img src="/wp-content/uploads/helping-your-adult-kids-get-started.png" alt="Parents talking with their adult child about getting started financially" />
+  </div>
+
+</div><!-- .hbf-article -->

@@ -1,0 +1,662 @@
+<!-- Heidi Blondin Financial: The Launch Series, Part 1 -->
+<!-- Paste this into WordPress > Custom HTML block -->
+
+<style>
+  .hbf-article {
+    --plum: #593d58;
+    --plum-light: #7a5679;
+    --plum-pale: #f0eaf0;
+    --plum-tint: #e0d5e0;
+    --sage: #a2a47d;
+    --sage-light: #b8ba98;
+    --sage-pale: #f4f5ee;
+    --sage-tint: #e8e9da;
+    --gold: #b87b1e;
+    --gold-light: #d4973a;
+    --gold-pale: #fdf7ec;
+    --gold-tint: #efdcbc;
+    --gray: #666666;
+    --gray-light: #999;
+    --gray-pale: #f7f7f7;
+    --white: #ffffff;
+  }
+
+  /* Series eyebrow */
+  .hbf-article .series-eyebrow {
+    display: inline-block;
+    background: var(--plum-pale);
+    color: var(--plum);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+
+  /* Numbered heading */
+  .hbf-article .tool-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin: 40px 0 14px;
+  }
+  .hbf-article .tool-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--plum-tint);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .hbf-article .tool-heading h3 {
+    margin: 0;
+  }
+
+  /* Strategy pull quote */
+  .hbf-article .strategy-line {
+    margin: 28px 0;
+    padding: 18px 24px;
+    border-left: 3px solid var(--plum);
+    background: var(--plum-pale);
+    border-radius: 0 10px 10px 0;
+    font-size: 15.5px;
+    font-weight: 500;
+    color: var(--plum);
+    line-height: 1.6;
+  }
+
+  /* Big stat block */
+  .hbf-article .stat-block {
+    margin: 32px 0;
+    background: var(--plum);
+    border-radius: 14px;
+    padding: 30px 32px;
+    text-align: center;
+  }
+  .hbf-article .stat-block .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 10px;
+  }
+  .hbf-article .stat-block .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .hbf-article .stat-block .stat-sub {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.78);
+    margin: 0 auto;
+    max-width: 460px;
+  }
+
+  /* Section divider */
+  .hbf-article .section-rule {
+    border: none;
+    border-top: 2px solid var(--plum-tint);
+    margin: 52px 0;
+    position: relative;
+  }
+  .hbf-article .section-rule::after {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    color: var(--sage);
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  /* Sage callout */
+  .hbf-article .ci-callout {
+    margin: 28px 0;
+    background: var(--sage-pale);
+    border: 1.5px solid var(--sage-tint);
+    border-radius: 12px;
+    padding: 24px 26px;
+  }
+  .hbf-article .ci-callout .ci-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+  .hbf-article .ci-callout p {
+    font-size: 15px;
+    color: var(--gray);
+    margin-bottom: 0;
+  }
+
+  /* Bridge */
+  .hbf-bridge { background: #f5f0f5; border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+  .hbf-bridge p { margin: 0; }
+  .hbf-bridge a { color: #593d58; font-weight: 700; }
+
+  /* CTA block */
+  .hbf-article .cta-block {
+    margin-top: 48px;
+    background: var(--plum);
+    border-radius: 14px;
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hbf-article .cta-text { flex: 1; min-width: 200px; }
+  .hbf-article .cta-text p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.80);
+    margin-bottom: 0;
+    line-height: 1.65;
+  }
+  .hbf-article .cta-text p strong {
+    color: var(--white);
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .hbf-article .cta-btn {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 9px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .hbf-article .cta-btn:hover { color: var(--white); }
+
+  /* Parent note */
+  .hbf-article .parent-note {
+    margin: 52px 0 0;
+    background: var(--gold-pale);
+    border: 1.5px solid var(--gold-tint);
+    border-radius: 14px;
+    padding: 30px 32px 26px;
+  }
+  .hbf-article .parent-note .pn-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .hbf-article .parent-note h3 {
+    margin: 0 0 14px;
+  }
+  .hbf-article .parent-note p {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+  .hbf-article .parent-note p:last-child { margin-bottom: 0; }
+  .hbf-article .parent-note ul { margin: 0 0 16px; }
+  .hbf-article .parent-note li { font-size: 15px; color: var(--gray); }
+  .hbf-article .parent-note a { color: var(--plum); font-weight: 700; }
+
+  /* ── INFOGRAPHIC ── */
+  .hbf-article .infographic {
+    margin: 36px 0;
+    border: 1.5px solid var(--plum-tint);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(89,61,88,0.08);
+  }
+  .hbf-article .ig-header {
+    background: var(--plum);
+    padding: 22px 28px 18px;
+  }
+  .hbf-article .ig-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 5px;
+  }
+  .hbf-article .ig-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.28;
+  }
+  .hbf-article .ig-title em { font-style: normal; color: var(--sage-light); }
+  .hbf-article .ig-assumptions {
+    background: var(--plum-pale);
+    border-bottom: 1px solid var(--plum-tint);
+    padding: 11px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+  }
+  .hbf-article .assump-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--gray);
+  }
+  .hbf-article .assump-item .a-dot {
+    width: 5px; height: 5px;
+    background: var(--plum);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .hbf-article .ig-body { padding: 22px 28px 18px; }
+  .hbf-article .ig-legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .hbf-article .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--gray);
+  }
+  .hbf-article .legend-swatch {
+    width: 12px; height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .hbf-article .chart-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 22px;
+  }
+  .hbf-article .chart-row {
+    display: grid;
+    grid-template-columns: 62px 1fr 130px;
+    align-items: center;
+    gap: 12px;
+  }
+  .hbf-article .year-badge {
+    background: var(--plum);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 6px;
+    letter-spacing: 0.04em;
+  }
+  .hbf-article .bar-wrap {
+    height: 34px;
+    background: var(--plum-pale);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+  }
+  .hbf-article .bar-contrib {
+    background: var(--plum);
+    height: 100%;
+    position: relative;
+  }
+  .hbf-article .bar-contrib-label {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    white-space: nowrap;
+  }
+  .hbf-article .bar-growth { background: var(--sage); height: 100%; }
+  .hbf-article .bar-meta { text-align: right; line-height: 1.4; }
+  .hbf-article .bm-balance { font-weight: 600; color: var(--plum); font-size: 13.5px; }
+  .hbf-article .bm-tax { font-size: 11.5px; color: var(--sage); font-weight: 500; }
+  .hbf-article .ig-divider {
+    border: none;
+    border-top: 1px solid var(--plum-tint);
+    margin: 0 0 18px;
+  }
+  .hbf-article .totals-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 11px;
+    margin-bottom: 18px;
+  }
+  .hbf-article .total-card {
+    border-radius: 10px;
+    padding: 15px 16px;
+    text-align: center;
+  }
+  .hbf-article .tc-plum { background: var(--plum); }
+  .hbf-article .tc-sage  { background: var(--sage); }
+  .hbf-article .tc-outline { background: var(--white); border: 1.5px solid var(--plum-tint); }
+  .hbf-article .tc-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .hbf-article .tc-plum .tc-label,
+  .hbf-article .tc-sage .tc-label { color: rgba(255,255,255,0.7); }
+  .hbf-article .tc-outline .tc-label { color: var(--gray-light); }
+  .hbf-article .tc-value {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hbf-article .tc-plum .tc-value,
+  .hbf-article .tc-sage .tc-value { color: var(--white); }
+  .hbf-article .tc-outline .tc-value { color: var(--plum); }
+  .hbf-article .tc-sub { font-size: 10.5px; line-height: 1.4; }
+  .hbf-article .tc-plum .tc-sub,
+  .hbf-article .tc-sage .tc-sub { color: rgba(255,255,255,0.6); }
+  .hbf-article .tc-outline .tc-sub { color: var(--gray-light); }
+  .hbf-article .insight-box {
+    background: var(--plum);
+    border-radius: 9px;
+    padding: 15px 18px;
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+  }
+  .hbf-article .insight-icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+  .hbf-article .insight-text { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,0.85); }
+  .hbf-article .insight-text strong { color: var(--white); }
+  .hbf-article .ig-footnote {
+    padding: 10px 28px;
+    background: var(--gray-pale);
+    border-top: 1px solid var(--plum-tint);
+    font-size: 10.5px;
+    line-height: 1.6;
+    color: var(--gray-light);
+  }
+  .hbf-article .ig-footnote sup { font-size: 9px; }
+
+  /* Featured image */
+  .hbf-article .article-featured-image {
+    margin-top: 48px;
+    border-radius: 14px;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .hbf-article .article-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+  }
+
+  /* Responsive */
+  @media (max-width: 680px) {
+    .hbf-article .chart-row { grid-template-columns: 52px 1fr 100px; gap: 8px; }
+    .hbf-article .totals-row { grid-template-columns: 1fr; }
+    .hbf-article .cta-block { padding: 28px 24px; }
+    .hbf-article .stat-block { padding: 26px 22px; }
+    .hbf-article .stat-block .stat-value { font-size: 36px; }
+    .hbf-article .parent-note { padding: 24px 22px; }
+    .hbf-article .ig-body,
+    .hbf-article .ig-assumptions,
+    .hbf-article .ig-header,
+    .hbf-article .ig-footnote { padding-left: 18px; padding-right: 18px; }
+  }
+</style>
+
+<!-- Article content starts here -->
+<div class="hbf-article">
+
+  <div class="series-eyebrow">The Launch Series &middot; Part 1</div>
+
+  <!-- ── INTRO ── -->
+  <p class="lead">If you are in your twenties and you feel like you are already behind, you are not imagining it. The starting line moved.</p>
+
+  <p>Rent takes a bigger bite of a first paycheque than it did for your parents. Tuition debt shows up before your first full-time job does. Entry-level wages have not kept pace with the cost of a place to live, and a house now costs a multiple of income that would have been unthinkable a generation ago. Those are real headwinds, and no amount of skipping coffee fixes them.</p>
+
+  <p>So let's not pretend they aren't there. This article is not going to tell you that you are bad with money. It's going to tell you about the one advantage you have right now that nobody older than you can buy back at any price.</p>
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 1 ── -->
+  <h2>The Headwinds Are Real. One Thing Didn't Change.</h2>
+
+  <p>Costs went up. Wages lagged. Housing got harder. All true.</p>
+
+  <p>What did not change is compounding: the fact that money you invest earns a return, and then that return earns a return of its own, over and over, for as long as you leave it alone. Compounding does not care about the job market. It only cares about time.</p>
+
+  <p>And time is the one thing you currently have more of than every single person reading this who is older than you. It is the only item on the list you cannot go out and buy more of later.</p>
+
+  <p>Here is what that actually looks like. Same person, same $100 a month, same 6% average annual return. The only thing that changes is the age they start.</p>
+
+  <!-- ── INFOGRAPHIC ── -->
+  <div class="infographic">
+    <div class="ig-header">
+      <div class="ig-eyebrow">The Power of Starting Early</div>
+      <div class="ig-title">$100 a month, invested until age 65: <em>the only variable is when you start</em></div>
+    </div>
+    <div class="ig-assumptions">
+      <div class="assump-item"><span class="a-dot"></span>$100 per month</div>
+      <div class="assump-item"><span class="a-dot"></span>6% average annual return</div>
+      <div class="assump-item"><span class="a-dot"></span>Held until age 65</div>
+    </div>
+    <div class="ig-body">
+      <div class="ig-legend">
+        <div class="legend-item"><span class="legend-swatch" style="background:#593d58"></span>What you put in</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:#a2a47d"></span>What growth adds</div>
+      </div>
+      <div class="chart-rows">
+        <div class="chart-row">
+          <div class="year-badge">Age 22</div>
+          <div class="bar-wrap">
+            <div class="bar-contrib" style="width:21.30%"><span class="bar-contrib-label">$51,600</span></div>
+            <div class="bar-growth" style="width:78.70%"></div>
+          </div>
+          <div class="bar-meta"><div class="bm-balance">≈ $242,300</div><div class="bm-tax">79% is growth</div></div>
+        </div>
+        <div class="chart-row">
+          <div class="year-badge">Age 25</div>
+          <div class="bar-wrap">
+            <div class="bar-contrib" style="width:19.81%"><span class="bar-contrib-label">$48,000</span></div>
+            <div class="bar-growth" style="width:62.39%"></div>
+          </div>
+          <div class="bar-meta"><div class="bm-balance">≈ $199,100</div><div class="bm-tax">76% is growth</div></div>
+        </div>
+        <div class="chart-row">
+          <div class="year-badge">Age 30</div>
+          <div class="bar-wrap">
+            <div class="bar-contrib" style="width:17.34%"><span class="bar-contrib-label">$42,000</span></div>
+            <div class="bar-growth" style="width:41.47%"></div>
+          </div>
+          <div class="bar-meta"><div class="bm-balance">≈ $142,500</div><div class="bm-tax">71% is growth</div></div>
+        </div>
+        <div class="chart-row">
+          <div class="year-badge">Age 35</div>
+          <div class="bar-wrap">
+            <div class="bar-contrib" style="width:14.86%"><span class="bar-contrib-label">$36,000</span></div>
+            <div class="bar-growth" style="width:26.60%"></div>
+          </div>
+          <div class="bar-meta"><div class="bm-balance">≈ $100,500</div><div class="bm-tax">64% is growth</div></div>
+        </div>
+        <div class="chart-row">
+          <div class="year-badge">Age 40</div>
+          <div class="bar-wrap">
+            <div class="bar-contrib" style="width:12.38%"><span class="bar-contrib-label">$30,000</span></div>
+            <div class="bar-growth" style="width:16.22%"></div>
+          </div>
+          <div class="bar-meta"><div class="bm-balance">≈ $69,300</div><div class="bm-tax">57% is growth</div></div>
+        </div>
+      </div>
+      <hr class="ig-divider">
+      <div class="totals-row">
+        <div class="total-card tc-plum">
+          <div class="tc-label">Start at 22</div>
+          <div class="tc-value">$242,300</div>
+          <div class="tc-sub">You contributed $51,600 of it</div>
+        </div>
+        <div class="total-card tc-sage">
+          <div class="tc-label">Start at 35</div>
+          <div class="tc-value">$100,500</div>
+          <div class="tc-sub">You contributed $36,000 of it</div>
+        </div>
+        <div class="total-card tc-outline">
+          <div class="tc-label">The Difference</div>
+          <div class="tc-value">$141,800</div>
+          <div class="tc-sub">For $15,600 more out of pocket, spread over 13 years</div>
+        </div>
+      </div>
+      <div class="insight-box">
+        <div class="insight-icon">💡</div>
+        <div class="insight-text"><strong>Start at 22 and roughly four out of every five dollars in that account is money you never earned at a job.</strong> Start at 40 and barely half of it is. You are not really saving money here. You are buying time, and time is the only thing on this page you cannot buy more of later.</div>
+      </div>
+    </div>
+    <div class="ig-footnote"><sup>*</sup> Illustration only. Assumes $100 contributed at the end of each month and a 6% average annual rate of return, compounded monthly, until age 65. Figures are rounded and are shown before fees, taxes and inflation, so $242,300 in the future will not buy what $242,300 buys today. Investment returns are not guaranteed and no single year looks like the average. Speak with a financial advisor about your own situation.</div>
+  </div>
+  <!-- ── END INFOGRAPHIC ── -->
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 2 ── -->
+  <h2>What One Year of Waiting Actually Costs</h2>
+
+  <p>"I'll start next year" sounds harmless. It isn't free, and it's worth knowing the price before you agree to it.</p>
+
+  <p>Take the person who starts at 25 in the chart above. If they push it to 26 instead, same $100 a month, same assumptions, they end up with about $12,700 less at 65.</p>
+
+  <div class="stat-block">
+    <div class="stat-label">The cost of waiting one year</div>
+    <div class="stat-value">≈ $12,700</div>
+    <div class="stat-sub">That is what a single year of "I'll start next year" costs a 25-year-old putting $100 a month away, under the same 6% assumption.</div>
+  </div>
+
+  <p>That reframes procrastination a little. Waiting is not neutral and it is not free: it is a purchase, and the price is paid by an older version of you who has fewer options.</p>
+
+  <p>The flip side is the good news. The amount is small. It's $100 a month, or $25 a week, or whatever you can actually manage. The size of the first deposit matters far less than the date on it.</p>
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 3 ── -->
+  <h2>Four Questions Before You Invest a Dollar</h2>
+
+  <p>Before you put money anywhere, answer these four. They take about five minutes, and they will save you from the two most common mistakes: putting money you need next year into something that can drop, and leaving money you don't need for thirty years sitting in a chequing account.</p>
+
+  <div class="tool-heading">
+    <span class="tool-num">1</span>
+    <h3>What is this money for?</h3>
+  </div>
+  <p>A trip, a car, first and last month's rent, a house someday, retirement, or simply "I don't know yet, I just want options." All of those are legitimate answers. They just lead to different accounts and different investments. Money with a job behaves differently than money without one.</p>
+
+  <div class="tool-heading">
+    <span class="tool-num">2</span>
+    <h3>When will I need it?</h3>
+  </div>
+  <p>This is your time horizon, and it drives almost everything. Money you need inside of two or three years should not be exposed to much risk, because it may not have time to recover from a bad stretch. Money you will not touch for thirty years can afford to ride out the bumps, and historically it has been rewarded for doing so.</p>
+
+  <div class="tool-heading">
+    <span class="tool-num">3</span>
+    <h3>What happens if it drops 20%?</h3>
+  </div>
+  <p>Not "would that be nice," but honestly: would you sell? Markets fall. That is a normal feature of investing, not a malfunction. The real risk for a young investor is not a downturn; it's panic-selling during one and locking in the loss. If a 20% drop would keep you up at night, that's useful information about how much risk belongs in your plan, and there is no wrong answer.</p>
+
+  <div class="tool-heading">
+    <span class="tool-num">4</span>
+    <h3>What am I giving up to save this?</h3>
+  </div>
+  <p>If saving $100 a month means carrying a credit card balance at 20% interest, pay the card first. Paying off high-interest debt is a guaranteed return that no investment can promise. And if your employer matches contributions to a group savings plan, that match is free money and it goes to the front of the line.</p>
+
+  <div class="ci-callout">
+    <div class="ci-label">The short version</div>
+    <p>What it's for, when you need it, how much of a drop you can handle, and what it costs you to save it. Those four answers point to the right account and the right level of risk. Everything else is detail.</p>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 4 ── -->
+  <h2>Where the First $100 Actually Goes</h2>
+
+  <p>Two steps, in this order. That's it.</p>
+
+  <div class="tool-heading">
+    <span class="tool-num">1</span>
+    <h3>Build a Launch Fund first</h3>
+  </div>
+
+  <p>Most people call this an emergency fund, which makes it sound like it exists because something bad is coming. That's the wrong frame. This money is what lets you say no to a job you hate, yes to a move, or "I'll handle it" when the transmission goes. It is not fear money. It is freedom money, and it is what keeps you from having to sell your investments at the worst possible moment.</p>
+
+  <p>Start with $1,000 in a plain savings account you can reach in a day. Then build toward a few months of your actual expenses, whatever pace that takes. This money's job is to be boring and available, so it does not get invested in anything that can fall.</p>
+
+  <div class="tool-heading">
+    <span class="tool-num">2</span>
+    <h3>Then open a TFSA</h3>
+  </div>
+
+  <p>Once the Launch Fund is started, the Tax-Free Savings Account is where most young Canadians should be investing. You can open one at 18 (19 in some provinces), your contribution room starts building from that age whether you use it or not, and every dollar of growth inside it is tax-free. Not tax-deferred. Tax-free.</p>
+
+  <p>The other thing that makes it the right first account at your age: you can take money out for any reason, and the room comes back the following year. You are not locking yourself into a decision your 24-year-old self has to live with forever.</p>
+
+  <p>One important point that trips people up. A TFSA is not an investment; it is a container. What you put inside it is a separate decision, and it should follow from your answers to those four questions above. A TFSA holding cash and a TFSA holding a long-term growth portfolio are two very different things.</p>
+
+  <div class="strategy-line">
+    💡 The order that works for most people starting out: pay off high-interest debt, take any employer match on offer, build a Launch Fund, then invest inside a TFSA. Start with what you can actually sustain. A habit you keep beats a bigger number you abandon in March.
+  </div>
+
+  <div class="hbf-bridge">
+    <p>If owning a home is something you see for yourself, and that's an if, not an assumption, there is a separate account built specifically for that goal. Read <a href="/first-home-buyer-savings"><strong>Saving for Your First Home in Canada</strong></a> for how the FHSA, the RRSP Home Buyers' Plan and the TFSA fit together.</p>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ── CONCLUSION ── -->
+  <h2>You Are Not Behind. You Are Early.</h2>
+
+  <p>The conditions you are starting in are harder than the ones your parents started in. Both things can be true: the headwinds are real, and you still hold the single most valuable asset in this entire conversation.</p>
+
+  <p>You do not need a big income, a finished plan, or a perfect month to begin. You need an account and a date. The rest gets easier from there, and you can adjust everything else as your life takes shape.</p>
+
+  <div class="cta-block">
+    <div class="cta-text">
+      <p><strong>Open a TFSA and start the clock.</strong> Heidi has recorded a short, free video walking through how to open one and how to think about what goes inside it. No meeting required, no cost, and nothing to sign.</p>
+    </div>
+    <a href="/contact" class="cta-btn">Get the Free Video →</a>
+  </div>
+
+  <!-- ── PARENT NOTE ── -->
+  <div class="parent-note">
+    <div class="pn-label">If someone forwarded this to you</div>
+    <h3>A note for the parent who sent this</h3>
+
+    <p>You are watching your kid start out into conditions that are genuinely harder than the ones you started in, and you want to help without turning every conversation into a lecture. Here is what tends to work.</p>
+
+    <ul>
+      <li><strong>Match instead of give.</strong> Offering to match what they put into a TFSA, dollar for dollar up to whatever you can manage, rewards the habit rather than replacing it. They still have to do the saving.</li>
+      <li><strong>Let them own the account.</strong> If you open it, fund it and manage it, they learn nothing except that you'll handle it. The point is that they build the muscle while the stakes are small.</li>
+      <li><strong>Send the tool, not the lecture.</strong> Forwarding this article and Heidi's video gives them something to react to on their own time, which lands very differently than a conversation at the dinner table.</li>
+      <li><strong>Don't fund it out of your own retirement.</strong> This one matters. There are loans for their goals; there are none for yours. Helping should never come out of the plan that keeps you independent later.</li>
+    </ul>
+
+    <p>If you would like to talk through how much help is the right amount of help, without putting your own plan at risk, <a href="/contact"><strong>book a conversation with Heidi</strong></a>. That's a question worth answering properly.</p>
+  </div>
+
+  <div class="article-featured-image">
+    <img src="/wp-content/uploads/starting-to-invest-in-your-twenties.png" alt="A young Canadian adult starting to invest in their twenties" />
+  </div>
+
+</div><!-- .hbf-article -->

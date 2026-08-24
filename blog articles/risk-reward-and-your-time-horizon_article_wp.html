@@ -1,0 +1,398 @@
+<!-- Heidi Blondin Financial: The Launch Series, Part 2 -->
+<!-- Paste this into WordPress > Custom HTML block -->
+
+<style>
+  .hbf-article {
+    --plum: #593d58;
+    --plum-light: #7a5679;
+    --plum-pale: #f0eaf0;
+    --plum-tint: #e0d5e0;
+    --sage: #a2a47d;
+    --sage-light: #b8ba98;
+    --sage-pale: #f4f5ee;
+    --sage-tint: #e8e9da;
+    --gold: #b87b1e;
+    --gold-pale: #fdf7ec;
+    --gold-tint: #efdcbc;
+    --gray: #666666;
+    --gray-light: #999;
+    --gray-pale: #f7f7f7;
+    --white: #ffffff;
+  }
+
+  /* Series eyebrow */
+  .hbf-article .series-eyebrow {
+    display: inline-block;
+    background: var(--plum-pale);
+    color: var(--plum);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+
+  /* Pull quote */
+  .hbf-article .pull-quote {
+    margin: 36px 0;
+    padding: 4px 0 4px 26px;
+    border-left: 4px solid var(--sage);
+  }
+  .hbf-article .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    line-height: 1.45;
+    color: var(--plum);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .hbf-article .pull-quote .pq-attr {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+  }
+
+  /* Section divider */
+  .hbf-article .section-rule {
+    border: none;
+    border-top: 2px solid var(--plum-tint);
+    margin: 46px 0;
+    position: relative;
+  }
+  .hbf-article .section-rule::after {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    color: var(--sage);
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  /* ── RISK LADDER ── */
+  .hbf-article .ladder {
+    margin: 34px 0;
+    border: 1.5px solid var(--plum-tint);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(89,61,88,0.08);
+  }
+  .hbf-article .ladder-header {
+    background: var(--plum);
+    padding: 20px 26px 17px;
+  }
+  .hbf-article .ladder-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 5px;
+  }
+  .hbf-article .ladder-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .hbf-article .ladder-body { padding: 20px 26px 16px; }
+  .hbf-article .rung {
+    display: grid;
+    grid-template-columns: 152px 1fr 116px;
+    align-items: center;
+    gap: 14px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--plum-pale);
+  }
+  .hbf-article .rung:last-child { border-bottom: none; }
+  .hbf-article .rung-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--plum);
+    line-height: 1.35;
+  }
+  .hbf-article .rung-name span {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--gray-light);
+    margin-top: 2px;
+  }
+  .hbf-article .rung-track {
+    height: 26px;
+    background: var(--plum-pale);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .hbf-article .rung-fill {
+    height: 100%;
+    border-radius: 6px 0 0 6px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+    white-space: nowrap;
+  }
+  .hbf-article .rung-time {
+    text-align: right;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--sage);
+    line-height: 1.35;
+  }
+  .hbf-article .ladder-foot {
+    padding: 12px 26px;
+    background: var(--gray-pale);
+    border-top: 1px solid var(--plum-tint);
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--gray-light);
+  }
+
+  /* ── FLUCTUATION CHART ── */
+  .hbf-article .fluct {
+    margin: 34px 0;
+    border: 1.5px solid var(--plum-tint);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--white);
+  }
+  .hbf-article .fluct-head {
+    background: var(--plum-pale);
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--plum-tint);
+  }
+  .hbf-article .fluct-head .fh-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--plum);
+  }
+  .hbf-article .fluct-body { padding: 20px 24px 10px; }
+  .hbf-article .fluct-body svg { width: 100%; height: auto; display: block; }
+  .hbf-article .fluct-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    padding: 0 24px 18px;
+  }
+  .hbf-article .fl-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--gray);
+  }
+  .hbf-article .fl-key { width: 20px; height: 3px; border-radius: 2px; flex-shrink: 0; }
+
+  /* Gold caution box */
+  .hbf-article .caution {
+    margin: 30px 0;
+    background: var(--gold-pale);
+    border: 1.5px solid var(--gold-tint);
+    border-radius: 12px;
+    padding: 22px 26px;
+  }
+  .hbf-article .caution .c-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 9px;
+  }
+  .hbf-article .caution p { font-size: 15px; color: var(--gray); margin-bottom: 0; }
+
+  /* Bridge */
+  .hbf-bridge { background: #f5f0f5; border-radius: 14px; padding: 20px 24px; margin: 28px 0; }
+  .hbf-bridge p { margin: 0; }
+  .hbf-bridge a { color: #593d58; font-weight: 700; }
+
+  /* CTA block */
+  .hbf-article .cta-block {
+    margin-top: 44px;
+    background: var(--plum);
+    border-radius: 14px;
+    padding: 34px 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hbf-article .cta-text { flex: 1; min-width: 200px; }
+  .hbf-article .cta-text p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.80);
+    margin-bottom: 0;
+    line-height: 1.65;
+  }
+  .hbf-article .cta-text p strong {
+    color: var(--white);
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .hbf-article .cta-btn {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 9px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .hbf-article .cta-btn:hover { color: var(--white); }
+
+  /* Featured image */
+  .hbf-article .article-featured-image {
+    margin-top: 44px;
+    border-radius: 14px;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .hbf-article .article-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+  }
+
+  @media (max-width: 680px) {
+    .hbf-article .rung { grid-template-columns: 1fr; gap: 7px; padding: 14px 0; }
+    .hbf-article .rung-time { text-align: left; }
+    .hbf-article .pull-quote p { font-size: 19px; }
+    .hbf-article .cta-block { padding: 26px 22px; }
+    .hbf-article .ladder-body,
+    .hbf-article .ladder-header,
+    .hbf-article .ladder-foot { padding-left: 18px; padding-right: 18px; }
+  }
+</style>
+
+<div class="hbf-article">
+
+  <div class="series-eyebrow">The Launch Series &middot; Part 2</div>
+
+  <p class="lead">Your account is open. Now comes the question that stalls most new investors: what actually goes inside it?</p>
+
+  <p>There is a whole range to choose from. At one end sit high-interest savings accounts and GICs, where the money does not move. At the other end sits full exposure to the stock market. Everything else is some mix of the two.</p>
+
+  <p>Choosing where you land on that range is not a test of how brave you are. It comes down to one question: when do you need the money?</p>
+
+  <div class="pull-quote">
+    <p>"It's important to align the goal and the time frame with the investment option chosen."</p>
+    <div class="pq-attr">Heidi Blondin, CFP</div>
+  </div>
+
+  <!-- ── RISK LADDER ── -->
+  <div class="ladder">
+    <div class="ladder-header">
+      <div class="ladder-eyebrow">Matching the tool to the timeline</div>
+      <div class="ladder-title">The risk ladder, and where each rung belongs</div>
+    </div>
+    <div class="ladder-body">
+      <div class="rung">
+        <div class="rung-name">High-interest savings<span>Cash, always available</span></div>
+        <div class="rung-track"><div class="rung-fill" style="width:14%; background:#a2a47d">No risk</div></div>
+        <div class="rung-time">Under 1 year</div>
+      </div>
+      <div class="rung">
+        <div class="rung-name">GICs<span>Locked in, rate guaranteed</span></div>
+        <div class="rung-track"><div class="rung-fill" style="width:30%; background:#8f9370">Very low</div></div>
+        <div class="rung-time">1 to 3 years</div>
+      </div>
+      <div class="rung">
+        <div class="rung-name">Balanced mix<span>Part bonds, part equities</span></div>
+        <div class="rung-track"><div class="rung-fill" style="width:62%; background:#7a5679">Moderate</div></div>
+        <div class="rung-time">3 to 10 years</div>
+      </div>
+      <div class="rung">
+        <div class="rung-name">Mostly equities<span>Ownership in companies</span></div>
+        <div class="rung-track"><div class="rung-fill" style="width:100%; background:#593d58">Higher</div></div>
+        <div class="rung-time">10 years or more</div>
+      </div>
+    </div>
+    <div class="ladder-foot">Time frames are general guidance, not a rule. Your own mix depends on the goal, your income, and how much fluctuation you can genuinely live with. Investment values are not guaranteed and will change over time.</div>
+  </div>
+
+  <hr class="section-rule">
+
+  <h2>Under three years? Stay low.</h2>
+
+  <p>If the money has a job coming up soon, a car, a move, first and last month's rent, the only thing that matters is that it's there when you reach for it. That means a high-interest savings account or a GIC.</p>
+
+  <p>You will not get rich this way. You also will not go to withdraw it two weeks before you need it and find a chunk of it missing.</p>
+
+  <h2>Longer than that? Time changes the math.</h2>
+
+  <p>If you will not touch the money for ten years or more, the calculation flips. A bad year becomes an inconvenience instead of a disaster, because you have the runway to recover from it. That is the case for more equity exposure, and it's why your twenties are the best stretch of your life to hold it.</p>
+
+  <div class="pull-quote">
+    <p>"New investors sometimes take too little risk, because it's all new. But the benefit of time is really on their side."</p>
+    <div class="pq-attr">Heidi Blondin, CFP</div>
+  </div>
+
+  <p>Playing it too safe feels responsible. Over thirty years, it quietly costs you: money parked in a savings account for decades can lose ground to inflation even while the balance goes up.</p>
+
+  <hr class="section-rule">
+
+  <h2>The part nobody should skip</h2>
+
+  <p>There is no guarantee in market-based investing. Some years your account will be worth less than what you put in. That is not a malfunction; it's the normal texture of it.</p>
+
+  <!-- ── FLUCTUATION CHART ── -->
+  <div class="fluct">
+    <div class="fluct-head"><div class="fh-title">Growth is real. It just doesn't arrive in a straight line.</div></div>
+    <div class="fluct-body">
+      <svg viewBox="0 0 620 200" role="img" aria-label="A jagged rising line showing what market growth looks like year to year, against a straight dashed line showing the smooth average people expect">
+        <line x1="8" y1="180" x2="612" y2="180" stroke="#e0d5e0" stroke-width="1.5"/>
+        <line x1="8" y1="180" x2="8" y2="14" stroke="#e0d5e0" stroke-width="1.5"/>
+        <path d="M8,168 L612,44" stroke="#a2a47d" stroke-width="2.5" stroke-dasharray="7 6" fill="none"/>
+        <path d="M8,168 L58,150 L100,164 L146,128 L190,140 L232,102 L274,150 L318,118 L360,86 L404,104 L448,62 L492,92 L536,50 L578,34 L612,44"
+              stroke="#593d58" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="274" cy="150" r="5" fill="#b87b1e"/>
+        <text x="286" y="163" font-family="Georgia, serif" font-size="12.5" fill="#b87b1e">the year you want to quit</text>
+      </svg>
+    </div>
+    <div class="fluct-legend">
+      <div class="fl-item"><span class="fl-key" style="background:#593d58"></span>What it actually looks like</div>
+      <div class="fl-item"><span class="fl-key" style="background:#a2a47d"></span>The average, in hindsight</div>
+    </div>
+  </div>
+
+  <div class="caution">
+    <div class="c-label">Be honest with yourself here</div>
+    <p>Both lines end in the same place. The only difference is that one of them is survivable and the other one is a fantasy. You have to be comfortable with some degree of fluctuation, because staying invested through the dips is what earns the growth. If a 20% drop would make you sell, that belongs in the plan from day one, and there is nothing wrong with saying so.</p>
+  </div>
+
+  <div class="hbf-bridge">
+    <p>New to this? Start with <a href="/starting-to-invest-in-your-twenties"><strong>Part 1: You're Not Behind, You're Early</strong></a> for what a small monthly amount grows into when you start in your twenties.</p>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-text">
+      <p><strong>Not sure which rung you belong on?</strong> That's a fifteen-minute conversation, not a commitment. Heidi will walk you through matching your goals and timelines to the right mix, at no cost.</p>
+    </div>
+    <a href="/contact" class="cta-btn">Ask Heidi →</a>
+  </div>
+
+  <div class="article-featured-image">
+    <img src="/wp-content/uploads/risk-reward-and-your-time-horizon.png" alt="A young investor deciding how much risk to take" />
+  </div>
+
+</div><!-- .hbf-article -->
