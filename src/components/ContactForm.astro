@@ -13,36 +13,36 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       <div>
         <label for="first_name" class="field-label">First Name <span class="text-brand-goldDark">*</span></label>
         <input type="text" id="first_name" name="first_name" autocomplete="given-name" required class="field-input" aria-describedby="first_name-error" />
-        <p id="first_name-error" class="field-error hidden text-[13px] text-red-600 mt-1" data-for="first_name" aria-live="polite">Please enter your first name.</p>
+        <p id="first_name-error" class="field-error hidden text-[14px] text-red-600 mt-1" data-for="first_name" aria-live="polite">Please enter your first name.</p>
       </div>
       <div>
         <label for="last_name" class="field-label">Last Name <span class="text-brand-goldDark">*</span></label>
         <input type="text" id="last_name" name="last_name" autocomplete="family-name" required class="field-input" aria-describedby="last_name-error" />
-        <p id="last_name-error" class="field-error hidden text-[13px] text-red-600 mt-1" data-for="last_name" aria-live="polite">Please enter your last name.</p>
+        <p id="last_name-error" class="field-error hidden text-[14px] text-red-600 mt-1" data-for="last_name" aria-live="polite">Please enter your last name.</p>
       </div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
       <div>
         <label for="email" class="field-label">Email <span class="text-brand-goldDark">*</span></label>
         <input type="email" id="email" name="email" autocomplete="email" required class="field-input" aria-describedby="email-error" />
-        <p id="email-error" class="field-error hidden text-[13px] text-red-600 mt-1" data-for="email" aria-live="polite">Please enter a valid email address.</p>
+        <p id="email-error" class="field-error hidden text-[14px] text-red-600 mt-1" data-for="email" aria-live="polite">Please enter a valid email address.</p>
       </div>
       <div>
         <label for="phone" class="field-label">Phone <span class="text-brand-goldDark">*</span></label>
         <input type="tel" id="phone" name="phone" autocomplete="tel" required class="field-input" aria-describedby="phone-error" />
-        <p id="phone-error" class="field-error hidden text-[13px] text-red-600 mt-1" data-for="phone" aria-live="polite">Please enter your phone number.</p>
+        <p id="phone-error" class="field-error hidden text-[14px] text-red-600 mt-1" data-for="phone" aria-live="polite">Please enter your phone number.</p>
       </div>
     </div>
     <div class="mb-5">
       <label for="message" class="field-label">Questions / Comments <span class="text-brand-goldDark">*</span></label>
       <textarea id="message" name="message" rows="5" required class="field-input resize-none" aria-describedby="message-error"></textarea>
-      <p id="message-error" class="field-error hidden text-[13px] text-red-600 mt-1" data-for="message" aria-live="polite">Please enter your message.</p>
+      <p id="message-error" class="field-error hidden text-[14px] text-red-600 mt-1" data-for="message" aria-live="polite">Please enter your message.</p>
     </div>
 
     <!-- CASL consent — unchecked by default (CASL requirement) -->
     <div class="mb-6 flex items-start gap-3">
       <input type="checkbox" id="casl_consent" name="casl_consent" class="mt-0.5 w-4 h-4 accent-brand-plum flex-shrink-0" />
-      <label for="casl_consent" class="font-sans text-[13px] text-brand-ink/70 leading-relaxed">
+      <label for="casl_consent" class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">
         I consent to Heidi Blondin Financial contacting me about my inquiry. I understand I can withdraw consent at any time.
       </label>
     </div>
@@ -56,7 +56,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     </button>
 
     <div id="form-error" class="hidden mt-6 bg-red-50 border border-red-200 p-5" role="alert" aria-live="polite">
-      <p id="form-error-message" class="font-sans text-sm text-red-700">Something went wrong. Please try again or call us at <a href="tel:18558443927" class="underline">1-855-844-3927</a>.</p>
+      <p id="form-error-message" class="font-sans text-[15px] text-red-700">Something went wrong. Please try again or call us at <a href="tel:18558443927" class="underline">1-855-844-3927</a>.</p>
     </div>
   </form>
 </div>

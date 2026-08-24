@@ -31,7 +31,7 @@
 
   body {
     @apply font-sans text-brand-ink bg-white;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.65;
   }
 
@@ -45,7 +45,7 @@
 
   /* Skip to content */
   .skip-link {
-    @apply absolute -top-full left-4 z-50 px-4 py-2 bg-brand-goldDark text-white font-sans font-medium text-sm;
+    @apply absolute -top-full left-4 z-50 px-4 py-2 bg-brand-goldDark text-white font-sans font-medium text-[15px];
     transition: top 0.1s;
   }
   .skip-link:focus {
@@ -62,16 +62,16 @@
 @layer components {
   /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-7 py-4 bg-brand-plum text-white font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plumDark;
+    @apply inline-flex items-center gap-2 px-7 py-4 bg-brand-plum text-white font-sans font-medium text-[15px] tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plumDark;
   }
   .btn-primary-gold {
-    @apply inline-flex items-center gap-2 px-7 py-4 bg-brand-goldDark text-white font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-amber-700;
+    @apply inline-flex items-center gap-2 px-7 py-4 bg-brand-goldDark text-white font-sans font-medium text-[15px] tracking-wide uppercase transition-colors duration-200 hover:bg-amber-700;
   }
   .btn-ghost {
-    @apply inline-flex items-center gap-2 px-7 py-4 border border-brand-plum text-brand-plum font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plum hover:text-white;
+    @apply inline-flex items-center gap-2 px-7 py-4 border border-brand-plum text-brand-plum font-sans font-medium text-[15px] tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plum hover:text-white;
   }
   .btn-ghost-light {
-    @apply inline-flex items-center gap-2 px-7 py-4 border border-white/50 text-white font-sans font-medium text-sm tracking-wide uppercase transition-colors duration-200 hover:bg-white hover:text-brand-plum;
+    @apply inline-flex items-center gap-2 px-7 py-4 border border-white/50 text-white font-sans font-medium text-[15px] tracking-wide uppercase transition-colors duration-200 hover:bg-white hover:text-brand-plum;
   }
 
   /* Section containers */
@@ -81,13 +81,13 @@
 
   /* Eyebrow label */
   .eyebrow {
-    @apply font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-goldDark;
+    @apply font-sans text-[13px] font-semibold tracking-[0.2em] uppercase text-brand-goldDark;
   }
   .eyebrow-sage {
-    @apply font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-sageDark;
+    @apply font-sans text-[13px] font-semibold tracking-[0.2em] uppercase text-brand-sageDark;
   }
   .eyebrow-light {
-    @apply font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-tintPlum/70;
+    @apply font-sans text-[13px] font-semibold tracking-[0.2em] uppercase text-brand-tintPlum/70;
   }
 
   /* Gold quote mark */
@@ -108,13 +108,13 @@
     @apply font-serif text-h3 text-brand-plum mt-8 mb-3;
   }
   .prose-hbf p {
-    @apply mb-5 text-[17px] leading-[1.7];
+    @apply mb-5 text-[18px] leading-[1.7];
   }
   .prose-hbf ul {
     @apply mb-5 pl-6 space-y-2;
   }
   .prose-hbf li {
-    @apply text-[17px] leading-[1.7] list-disc;
+    @apply text-[18px] leading-[1.7] list-disc;
   }
   .prose-hbf strong {
     @apply font-semibold text-brand-plum;
@@ -146,25 +146,25 @@
 
   /* Form fields */
   .field-label {
-    @apply block font-sans text-sm font-medium text-brand-plum mb-1.5;
+    @apply block font-sans text-[15px] font-medium text-brand-plum mb-1.5;
   }
   .field-input {
-    @apply w-full border border-brand-plum/25 bg-white px-4 py-3 font-sans text-sm text-brand-ink placeholder-brand-plumMid/50 transition-colors focus:border-brand-plum focus:outline-none;
+    @apply w-full border border-brand-plum/25 bg-white px-4 py-3 font-sans text-[15px] text-brand-ink placeholder-brand-plumMid/50 transition-colors focus:border-brand-plum focus:outline-none;
   }
   .field-select {
-    @apply w-full border border-brand-plum/25 bg-white px-4 py-3 font-sans text-sm text-brand-ink transition-colors focus:border-brand-plum focus:outline-none appearance-none cursor-pointer;
+    @apply w-full border border-brand-plum/25 bg-white px-4 py-3 font-sans text-[15px] text-brand-ink transition-colors focus:border-brand-plum focus:outline-none appearance-none cursor-pointer;
   }
 
   /* Nav link */
   .nav-link {
-    @apply font-sans text-sm font-medium text-brand-ink/80 hover:text-brand-plum transition-colors duration-150 py-1;
+    @apply font-sans text-[15px] font-medium text-brand-ink/80 hover:text-brand-plum transition-colors duration-150 py-1;
   }
   .nav-link-active {
     @apply text-brand-plum font-semibold;
   }
   /* Nav link — for dark (plum) header backgrounds */
   .nav-link-light {
-    @apply font-sans text-sm font-medium text-white/80 hover:text-white transition-colors duration-150 py-1;
+    @apply font-sans text-[15px] font-medium text-white/80 hover:text-white transition-colors duration-150 py-1;
   }
   .nav-link-active-light {
     @apply text-white font-semibold;
@@ -180,6 +180,30 @@
   }
   .section-gap-sm {
     @apply py-14 lg:py-20;
+  }
+}
+
+/* Homepage hero: extends the painting's plum wall across the whole banner
+   so the headline sits on flat colour while the family stays visible at right. */
+.hero-veil {
+  background: linear-gradient(
+    to right,
+    rgba(89, 61, 88, 0.93) 0%,
+    rgba(89, 61, 88, 0.88) 45%,
+    rgba(89, 61, 88, 0.62) 72%,
+    rgba(89, 61, 88, 0.45) 100%
+  );
+}
+@media (min-width: 1024px) {
+  .hero-veil {
+    background: linear-gradient(
+      to right,
+      rgba(89, 61, 88, 0.86) 0%,
+      rgba(89, 61, 88, 0.80) 26%,
+      rgba(89, 61, 88, 0.45) 48%,
+      rgba(89, 61, 88, 0.10) 66%,
+      rgba(89, 61, 88, 0) 78%
+    );
   }
 }
 

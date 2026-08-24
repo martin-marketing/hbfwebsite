@@ -82,7 +82,7 @@ const currentPath = Astro.url.pathname;
                 class="mega-menu hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[680px] max-w-[95vw] bg-white shadow-xl border border-brand-plum/8 p-6"
               >
                 <div class="mb-4 pb-3 border-b border-brand-tintPlum">
-                  <a href="/financial-services/" class="font-sans text-[13px] font-semibold text-brand-plum hover:text-brand-goldDark transition-colors">
+                  <a href="/financial-services/" class="font-sans text-[14px] font-semibold text-brand-plum hover:text-brand-goldDark transition-colors">
                     View All Financial Services →
                   </a>
                 </div>
@@ -91,7 +91,7 @@ const currentPath = Astro.url.pathname;
                   <div>
                     <a
                       href={overviewHrefs[col]}
-                      class="font-serif text-sm text-brand-plum font-normal mb-3 block border-b border-brand-tintPlum pb-2 hover:text-brand-gold transition-colors"
+                      class="font-serif text-[15px] text-brand-plum font-normal mb-3 block border-b border-brand-tintPlum pb-2 hover:text-brand-gold transition-colors"
                      
                     >
                       {col}
@@ -99,14 +99,14 @@ const currentPath = Astro.url.pathname;
                     <ul class="space-y-1.5">
                       {items.map((item) => (
                         <li>
-                          <a href={item.href} class="font-sans text-[13px] text-brand-ink/75 hover:text-brand-plum transition-colors block py-0.5">
+                          <a href={item.href} class="font-sans text-[14px] text-brand-ink/75 hover:text-brand-plum transition-colors block py-0.5">
                             {item.label}
                           </a>
                         </li>
                       ))}
                       {col === 'Insurance' && (
                         <li class="pt-2">
-                          <a href="/financial-services/insurance-quote/" class="font-sans text-[13px] font-medium text-brand-goldDark border border-brand-gold px-3 py-1.5 hover:bg-brand-gold hover:text-white transition-colors inline-block tracking-wide uppercase">
+                          <a href="/financial-services/insurance-quote/" class="font-sans text-[14px] font-medium text-brand-goldDark border border-brand-gold px-3 py-1.5 hover:bg-brand-gold hover:text-white transition-colors inline-block tracking-wide uppercase">
                             Request a Quote →
                           </a>
                         </li>
@@ -165,7 +165,7 @@ const currentPath = Astro.url.pathname;
         link.hasMega ? (
           <div>
             <button
-              class="mobile-accordion-btn w-full flex items-center justify-between px-3 py-3 font-sans text-sm font-medium text-brand-ink hover:text-brand-plum"
+              class="mobile-accordion-btn w-full flex items-center justify-between px-3 py-3 font-sans text-[15px] font-medium text-brand-ink hover:text-brand-plum"
               aria-expanded="false"
             >
               Financial Services
@@ -175,38 +175,38 @@ const currentPath = Astro.url.pathname;
             </button>
             <div class="mobile-accordion-body accordion-body">
               <div class="pl-4 pb-2 space-y-3">
-                <a href="/financial-services/" class="block px-3 font-sans text-[13px] font-semibold text-brand-plum hover:text-brand-goldDark transition-colors">
+                <a href="/financial-services/" class="block px-3 font-sans text-[14px] font-semibold text-brand-plum hover:text-brand-goldDark transition-colors">
                   View All Financial Services →
                 </a>
                 {Object.entries(megaMenu).map(([col, items]) => (
                   <div>
-                    <div class="font-serif text-brand-plumMid text-xs mb-1 px-3">{col}</div>
+                    <div class="font-serif text-brand-plumMid text-[13px] mb-1 px-3">{col}</div>
                     {items.map((item) => (
-                      <a href={item.href} class="block px-3 py-1.5 font-sans text-[13px] text-brand-ink/70 hover:text-brand-plum">
+                      <a href={item.href} class="block px-3 py-1.5 font-sans text-[14px] text-brand-ink/70 hover:text-brand-plum">
                         {item.label}
                       </a>
                     ))}
                   </div>
                 ))}
-                <a href="/financial-services/insurance-quote/" class="mx-3 block font-sans text-[13px] font-medium text-brand-goldDark border border-brand-gold px-3 py-1.5 text-center hover:bg-brand-gold hover:text-white transition-colors">
+                <a href="/financial-services/insurance-quote/" class="mx-3 block font-sans text-[14px] font-medium text-brand-goldDark border border-brand-gold px-3 py-1.5 text-center hover:bg-brand-gold hover:text-white transition-colors">
                   Request a Quote →
                 </a>
               </div>
             </div>
           </div>
         ) : (
-          <a href={link.href} class="block px-3 py-3 font-sans text-sm font-medium text-brand-ink hover:text-brand-plum">
+          <a href={link.href} class="block px-3 py-3 font-sans text-[15px] font-medium text-brand-ink hover:text-brand-plum">
             {link.label}
           </a>
         )
       ))}
     </div>
     <div class="p-4 border-t border-brand-plum/10 mt-2">
-      <a href="tel:18558443927" class="flex items-center gap-2 font-sans text-sm font-medium text-brand-plum">
+      <a href="tel:18558443927" class="flex items-center gap-2 font-sans text-[15px] font-medium text-brand-plum">
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z"/></svg>
         1-855-844-3927
       </a>
-      <a href="tel:6138872726" class="flex items-center gap-2 mt-2 font-sans text-sm text-brand-ink/70">
+      <a href="tel:6138872726" class="flex items-center gap-2 mt-2 font-sans text-[15px] text-brand-ink/70">
         613-887-2726 (Heidi)
       </a>
     </div>

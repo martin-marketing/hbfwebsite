@@ -13,7 +13,7 @@ const { quote, attribution, compact = false } = Astro.props;
     <blockquote class="font-serif text-xl text-brand-plum leading-relaxed mb-4" style="font-optical-sizing: auto; font-style: italic; font-variation-settings: 'SOFT' 60;">
       {quote}
     </blockquote>
-    <cite class="font-sans text-xs tracking-[0.18em] uppercase text-brand-sageDark not-italic">{attribution}</cite>
+    <cite class="font-sans text-[13px] tracking-[0.18em] uppercase text-brand-sageDark not-italic">{attribution}</cite>
   </div>
 ) : (
   <section class="bg-brand-plumDark py-20 lg:py-28 relative overflow-hidden">
@@ -26,7 +26,7 @@ const { quote, attribution, compact = false } = Astro.props;
       <blockquote class="font-serif text-white/90 max-w-3xl mx-auto mb-6 leading-relaxed" style={`font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-optical-sizing: auto; font-style: italic; font-variation-settings: 'SOFT' 60;`}>
         {quote}
       </blockquote>
-      <cite class="font-sans text-xs tracking-[0.2em] uppercase text-white/70 not-italic">{attribution}</cite>
+      <cite class="font-sans text-[13px] tracking-[0.2em] uppercase text-white/70 not-italic">{attribution}</cite>
     </div>
   </section>
 )}

@@ -70,7 +70,7 @@ const sections = [
   <!-- Intro -->
   <section class="bg-white pt-16 lg:pt-20 pb-0">
     <div class="container-content max-w-3xl">
-      <div class="font-sans text-[17px] text-brand-ink/75 leading-relaxed space-y-4">
+      <div class="font-sans text-[18px] text-brand-ink/75 leading-relaxed space-y-4">
         <p>Heidi Blondin Financial works with families, retirees, and self-employed people in Kingston and across Eastern Ontario. Some arrive with one question, usually whether their life insurance is enough. Others want a plan built from scratch.</p>
         <p>What we offer falls into three groups. Investing covers the registered accounts most Canadians save through: RRSPs, TFSAs, RESPs, the newer FHSA, and group plans through an employer. Insurance covers what happens when income stops, whether that is illness, disability, or death. Planning takes the longer view, across retirement income, your estate, and charitable giving.</p>
         <p>We are independent, so we are not tied to one company's shelf. That matters more than it sounds. It lets us compare across insurers and fund companies, and it means a recommendation is not a quota being filled.</p>
@@ -80,7 +80,7 @@ const sections = [
       <div class="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-3">
         {mostRequested.map(item => (
           <a href={item.href} class="group flex items-center gap-2 border border-brand-plum/10 px-4 py-3 hover:border-brand-plum/25 hover:shadow-sm transition-all">
-            <span class="flex-1 font-sans text-[13px] font-semibold text-brand-plum group-hover:text-brand-goldDark transition-colors">{item.label}</span>
+            <span class="flex-1 font-sans text-[14px] font-semibold text-brand-plum group-hover:text-brand-goldDark transition-colors">{item.label}</span>
             <svg class="w-3 h-3 text-brand-gold flex-shrink-0 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
           </a>
         ))}
@@ -112,7 +112,7 @@ const sections = [
             {section.overview && (
               <a
                 href={section.overview.href}
-                class="group flex items-center gap-2 mb-4 font-sans text-sm font-semibold text-brand-plum hover:text-brand-goldDark transition-colors"
+                class="group flex items-center gap-2 mb-4 font-sans text-[15px] font-semibold text-brand-plum hover:text-brand-goldDark transition-colors"
               >
                 {section.overview.label}
                 <svg class="w-3.5 h-3.5 text-brand-gold group-hover:translate-x-0.5 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
@@ -125,7 +125,7 @@ const sections = [
                 <li>
                   <a
                     href={item.href}
-                    class="group flex items-center gap-2 font-sans text-[14px] text-brand-ink/75 hover:text-brand-plum transition-colors py-0.5"
+                    class="group flex items-center gap-2 font-sans text-[15px] text-brand-ink/75 hover:text-brand-plum transition-colors py-0.5"
                   >
                     <svg class="w-3 h-3 text-brand-gold/60 group-hover:text-brand-gold group-hover:translate-x-0.5 transition-all flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
                     {item.label}
@@ -139,7 +139,7 @@ const sections = [
               <div class="mt-5">
                 <a
                   href={section.cta.href}
-                  class="font-sans text-[13px] font-medium text-brand-goldDark border border-brand-gold px-4 py-2 hover:bg-brand-gold hover:text-white transition-colors inline-block tracking-wide uppercase"
+                  class="font-sans text-[14px] font-medium text-brand-goldDark border border-brand-gold px-4 py-2 hover:bg-brand-gold hover:text-white transition-colors inline-block tracking-wide uppercase"
                 >
                   {section.cta.label} &rarr;
                 </a>
@@ -154,7 +154,7 @@ const sections = [
   <!-- CTA -->
   <section class="bg-brand-tintPlum section-gap">
     <div class="container-content text-center max-w-2xl mx-auto">
-      <p class="font-sans text-[17px] text-brand-ink/80 leading-relaxed mb-8">
+      <p class="font-sans text-[18px] text-brand-ink/80 leading-relaxed mb-8">
         If you have questions or would like more information, Contact Heidi today or ask for a quote.
       </p>
       <a href="/contact/" class="btn-primary-gold">Contact Heidi</a>
@@ -165,12 +165,12 @@ const sections = [
   <section class="bg-white section-gap">
     <div class="container-content max-w-3xl mx-auto">
       <blockquote class="border-l-4 border-brand-gold pl-8">
-        <p class="font-sans text-[17px] text-brand-ink/80 leading-relaxed">
+        <p class="font-sans text-[18px] text-brand-ink/80 leading-relaxed">
           My partner and I have worked with Heidi Blondin of Blondin Financial for almost a year. We recently retired and needed help with our financial planning and investments. We needed sound, honest and prudent advice. First and foremost was to find someone that we could trust, feel comfortable and confident with and who understood our personal needs and desires. This is Heidi. More than thrilled to have found someone that meets all of our requirements and more. We honestly feel so fortunate to have found her. P.M. &ndash; Kingston, Ontario
         </p>
       </blockquote>
       <div class="mt-8 pl-8">
-        <a href="https://www.google.com/maps/place/Heidi+Blondin+Financial/@44.2602899,-76.5399038,17z/data=!4m8!3m7!1s0x4cd2ab2e0b9dc5f3:0xf4fc562e5c6d96cc!8m2!3d44.2602899!4d-76.5377151!9m1!1b1" target="_blank" rel="noopener" class="font-sans text-sm font-semibold text-brand-goldDark hover:underline">See &amp; Write Reviews for Heidi<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="https://www.google.com/maps/place/Heidi+Blondin+Financial/@44.2602899,-76.5399038,17z/data=!4m8!3m7!1s0x4cd2ab2e0b9dc5f3:0xf4fc562e5c6d96cc!8m2!3d44.2602899!4d-76.5377151!9m1!1b1" target="_blank" rel="noopener" class="font-sans text-[15px] font-semibold text-brand-goldDark hover:underline">See &amp; Write Reviews for Heidi<span class="sr-only"> (opens in a new tab)</span></a>
       </div>
     </div>
   </section>

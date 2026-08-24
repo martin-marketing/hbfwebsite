@@ -45,7 +45,7 @@ const totalPosts = posts.length;
       <h1 class="font-serif text-2xl lg:text-[2rem] text-white max-w-xl mx-auto text-balance" style="line-height: 1.2; letter-spacing: -0.01em;">
         Financial insights worth reading.
       </h1>
-      <p class="font-sans text-[18px] text-white/65 mt-5 max-w-lg mx-auto">
+      <p class="font-sans text-[19px] text-white/65 mt-5 max-w-lg mx-auto">
         Plain-language articles on retirement, insurance, investing, and estate planning — written for real Ontario families.
       </p>
     </div>
@@ -63,7 +63,7 @@ const totalPosts = posts.length;
           <div class="flex flex-wrap gap-2 mb-10" id="filter-bar">
             <button
               data-filter="all"
-              class="filter-btn active font-sans text-xs font-medium tracking-wide uppercase px-4 py-2 border transition-colors"
+              class="filter-btn active font-sans text-[13px] font-medium tracking-wide uppercase px-4 py-2 border transition-colors"
             >
               All <span class="ml-1 opacity-60">({totalPosts})</span>
             </button>
@@ -72,7 +72,7 @@ const totalPosts = posts.length;
               return (
                 <button
                   data-filter={cat}
-                  class="filter-btn font-sans text-xs font-medium tracking-wide uppercase px-4 py-2 border transition-colors"
+                  class="filter-btn font-sans text-[13px] font-medium tracking-wide uppercase px-4 py-2 border transition-colors"
                 >
                   {cat} <span class="ml-1 opacity-60">({count})</span>
                 </button>
@@ -81,7 +81,7 @@ const totalPosts = posts.length;
           </div>
 
           <!-- Post count line -->
-          <p class="font-sans text-sm text-brand-ink/70 mb-6" id="post-count">Showing all {totalPosts} articles</p>
+          <p class="font-sans text-[15px] text-brand-ink/70 mb-6" id="post-count">Showing all {totalPosts} articles</p>
 
           <!-- Posts grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="posts-grid">

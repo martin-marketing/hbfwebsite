@@ -22,19 +22,19 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         <div class="space-y-6">
           <div>
             <h2 class="font-serif text-xl text-brand-plum mb-3">What happens next</h2>
-            <ol class="font-sans text-sm text-brand-ink/70 space-y-3">
+            <ol class="font-sans text-[15px] text-brand-ink/70 space-y-3">
               <li class="flex items-start gap-3"><span class="font-serif text-brand-gold text-lg leading-none mt-0.5">1</span><span>You submit the form with your information and coverage preferences.</span></li>
               <li class="flex items-start gap-3"><span class="font-serif text-brand-gold text-lg leading-none mt-0.5">2</span><span>Heidi or a team member reviews your information and researches options across our insurance partners.</span></li>
               <li class="flex items-start gap-3"><span class="font-serif text-brand-gold text-lg leading-none mt-0.5">3</span><span>We reach out to discuss the options and schedule a conversation if you'd like to proceed.</span></li>
             </ol>
           </div>
           <div class="bg-brand-plum/8 border border-brand-plum/12 p-5">
-            <p class="font-sans text-xs text-brand-ink/70 leading-relaxed">
+            <p class="font-sans text-[13px] text-brand-ink/70 leading-relaxed">
               <strong class="text-brand-plum">No obligation.</strong> Requesting a quote doesn't commit you to anything. We'll present options and answer questions — you decide if and when to move forward.
             </p>
           </div>
           <div>
-            <p class="font-sans text-xs text-brand-ink/70 leading-relaxed">For general inquiries not related to insurance, please use our <a href="/contact/" class="text-brand-goldDark hover:underline">Contact form</a>.</p>
+            <p class="font-sans text-[13px] text-brand-ink/70 leading-relaxed">For general inquiries not related to insurance, please use our <a href="/contact/" class="text-brand-goldDark hover:underline">Contact form</a>.</p>
           </div>
         </div>
 
@@ -46,24 +46,24 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
                 <div>
                   <label for="first_name" class="field-label">First Name <span class="text-brand-goldDark">*</span></label>
                   <input type="text" id="first_name" name="first_name" required autocomplete="given-name" class="field-input" aria-describedby="first_name-error" />
-                  <p class="field-error hidden text-[13px] text-red-600 mt-1" id="first_name-error" data-for="first_name">Please enter your first name.</p>
+                  <p class="field-error hidden text-[14px] text-red-600 mt-1" id="first_name-error" data-for="first_name">Please enter your first name.</p>
                 </div>
                 <div>
                   <label for="last_name" class="field-label">Last Name <span class="text-brand-goldDark">*</span></label>
                   <input type="text" id="last_name" name="last_name" required autocomplete="family-name" class="field-input" aria-describedby="last_name-error" />
-                  <p class="field-error hidden text-[13px] text-red-600 mt-1" id="last_name-error" data-for="last_name">Please enter your last name.</p>
+                  <p class="field-error hidden text-[14px] text-red-600 mt-1" id="last_name-error" data-for="last_name">Please enter your last name.</p>
                 </div>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label for="email" class="field-label">Email Address <span class="text-brand-goldDark">*</span></label>
                   <input type="email" id="email" name="email" required autocomplete="email" class="field-input" aria-describedby="email-error" />
-                  <p class="field-error hidden text-[13px] text-red-600 mt-1" id="email-error" data-for="email">Please enter a valid email address.</p>
+                  <p class="field-error hidden text-[14px] text-red-600 mt-1" id="email-error" data-for="email">Please enter a valid email address.</p>
                 </div>
                 <div>
                   <label for="phone" class="field-label">Phone Number <span class="text-brand-goldDark">*</span></label>
                   <input type="tel" id="phone" name="phone" required autocomplete="tel" class="field-input" aria-describedby="phone-error" />
-                  <p class="field-error hidden text-[13px] text-red-600 mt-1" id="phone-error" data-for="phone">Please enter your phone number.</p>
+                  <p class="field-error hidden text-[14px] text-red-600 mt-1" id="phone-error" data-for="phone">Please enter your phone number.</p>
                 </div>
               </div>
               <div>
@@ -77,13 +77,13 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
                   <option value="life_no_medical">Life Insurance (No Medical)</option>
                   <option value="combination">Combination (multiple types)</option>
                 </select>
-                <p class="field-error hidden text-[13px] text-red-600 mt-1" id="insurance_type-error" data-for="insurance_type">Please select a type of insurance.</p>
+                <p class="field-error hidden text-[14px] text-red-600 mt-1" id="insurance_type-error" data-for="insurance_type">Please select a type of insurance.</p>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label for="dob" class="field-label">Date of Birth <span class="text-brand-goldDark">*</span></label>
                   <input type="date" id="dob" name="dob" required class="field-input" aria-describedby="dob-error" />
-                  <p class="field-error hidden text-[13px] text-red-600 mt-1" id="dob-error" data-for="dob">Please enter your date of birth.</p>
+                  <p class="field-error hidden text-[14px] text-red-600 mt-1" id="dob-error" data-for="dob">Please enter your date of birth.</p>
                 </div>
                 <div>
                   <label for="sex" class="field-label">Sex</label>
@@ -131,7 +131,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
               <div class="flex items-start gap-3 py-2">
                 <input type="checkbox" id="casl_consent" name="casl_consent" class="mt-1 h-4 w-4 border-brand-plum/30 text-brand-plum focus:ring-brand-plum" />
-                <label for="casl_consent" class="font-sans text-[13px] text-brand-ink/70 leading-relaxed cursor-pointer">
+                <label for="casl_consent" class="font-sans text-[14px] text-brand-ink/70 leading-relaxed cursor-pointer">
                   I consent to Heidi Blondin Financial contacting me about my insurance inquiry and quote request.
                 </label>
               </div>
@@ -139,7 +139,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
               <div class="cf-turnstile" data-sitekey={siteKey} data-theme="light"></div>
 
               <div id="form-error" class="hidden bg-red-50 border border-red-200 p-4" role="alert">
-                <p id="form-error-text" class="font-sans text-sm text-red-700">There was an error sending your request. Please try again or call us at <a href="tel:6138872726" class="font-medium underline">613-887-2726</a>.</p>
+                <p id="form-error-text" class="font-sans text-[15px] text-red-700">There was an error sending your request. Please try again or call us at <a href="tel:6138872726" class="font-medium underline">613-887-2726</a>.</p>
               </div>
 
               <button type="submit" id="submit-btn" class="btn-primary w-full justify-center">
@@ -150,7 +150,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
                 </span>
               </button>
 
-              <p class="font-sans text-[13px] text-brand-ink/70 leading-relaxed">
+              <p class="font-sans text-[14px] text-brand-ink/70 leading-relaxed">
                 Insurance products are offered through Heidi Blondin Financial / Qualified Financial Services. Your personal information is collected solely for the purpose of providing you with an insurance quote and is subject to our <a href="/privacy-policy/" class="underline">Privacy Policy</a>. We do not collect SIN or financial account numbers through this form.
               </p>
             </form>
