@@ -280,6 +280,89 @@
   }
   .hbf-article .cta-btn:hover { color: var(--white); }
 
+  /* ── SERIES NAV ── */
+  .hbf-article .series-nav {
+    margin: 44px 0 0;
+    border: 1.5px solid var(--plum-tint);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--white);
+  }
+  .hbf-article .sn-head {
+    background: var(--plum);
+    padding: 18px 24px 15px;
+  }
+  .hbf-article .sn-eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 4px;
+  }
+  .hbf-article .sn-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .hbf-article .sn-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 24px;
+    border-bottom: 1px solid var(--plum-pale);
+    text-decoration: none;
+    color: var(--plum);
+  }
+  .hbf-article .sn-step:last-of-type { border-bottom: none; }
+  .hbf-article .sn-step:hover { background: var(--gray-pale); color: var(--plum); }
+  .hbf-article .sn-step.is-current { background: var(--plum-pale); }
+  .hbf-article .sn-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: var(--plum-pale);
+    color: var(--plum);
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .hbf-article .sn-step.is-current .sn-num { background: var(--plum); color: var(--white); }
+  .hbf-article .sn-label {
+    flex: 1;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .hbf-article .sn-go { color: var(--sage); font-size: 20px; font-weight: 700; flex-shrink: 0; }
+  .hbf-article .sn-here {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--plum-light);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .hbf-article .sn-foot {
+    padding: 16px 24px;
+    background: var(--sage-pale);
+    border-top: 1.5px solid var(--sage-tint);
+  }
+  .hbf-article .sn-parent {
+    display: block;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--gray);
+    text-decoration: none;
+  }
+  .hbf-article .sn-parent strong { color: var(--plum); }
+  .hbf-article .sn-parent:hover strong { color: var(--plum-light); }
+
   /* Featured image */
   .hbf-article .article-featured-image {
     margin-top: 44px;
@@ -403,15 +486,36 @@
     <p>Both lines end in the same place. The only difference is that one of them is survivable and the other one is a fantasy. You have to be comfortable with some degree of fluctuation, because staying invested through the dips is what earns the growth. If a 20% drop would make you sell, that belongs in the plan from day one, and there is nothing wrong with saying so.</p>
   </div>
 
-  <div class="hbf-bridge">
-    <p>New to this? Start with <a href="/starting-to-invest-in-your-twenties"><strong>Part 1: You're Not Behind, You're Early</strong></a> for what a small monthly amount grows into when you start in your twenties.</p>
-  </div>
-
   <div class="cta-block">
     <div class="cta-text">
       <p><strong>Not sure which rung you belong on?</strong> That's a fifteen-minute conversation, not a commitment. Heidi and her team work with new investors all the time, and they will help you match your goals and timelines to the right mix, at no cost. You do not need a big balance to be worth their time.</p>
     </div>
     <a href="/contact" class="cta-btn">Talk to the Team →</a>
+  </div>
+
+  <div class="series-nav">
+    <div class="sn-head">
+      <div class="sn-eyebrow">The Launch Series</div>
+      <div class="sn-title">Three steps, in order</div>
+    </div>
+    <a class="sn-step" href="/starting-to-invest-in-your-twenties">
+      <span class="sn-num">1</span>
+      <span class="sn-label">You're Not Behind. You're Early.</span>
+      <span class="sn-go">&rarr;</span>
+    </a>
+    <div class="sn-step is-current">
+      <span class="sn-num">2</span>
+      <span class="sn-label">How Much Risk Should You Actually Take?</span>
+      <span class="sn-here">You are here</span>
+    </div>
+    <a class="sn-step" href="/first-home-buyer-savings">
+      <span class="sn-num">3</span>
+      <span class="sn-label">How to Save for Your First Home in Canada</span>
+      <span class="sn-go">&rarr;</span>
+    </a>
+    <div class="sn-foot">
+      <a class="sn-parent" href="/helping-your-adult-kids-get-started">Sending this to a parent? <strong>For Parents: How to Actually Help &rarr;</strong></a>
+    </div>
   </div>
 
   <div class="article-featured-image">
