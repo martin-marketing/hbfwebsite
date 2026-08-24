@@ -105,7 +105,7 @@
   .hbf-article .ladder-body { padding: 20px 26px 16px; }
   .hbf-article .rung {
     display: grid;
-    grid-template-columns: 168px 1fr 132px;
+    grid-template-columns: 158px 1fr 150px;
     align-items: center;
     gap: 14px;
     padding: 11px 0;
@@ -140,13 +140,32 @@
     line-height: 1.35;
   }
   .hbf-article .rung-risk {
-    font-size: 13px;
+    display: inline-block;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    display: block;
-    margin-bottom: 3px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    white-space: nowrap;
+    margin-bottom: 6px;
   }
+  .hbf-article .ladder-cols {
+    display: grid;
+    grid-template-columns: 158px 1fr 150px;
+    gap: 14px;
+    padding-bottom: 9px;
+    border-bottom: 1.5px solid var(--plum-tint);
+    margin-bottom: 4px;
+  }
+  .hbf-article .ladder-cols span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+  }
+  .hbf-article .ladder-cols span:last-child { text-align: right; }
   .hbf-article .rung-time {
     display: block;
     font-size: 15px;
@@ -276,6 +295,7 @@
   }
 
   @media (max-width: 680px) {
+    .hbf-article .ladder-cols { display: none; }
     .hbf-article .rung { grid-template-columns: 1fr; gap: 7px; padding: 14px 0; }
     .hbf-article .rung-meta { text-align: left; }
     .hbf-article .pull-quote p { font-size: 19px; }
@@ -308,25 +328,26 @@
       <div class="ladder-title">The risk ladder, and where each rung belongs</div>
     </div>
     <div class="ladder-body">
+      <div class="ladder-cols"><span>Option</span><span>Relative risk</span><span>Time frame</span></div>
       <div class="rung">
         <div class="rung-name">High-interest savings<span>Cash, always available</span></div>
         <div class="rung-track"><div class="rung-fill" style="width:14%; background:#a2a47d"></div></div>
-        <div class="rung-meta"><span class="rung-risk" style="color:#5f6244">No risk</span><span class="rung-time">Under 1 year</span></div>
+        <div class="rung-meta"><span class="rung-risk" style="background:#e8e9da; color:#5f6244">No risk</span><span class="rung-time">Under 1 year</span></div>
       </div>
       <div class="rung">
         <div class="rung-name">GICs<span>Locked in, rate guaranteed</span></div>
         <div class="rung-track"><div class="rung-fill" style="width:30%; background:#8f9370"></div></div>
-        <div class="rung-meta"><span class="rung-risk" style="color:#565a3d">Low risk</span><span class="rung-time">1 to 3 years</span></div>
+        <div class="rung-meta"><span class="rung-risk" style="background:#dcdfc6; color:#4f5336">Low risk</span><span class="rung-time">1 to 3 years</span></div>
       </div>
       <div class="rung">
         <div class="rung-name">Balanced mix<span>Part bonds, part equities</span></div>
         <div class="rung-track"><div class="rung-fill" style="width:62%; background:#7a5679"></div></div>
-        <div class="rung-meta"><span class="rung-risk" style="color:#6b4a6a">Moderate risk</span><span class="rung-time">3 to 10 years</span></div>
+        <div class="rung-meta"><span class="rung-risk" style="background:#eee3ed; color:#6b4a6a">Moderate risk</span><span class="rung-time">3 to 10 years</span></div>
       </div>
       <div class="rung">
         <div class="rung-name">Mostly equities<span>Ownership in companies</span></div>
         <div class="rung-track"><div class="rung-fill" style="width:100%; background:#593d58"></div></div>
-        <div class="rung-meta"><span class="rung-risk" style="color:#593d58">Higher risk</span><span class="rung-time">10 years or more</span></div>
+        <div class="rung-meta"><span class="rung-risk" style="background:#593d58; color:#ffffff">Higher risk</span><span class="rung-time">10 years or more</span></div>
       </div>
     </div>
     <div class="ladder-foot">Time frames are general guidance, not a rule. Your own mix depends on the goal, your income, and how much fluctuation you can genuinely live with. Investment values are not guaranteed and will change over time.</div>
