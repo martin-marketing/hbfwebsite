@@ -57,31 +57,29 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
   {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
 
   <!-- Organization schema on every page -->
-  <script type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": ["Organization", "FinancialService", "LocalBusiness"],
-      "name": "Heidi Blondin Financial Inc.",
-      "url": "https://heidiblondin.com",
-      "logo": "https://heidiblondin.com/logos/heidiblondinfinancial_investia_logos_header_V1.png",
-      "telephone": ["+16138872726", "+18558443927"],
-      "email": "hbadmin@heidiblondin.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "785 Midpark Drive, Suite 100",
-        "addressLocality": "Kingston",
-        "addressRegion": "ON",
-        "postalCode": "K7M 7G3",
-        "addressCountry": "CA"
-      },
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "Ontario"
-      },
-      "foundingDate": "2013",
-      "sameAs": []
-    })}
-  </script>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": ["Organization", "FinancialService", "LocalBusiness"],
+    "name": "Heidi Blondin Financial Inc.",
+    "url": "https://heidiblondin.com",
+    "logo": "https://heidiblondin.com/logos/heidiblondinfinancial_investia_logos_header_V1.png",
+    "telephone": ["+16138872726", "+18558443927"],
+    "email": "hbadmin@heidiblondin.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "785 Midpark Drive, Suite 100",
+      "addressLocality": "Kingston",
+      "addressRegion": "ON",
+      "postalCode": "K7M 7G3",
+      "addressCountry": "CA"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Ontario"
+    },
+    "foundingDate": "2013",
+    "sameAs": []
+  })} />
 
   {ga4Id && (
     <>
