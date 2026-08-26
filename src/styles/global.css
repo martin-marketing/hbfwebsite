@@ -186,26 +186,30 @@
   }
 }
 
-/* Homepage hero: extends the painting's plum wall across the whole banner
-   so the headline sits on flat colour while the family stays visible at right. */
+/* Homepage hero (768px and up): extends the painting's plum wall across the whole
+   banner so the headline sits on flat colour while the family stays visible at right.
+   Below 768px the hero swaps to phone artwork with the fade already baked in. */
 .hero-veil {
   background: linear-gradient(
     to right,
-    rgba(89, 61, 88, 0.93) 0%,
-    rgba(89, 61, 88, 0.88) 45%,
-    rgba(89, 61, 88, 0.62) 72%,
-    rgba(89, 61, 88, 0.45) 100%
+    rgba(89, 61, 88, 0.86) 0%,
+    rgba(89, 61, 88, 0.80) 26%,
+    rgba(89, 61, 88, 0.45) 48%,
+    rgba(89, 61, 88, 0.10) 66%,
+    rgba(89, 61, 88, 0) 78%
   );
 }
-@media (min-width: 1024px) {
+
+/* Tablet: the painting fills the frame behind the copy, so the wash has to
+   carry further right than it does on a wide desktop screen. */
+@media (min-width: 768px) and (max-width: 1023px) {
   .hero-veil {
     background: linear-gradient(
       to right,
-      rgba(89, 61, 88, 0.86) 0%,
-      rgba(89, 61, 88, 0.80) 26%,
-      rgba(89, 61, 88, 0.45) 48%,
-      rgba(89, 61, 88, 0.10) 66%,
-      rgba(89, 61, 88, 0) 78%
+      rgba(89, 61, 88, 0.92) 0%,
+      rgba(89, 61, 88, 0.88) 45%,
+      rgba(89, 61, 88, 0.70) 72%,
+      rgba(89, 61, 88, 0.52) 100%
     );
   }
 }

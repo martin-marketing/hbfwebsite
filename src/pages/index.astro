@@ -14,20 +14,25 @@ const recentPosts = (await getAllPosts()).slice(0, 3);
 
   <!-- Hero -->
   <section class="relative bg-brand-plumDark overflow-hidden">
-    <img
-      src="/illustrations/home-band.jpg"
-      alt="Three generations of a family talking around the table after a meal"
-      width="1584"
-      height="672"
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
-      class="absolute inset-0 w-full h-full object-cover object-right"
-    />
-    <!-- Plum wash: carries the painting's left-hand wall across the full width so the headline sits on colour, not on the scene -->
-    <div class="absolute inset-0 hero-veil"></div>
+    <picture>
+      <!-- Mobile art fades the painting into solid plum so the copy stacks below the scene -->
+      <source media="(max-width: 767px)" srcset="/illustrations/home-hero-mobile.jpg" width="1080" height="1687" />
+      <img
+        src="/illustrations/home-band.jpg"
+        alt="Three generations of a family talking around the table after a meal"
+        width="1584"
+        height="672"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="absolute top-0 left-0 w-full h-auto md:inset-0 md:h-full md:object-cover md:object-right"
+      />
+    </picture>
+    <!-- Plum wash: carries the painting's left-hand wall across the full width so the headline sits on colour, not on the scene.
+         Tablet and up - the phone art has the fade baked in. -->
+    <div class="hidden md:block absolute inset-0 hero-veil"></div>
 
-    <div class="relative container-content flex items-center py-16 sm:py-20 lg:py-28 min-h-[440px] lg:min-h-[580px]">
+    <div class="relative container-content flex items-center pt-[92%] pb-16 md:pt-20 md:pb-20 lg:pt-28 lg:pb-28 md:min-h-[480px] lg:min-h-[580px]">
       <div class="max-w-[34rem]">
         <h1 class="font-serif text-white text-balance" style="font-size: clamp(1.9rem, 3.6vw, 3rem); line-height: 1.08; letter-spacing: -0.02em;">
           Are your life goals &amp; your money<br/><em class="text-brand-goldLight" style="font-style: italic; font-variation-settings: 'SOFT' 80;">working in harmony?</em>
