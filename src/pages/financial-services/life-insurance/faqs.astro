@@ -1,0 +1,104 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
+import FAQAccordion from '@/components/FAQAccordion.astro';
+import { lifeInsuranceFaqGroups, allLifeInsuranceFaqs } from '@/data/life-insurance-faqs';
+
+const siteUrl = 'https://heidiblondin.com';
+const stripTags = (value: string) => value.replace(/<[^>]+>/g, '');
+
+// Single FAQPage entity for the whole page. The service page shows a few of these
+// questions inline but emits no schema, so there is one canonical FAQPage per question.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: allLifeInsuranceFaqs.map((item) => ({
+    '@type': 'Question',
+    name: stripTags(item.q),
+    acceptedAnswer: { '@type': 'Answer', text: stripTags(item.a) },
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Financial Services', item: `${siteUrl}/financial-services/` },
+    { '@type': 'ListItem', position: 2, name: 'Life Insurance', item: `${siteUrl}/financial-services/life-insurance/` },
+    { '@type': 'ListItem', position: 3, name: 'Life Insurance FAQ', item: `${siteUrl}/financial-services/life-insurance/faqs/` },
+  ],
+};
+---
+
+<BaseLayout
+  title="Life Insurance FAQ | Heidi Blondin Financial"
+  description="Answers to common life insurance questions in Canada: policy types, what coverage costs, how much you need, and what young families should consider."
+>
+
+  <PageHero
+    eyebrow="Life Insurance"
+    title="Life Insurance Questions, Answered"
+    subtitle="Straight answers to the questions we hear most often about life insurance in Canada: the types available, what coverage actually costs, and how much protection a family needs."
+    center
+  />
+
+  <!-- Breadcrumb + jump links -->
+  <section class="bg-white pt-8 lg:pt-10 pb-4">
+    <div class="container-content">
+      <nav aria-label="Breadcrumb" class="max-w-2xl mx-auto mb-8">
+        <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 font-sans text-[15px] text-brand-ink/60">
+          <li><a href="/financial-services/" class="hover:text-brand-plum underline underline-offset-2">Financial Services</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/financial-services/life-insurance/" class="hover:text-brand-plum underline underline-offset-2">Life Insurance</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="text-brand-plum font-medium">FAQ</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-2xl mx-auto">
+        <h2 class="font-sans text-[15px] font-semibold uppercase tracking-wide text-brand-ink/55 mb-3">On this page</h2>
+        <ul class="space-y-2">
+          {lifeInsuranceFaqGroups.map((group) => (
+            <li>
+              <a href={`#${group.id}`} class="font-sans text-[18px] text-brand-plum font-semibold underline underline-offset-2 hover:opacity-80">
+                {group.heading}
+              </a>
+              <span class="font-sans text-[18px] text-brand-ink/55"> ({group.items.length} questions)</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {lifeInsuranceFaqGroups.map((group, i) => (
+    <div id={group.id} class="scroll-mt-24">
+      <FAQAccordion
+        heading={group.heading}
+        groupId={group.id}
+        items={group.items}
+        bg={i % 2 === 0 ? 'sage' : 'white'}
+        schema={false}
+      />
+    </div>
+  ))}
+
+  <!-- Back to the service page -->
+  <section class="bg-brand-tintPlum section-gap">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-serif text-h2 text-brand-plum mb-4">Still have questions?</h2>
+      <p class="font-sans text-[18px] text-brand-ink/75 leading-relaxed mb-8">Every family's situation is different, and these answers are general information rather than advice for your circumstances. If you would like to talk it through, one of our licensed insurance advisors is happy to help.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/contact" class="btn-primary inline-block">Request A Life Insurance Quote Online</a>
+        <a href="/financial-services/life-insurance/" class="font-sans text-[18px] text-brand-plum font-semibold underline underline-offset-2 hover:opacity-80 self-center">Back to life insurance</a>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <CTABand heading="Get a life insurance quote" sub="Book a free consultation or use our insurance quote form and we'll find you competitive coverage." />
+
+</BaseLayout>

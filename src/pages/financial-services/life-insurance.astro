@@ -2,6 +2,8 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTABand from '@/components/CTABand.astro';
 import PageHero from '@/components/PageHero.astro';
+import FAQAccordion from '@/components/FAQAccordion.astro';
+import { featuredLifeInsuranceFaqs } from '@/data/life-insurance-faqs';
 ---
 
 <BaseLayout
@@ -427,6 +429,25 @@ import PageHero from '@/components/PageHero.astro';
       <h2 class="font-serif text-h2 text-brand-plum mb-4">At Your Service</h2>
       <p class="font-sans text-[17px] text-brand-ink/75 leading-relaxed mb-8">As established Kingston, ON, life insurance advisors, Heidi Blondin and Joanne Charron proudly serve customers throughout Ontario and New Brunswick. For your convenience, they offer flexible appointment times, online applications, and a quick response to all inquiries. To schedule a consultation, call today. 855-844-3927</p>
       <a href="/contact" class="btn-primary inline-block">Request A Life Insurance Quote Online</a>
+    </div>
+  </section>
+
+  <!-- Common questions (short set; full list lives on the FAQ sub-page) -->
+  <FAQAccordion
+    heading="Common questions"
+    groupId="featured"
+    items={featuredLifeInsuranceFaqs}
+    bg="sage"
+    schema={false}
+  />
+
+  <section class="bg-brand-tintSage pb-20 lg:pb-28 -mt-8 lg:-mt-12">
+    <div class="container-content">
+      <p class="max-w-2xl mx-auto text-center font-sans text-[18px] text-brand-ink/75 leading-relaxed">
+        Have more questions? Read our
+        <a href="/financial-services/life-insurance/faqs/" class="text-brand-plum font-semibold underline underline-offset-2 hover:opacity-80">full life insurance FAQ</a>,
+        covering policy types, costs in Canada, and coverage for young families.
+      </p>
     </div>
   </section>
 

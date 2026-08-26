@@ -6,30 +6,36 @@ interface FAQItem {
 interface Props {
   items: FAQItem[];
   heading?: string;
+  bg?: 'sage' | 'white';
+  schema?: boolean;
+  groupId?: string;
 }
-const { items, heading = 'Frequently Asked Questions' } = Astro.props;
+const { items, heading = 'Frequently Asked Questions', bg = 'sage', schema = true, groupId } = Astro.props;
+const slug = groupId ?? heading.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const sectionBg = bg === 'white' ? 'bg-white' : 'bg-brand-tintSage';
+const panelBg = bg === 'white' ? 'bg-brand-tintSage/40' : 'bg-white';
 ---
 
-<section class="bg-brand-tintSage section-gap">
+<section class={`${sectionBg} section-gap`}>
   <div class="container-content">
     <h2 class="font-serif text-h2 text-brand-plum text-center mb-12 text-balance">{heading}</h2>
-    <div class="max-w-2xl mx-auto bg-white divide-y divide-brand-plum/8" id="faq-list">
+    <div class={`faq-group max-w-2xl mx-auto ${panelBg} divide-y divide-brand-plum/8`}>
       {items.map((item, i) => (
         <div class="faq-item">
           <button
-            id={`faq-question-${i}`}
-            class="w-full flex items-center justify-between px-6 py-5 text-left font-sans text-[15px] font-medium text-brand-plum hover:text-brand-goldDark transition-colors group"
+            id={`faq-q-${slug}-${i}`}
+            class="w-full flex items-center justify-between px-6 py-5 text-left font-sans text-[17px] font-medium text-brand-plum hover:text-brand-goldDark transition-colors"
             aria-expanded="false"
-            aria-controls={`faq-body-${i}`}
+            aria-controls={`faq-a-${slug}-${i}`}
           >
             <span>{item.q}</span>
             <svg class="w-4 h-4 flex-shrink-0 ml-4 text-brand-gold transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
             </svg>
           </button>
-          <div class="accordion-body" id={`faq-body-${i}`} role="region" aria-labelledby={`faq-question-${i}`}>
+          <div class="accordion-body" id={`faq-a-${slug}-${i}`} role="region" aria-labelledby={`faq-q-${slug}-${i}`}>
             <div>
-              <p class="px-6 pb-5 font-sans text-[15px] text-brand-ink/75 leading-relaxed">{item.a}</p>
+              <p class="px-6 pb-5 font-sans text-[18px] text-brand-ink/75 leading-relaxed [&_a]:text-brand-plum [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-2" set:html={item.a} />
             </div>
           </div>
         </div>
@@ -39,33 +45,35 @@ const { items, heading = 'Frequently Asked Questions' } = Astro.props;
 </section>
 
 <script>
-  document.querySelectorAll('.faq-item button').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const body = btn.nextElementSibling as HTMLElement;
-      const isOpen = body?.classList.contains('open');
-      // Close all others
-      document.querySelectorAll('.faq-item .accordion-body').forEach(b => b.classList.remove('open'));
-      document.querySelectorAll('.faq-item button').forEach(b => {
-        b.setAttribute('aria-expanded', 'false');
-        const icon = b.querySelector('svg');
-        icon?.classList.remove('rotate-45');
+  document.querySelectorAll('.faq-group').forEach((group) => {
+    group.querySelectorAll('.faq-item button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const body = btn.nextElementSibling as HTMLElement;
+        const isOpen = body?.classList.contains('open');
+        // Close every other panel in this group only
+        group.querySelectorAll('.faq-item .accordion-body').forEach(b => b.classList.remove('open'));
+        group.querySelectorAll('.faq-item button').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          b.querySelector('svg')?.classList.remove('rotate-45');
+        });
+        if (!isOpen) {
+          body?.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.querySelector('svg')?.classList.add('rotate-45');
+        }
       });
-      if (!isOpen) {
-        body?.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        const icon = btn.querySelector('svg');
-        icon?.classList.add('rotate-45');
-      }
     });
   });
 </script>
 
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": items.map(item => ({
-    "@type": "Question",
-    "name": item.q,
-    "acceptedAnswer": { "@type": "Answer", "text": item.a }
-  }))
-})} />
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": items.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": { "@type": "Answer", "text": item.a.replace(/<[^>]+>/g, '') }
+    }))
+  })} />
+)}
