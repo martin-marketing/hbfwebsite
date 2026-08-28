@@ -246,12 +246,11 @@
     border-radius: 14px;
     padding: 34px 38px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 24px;
-    flex-wrap: wrap;
   }
-  .hbf-article .cta-text { flex: 1; min-width: 200px; }
+  .hbf-article .cta-text { width: 100%; }
   .hbf-article .cta-text p {
     font-size: 18px;
     color: rgba(255,255,255,0.80);
@@ -275,8 +274,6 @@
     padding: 14px 28px;
     border-radius: 9px;
     letter-spacing: 0.03em;
-    white-space: nowrap;
-    flex-shrink: 0;
   }
   .hbf-article .cta-btn:hover { color: var(--white); }
 
