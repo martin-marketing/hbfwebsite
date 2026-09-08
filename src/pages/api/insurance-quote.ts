@@ -46,11 +46,11 @@ function buildAttributionHtml(attribution: Record<string, unknown> | undefined |
 
 const INSURANCE_TYPE_LABELS: Record<string, string> = {
   life: 'Life Insurance',
-  life_ci: 'Life + Critical Illness Insurance',
+  life_ci: 'Life Insurance & Critical Illness Insurance',
   ci: 'Critical Illness Insurance',
   disability: 'Disability Insurance',
-  life_no_medical: 'Life Insurance (No Medical)',
-  combination: 'Combination (multiple types)',
+  life_no_medical: 'Life Insurance - no medical',
+  combination: 'Combination Insurance (Life, CI and DI)',
 };
 
 export const POST: APIRoute = async ({ request }) => {
@@ -94,6 +94,9 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ error: 'Invalid email address' }), { status: 400 });
   }
   if ([first_name, last_name, email, phone].some((v) => typeof v === 'string' && v.length > 200)) {
+    return new Response(JSON.stringify({ error: 'Field too long' }), { status: 400 });
+  }
+  if (typeof coverage_amount === 'string' && coverage_amount.length > 200) {
     return new Response(JSON.stringify({ error: 'Field too long' }), { status: 400 });
   }
   if (typeof comments === 'string' && comments.length > 5000) {

@@ -42,42 +42,53 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
           <div class="bg-white p-8 shadow-sm">
             <h2 class="font-serif text-xl text-brand-plum mb-6">Your quote request</h2>
             <form id="quote-form" class="space-y-5" novalidate>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label for="first_name" class="field-label">First Name <span class="text-brand-goldDark">*</span></label>
-                  <input type="text" id="first_name" name="first_name" required autocomplete="given-name" class="field-input" aria-describedby="first_name-error" />
-                  <p class="field-error hidden text-[14px] text-red-600 mt-1" id="first_name-error" data-for="first_name">Please enter your first name.</p>
+              <fieldset>
+                <legend class="field-label">Name <span class="text-brand-goldDark">*</span></legend>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label for="first_name" class="field-sublabel">First</label>
+                    <input type="text" id="first_name" name="first_name" required autocomplete="given-name" class="field-input" aria-describedby="first_name-error" />
+                    <p class="field-error hidden text-[14px] text-red-600 mt-1" id="first_name-error" data-for="first_name">Please enter your first name.</p>
+                  </div>
+                  <div>
+                    <label for="last_name" class="field-sublabel">Last</label>
+                    <input type="text" id="last_name" name="last_name" required autocomplete="family-name" class="field-input" aria-describedby="last_name-error" />
+                    <p class="field-error hidden text-[14px] text-red-600 mt-1" id="last_name-error" data-for="last_name">Please enter your last name.</p>
+                  </div>
                 </div>
-                <div>
-                  <label for="last_name" class="field-label">Last Name <span class="text-brand-goldDark">*</span></label>
-                  <input type="text" id="last_name" name="last_name" required autocomplete="family-name" class="field-input" aria-describedby="last_name-error" />
-                  <p class="field-error hidden text-[14px] text-red-600 mt-1" id="last_name-error" data-for="last_name">Please enter your last name.</p>
-                </div>
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label for="email" class="field-label">Email Address <span class="text-brand-goldDark">*</span></label>
-                  <input type="email" id="email" name="email" required autocomplete="email" class="field-input" aria-describedby="email-error" />
-                  <p class="field-error hidden text-[14px] text-red-600 mt-1" id="email-error" data-for="email">Please enter a valid email address.</p>
-                </div>
-                <div>
-                  <label for="phone" class="field-label">Phone Number <span class="text-brand-goldDark">*</span></label>
-                  <input type="tel" id="phone" name="phone" required autocomplete="tel" class="field-input" aria-describedby="phone-error" />
-                  <p class="field-error hidden text-[14px] text-red-600 mt-1" id="phone-error" data-for="phone">Please enter your phone number.</p>
-                </div>
-              </div>
+              </fieldset>
               <div>
-                <label for="insurance_type" class="field-label">Type of Insurance <span class="text-brand-goldDark">*</span></label>
+                <label for="insurance_type" class="field-label">Insurance Type: <span class="text-brand-goldDark">*</span></label>
                 <select id="insurance_type" name="insurance_type" required class="field-select" aria-describedby="insurance_type-error">
                   <option value="">— Please select —</option>
                   <option value="life">Life Insurance</option>
-                  <option value="life_ci">Life + Critical Illness Insurance</option>
+                  <option value="life_ci">Life Insurance &amp; Critical Illness Insurance</option>
                   <option value="ci">Critical Illness Insurance</option>
                   <option value="disability">Disability Insurance</option>
-                  <option value="life_no_medical">Life Insurance (No Medical)</option>
-                  <option value="combination">Combination (multiple types)</option>
+                  <option value="life_no_medical">Life Insurance - no medical</option>
+                  <option value="combination">Combination Insurance (Life, CI and DI)</option>
                 </select>
                 <p class="field-error hidden text-[14px] text-red-600 mt-1" id="insurance_type-error" data-for="insurance_type">Please select a type of insurance.</p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="sex" class="field-label">Sex</label>
+                  <select id="sex" name="sex" class="field-select">
+                    <option value="">— Please select —</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="health" class="field-label">Your overall health:</label>
+                  <select id="health" name="health" class="field-select">
+                    <option value="">— Please select —</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Above average">Above average</option>
+                    <option value="Average">Average</option>
+                    <option value="Some health concerns">Some health concerns</option>
+                  </select>
+                </div>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
@@ -86,47 +97,34 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
                   <p class="field-error hidden text-[14px] text-red-600 mt-1" id="dob-error" data-for="dob">Please enter your date of birth.</p>
                 </div>
                 <div>
-                  <label for="sex" class="field-label">Sex</label>
-                  <select id="sex" name="sex" class="field-select">
-                    <option value="">— Please select —</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                  <label for="smoker" class="field-label">Do you smoke?</label>
+                  <select id="smoker" name="smoker" class="field-select">
+                    <option value="">-Select-</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
                   </select>
                 </div>
+              </div>
+              <div>
+                <label for="coverage_amount" class="field-label">Amount of Insurance Required</label>
+                <input type="text" id="coverage_amount" name="coverage_amount" class="field-input" aria-describedby="coverage_amount-help" />
+                <p id="coverage_amount-help" class="font-sans text-[15px] text-brand-ink/70 leading-relaxed mt-2">We're happy to go through a needs analysis with you to determine the right amount of coverage.</p>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label for="health" class="field-label">Overall Health</label>
-                  <select id="health" name="health" class="field-select">
-                    <option value="">— Please select —</option>
-                    <option value="excellent">Excellent</option>
-                    <option value="above_avg">Above Average</option>
-                    <option value="average">Average</option>
-                    <option value="some_concerns">Some Health Concerns</option>
-                  </select>
+                  <label for="email" class="field-label">Email <span class="text-brand-goldDark">*</span></label>
+                  <input type="email" id="email" name="email" required autocomplete="email" class="field-input" aria-describedby="email-error" />
+                  <p class="field-error hidden text-[14px] text-red-600 mt-1" id="email-error" data-for="email">Please enter a valid email address.</p>
                 </div>
                 <div>
-                  <label for="smoker" class="field-label">Do you smoke?</label>
-                  <select id="smoker" name="smoker" class="field-select">
-                    <option value="">— Please select —</option>
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                  </select>
+                  <label for="phone" class="field-label">Phone <span class="text-brand-goldDark">*</span></label>
+                  <input type="tel" id="phone" name="phone" required autocomplete="tel" class="field-input" aria-describedby="phone-error" />
+                  <p class="field-error hidden text-[14px] text-red-600 mt-1" id="phone-error" data-for="phone">Please enter your phone number.</p>
                 </div>
               </div>
               <div>
-                <label for="coverage_amount" class="field-label">Approximate Coverage Amount Needed</label>
-                <select id="coverage_amount" name="coverage_amount" class="field-select">
-                  <option value="">— Unsure / prefer to discuss —</option>
-                  <option value="under_250k">Under $250,000</option>
-                  <option value="250k_500k">$250,000 – $500,000</option>
-                  <option value="500k_1m">$500,000 – $1,000,000</option>
-                  <option value="over_1m">Over $1,000,000</option>
-                </select>
-              </div>
-              <div>
-                <label for="comments" class="field-label">Additional Information</label>
-                <textarea id="comments" name="comments" rows="4" class="field-input" placeholder="Any other details about your health history, current coverage, or specific questions..."></textarea>
+                <label for="comments" class="field-label">Additional Comments</label>
+                <textarea id="comments" name="comments" rows="4" class="field-input"></textarea>
               </div>
 
               <div class="flex items-start gap-3 py-2">
