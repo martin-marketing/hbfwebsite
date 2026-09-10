@@ -143,6 +143,14 @@
   .prose-hbf figure {
     @apply my-6;
   }
+  .prose-hbf .hbf-embed {
+    @apply my-6 rounded-sm overflow-hidden;
+    aspect-ratio: 16 / 9;
+  }
+  .prose-hbf .hbf-embed iframe {
+    @apply w-full h-full block;
+    border: 0;
+  }
   .prose-hbf blockquote {
     @apply border-l-4 border-brand-gold pl-5 italic text-brand-ink/70 my-6;
   }
