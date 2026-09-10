@@ -26,7 +26,7 @@ function simpleMarkdown(md: string): string {
     .replace(/\n\n/g, '</p><p>')
     .replace(/^(?!<[hul])(.+)$/gm, '$1')
     .split('\n\n').map(block => {
-      if (block.startsWith('<h') || block.startsWith('<ul') || block.startsWith('<ol')) return block;
+      if (block.startsWith('<h') || block.startsWith('<ul') || block.startsWith('<ol') || block.startsWith('<div') || block.startsWith('<figure') || block.startsWith('<blockquote')) return block;
       return `<p>${block}</p>`;
     }).join('\n');
 }
