@@ -35,7 +35,7 @@ const panelBg = bg === 'white' ? 'bg-brand-tintSage/40' : 'bg-white';
           </button>
           <div class="accordion-body" id={`faq-a-${slug}-${i}`} role="region" aria-labelledby={`faq-q-${slug}-${i}`}>
             <div>
-              <p class="px-6 pb-5 font-sans text-[18px] text-brand-ink/75 leading-relaxed [&_a]:text-brand-plum [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-2" set:html={item.a} />
+              <div class="px-6 pb-5 font-sans text-[18px] text-brand-ink/75 leading-relaxed [&_a]:text-brand-plum [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-2 [&>p+p]:mt-3" set:html={item.a} />
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ const panelBg = bg === 'white' ? 'bg-brand-tintSage/40' : 'bg-white';
     "mainEntity": items.map(item => ({
       "@type": "Question",
       "name": item.q,
-      "acceptedAnswer": { "@type": "Answer", "text": item.a.replace(/<[^>]+>/g, '') }
+      "acceptedAnswer": { "@type": "Answer", "text": item.a.replace(/<\/p>\s*<p>/g, ' ').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() }
     }))
   })} />
 )}

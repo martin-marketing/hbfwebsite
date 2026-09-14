@@ -31,7 +31,7 @@ export const youngFamiliesFaqs: FAQItem[] = [
   },
   {
     q: 'What happens if a young family has no life insurance?',
-    a: 'The surviving parent or caregiver may need to cover bills, debt, and childcare with less income. That can lead to stress, borrowing, or having to make quick financial changes. Life insurance is one way to reduce that pressure.',
+    a: 'The surviving parent or caregiver may need to cover bills, debt, and childcare with less income. That can lead to stress, borrowing, or having to make quick financial changes. You don’t want your family to be forced to sell the family home when they are grieving. Life insurance is one way to reduce that pressure.',
   },
   {
     q: 'Is life insurance worth it if we already have savings?',
@@ -59,7 +59,7 @@ export const youngFamiliesFaqs: FAQItem[] = [
 export const costFaqs: FAQItem[] = [
   {
     q: 'How much is life insurance in Canada for a healthy adult?',
-    a: 'For a healthy adult in Canada, basic term life insurance can often cost less than a few cups of coffee per week, especially for younger non-smokers. The exact price depends on age, gender, smoking status, health history, and how much coverage you buy. A quote is the only way to get a real number, but most people are surprised that term insurance is more affordable than they expected.',
+    a: 'For a healthy adult in Canada, basic term life insurance can often cost less than a few cups of coffee per week, especially for younger non-smokers. The exact price depends on age, gender, smoking status, health history, and how much coverage you buy. A quote is the only way to get a real number, but most people are surprised that term insurance is more affordable than they expected. Heidi Blondin Financial can shop the market for you and find the best value for your personal situation.',
   },
   {
     q: 'What affects the cost of life insurance in Canada?',
@@ -67,7 +67,7 @@ export const costFaqs: FAQItem[] = [
   },
   {
     q: 'Is term life insurance cheaper than whole life insurance in Canada?',
-    a: 'Yes, term life insurance is usually much cheaper than whole life insurance in Canada. Term insurance gives coverage for a set period, while whole life insurance lasts longer and includes a cash value component. If your main goal is protecting income or family debts, term insurance is often the more affordable option.',
+    a: 'Yes, term life insurance is usually much cheaper than whole life insurance in Canada. Term insurance gives coverage for a set period at a set price, while whole life insurance last a lifetime and can include a cash value component. If your main goal is protecting income or family debts, term insurance is often the more affordable option.',
   },
   {
     q: 'How much life insurance do I need in Canada?',
@@ -79,7 +79,7 @@ export const costFaqs: FAQItem[] = [
   },
   {
     q: 'Do smokers pay more for life insurance in Canada?',
-    a: 'Yes, smokers usually pay more because insurers see smoking as a higher risk. In many cases, the price difference can be significant. If you quit smoking, some insurers may review your status after a certain period and offer a lower rate later.',
+    a: '<p>Yes, smokers usually pay more because insurers see smoking as a higher risk. In many cases, the price difference can be significant. If you quit smoking, most insurers will consider you a non-smoker after 12 months of quitting. If you intend to quit smoking, some insurers may offer you non-smoker rates and give you a set period of time to quit. If you have a policy that was issued when you were a smoker, you can apply to have the smoker rating removed once you have been smoke free for certain period of time. You can save yourself a fair bit of money by applying when you are smoke free.</p><p>Note: Regular Marijuana usage can also cause you to be rated as a smoker.</p>',
   },
   {
     q: 'Is life insurance worth it if I already have coverage through work?',
@@ -87,7 +87,7 @@ export const costFaqs: FAQItem[] = [
   },
   {
     q: 'How much is life insurance in Canada for a family with children?',
-    a: 'For families with children, the cost depends on the parents’ ages, health, and the amount of coverage needed to replace income and cover childcare or education costs. Many families choose term insurance because it gives strong protection at a lower monthly cost. If you are planning around family protection, <a href="/baby-steps-protect-family/">this guide on protecting your family</a> is a useful place to start.',
+    a: 'For families with children, the cost depends on the parents’ ages, health, and the amount of coverage needed to replace income and cover childcare or education costs. Many families choose term insurance because it gives strong protection at a lower monthly cost. If you are planning around family protection, <a href="/baby-steps-protect-family/">this guide on protecting your family</a> is a useful place to start. Heidi Blondin Financial would also be happy to <a href="/financial-services/insurance-quote/">provide pricing and options tailored to your needs</a>.',
   },
   {
     q: 'Can I get life insurance in Canada without a medical exam?',
@@ -103,7 +103,7 @@ export const costFaqs: FAQItem[] = [
   },
   {
     q: 'What is the best way to compare life insurance quotes in Canada?',
-    a: 'The best way is to compare the same coverage amount, same term length, and same policy type across multiple insurers. That makes it easier to see the real difference in price and value. A quote comparison should also look at flexibility, conversion options, and whether the policy fits your long-term goals.',
+    a: 'The best way is to compare the same coverage amount, same term length, and same policy type across multiple insurers. That makes it easier to see the real difference in price and value. A quote comparison should also look at flexibility, conversion options, and whether the policy fits your long-term goals. Heidi Blondin Financial is licensed with numerous Insurance providers, so we can shop the market for you.',
   },
 ];
 
@@ -111,31 +111,31 @@ export const costFaqs: FAQItem[] = [
 export const policyTypeFaqs: FAQItem[] = [
   {
     q: 'What types of life insurance are available?',
-    a: 'The main types of life insurance are term life insurance and permanent life insurance. Term life covers you for a set period, like 10, 20, or 30 years. Permanent life insurance includes coverage that can last for life, as long as premiums are paid, and it usually builds cash value over time.',
+    a: 'The main types of life insurance are term life insurance and permanent life insurance. Term life insurance is intended to protect you for a temporary need i.e. a mortgage. The coverage renews at set time periods like every 10, 20, or 30 years and the premiums will increase at each renewal. Permanent life insurance includes coverage that can last for life, as long as all required premiums are paid, and it often builds cash value over time.',
   },
   {
     q: 'What is term life insurance?',
-    a: 'Term life insurance gives you coverage for a specific number of years. It is often used to protect a mortgage, replace income while children are dependent, or cover debts during working years. If you die during the term, the policy pays a death benefit to your beneficiary.',
+    a: 'Term life insurance is intended to protect you for a temporary need i.e. a mortgage, replace income while children are dependent, or cover debts during working years. The coverage renews at set time periods like every 10, 20, or 30 years and the premiums will increase at each renewal. There is often a termination age when the coverage will expire altogether. Term life insurance is a cost-effective way to secure protection for a specific number of years. The term life insurance policy will pay a death benefit to your beneficiary if you pass away while the coverage is in force. Some policies allow you to convert the term coverage to a permanent policy. Some policies may allow you to extend the length of the term by a certain year in the policy. Pricing for any conversion or extension will be based on your age at the time the change is made. So it is wise to exercise these changes as early as possible.',
   },
   {
     q: 'What is permanent life insurance?',
-    a: 'Permanent life insurance is designed to last for your whole life, not just a set term. It usually includes a cash value component that grows over time, which can make it more flexible than term coverage. This type of insurance is often used for estate planning, lifelong dependants, or tax planning goals.',
+    a: 'Permanent life insurance is designed to last for your whole life, not just a set term. It provides a death benefit to your beneficiaries that will not expire before you do. This type of insurance is often used for estate planning, lifelong dependants, or tax planning goals. Some permanent policies include a cash value component that grows over time, which can potentially be used as collateral for a loan, or allow you to use the accumulated cash when you cancel the policy. Permanent policies are more expensive than term coverage, but they are more flexible.',
   },
   {
     q: 'What are the main types of permanent life insurance?',
-    a: 'The most common permanent life insurance types are whole life, universal life, and participating life insurance. Whole life usually has fixed premiums and predictable cash value growth. Universal life offers more flexibility in premiums and death benefit structure, while participating life may pay dividends depending on the insurer’s performance.',
+    a: 'The most common permanent life insurance types are whole life, universal life, and participating life insurance. Term to age 100 is also considered a permanent policy. Whole life usually has fixed premiums and predictable cash value growth. Universal life offers more flexibility in premiums and death benefit structure, while participating life may pay dividends depending on the insurer’s performance. There are a few options for the dividends in a participating whole life policy, they can be used to reduce the premiums paid, increase the death benefit over time, or enhance the coverage.',
   },
   {
     q: 'What is whole life insurance?',
-    a: 'Whole life insurance is a permanent policy with level premiums and a guaranteed death benefit. It also builds cash value at a steady pace. People often choose it when they want long-term certainty and do not want to reapply for coverage later in life.',
+    a: 'Whole life insurance is a permanent policy with level premiums and a guaranteed death benefit. If you select a whole life participating policy, it may pay dividends depending on the insurer’s performance. There are a few options for the dividends in a participating whole life policy, they can be used to reduce the premiums paid, increase the death benefit over time, or enhance the coverage. It also builds cash value inside the policy. People often choose permanent coverage when they want long-term certainty and do not want to reapply for coverage later in life. Life insurance premiums are based on your age at time of issue. So the younger you are when you decide you want permanent insurance, the less expensive it will be.',
   },
   {
     q: 'What is universal life insurance?',
-    a: 'Universal life insurance is a permanent policy with more flexibility than whole life. You may be able to adjust premium payments and death benefit amounts within policy limits. It can work well for someone who wants lifelong coverage but also wants more control over how the policy is funded.',
+    a: 'Universal life insurance is a permanent policy with more flexibility than whole life. You may be able to adjust premium payments and death benefit amounts within policy limits. It can work well for someone who wants lifelong coverage but also wants more control over how the policy is funded and invested.',
   },
   {
     q: 'What is the difference between term life and permanent life insurance?',
-    a: 'Term life insurance is temporary and usually costs less. Permanent life insurance lasts longer and often costs more because it includes cash value and lifelong coverage. The right choice depends on whether you need affordable protection for a set period or long-term coverage that can support future planning.',
+    a: 'Term life insurance is designed to protect a temporary need and is usually more cost-effective. Permanent life insurance can be inforce for your entire life and often costs more because it includes cash value and lifelong coverage. The right choice depends on whether you need affordable protection for a set period or long-term coverage that can support future planning.',
   },
   {
     q: 'Which type of life insurance is best for families?',

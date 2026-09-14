@@ -6,7 +6,8 @@ import FAQAccordion from '@/components/FAQAccordion.astro';
 import { lifeInsuranceFaqGroups, allLifeInsuranceFaqs } from '@/data/life-insurance-faqs';
 
 const siteUrl = 'https://heidiblondin.com';
-const stripTags = (value: string) => value.replace(/<[^>]+>/g, '');
+const stripTags = (value: string) =>
+  value.replace(/<\/p>\s*<p>/g, ' ').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
 // Single FAQPage entity for the whole page. The service page shows a few of these
 // questions inline but emits no schema, so there is one canonical FAQPage per question.
