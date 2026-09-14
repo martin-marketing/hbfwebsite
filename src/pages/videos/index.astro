@@ -4,6 +4,12 @@ import PageHero from '@/components/PageHero.astro';
 
 const videos = [
   {
+    id: 'nhMKm-qRvco',
+    title: 'Saving for Your First Home (FHSA)',
+    desc: 'The Tax-Free First Home Savings Account (FHSA) is a powerful savings tool designed to help Canadians fund their first home purchase more efficiently.',
+    vertical: true,
+  },
+  {
     id: '2oBV4sjy-n4',
     title: 'Saving for Your First Home.',
     desc: "Have you heard about the new Tax Free First Home Savings Account (FHSA)? It's a great new program designed to help qualified Canadians save for their first home.",
@@ -128,7 +134,8 @@ const videos = [
         {videos.map(video => (
           <div class="bg-white">
             <!-- YouTube embed -->
-            <div class="aspect-video">
+            <div class={`aspect-video ${video.vertical ? 'flex justify-center bg-brand-tintSage/40' : ''}`}>
+              <div class={video.vertical ? 'h-full aspect-[9/16]' : 'contents'}>
               <iframe
                 title={video.title}
                 width="100%"
@@ -141,6 +148,7 @@ const videos = [
                 loading="lazy"
                 class="w-full h-full"
               ></iframe>
+              </div>
             </div>
             <div class="p-5">
               <h3 class="font-sans text-[15px] font-semibold text-brand-plum mt-1.5 mb-2 leading-snug">{video.title}</h3>
