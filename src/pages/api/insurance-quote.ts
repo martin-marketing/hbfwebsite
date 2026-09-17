@@ -107,6 +107,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   // Build a plain-text summary for Supabase storage
   const messageSummary = [
+    'Form: Insurance Quote Request',
     `Insurance Type: ${typeLabel}`,
     dob ? `Date of Birth: ${dob}` : null,
     sex ? `Sex: ${sex}` : null,
@@ -117,6 +118,8 @@ export const POST: APIRoute = async ({ request }) => {
   ].filter(Boolean).join('\n');
 
   const errors: string[] = [];
+  let dbOk = false;
+  let emailOk = false;
 
   if (supabaseServer) {
     const { error: dbError } = await supabaseServer.rpc('insert_contact_submission', {
@@ -127,7 +130,15 @@ export const POST: APIRoute = async ({ request }) => {
       p_message: messageSummary,
       p_casl_consent: casl_consent === 'on' || casl_consent === 'true',
     });
-    if (dbError) errors.push(`DB: ${dbError.message}`);
+    if (dbError) {
+      console.error('Insurance quote: Supabase insert failed', dbError);
+      errors.push(`DB: ${dbError.message}`);
+    } else {
+      dbOk = true;
+    }
+  } else {
+    console.error('Insurance quote: Supabase client not configured (SUPABASE_URL / SUPABASE_ANON_KEY)');
+    errors.push('DB: Supabase client not configured');
   }
 
   if (!resend) {
@@ -155,11 +166,11 @@ export const POST: APIRoute = async ({ request }) => {
         ${buildAttributionHtml(attribution)}
       `,
     });
-    if (emailError) errors.push(`Email: ${emailError.message}`);
+    if (emailError) errors.push(`Email: ${emailError.message}`); else emailOk = true;
   }
 
-  if (errors.length === 2) {
-    console.error('Insurance quote errors:', errors);
+  if (errors.length) console.error('Insurance quote partial failure:', errors);
+  if (!dbOk && !emailOk) {
     return new Response(JSON.stringify({ error: 'Submission failed' }), { status: 500 });
   }
 

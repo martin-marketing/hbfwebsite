@@ -88,6 +88,8 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const errors: string[] = [];
+  let dbOk = false;
+  let emailOk = false;
 
   // Store lead in Supabase private schema
   if (supabaseServer) {
@@ -99,7 +101,15 @@ export const POST: APIRoute = async ({ request }) => {
       p_message: message.trim(),
       p_casl_consent: casl_consent === 'on' || casl_consent === 'true',
     });
-    if (dbError) errors.push(`DB: ${dbError.message}`);
+    if (dbError) {
+      console.error('Contact form: Supabase insert failed', dbError);
+      errors.push(`DB: ${dbError.message}`);
+    } else {
+      dbOk = true;
+    }
+  } else {
+    console.error('Contact form: Supabase client not configured (SUPABASE_URL / SUPABASE_ANON_KEY)');
+    errors.push('DB: Supabase client not configured');
   }
 
   // Send email notification via Resend
@@ -123,12 +133,12 @@ export const POST: APIRoute = async ({ request }) => {
       ${buildAttributionHtml(attribution)}
     `,
   });
-  if (emailError) errors.push(`Email: ${emailError.message}`);
+  if (emailError) errors.push(`Email: ${emailError.message}`); else emailOk = true;
   }
 
   // Return 200 as long as at least one succeeded
-  if (errors.length === 2) {
-    console.error('Contact form errors:', errors);
+  if (errors.length) console.error('Contact form partial failure:', errors);
+  if (!dbOk && !emailOk) {
     return new Response(JSON.stringify({ error: 'Submission failed' }), { status: 500 });
   }
 
