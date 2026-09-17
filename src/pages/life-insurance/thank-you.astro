@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
 ---
 
 <BaseLayout
@@ -24,8 +26,10 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <script is:inline>
-    if (typeof window.gtag === 'function') {
+  <script is:inline define:vars={{ ga4Id }}>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'generate_lead', form: 'life_insurance' });
+    if (ga4Id && typeof window.gtag === 'function') {
       window.gtag('event', 'generate_lead', { form: 'life_insurance' });
     }
   </script>
