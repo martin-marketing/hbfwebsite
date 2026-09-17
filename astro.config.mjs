@@ -10,7 +10,7 @@ export default defineConfig({
     tailwind({ applyBaseStyles: false }),
     mdx(),
     sitemap({
-      filter: (page) => !page.includes('thank-you') && !page.includes('contact-thank-you'),
+      filter: (page) => !page.includes('thank-you') && !page.includes('contact-thank-you') && !page.includes('insurance-submitted'),
     }),
   ],
   output: 'static',
