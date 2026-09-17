@@ -122,15 +122,41 @@ export const POST: APIRoute = async ({ request }) => {
   let emailOk = false;
 
   if (supabaseServer) {
-    const { error: dbError } = await supabaseServer.rpc('insert_contact_submission', {
+    const { error: dbError } = await supabaseServer.rpc('insert_insurance_quote', {
       p_first_name: first_name.trim(),
       p_last_name: last_name.trim(),
       p_email: email.trim().toLowerCase(),
       p_phone: phone.trim(),
-      p_message: messageSummary,
+      p_insurance_type: insurance_type.trim(),
+      p_dob: dob?.trim() || null,
+      p_sex: sex?.trim() || null,
+      p_health: health?.trim() || null,
+      p_smoker: smoker === 'Yes' ? true : smoker === 'No' ? false : null,
+      p_coverage_amount: coverage_amount?.trim() || null,
+      p_comments: comments?.trim() || null,
       p_casl_consent: casl_consent === 'on' || casl_consent === 'true',
+      p_attribution: attribution && typeof attribution === 'object' ? attribution : null,
     });
-    if (dbError) {
+
+    // The insurance_quotes migration may not have been applied yet; until it is,
+    // fall back to the shared contact submission table so leads are never lost.
+    if (dbError && (dbError.code === 'PGRST202' || dbError.code === '42883')) {
+      console.error('Insurance quote: insert_insurance_quote missing, falling back', dbError);
+      const { error: fallbackError } = await supabaseServer.rpc('insert_contact_submission', {
+        p_first_name: first_name.trim(),
+        p_last_name: last_name.trim(),
+        p_email: email.trim().toLowerCase(),
+        p_phone: phone.trim(),
+        p_message: messageSummary,
+        p_casl_consent: casl_consent === 'on' || casl_consent === 'true',
+      });
+      if (fallbackError) {
+        console.error('Insurance quote: fallback insert failed', fallbackError);
+        errors.push(`DB: ${fallbackError.message}`);
+      } else {
+        dbOk = true;
+      }
+    } else if (dbError) {
       console.error('Insurance quote: Supabase insert failed', dbError);
       errors.push(`DB: ${dbError.message}`);
     } else {
