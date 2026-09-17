@@ -1,6 +1,7 @@
 ---
 const navLinks = [
-  { label: 'About', href: '/heidi/' },
+  // /heidi/ and the individual bios live under the About section, so they keep the nav item lit.
+  { label: 'About', href: '/about/', match: ['/about/', '/heidi/', '/angela/', '/joanne/', '/jack/'] },
   { label: 'Financial Services', href: '/financial-services/', hasMega: true },
   { label: 'Testimonials', href: '/testimonials/' },
   { label: 'Blog', href: '/blog/' },
@@ -45,6 +46,11 @@ const megaMenu = {
 };
 
 const currentPath = Astro.url.pathname;
+
+const isActive = (link) =>
+  link.match
+    ? link.match.includes(currentPath)
+    : currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
 ---
 
 <header class="sticky top-0 z-50 bg-brand-plumDark border-b border-white/10 transition-shadow" id="site-header">
@@ -120,7 +126,7 @@ const currentPath = Astro.url.pathname;
           ) : (
             <a
               href={link.href}
-              class={`nav-link-light px-3 ${currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) ? 'nav-link-active-light' : ''}`}
+              class={`nav-link-light px-3 ${isActive(link) ? 'nav-link-active-light' : ''}`}
             >
               {link.label}
             </a>

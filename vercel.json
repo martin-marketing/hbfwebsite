@@ -259,6 +259,31 @@
       "source": "/financial-services",
       "destination": "/financial-services/",
       "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-heidi/",
+      "destination": "/heidi/",
+      "permanent": true
+    },
+    {
+      "source": "/about-heidi",
+      "destination": "/heidi/",
+      "permanent": true
     }
   ],
   "headers": [

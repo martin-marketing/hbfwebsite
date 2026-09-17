@@ -1,146 +1,97 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTABand from '@/components/CTABand.astro';
+import PageHero from '@/components/PageHero.astro';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Heidi Blondin",
+  "honorificSuffix": "BA, CFP®, EPC",
+  "jobTitle": "Certified Financial Planner",
+  "url": "https://heidiblondin.com/heidi/",
+  "image": "https://heidiblondin.com/team/heidi-corp468.jpeg",
+  "telephone": "+16138872726",
+  "email": "hbadmin@heidiblondin.com",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Queen's University"
+  },
+  "worksFor": {
+    "@type": "FinancialService",
+    "name": "Heidi Blondin Financial Inc.",
+    "url": "https://heidiblondin.com"
+  },
+  "sameAs": ["https://www.linkedin.com/in/heidiblondin/"]
+};
 ---
 
 <BaseLayout
   title="About Heidi Blondin, Female Certified Financial Planner"
   description="Are you looking for honest, and holistic financial planning advice? Heidi Blondin Financial is locally owned an operated by women who genuinely care."
+  image="/team/heidi-corp468.jpeg"
 >
 
-  <!-- Why us? — two column with team photo -->
-  <section class="bg-brand-tintPlum section-gap">
-    <div class="container-content">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div>
-          <h1 class="font-serif text-h2 text-brand-plum mb-8">Why us?</h1>
-          <div class="space-y-5 font-sans text-[18px] text-brand-ink/75 leading-relaxed">
-            <p>For some of us, thinking about and talking about money is intimidating and stressful. After all, you probably didn't learn about making a budget or doing your taxes in school!</p>
-            <p>You may have big questions, like when can I retire? Or how will my family cope if we experience a big change? Is now the time to invest and, if so, into what?</p>
-            <p>Our team is passionate about helping families eliminate debt, protect their loved ones and live the retirement of their dreams.</p>
-            <p>When you meet with us, we map out your current situation and develop goals and strategies which will accelerate your financial success. We look at the big picture and create a straightforward approach that helps you create peace of mind. Heidi Blondin Financial is locally owned and operated by women who genuinely care about their clients.</p>
-            <p>When you're ready, please <a href="/contact/" class="text-brand-plum underline underline-offset-2">connect with us</a>.</p>
-          </div>
-        </div>
-        <div>
-          <img
-            src="/team/team-corp482.jpeg"
-            alt="The Heidi Blondin Financial team — Kingston, Ontario"
-            class="w-full"
-            loading="eager"
-            width="3600"
-            height="2401"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageHero
+    eyebrow="Certified Financial Planner"
+    title="Heidi Blondin, BA, CFP&#174;, EPC"
+    titleClass="font-serif text-display text-white max-w-2xl mx-auto text-balance"
+    padding="py-20 lg:py-24"
+    center
+  />
 
-  <!-- Heidi's bio -->
   <section class="bg-white section-gap">
     <div class="container-content">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-        <div class="relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+        <!-- Portrait -->
+        <div class="lg:col-span-5">
           <img
-            src="/team/heidi-corp386.jpeg"
+            src="/team/heidi-corp468.jpeg"
             alt="Heidi Blondin, CFP® — Certified Financial Planner, Kingston Ontario"
             class="w-full aspect-[3/4] object-cover object-top"
-            loading="lazy"
-            width="2401"
-            height="3600"
+            loading="eager"
+            width="1200"
+            height="1800"
           />
         </div>
-        <div class="lg:pt-4">
-          <h2 class="font-serif text-h2 text-brand-plum mb-2">
-            Heidi Blondin, BA, CFP®, EPC
-          </h2>
-          <p class="eyebrow-sage mb-6">Certified Financial Planner</p>
-          <div class="space-y-5 font-sans text-[18px] text-brand-ink/75 leading-relaxed">
-            <p>Heidi believes that everyone should have access to the expert help they need. You deserve to work with someone that is knowledgeable, dedicated and passionate about guiding clients to live their best life. Heidi has worked in the financial services sector since 2007, and founded her own firm in 2013 to bring something she felt was missing from the financial planning sector: a focus on what's best for the client.</p>
-            <p>Heidi graduated from Queen's University with a Bachelor of Arts in Economics and is qualified to offer both Mutual Fund and Life Insurance Solutions. She holds her Certified Financial Planning designation as well as her Elder Planning Counselor designation.</p>
-            <p>Heidi regularly attends industry training sessions and conferences to further enhance her financial knowledge and resources.</p>
-            <p>Mutual funds are offered through Investia Financial Services Inc.</p>
+
+        <!-- Her story -->
+        <div class="lg:col-span-7">
+          <h2 class="font-serif text-h2 text-brand-plum mb-6">Beyond the Office</h2>
+
+          <div class="space-y-6 font-sans text-[18px] text-brand-ink/75 leading-relaxed">
+            <p>When I'm not working with clients, you'll likely find me enjoying the simple things that bring me joy and keep me grounded. Whether I'm out on the river, painting, quilting, scrapbooking, or creating something new, I love finding opportunities to express my creative side.</p>
+            <p>Family is at the heart of everything I do. I'm a proud mother to Jack and Karli, and nothing brings me more happiness than being a grandma and spending time with the little people in our lives. I also cherish time with my husband, John, whether we're enjoying quiet moments at home, exploring new places, or sharing life's adventures together.</p>
+            <p>Travel is another passion of mine, particularly visiting Europe. I love experiencing different cultures, history, architecture, and local traditions. Each journey provides new perspectives, treasured memories, and inspiration that I carry into both my personal and professional life.</p>
+            <p>Some of my favourite moments are gathered around the table with family and friends—cooking, entertaining, sharing stories, and creating memories together. I also cherish peaceful evenings at home, watching the sunset from my rocking chair and reflecting on all there is to be grateful for.</p>
+            <p>At my core, I am someone who genuinely loves helping people. Building meaningful relationships, supporting others through important life decisions, and celebrating their successes is what inspires me every day. I believe that kindness, compassion, and caring for people aren't just values—they're the foundation of both my personal life and my work with clients.</p>
+          </div>
+
+          <blockquote class="mt-10 border-l-2 border-brand-gold pl-6 lg:pl-8">
+            <p class="font-serif text-[22px] lg:text-[26px] text-brand-plum leading-snug text-balance">
+              My hope is that every client who works with me feels welcomed, cared for, and supported—because helping people isn't just what I do, it's who I am.
+            </p>
+          </blockquote>
+
+          <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-x-8 gap-y-4">
+            <a href="/about/" class="font-sans text-[18px] font-medium text-brand-goldDark underline underline-offset-2 hover:text-amber-700">Read Heidi's professional bio →</a>
+            <a href="/about/" class="font-sans text-[18px] font-medium text-brand-goldDark underline underline-offset-2 hover:text-amber-700">Meet the team →</a>
           </div>
         </div>
+
       </div>
+
+      <!-- Heidi's personal photos go here, as a 3-up strip — same pattern as /angela/ and /joanne/. -->
+
     </div>
   </section>
 
-  <!-- Team grid -->
-  <section class="bg-brand-tintPlum section-gap">
-    <div class="container-content">
-      <div class="text-center mb-14">
-        <h2 class="font-serif text-h2 text-brand-plum">Heidi's Team</h2>
-      </div>
+  <CTABand
+    heading="Let's talk about what matters most to you"
+    sub="Schedule a free, no-obligation consultation with Heidi and let's talk about where you are and where you want to be."
+  />
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-
-        <!-- Angela McCann -->
-        <div class="text-center">
-          <a href="/angela/">
-            <img
-              src="/team/angela-portrait.jpg"
-              alt="Angela McCann"
-              class="w-full object-cover mb-4"
-              loading="lazy"
-              width="1200"
-              height="1800"
-            />
-          </a>
-          <p class="font-serif text-lg text-brand-plum">Angela McCann</p>
-          <p class="font-sans text-[15px] text-brand-ink/70 mt-1">Licensed Assistant</p>
-          <a href="/angela/" class="inline-flex items-center gap-2 mt-4 px-5 py-2.5 border border-brand-plum text-brand-plum font-sans font-medium text-[13px] tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plum hover:text-white">Read Angela's bio</a>
-        </div>
-
-        <!-- Joanne Charron -->
-        <div class="text-center">
-          <a href="/joanne/">
-            <img
-              src="/team/joanne-portrait.jpg"
-              alt="Joanne Charron - Insurance Advisor"
-              class="w-full object-cover mb-4"
-              loading="lazy"
-              width="2401"
-              height="3600"
-            />
-          </a>
-          <p class="font-serif text-lg text-brand-plum">Joanne Charron</p>
-          <p class="font-sans text-[15px] text-brand-ink/70 mt-1">Insurance Advisor</p>
-          <a href="/joanne/" class="inline-flex items-center gap-2 mt-4 px-5 py-2.5 border border-brand-plum text-brand-plum font-sans font-medium text-[13px] tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plum hover:text-white">Read Joanne's bio</a>
-        </div>
-
-        <!-- John Blondin -->
-        <div class="text-center">
-          <img
-            src="/team/john-portrait.jpg"
-            alt="About John Blondin - Operations Manager"
-            class="w-full object-cover mb-4"
-            loading="lazy"
-            width="2401"
-            height="3600"
-          />
-          <p class="font-serif text-lg text-brand-plum">John Blondin</p>
-          <p class="font-sans text-[15px] text-brand-ink/70 mt-1">Operations Manager</p>
-        </div>
-
-        <!-- Jack Blondin -->
-        <div class="text-center">
-          <a href="/jack/">
-            <img
-              src="/team/jack-portrait.jpg"
-              alt="Jack Blondin Headshot"
-              class="w-full object-cover mb-4"
-              loading="lazy"
-              width="2401"
-              height="3600"
-            />
-          </a>
-          <p class="font-serif text-lg text-brand-plum">Jack Blondin</p>
-          <p class="font-sans text-[15px] text-brand-ink/70 mt-1">Assistant</p>
-          <a href="/jack/" class="inline-flex items-center gap-2 mt-4 px-5 py-2.5 border border-brand-plum text-brand-plum font-sans font-medium text-[13px] tracking-wide uppercase transition-colors duration-200 hover:bg-brand-plum hover:text-white">Read Jack's bio</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
 </BaseLayout>
