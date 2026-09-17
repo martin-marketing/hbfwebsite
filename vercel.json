@@ -222,7 +222,12 @@
     },
     {
       "source": "/insurance/",
-      "destination": "/financial-services/insurance/",
+      "destination": "/financial-services/life-insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance",
+      "destination": "/financial-services/life-insurance/",
       "permanent": true
     },
     {
