@@ -2,7 +2,7 @@
 
 - Heidi Blondin Financial is a financial services firm based in Kingston, Ontario, offering financial planning, life and living benefits insurance, mutual funds, socially responsible investing, and client education workshops. The firm serves professional families, women, and individuals navigating key life transitions. Content produced for this firm must comply with Investia Financial Services Inc. regulatory and compliance requirements.
 
-- Heidi Blondin Financial is led by founder Heidi Blondin, BA, CFP®, EPC (Certified Financial Planner and Elder Planning Counselor). Heidi's approach centres on financial education and empowerment: helping clients understand their options so they can make informed decisions. Mutual funds and investments are provided through Investia Financial Services Inc. All marketing content is subject to Investia compliance review prior to publication.
+- Heidi Blondin Financial is led by founder Heidi Blondin, BA, CFP®, EPC (Certified Financial Planner and Elder Planning Counsellor). Heidi's approach centres on financial education and empowerment: helping clients understand their options so they can make informed decisions. Mutual funds and investments are provided through Investia Financial Services Inc. All marketing content is subject to Investia compliance review prior to publication.
 
 ## Services
 
@@ -19,10 +19,6 @@
 - [Retirement Savings Strategies](https://heidiblondin.com/much-need-save-retirement/): RRSP vs. TFSA, retirement income sequencing, and saving timelines.
 - [Savings Strategies](https://heidiblondin.com/savings-strategies/): General savings frameworks for different life stages.
 
-## Workshops and Education
-
-- [Women and Wealth Workshops](https://heidiblondin.com/women-wealth-workshops/): Group workshops covering protection, investing fundamentals, and financial literacy for women.
-- [Women & Wealth: Get in the Driver's Seat](https://heidiblondin.com/women-wealth-get-drivers-seat/): Workshop series focused on financial empowerment and independence for women.
 
 ## Resources
 
@@ -40,8 +36,8 @@
 
 ## Team
 
-- [Heidi Blondin, BA, CFP®, EPC](https://heidiblondin.com/what-is-a-financial-planner/): Founder and lead advisor. Certified Financial Planner and Elder Planning Counselor with a focus on financial education, women's financial empowerment, and holistic planning.
-- [Introducing Angela McCann](https://heidiblondin.com/introducing-angela-mccann/): Team member with financial planning experience supporting client care and planning services.
+- [Heidi Blondin, BA, CFP®, EPC](https://heidiblondin.com/about/): Founder and lead advisor. Certified Financial Planner and Elder Planning Counsellor with a focus on financial education, women's financial empowerment, and holistic planning.
+- [Heidi's Team](https://heidiblondin.com/about/): Heidi's team is here to help with financial planning and supporting client care and planning services.
 
 ## Compliance Notice
 
