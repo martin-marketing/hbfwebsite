@@ -226,6 +226,16 @@
       "permanent": true
     },
     {
+      "source": "/life-insurance/thank-you/",
+      "destination": "/financial-services/insurance-quote/insurance-submitted/",
+      "permanent": true
+    },
+    {
+      "source": "/life-insurance/thank-you",
+      "destination": "/financial-services/insurance-quote/insurance-submitted/",
+      "permanent": true
+    },
+    {
       "source": "/thank-you/",
       "destination": "/contact-thank-you/",
       "permanent": true
