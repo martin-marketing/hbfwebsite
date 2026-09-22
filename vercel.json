@@ -231,6 +231,16 @@
       "permanent": true
     },
     {
+      "source": "/whole-life-confirmation/",
+      "destination": "/financial-services/insurance-quote/insurance-submitted/",
+      "permanent": true
+    },
+    {
+      "source": "/whole-life-confirmation",
+      "destination": "/financial-services/insurance-quote/insurance-submitted/",
+      "permanent": true
+    },
+    {
       "source": "/life-insurance/thank-you/",
       "destination": "/financial-services/insurance-quote/insurance-submitted/",
       "permanent": true
