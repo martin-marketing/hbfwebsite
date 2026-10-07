@@ -28,7 +28,7 @@ const personSchema = {
 
 <BaseLayout
   title="About Heidi Blondin, Female Certified Financial Planner"
-  description="Are you looking for honest, and holistic financial planning advice? Heidi Blondin Financial is locally owned an operated by women who genuinely care."
+  description="Heidi Blondin, BA, CFP®, EPC, founded Heidi Blondin Financial in Kingston in 2013. Meet the planner behind the firm, at work and beyond the office."
   image="/team/heidi-corp468.jpeg"
 >
 
@@ -38,7 +38,15 @@ const personSchema = {
     titleClass="font-serif text-display text-white max-w-2xl mx-auto text-balance"
     padding="py-20 lg:py-24"
     center
-  />
+  >
+    <details class="mt-8 max-w-2xl mx-auto text-left border border-brand-plum/20 rounded-lg overflow-hidden">
+      <summary class="cursor-pointer bg-white px-5 py-4 font-sans text-[18px] font-semibold text-brand-plum select-none">Credentials and experience</summary>
+      <div class="bg-white px-5 pb-5 pt-1 space-y-4 font-sans text-[18px] text-brand-ink/75 leading-relaxed">
+        <p>Heidi has worked in financial services since 2007 and founded Heidi Blondin Financial in 2013 to put clients' interests first. She holds a BA in Economics from Queen's University, the Certified Financial Planner (CFP®) designation and the Elder Planning Counselor (EPC) designation, and is qualified to offer both mutual fund and life insurance solutions.</p>
+        <p>Mutual funds are offered through Investia Financial Services Inc.</p>
+      </div>
+    </details>
+  </PageHero>
 
   <section class="bg-white section-gap">
     <div class="container-content">
@@ -75,7 +83,6 @@ const personSchema = {
           </blockquote>
 
           <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-x-8 gap-y-4">
-            <a href="/about/" class="font-sans text-[18px] font-medium text-brand-goldDark underline underline-offset-2 hover:text-amber-700">Read Heidi's professional bio →</a>
             <a href="/about/" class="font-sans text-[18px] font-medium text-brand-goldDark underline underline-offset-2 hover:text-amber-700">Meet the team →</a>
           </div>
         </div>
