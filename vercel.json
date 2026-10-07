@@ -341,6 +341,16 @@
       "permanent": true
     },
     {
+      "source": "/john/",
+      "destination": "/about/",
+      "permanent": false
+    },
+    {
+      "source": "/john",
+      "destination": "/about/",
+      "permanent": false
+    },
+    {
       "source": "/life-insurance/thank-you/",
       "destination": "/financial-services/insurance-quote/insurance-submitted/",
       "permanent": true
