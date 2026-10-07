@@ -73,11 +73,17 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
   <!-- Organization schema on every page -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": ["Organization", "FinancialService", "LocalBusiness"],
-    "name": "Heidi Blondin Financial Inc.",
-    "url": "https://heidiblondin.com",
+    "@type": "FinancialService",
+    "@id": "https://heidiblondin.com/#organization",
+    "name": "Heidi Blondin Financial",
+    "legalName": "Heidi Blondin Financial Inc.",
+    "url": "https://heidiblondin.com/",
     "logo": "https://heidiblondin.com/logos/heidiblondinfinancial_investia_logos_header_V1.png",
-    "telephone": ["+16138872726", "+18558443927"],
+    "image": "https://heidiblondin.com/team/team-2026.jpg",
+    "description": "Independent financial planning and insurance firm in Kingston, Ontario, founded in 2013 by Heidi Blondin, CFP®, EPC.",
+    "foundingDate": "2013",
+    "founder": { "@id": "https://heidiblondin.com/heidi/#person" },
+    "telephone": "+1-613-887-2726",
     "email": "hbadmin@heidiblondin.com",
     "address": {
       "@type": "PostalAddress",
@@ -88,12 +94,24 @@ const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
       "addressCountry": "CA"
     },
     "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": "Ontario"
+      "@type": "City",
+      "name": "Kingston, Ontario"
     },
-    "foundingDate": "2013",
-    "sameAs": []
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-855-844-3927",
+      "contactType": "customer service",
+      "areaServed": "CA",
+      "availableLanguage": "English"
+    },
+    "sameAs": [
+      "https://www.facebook.com/HeidiBlondinFinancial",
+      "https://www.instagram.com/heidiblondinfinancial/"
+    ]
   })} />
+
+  <!-- Page-specific head content, e.g. Person schema on /heidi/ -->
+  <slot name="head" />
 
   {ga4Id && (
     <>

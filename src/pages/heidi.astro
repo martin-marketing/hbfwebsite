@@ -6,23 +6,39 @@ import PageHero from '@/components/PageHero.astro';
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://heidiblondin.com/heidi/#person",
   "name": "Heidi Blondin",
   "honorificSuffix": "BA, CFP®, EPC",
   "jobTitle": "Certified Financial Planner",
   "url": "https://heidiblondin.com/heidi/",
   "image": "https://heidiblondin.com/team/heidi-corp468.jpeg",
-  "telephone": "+16138872726",
-  "email": "hbadmin@heidiblondin.com",
+  "worksFor": { "@id": "https://heidiblondin.com/#organization" },
   "alumniOf": {
     "@type": "CollegeOrUniversity",
     "name": "Queen's University"
   },
-  "worksFor": {
-    "@type": "FinancialService",
-    "name": "Heidi Blondin Financial Inc.",
-    "url": "https://heidiblondin.com"
-  },
-  "sameAs": ["https://www.linkedin.com/in/heidiblondin/"]
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Certified Financial Planner (CFP®)",
+      "credentialCategory": "Professional designation"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Elder Planning Counselor (EPC)",
+      "credentialCategory": "Professional designation"
+    }
+  ],
+  "knowsAbout": [
+    "Financial planning",
+    "Retirement income planning",
+    "Life insurance",
+    "Estate planning",
+    "Charitable giving"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/heidiblondin/"
+  ]
 };
 ---
 
@@ -31,6 +47,9 @@ const personSchema = {
   description="Heidi Blondin, BA, CFP®, EPC, founded Heidi Blondin Financial in Kingston in 2013. Meet the planner behind the firm, at work and beyond the office."
   image="/team/heidi-corp468.jpeg"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  </Fragment>
 
   <PageHero
     eyebrow="Certified Financial Planner"
@@ -98,7 +117,5 @@ const personSchema = {
     heading="Let's talk about what matters most to you"
     sub="Schedule a free, no-obligation consultation with Heidi and let's talk about where you are and where you want to be."
   />
-
-  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
 </BaseLayout>
