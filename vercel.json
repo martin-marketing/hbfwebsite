@@ -241,6 +241,106 @@
       "permanent": true
     },
     {
+      "source": "/blog_disclaimer/",
+      "destination": "/website-compliance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog_disclaimer",
+      "destination": "/website-compliance/",
+      "permanent": true
+    },
+    {
+      "source": "/services/insurance-quote/",
+      "destination": "/financial-services/insurance-quote/",
+      "permanent": true
+    },
+    {
+      "source": "/services/insurance-quote",
+      "destination": "/financial-services/insurance-quote/",
+      "permanent": true
+    },
+    {
+      "source": "/joanne-thank-you/",
+      "destination": "/contact-thank-you/",
+      "permanent": true
+    },
+    {
+      "source": "/joanne-thank-you",
+      "destination": "/contact-thank-you/",
+      "permanent": true
+    },
+    {
+      "source": "/charitable_giving/",
+      "destination": "/charitable-giving/",
+      "permanent": true
+    },
+    {
+      "source": "/charitable_giving",
+      "destination": "/charitable-giving/",
+      "permanent": true
+    },
+    {
+      "source": "/workshops/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/workshops",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/services/group-plans/",
+      "destination": "/financial-services/employee-group-benefits-plans/",
+      "permanent": true
+    },
+    {
+      "source": "/services/group-plans",
+      "destination": "/financial-services/employee-group-benefits-plans/",
+      "permanent": true
+    },
+    {
+      "source": "/videos/financial-resp-videos/",
+      "destination": "/videos/",
+      "permanent": true
+    },
+    {
+      "source": "/videos/financial-resp-videos",
+      "destination": "/videos/",
+      "permanent": true
+    },
+    {
+      "source": "/videos/heidi-blondin-financial-financial-literacy-videos/",
+      "destination": "/videos/",
+      "permanent": true
+    },
+    {
+      "source": "/videos/heidi-blondin-financial-financial-literacy-videos",
+      "destination": "/videos/",
+      "permanent": true
+    },
+    {
+      "source": "/videos/heidi-blondin-financial-videos-estate-planning-videos/",
+      "destination": "/videos/",
+      "permanent": true
+    },
+    {
+      "source": "/videos/heidi-blondin-financial-videos-estate-planning-videos",
+      "destination": "/videos/",
+      "permanent": true
+    },
+    {
+      "source": "/videos/heidi-blondin-financial-retirement-planning-videos/",
+      "destination": "/videos/",
+      "permanent": true
+    },
+    {
+      "source": "/videos/heidi-blondin-financial-retirement-planning-videos",
+      "destination": "/videos/",
+      "permanent": true
+    },
+    {
       "source": "/life-insurance/thank-you/",
       "destination": "/financial-services/insurance-quote/insurance-submitted/",
       "permanent": true
