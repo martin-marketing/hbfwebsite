@@ -1,0 +1,357 @@
+<!-- Heidi Blondin Financial: Retirement Transition Series, Part 1 -->
+<!-- CPP at 60, 65 or 70: How to Decide When to Start -->
+<!-- Video hidden until Heidi records Part 1; see TODO below -->
+
+<style>
+  .hbf-article {
+    --plum: #593d58;
+    --plum-light: #7a5679;
+    --plum-pale: #f0eaf0;
+    --plum-tint: #e0d5e0;
+    --sage: #a2a47d;
+    --sage-light: #b8ba98;
+    --sage-pale: #f4f5ee;
+    --sage-tint: #e8e9da;
+    --gray: #666666;
+    --gray-light: #999;
+    --gray-pale: #f7f7f7;
+    --white: #ffffff;
+  }
+
+  /* Series eyebrow */
+  .hbf-article .series-eyebrow {
+    display: inline-block;
+    background: var(--plum-pale);
+    color: var(--plum);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+
+  /* Video (placeholder until Heidi records Part 1) */
+  .hbf-article .hbf-video {
+    margin: 32px 0;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 4px 20px rgba(89,61,88,0.08);
+  }
+  .hbf-article .hbf-video iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .hbf-article .hbf-video.is-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    background: var(--plum-pale);
+    border: 2px dashed var(--plum-tint);
+    box-shadow: none;
+    color: var(--plum);
+    font-weight: 600;
+  }
+
+  /* Heidi quote */
+  .hbf-article .heidi-quote {
+    margin: 32px 0;
+    padding: 22px 26px;
+    border-left: 3px solid var(--plum);
+    background: var(--plum-pale);
+    border-radius: 0 12px 12px 0;
+  }
+  .hbf-article .heidi-quote p {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--plum);
+    line-height: 1.6;
+    margin: 0 0 10px;
+  }
+  .hbf-article .heidi-quote cite {
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  /* Section divider */
+  .hbf-article .section-rule {
+    border: none;
+    border-top: 2px solid var(--plum-tint);
+    margin: 52px 0;
+    position: relative;
+  }
+  .hbf-article .section-rule::after {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    color: var(--sage);
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  /* CPP start-age table */
+  .hbf-article .compare-wrap {
+    margin: 28px 0 0;
+    border: 1.5px solid var(--plum-tint);
+    border-radius: 12px;
+    overflow-x: auto;
+  }
+  .hbf-article .compare-table { width: 100%; border-collapse: collapse; font-size: 17px; }
+  .hbf-article .compare-table th {
+    background: var(--plum);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 13px 18px;
+    text-align: left;
+  }
+  .hbf-article .compare-table td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--plum-tint);
+    color: var(--gray);
+    white-space: nowrap;
+  }
+  .hbf-article .compare-table td:first-child { font-weight: 700; color: var(--plum); }
+  .hbf-article .compare-table tr:last-child td { border-bottom: none; }
+  .hbf-article .compare-table tr:nth-child(even) td { background: var(--gray-pale); }
+  .hbf-article .compare-table tr.is-base td { background: var(--sage-pale); }
+  .hbf-article .table-note {
+    margin: 10px 0 28px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--gray);
+  }
+
+  /* Hypothetical illustration callout */
+  .hbf-article .ci-callout {
+    margin: 28px 0;
+    background: var(--sage-pale);
+    border: 1.5px solid var(--sage-tint);
+    border-radius: 12px;
+    padding: 24px 26px;
+  }
+  .hbf-article .ci-callout .ci-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+  .hbf-article .ci-callout p { font-size: 18px; line-height: 1.7; color: var(--gray); margin: 0 0 14px; }
+  .hbf-article .ci-callout p:last-child { margin-bottom: 0; }
+
+  /* Tip box */
+  .hbf-article .hbf-tip {
+    background: #f5f0f5;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 24px 0;
+    border-left: 3px solid #593d58;
+  }
+  .hbf-article .hbf-tip p { font-size: 18px; line-height: 1.7; margin: 0; color: #593d58; font-weight: 600; }
+  .hbf-article .hbf-tip a { color: #593d58; }
+
+  /* CTA block */
+  .hbf-article .cta-block {
+    margin-top: 48px;
+    background: var(--plum);
+    border-radius: 14px;
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .hbf-article .cta-text { width: 100%; }
+  .hbf-article .cta-text p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.80);
+    margin-bottom: 0;
+    line-height: 1.65;
+  }
+  .hbf-article .cta-text p strong {
+    color: var(--white);
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .hbf-article .cta-btn {
+    display: inline-block;
+    background: var(--sage);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 9px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+  .hbf-article .cta-btn:hover { color: var(--white); }
+
+  /* Sources */
+  .hbf-article .article-sources {
+    margin-top: 36px;
+    font-size: 15px;
+    color: var(--gray);
+  }
+  .hbf-article .article-sources a { color: var(--plum); }
+
+  /* Featured image */
+  .hbf-article .article-featured-image {
+    margin-top: 48px;
+    border-radius: 14px;
+    overflow: hidden;
+    line-height: 0;
+  }
+  .hbf-article .article-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+  }
+
+  @media (max-width: 680px) {
+    .hbf-article .cta-block { padding: 28px 24px; }
+    .hbf-article .compare-table td,
+    .hbf-article .compare-table th { padding-left: 12px; padding-right: 12px; }
+  }
+</style>
+
+<div class="hbf-article">
+
+  <div class="series-eyebrow">Retirement Transition Series &middot; Part 1</div>
+
+  <!-- ── INTRO ── -->
+  <p>When to start the Canada Pension Plan (CPP) is the question we hear most from people nearing retirement. The choice is permanent, and it shapes your guaranteed income for life.</p>
+
+  <!-- TODO: add the Part 1 video here once Heidi records it (Heidi explains how she approaches CPP timing with clients):
+  <div class="hbf-video">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Retirement Transition Series: When to Start CPP" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  -->
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 1 ── -->
+  <h2>Don't decide based on your neighbour</h2>
+
+  <p>Most people hear about CPP timing from a friend or colleague, and the advice is usually to take it as soon as you can.</p>
+
+  <blockquote class="heidi-quote">
+    <p>"A lot of people say, oh, my neighbour said, start CPP at 60. And that's not always the best option."</p>
+    <cite>Heidi Blondin, CFP®, EPC</cite>
+  </blockquote>
+
+  <p>Starting CPP early can be the right call, but it really depends on your personal situation. There are a number of factors to consider when determining the right timing. There isn’t a one size fits all solution.</p>
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 2 ── -->
+  <h2>What you get at each start age</h2>
+
+  <p>You can start CPP any time between age 60 and 70. Each month before 65 cuts your pension benefit by 0.6%; each month deferred after 65 adds 0.7%. Both adjustments will affect your income for the rest of your life. Here is what that means for someone entitled to $1,000 a month at 65:</p>
+
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr><th>Start age</th><th>Adjustment</th><th>Monthly pension</th><th>Per year</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>60</td><td>&minus;36%</td><td>$640</td><td>$7,680</td></tr>
+        <tr><td>62</td><td>&minus;21.6%</td><td>$784</td><td>$9,408</td></tr>
+        <tr class="is-base"><td>65</td><td>None</td><td>$1,000</td><td>$12,000</td></tr>
+        <tr><td>67</td><td>+16.8%</td><td>$1,168</td><td>$14,016</td></tr>
+        <tr><td>70</td><td>+42%</td><td>$1,420</td><td>$17,040</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="table-note">Hypothetical illustration. Assumes $1,000 a month at 65 in today's dollars and the standard adjustments; excludes indexing, tax and the post-retirement benefit. The maximum CPP benefit at 65 in January 2026 was $1,507.65 a month (Government of Canada); most people receive less.</p>
+
+  <blockquote class="heidi-quote">
+    <p>"Starting CPP at 60, you take a 36% reduction for the rest of your life. That's a big hit, especially when you don't have any other guaranteed retirement income."</p>
+    <cite>Heidi Blondin, CFP®, EPC</cite>
+  </blockquote>
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 3 ── -->
+  <h2>Why waiting matters most if you don't have a pension</h2>
+
+  <p>Our view is that CPP timing matters most for people without a workplace pension. For them, CPP may be the only income they will have for life that is guaranteed, predictable and indexed to inflation.</p>
+
+  <blockquote class="heidi-quote">
+    <p>"In a lot of cases, it's the only guaranteed, predictable income they'll have for the rest of their life. It's indexed, which means it grows a little bit each year depending on the cost of living."</p>
+    <cite>Heidi Blondin, CFP®, EPC</cite>
+  </blockquote>
+
+  <p>Savings can deplete quickly; a larger CPP cheque does not. Drawing on savings for a few years while you delay CPP can buy a bigger guaranteed base income for the rest of your life.</p>
+
+  <div class="ci-callout">
+    <div class="ci-label">Hypothetical illustration</div>
+    <p>Which pays more in total? It depends on how long you live. Using the example above, if you start at 60, you collect $640 a month for five years before someone who waits until 65 gets their first cheque. That is a head start of about $38,000.</p>
+    <p>From 65 on, the person who waited gets $360 more every month. By about age 74, they have caught up, and every year after that they pull further ahead. Waiting from 65 to 70 works the same way, with a catch-up age of about 82.</p>
+    <p>So starting early pays more if your retirement is shorter, and waiting pays more if it is longer.</p>
+    <p>(Simplified: these figures leave out tax and inflation.)</p>
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 4 ── -->
+  <h2>When starting earlier can make sense</h2>
+
+  <p>Starting before 65 can be reasonable when:</p>
+
+  <ul>
+    <li>You have stopped working and would otherwise draw heavily on savings or carry debt.</li>
+    <li>You have health concerns that make a shorter retirement more likely.</li>
+    <li>You have a solid defined benefit pension, so CPP is a smaller share of your guaranteed income.</li>
+    <li>You are already collecting a CPP spousal death benefit.</li>
+  </ul>
+
+  <p>If you are still working, CPP is taxable at your marginal tax rate which may be higher while you still have employment income. Waiting until age 65 or beyond usually makes more sense if you are still working, have little or no pension, or expect a long retirement.</p>
+
+  <hr class="section-rule">
+
+  <!-- ── SECTION 5 ── -->
+  <h2>Look at the whole picture first</h2>
+
+  <p>Pensions, OAS, RRSPs, LIRAs, TFSAs, Non-Registered savings, part-time work and a spouse's income sources all affect when CPP should start.</p>
+
+  <blockquote class="heidi-quote">
+    <p>"The answer's not consistent for everybody, but it does matter. We have to look at the whole picture to see what makes most sense for each individual."</p>
+    <cite>Heidi Blondin, CFP®, EPC</cite>
+  </blockquote>
+
+  <div class="hbf-tip">
+    <p>Before you apply to start your CPP benefit, request your CPP projections at various ages by calling 800-277-9914 or log into your <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html" target="_blank" rel="noopener noreferrer">My Service Canada Account</a>. Make a list of all your retirement income sources for you and your spouse. Be sure to consider the impact of your decisions on everyone in your household.</p>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="cta-block">
+    <div class="cta-text">
+      <p><strong>Not sure when to start your CPP?</strong>We build Retirement Income Plans that optimize your income for a tax efficient draw down from CPP, OAS, pensions, investments and other sources. We ensure you have a written plan that shows the flow of income and how all your savings pieces fit together. Be sure to start planning well in advance, so you have time to fill any income gaps.</p>
+    </div>
+    <a href="/contact" class="cta-btn">Book a consultation →</a>
+  </div>
+
+  <p class="article-sources">Sources: <a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/payment-amounts.html" target="_blank" rel="noopener noreferrer">CPP payment amounts, Government of Canada</a></p>
+
+  <div class="article-featured-image">
+    <img src="/wp-content/uploads/cpp-at-60-65-or-70.jpg" alt="A couple in their sixties reviewing retirement income papers together at their dining table" />
+  </div>
+
+</div><!-- .hbf-article -->
