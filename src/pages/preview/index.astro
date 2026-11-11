@@ -1,0 +1,56 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogCard from '@/components/BlogCard.astro';
+import { previews } from '@/data/previews';
+
+// Index of draft articles awaiting compliance approval; see src/data/previews.ts.
+const posts = [...previews].sort((a, b) => b.published_at.localeCompare(a.published_at));
+---
+
+<BaseLayout
+  title="Drafts for Compliance Review | Heidi Blondin Financial"
+  description="Draft articles awaiting compliance review."
+  noindex={true}
+>
+  <!-- Drafts only open on hbfwebsite.vercel.app; see [slug].astro. -->
+  <script is:inline slot="head">
+    if (/(^|\.)heidiblondin\.com$/.test(location.hostname)) location.replace('/blog/');
+  </script>
+
+  <!-- Hero -->
+  <section class="bg-brand-plum py-20">
+    <div class="container-content text-center">
+      <p class="eyebrow-light mb-5">Drafts</p>
+      <h1 class="font-serif text-2xl lg:text-[2rem] text-white max-w-xl mx-auto text-balance" style="line-height: 1.2; letter-spacing: -0.01em;">
+        Articles for compliance review
+      </h1>
+      <p class="font-sans text-[19px] text-white/65 mt-5 max-w-lg mx-auto">
+        These articles are not published on heidiblondin.com.
+      </p>
+    </div>
+  </section>
+
+  <!-- Posts -->
+  <section class="bg-brand-tintSage section-gap">
+    <div class="container-content">
+      {posts.length === 0 ? (
+        <p class="font-sans text-brand-ink/70 text-center py-20">No drafts awaiting review.</p>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map(post => (
+            <BlogCard
+              slug={post.slug}
+              href={`/preview/${post.slug}/`}
+              title={post.title}
+              excerpt={post.excerpt}
+              category={post.category}
+              published_at={post.published_at}
+              cover_image={post.cover_image}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+</BaseLayout>
