@@ -14,6 +14,7 @@ export default defineConfig({
         !page.includes('thank-you') &&
         !page.includes('contact-thank-you') &&
         !page.includes('insurance-submitted') &&
+        !page.includes('/preview/') &&
         // Articles canonicalise to /{slug}; the /blog/{slug} aliases are noindex,
         // so keep them out of the sitemap. /blog/ and /blog/page/N stay in.
         !/\/blog\/(?!page\/)./.test(page),

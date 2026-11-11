@@ -1,0 +1,93 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTABand from '@/components/CTABand.astro';
+import { formatDate } from '@/lib/posts';
+import { previews } from '@/data/previews';
+
+// Draft articles for compliance review; see src/data/previews.ts.
+const bodies = import.meta.glob('/blog articles/*_article_wp.html', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+}) as Record<string, string>;
+
+export function getStaticPaths() {
+  return previews.map(post => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const bodyHtml = bodies[`/blog articles/${post.slug}_article_wp.html`];
+if (!bodyHtml) throw new Error(`preview: no article file for "${post.slug}"`);
+---
+
+<BaseLayout
+  title={`${post.title} | Heidi Blondin Financial`}
+  description={post.meta_desc}
+  noindex={true}
+>
+
+  <!-- Draft notice -->
+  <div class="bg-brand-tintSage border-b border-brand-sage/40">
+    <div class="container-content py-3 text-center font-sans text-[15px] text-brand-ink/80">
+      Draft for compliance review. This article is not published on heidiblondin.com.
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="bg-brand-plum py-12 lg:py-16">
+    <div class="container-content text-center">
+      <h1 class="font-serif text-2xl lg:text-[2rem] text-white max-w-3xl mx-auto text-balance" style="line-height: 1.2; letter-spacing: -0.01em;">{post.title}</h1>
+    </div>
+  </section>
+
+  <!-- Post body -->
+  <article class="bg-white section-gap">
+    <div class="container-content max-w-3xl">
+      <div class="prose-hbf" set:html={bodyHtml} />
+
+      <!-- Author -->
+      <div class="mt-12 pt-8 border-t border-brand-plum/10 flex items-center gap-4">
+        <img src="/team/heidi-portrait.jpg" alt="Heidi Blondin" class="w-14 h-14 object-cover object-top flex-shrink-0" />
+        <div>
+          <div class="font-sans text-[15px] font-semibold text-brand-plum">{post.author}</div>
+          <div class="font-sans text-[13px] text-brand-ink/70 mt-0.5">CFP®, EPC · Heidi Blondin Financial</div>
+          {post.published_at && (
+            <div class="font-sans text-[13px] text-brand-ink/70 mt-0.5">{formatDate(post.published_at)}</div>
+          )}
+        </div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="mt-8 bg-brand-tintPlum p-5 border-l-2 border-brand-plum/30">
+        <p class="font-sans text-[13px] text-brand-ink/70 leading-relaxed">
+          Mutual funds are offered through Investia Financial Services Inc.
+        </p>
+        <p class="font-sans text-[13px] text-brand-ink/70 leading-relaxed mt-3">
+          Insurance solutions provided in Ontario and New Brunswick, through Heidi Blondin Financial / Qualified Financial Services.
+        </p>
+        <p class="font-sans text-[13px] text-brand-ink/70 leading-relaxed mt-3">
+          The comments contained herein are a general discussion of certain issues intended as general information only and should not be relied upon as tax or legal advice. Please obtain independent professional advice, in the context of your particular circumstances. This article was prepared by Heidi Blondin who is a Certified Financial Planner (CFP) at Heidi Blondin Financial a registered trade name with Investia Financial Services Inc., and does not necessarily reflect the opinion of Investia Financial Services Inc. The information contained in this presentation comes from sources we believe reliable, but we cannot guarantee its accuracy or reliability.
+        </p>
+      </div>
+
+      {post.tags && post.tags.length > 0 && (
+        <div class="mt-6 flex flex-wrap gap-2">
+          {post.tags.map(tag => (
+            <span class="font-sans text-[14px] font-medium text-brand-sageDark bg-brand-tintSage px-3 py-1.5 tracking-wide uppercase">{tag}</span>
+          ))}
+        </div>
+      )}
+
+      <div class="mt-10">
+        <a href="/blog/" class="font-sans text-[15px] font-medium text-brand-goldDark flex items-center gap-2 hover:gap-3 transition-all">
+          <svg class="w-4 h-4 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Back to all posts
+        </a>
+      </div>
+    </div>
+  </article>
+
+
+  <CTABand heading="Found this helpful?" sub="Book a free consultation and we'll apply this thinking to your specific situation." />
+
+</BaseLayout>
