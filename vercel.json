@@ -5,7 +5,7 @@
       "has": [
         {
           "type": "host",
-          "value": "(www\\.)?heidiblondin\\.com"
+          "value": "heidiblondin.com"
         }
       ],
       "destination": "/blog/",
