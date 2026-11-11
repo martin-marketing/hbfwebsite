@@ -25,6 +25,10 @@ if (!bodyHtml) throw new Error(`preview: no article file for "${post.slug}"`);
   description={post.meta_desc}
   noindex={true}
 >
+  <!-- Drafts only open on hbfwebsite.vercel.app; vercel.json's host-based redirect doesn't fire on this build, so do it here before anything renders. -->
+  <script is:inline slot="head">
+    if (/(^|\.)heidiblondin\.com$/.test(location.hostname)) location.replace('/blog/');
+  </script>
 
   <!-- Draft notice -->
   <div class="bg-brand-tintSage border-b border-brand-sage/40">
