@@ -438,6 +438,11 @@
     },
     {
       "source": "/team/heidi-corp468.jpeg",
+      "destination": "/team/heidi-blondin-kingston-beyond-the-office.jpg",
+      "statusCode": 301
+    },
+    {
+      "source": "/team/heidi-corp386.jpeg",
       "destination": "/team/heidi-blondin-cfp-financial-planner-kingston.jpg",
       "statusCode": 301
     }
