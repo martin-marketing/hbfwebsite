@@ -435,6 +435,11 @@
       "source": "/about-heidi",
       "destination": "/heidi/",
       "permanent": true
+    },
+    {
+      "source": "/team/heidi-corp468.jpeg",
+      "destination": "/team/heidi-blondin-cfp-financial-planner-kingston.jpg",
+      "statusCode": 301
     }
   ],
   "headers": [
